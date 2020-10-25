@@ -31,3 +31,6 @@ nav a:hover{
 ul li{
     margin: 1em auto ;
 }
+.pp_image{
+     max-height: 50%;
+}
