@@ -1,5 +1,5 @@
 import React from 'react';
-import Home_bg from './images/home_bg.png';
+import Home_bg from './images/home_bg.svg';
 import './App.css';
 
 function App() {
