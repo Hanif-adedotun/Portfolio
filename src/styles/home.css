@@ -20,6 +20,17 @@
   opacity: .5;
 }
 
+.home-main{
+  height: 100vh;
+}
+.skills-section{
+  min-height: 50vh;
+  background-color: aliceblue;
+}
+
+.skills-eulogy{
+  color: var(--primary);
+}
 
 @media only screen and (max-width: 600px) {
   .bg{
