@@ -1,6 +1,57 @@
 /* To import the colors of the website */
 @import url("../utility/colours.css");
 
+.nav{
+    text-align: center;
+    font-family: Quicksand !important;
+    background-color: var(--primary) !important;
+}
+.nav-appBar{
+  background-color: var(--primary) !important;
+  opacity: .9;
+  backdrop-filter: saturate(180%) blur(10px) !important;
+}
+
+.nav-toolbar{
+  color: var(--accent) !important;
+}
+
+.nav-drawer{
+  backdrop-filter: saturate(120%) blur(2px) !important;
+}
+.nav-drawer-div{
+  background-color: var(--primary) !important;
+  opacity: .9;
+  height: 100vh;
+}
+
+/* Link styles on the header */
+.nav-head-text{
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+}
+
+.nav-links{
+  text-decoration: none;
+  color: var(--accent) ;
+  font-family: inherit;
+}
+.nav-links-active{
+  color: var(--contrast);
+}
+
+.nav-link-contact{
+  background-color: var(--contrast) !important;
+  color: var(--primary) !important;
+  font-weight: bold !important;
+  /* padding: .2em .5em !important; */
+  border-radius: 5px !important;
+}
+/* Drawer styles */
+.nav-drawer{
+  color: var(--primary) !important;
+}
 
 /* Modal styles */
 .contact-modal{

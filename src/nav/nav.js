@@ -1,5 +1,6 @@
 import {React, useState} from 'react';
 import '../styles/nav.css';
+
 // Material UI components
 import { AppBar, 
      Toolbar,
@@ -21,14 +22,17 @@ import {
      HashRouter,
      Switch,
      Route,
-     Link,
-     useLocation
+     NavLink,
+     Link
    } from "react-router-dom";
 
 // Views
 import Home from '../components/home';
 import Resume from '../components/resume';
+import Projects from '../components/projects';
+import Certifications from '../components/certifications';
 import Footer from '../components/footer';
+import NotFound from '../components/404';
 
 // Backdrop for the modal dialog
 const Backdrop = styled('div')`
@@ -38,9 +42,11 @@ const Backdrop = styled('div')`
   bottom: 0;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(12, 24, 36, 0.9);
   -webkit-tap-highlight-color: transparent;
+  backdrop-filter: saturate(120%) blur(2px) ;
 `;
+
 
 const Navigation = (props) => {
      // let location = useLocation();
@@ -51,7 +57,7 @@ const Navigation = (props) => {
      };
 
      const theme = useTheme();
-     const ismobile = useMediaQuery(theme.breakpoints.down('sm'))
+     const ismobile = useMediaQuery(theme.breakpoints.down('700'))
        
 
      // Modal Functions
@@ -60,31 +66,31 @@ const Navigation = (props) => {
      const handleClose = () => setOpen(false);
 
      return(
-          <div>
+          <div className="nav">
           <HashRouter basename='/'>
-          <AppBar position="sticky">
-               <Toolbar >
-                    <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 1 }}>
-                         Hanif Adedotun
-                    </Typography>
+          <AppBar position="sticky" className="nav-appBar" elevation={0}>
+               <Toolbar className='nav-toolbar'>
+                    <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 1, textAlign:'left' }}>
+                    <Link to='/' className='nav-head-text'>Hanif Adedotun</Link>
+               </Typography>
 
                     {(ismobile) ? 
                     <IconButton
-                    size="large"
+                    size="900"
                     edge="start"
                     color="inherit"
                     aria-label="menu"
                     sx={{ ml: 2 }}
                     onClick={handleDrawerToggle}
                     >
-                    <MenuIcon />
+                    <MenuIcon/>
                     </IconButton>
                     :
                     <div>
-                    <Button color="inherit"><Link to='/resume'>Projects</Link></Button>
-                    <Button color="inherit"><Link to='/resume'>Resume</Link></Button>
-                    <Button color="inherit">Certifications</Button>
-                    <Button variant='contained' onClick={handleOpen}>Contact me</Button>
+                    <Button color="inherit"><NavLink to='/resume' className='nav-links' activeClassName="nav-links-active">Projects</NavLink></Button>
+                    <Button color="inherit"><NavLink to='/projects' className='nav-links' activeClassName="nav-links-active">Resume</NavLink></Button>
+                    <Button color="inherit"><NavLink to='/certificates' className='nav-links' activeClassName="nav-links-active">Certifications</NavLink></Button>
+                    <Button className='nav-link-contact' variant='contained' onClick={handleOpen}>Contact me</Button>
                     </div>
                     }
                </Toolbar>
@@ -96,6 +102,8 @@ const Navigation = (props) => {
           variant="temporary"
           open={DrawerOpen}
           onClose={handleDrawerToggle}
+          transitionDuration={700}
+          className={'nav-drawer'}
           ModalProps={{
             keepMounted: true,
           }}
@@ -104,33 +112,37 @@ const Navigation = (props) => {
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
           }}
         >
-          <div>
+          <div  className={'nav-drawer-div'}>
                <List>
                     <ListItem>
-                         <Button>Projects</Button>
+                         <Button onClick={handleDrawerToggle}><NavLink to='/projects' className='nav-links' activeClassName="nav-links-active">Projects</NavLink></Button>
                     </ListItem>
 
                     <ListItem>
-                         <Button>Resume</Button>
+                         <Button onClick={handleDrawerToggle}><NavLink to='/resume' className='nav-links' activeClassName="nav-links-active">Resume</NavLink></Button>
                     </ListItem>
 
                     <ListItem>
-                         <Button>Certifications</Button>
+                         <Button onClick={handleDrawerToggle}><NavLink to='/certificates' className='nav-links' activeClassName="nav-links-active">Certifications</NavLink></Button>
                     </ListItem>
 
                     <ListItem>
-                         <Button onClick={() => {handleDrawerToggle(); handleOpen()}}>Contact me</Button>
+                         <Button onClick={() => {handleDrawerToggle(); handleOpen()}} className='nav-link-contact' variant='contained'>Contact me</Button>
                     </ListItem>
                </List>
           </div>
         </Drawer>
           
           {/* All Components come here */}
-          
+               <div className="nav-routes">
                <Switch >
                     <Route exact path="/"><Home/></Route>
                     <Route exact path="/resume"><Resume/></Route>
+                    <Route exact path="/projects"><Projects/></Route>
+                    <Route exact path="/certificates"><Certifications/></Route>
+                    <Route><NotFound/></Route>
                </Switch>
+               </div>
           
 
           {/* Modal for Contact me */}

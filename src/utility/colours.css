@@ -1,5 +1,7 @@
 :root{
      --primary: #112233;
      --secondary: #30495F;
-     --light: #DCEDFF;
+     --contrast: #1DCFF6;
+     --white: #FFFFFF;
+     --accent: #DCEDFF;
 }
