@@ -4,16 +4,16 @@
 .nav{
     text-align: center;
     font-family: Quicksand !important;
-    background-color: var(--primary) !important;
 }
 .nav-appBar{
   background-color: var(--primary) !important;
-  opacity: .9;
+  opacity: 1;
   backdrop-filter: saturate(180%) blur(10px) !important;
 }
 
 .nav-toolbar{
   color: var(--accent) !important;
+  font-size: medium !important;
 }
 
 .nav-drawer{
@@ -34,9 +34,12 @@
 
 .nav-links{
   text-decoration: none;
+  text-transform: capitalize;
+  margin: auto 1em;
   color: var(--accent) ;
-  font-family: inherit;
+  font-family: Quicksand;
 }
+
 .nav-links-active{
   color: var(--contrast);
 }
@@ -45,9 +48,11 @@
   background-color: var(--contrast) !important;
   color: var(--primary) !important;
   font-weight: bold !important;
+  font-family: Quicksand !important;
   /* padding: .2em .5em !important; */
   border-radius: 5px !important;
 }
+
 /* Drawer styles */
 .nav-drawer{
   color: var(--primary) !important;
@@ -67,8 +72,15 @@
 }
 
 .contact-modal-box{
-     background-color: aliceblue;
+     background-color: var(--accent);
      border-radius: 5px;
      color: var(--primary);
-     padding: 2em;
+     padding: 5px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .nav-links{
+    margin: auto;
+  }
 }

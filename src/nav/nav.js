@@ -12,10 +12,11 @@ import { AppBar,
        Drawer, 
        useTheme,
        useMediaQuery,
+       Grid, 
        Box, styled} from '@mui/material';
 
 import ModalUnstyled from '@mui/core/ModalUnstyled';
-import {Menu as MenuIcon} from '@mui/icons-material';
+import {Menu as MenuIcon, CloseOutlined} from '@mui/icons-material';
 
 // React router dom
 import {
@@ -31,7 +32,6 @@ import Home from '../components/home';
 import Resume from '../components/resume';
 import Projects from '../components/projects';
 import Certifications from '../components/certifications';
-import Footer from '../components/footer';
 import NotFound from '../components/404';
 
 // Backdrop for the modal dialog
@@ -71,8 +71,8 @@ const Navigation = (props) => {
           <AppBar position="sticky" className="nav-appBar" elevation={0}>
                <Toolbar className='nav-toolbar'>
                     <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 1, textAlign:'left' }}>
-                    <Link to='/' className='nav-head-text'>Hanif Adedotun</Link>
-               </Typography>
+                         <Link to='/' className='nav-head-text'>Hanif Adedotun</Link>
+                    </Typography>
 
                     {(ismobile) ? 
                     <IconButton
@@ -87,8 +87,8 @@ const Navigation = (props) => {
                     </IconButton>
                     :
                     <div>
-                    <Button color="inherit"><NavLink to='/resume' className='nav-links' activeClassName="nav-links-active">Projects</NavLink></Button>
-                    <Button color="inherit"><NavLink to='/projects' className='nav-links' activeClassName="nav-links-active">Resume</NavLink></Button>
+                    <Button color="inherit"><NavLink to='/projects' className='nav-links' activeClassName="nav-links-active">Projects</NavLink></Button>
+                    <Button color="inherit"><NavLink to='/resume' className='nav-links' activeClassName="nav-links-active">Resume</NavLink></Button>
                     <Button color="inherit"><NavLink to='/certificates' className='nav-links' activeClassName="nav-links-active">Certifications</NavLink></Button>
                     <Button className='nav-link-contact' variant='contained' onClick={handleOpen}>Contact me</Button>
                     </div>
@@ -134,7 +134,7 @@ const Navigation = (props) => {
         </Drawer>
           
           {/* All Components come here */}
-               <div className="nav-routes">
+               <div >
                <Switch >
                     <Route exact path="/"><Home/></Route>
                     <Route exact path="/resume"><Resume/></Route>
@@ -143,7 +143,8 @@ const Navigation = (props) => {
                     <Route><NotFound/></Route>
                </Switch>
                </div>
-          
+
+          </HashRouter>
 
           {/* Modal for Contact me */}
           <ModalUnstyled 
@@ -152,17 +153,23 @@ const Navigation = (props) => {
           className={'contact-modal'}
           BackdropComponent={Backdrop}
           >
-          
                <Box className={'contact-modal-box'}>
-                    <h2 id="unstyled-modal-title">Text in a modal</h2>
+
+               <Grid container spacing={2}>
+                    <Grid item xs>
+                         <h2 >Text in a modal</h2>
+                    </Grid>  
+
+                    <Grid item xs={2}>
+                         <IconButton onClick={handleClose}>
+                          <CloseOutlined />
+                    </IconButton>
+                    </Grid>  
+               </Grid>
+         
                      <p id="unstyled-modal-description">Aliquid amet deserunt earum!</p>
                 </Box>
           </ModalUnstyled>
-
-          {/* Footer */}
-          <Footer/>
-
-          </HashRouter>
           </div>
      )
 }
