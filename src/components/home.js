@@ -8,6 +8,11 @@ import { TextLoop } from "react-text-loop-next";
 import {Grid} from '@mui/material';
 
 function App() {
+  const skills = {
+    1: ['Javascript', 'React'],
+    2: ['PHP', 'MySql'],
+    3: ['MongoDB', 'Figma']
+  }
   return (
     <div className='home-cont'>
 
@@ -39,17 +44,25 @@ function App() {
         
         <div className='skills-section'>
           
-          <div className='skills-eulogy'>I’ll probably be the smallest person  in a room in terms of size, 
+          <div className='skills-eulogy'>I’ll probably be the shortest person in a room, 
             but trust me not in knowledge...
           </div>
 
-          <Grid container justifyContent="center" className='profile-container'>
-              <Grid container sm={6} xs={12} justifyContent="center" className='profile-image-container'>
+          <Grid container justifyContent="center"  className='profile-container'>
+              <Grid container  sm={6} xs={12} justifyContent="center" className='profile-image-container'>
                 <div className='profile-image'></div>
               </Grid>
 
-              <Grid container sm={6} xs={12} justifyContent="center" className='profile-skills'>
-                jkj
+              <Grid container  sm={4} xs={12} spacing={2} justifyContent="center" className='profile-skills'>
+                <span className='skills-head'>My Top Skills</span>
+                {Object.values(skills).map((skill,i) =>
+                  <Grid container item xs={10}  spacing={5} justifyContent="center">
+                    {Object.values(skill).map((v,i) =>
+                      <Grid item xs={5}><div className={'skill-name'}>{v}</div></Grid>
+                    )}
+                  </Grid>
+                )}
+                  <span className='skills-footer'>...and of course HTML and CSS</span>
               </Grid>
           </Grid>
 

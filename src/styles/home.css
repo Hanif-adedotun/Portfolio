@@ -47,16 +47,37 @@
 
 .skills-eulogy{
   color: var(--primary);
-  font-size: 200% !important;
+  font-size: 150% !important;
+  margin: 2em auto !important;
 }
-/* .profile-container{
-  border: 2px solid blue;
-} */
+.profile-container{
+  margin: 5em 0;
+}
 .profile-image{
-  width: 20em;
-  height: 20em;
-  background-color: var(--primary);
+  width: 25em;
+  height: 25em;
+  background-color: var(--secondary);
   border-radius: 10px;
+}
+
+.profile-skills{
+  margin: 5em 0;
+}
+.skills-head{
+  font-weight:bolder;
+  font-size: x-large;
+  color: var(--primary);
+}
+.skill-name{
+  background-color: var(--primary);
+  padding: 5px 0;
+  border-radius: 5px;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.skills-footer{
+  font-weight:  bold;
 }
 @media only screen and (max-width: 600px) {
   .bg{

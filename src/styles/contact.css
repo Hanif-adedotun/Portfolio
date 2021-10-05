@@ -1,0 +1,64 @@
+/* Modal styles */
+.contact-modal{
+     position: fixed;
+     z-index: 1300;
+     right: 0;
+     bottom: 0;
+     top: 0;
+     left: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.contact-modal-box{
+        background-color: var(--accent);
+        border-radius: 15px;
+        color: var(--secondary);
+        padding: 0  10px 0 3em; /* top right botttom left */
+        min-width: 40vw;
+        /* font-size: small !important; */
+}
+
+.contact-link-container{
+     margin: 2em auto;
+}
+
+.contact-link-container a:hover{
+     font-weight: bold;     
+}
+.contact-icon{
+     color: var(--secondary);
+     margin-right: 1em;
+}
+.contact-link{
+     text-decoration: none;
+     color: var(--secondary);
+}
+
+/* Form styles */
+.contact-form{
+     height: max-content;
+     width: 100%;
+     background-color: var(--white);
+     border-radius: 5px;
+     margin: 2em auto !important;
+}
+.form-input{
+     margin-bottom: 2em !important;
+}
+
+.form-send{
+     background-color: var(--secondary) !important;
+     font-family: Quicksand !important;
+
+}
+
+@media only screen and (max-width: 600px) {
+     .contact-modal-box{
+          min-width: 70vw;
+     }
+     .contact-modal-box{
+          padding: 0  30px 0 3em; /* top right botttom left */
+  }
+}

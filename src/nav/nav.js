@@ -11,12 +11,11 @@ import { AppBar,
        ListItem,  
        Drawer, 
        useTheme,
-       useMediaQuery,
-       Grid, 
-       Box, styled} from '@mui/material';
+       useMediaQuery, 
+       styled} from '@mui/material';
 
 import ModalUnstyled from '@mui/core/ModalUnstyled';
-import {Menu as MenuIcon, CloseOutlined} from '@mui/icons-material';
+import {Menu as MenuIcon} from '@mui/icons-material';
 
 // React router dom
 import {
@@ -31,6 +30,7 @@ import {
 import Home from '../components/home';
 import Resume from '../components/resume';
 import Projects from '../components/projects';
+import Contact from '../components/contact';
 import Certifications from '../components/certifications';
 import NotFound from '../components/404';
 
@@ -59,12 +59,11 @@ const Navigation = (props) => {
      const theme = useTheme();
      const ismobile = useMediaQuery(theme.breakpoints.down('700'))
        
-
      // Modal Functions
      const[open, setOpen] = useState(false);
      const handleOpen = () => setOpen(true);
      const handleClose = () => setOpen(false);
-
+     
      return(
           <div className="nav">
           <HashRouter basename='/'>
@@ -153,22 +152,7 @@ const Navigation = (props) => {
           className={'contact-modal'}
           BackdropComponent={Backdrop}
           >
-               <Box className={'contact-modal-box'}>
-
-               <Grid container spacing={2}>
-                    <Grid item xs>
-                         <h2 >Text in a modal</h2>
-                    </Grid>  
-
-                    <Grid item xs={2}>
-                         <IconButton onClick={handleClose}>
-                          <CloseOutlined />
-                    </IconButton>
-                    </Grid>  
-               </Grid>
-         
-                     <p id="unstyled-modal-description">Aliquid amet deserunt earum!</p>
-                </Box>
+               <Contact onClose={handleClose}/>
           </ModalUnstyled>
           </div>
      )
