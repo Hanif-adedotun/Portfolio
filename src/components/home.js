@@ -11,7 +11,8 @@ function App() {
   const skills = {
     1: ['Javascript', 'React'],
     2: ['PHP', 'MySql'],
-    3: ['MongoDB', 'Figma']
+    3: ['MongoDB', 'Figma'],
+    4: ['Python']
   }
   return (
     <div className='home-cont'>

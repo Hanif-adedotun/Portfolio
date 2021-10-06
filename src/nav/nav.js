@@ -89,7 +89,7 @@ const Navigation = (props) => {
                     <Button color="inherit"><NavLink to='/projects' className='nav-links' activeClassName="nav-links-active">Projects</NavLink></Button>
                     <Button color="inherit"><NavLink to='/resume' className='nav-links' activeClassName="nav-links-active">Resume</NavLink></Button>
                     <Button color="inherit"><NavLink to='/certificates' className='nav-links' activeClassName="nav-links-active">Certifications</NavLink></Button>
-                    <Button className='nav-link-contact' variant='contained' onClick={handleOpen}>Contact me</Button>
+                    <Button sx={{boxShadow: 4}} className='nav-link-contact' variant='contained' onClick={handleOpen}>Contact me</Button>
                     </div>
                     }
                </Toolbar>
@@ -126,7 +126,7 @@ const Navigation = (props) => {
                     </ListItem>
 
                     <ListItem>
-                         <Button onClick={() => {handleDrawerToggle(); handleOpen()}} className='nav-link-contact' variant='contained'>Contact me</Button>
+                         <Button sx={{boxShadow: 2}} onClick={() => {handleDrawerToggle(); handleOpen()}} className='nav-link-contact' variant='contained'>Contact me</Button>
                     </ListItem>
                </List>
           </div>

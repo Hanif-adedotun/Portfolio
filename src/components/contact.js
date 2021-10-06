@@ -3,7 +3,8 @@ import '../styles/contact.css';
 
 // Material UI Components
 import {IconButton, Grid, Box, TextField, InputAdornment, FormControl, Button} from '@mui/material';
-import {CloseOutlined, AccountCircle} from '@mui/icons-material';
+import {CloseOutlined} from '@mui/icons-material';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -53,24 +54,31 @@ function Contact({onClose}){
                          </Box>
 
                          {/* Solial Media Icons */}
-                         <Grid container justifyContent="center">
+                         <Grid container justifyContent="center" className='social-icon-container'>
                               <Grid item xs={3}>
-                                   <LinkedInIcon/>
+                                   <LinkedInIcon sx={{ fontSize: 32 }} className='social-icon'/>
                               </Grid>
 
                               <Grid item xs={3}>
-                                   <GitHubIcon/>
+                                   <GitHubIcon sx={{ fontSize: 32 }}/>
                               </Grid>
 
                               <Grid item xs={3}>
-                                   <TwitterIcon/>
+                                   <TwitterIcon sx={{ fontSize: 32 }}/>
                               </Grid>
                          </Grid>
 
                     </Grid>
                     
 
-                    <Grid  item xs={6} className="contact-form" justifyContent="center">
+                    <Grid 
+                    container 
+                    item 
+                    xs={6} 
+                    sx={{boxShadow:4}}
+                    className="contact-form" 
+                    justifyContent="center">
+
                       <FormControl>
                       <TextField
                          required
@@ -80,10 +88,11 @@ function Contact({onClose}){
                          label="Full Name"
                          autoComplete='name'
                          className='form-input'
+                         size='small'
                          InputProps={{
                               startAdornment: (
                               <InputAdornment position="start">
-                              <AccountCircle />
+                              <AccountBoxIcon />
                               </InputAdornment>
                               ),
                          }}
@@ -98,10 +107,11 @@ function Contact({onClose}){
                          label="Email"
                          autoComplete='email'
                          className='form-input'
+                         size='small'
                          InputProps={{
                               startAdornment: (
                               <InputAdornment position="start">
-                              <AccountCircle />
+                              <EmailIcon />
                               </InputAdornment>
                               ),
                          }}
@@ -115,16 +125,13 @@ function Contact({onClose}){
                          label="Message"
                          placeholder="Your message"
                          className='form-input'
+                         size='small'
                          multiline
                          rows={4}
                               />
                          </FormControl>
 
-                         <Grid container xs={12} justifyContent='flex-end'>
-                              <Grid item xs={8} sm={6} >
-                              <Button variant="contained" className="form-send">Send Button</Button>
-                              </Grid>
-                         </Grid>
+                         <Button size='small' variant="contained" className="form-send">Send Message</Button>
                     </Grid>
                </Grid>
 

@@ -35,23 +35,32 @@
      text-decoration: none;
      color: var(--secondary);
 }
-
+.social-icon-container{
+     margin-top: 30% !important;
+}
+.social-icon:hover{
+     color: var(--primary) !important;
+}
 /* Form styles */
 .contact-form{
      height: max-content;
      width: 100%;
      background-color: var(--white);
-     border-radius: 5px;
-     margin: 2em auto !important;
+     border-radius: 15px;
+     margin: 1em 0 !important;
+     padding: 2em .2em;
 }
 .form-input{
      margin-bottom: 2em !important;
+     border-color: var(--accent) !important;
 }
 
 .form-send{
      background-color: var(--secondary) !important;
      font-family: Quicksand !important;
-
+     font-size: small !important;
+     font-weight: bold;
+     justify-self: end !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -59,6 +68,9 @@
           min-width: 70vw;
      }
      .contact-modal-box{
-          padding: 0  30px 0 3em; /* top right botttom left */
+          padding: 0  15px 0 1em; /* top right botttom left */
+  }
+     .contact-form{
+          padding: 2em 10px;
   }
 }
