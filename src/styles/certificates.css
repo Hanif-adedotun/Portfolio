@@ -1,0 +1,11 @@
+/* To import the colors of the website */
+@import url("../utility/colours.css");
+
+.certificates-main{
+     background-color: var(--primary);
+     min-height: max-content;
+}
+/* Footer CSS */
+#footer-cert{
+     color: var(--contrast);
+}

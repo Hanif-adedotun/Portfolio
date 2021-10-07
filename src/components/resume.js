@@ -2,7 +2,7 @@ import {React, useState} from 'react';
 import '../styles/resume.css';
 
 // Material UI
-import {Button, Grid} from '@mui/material';
+import {Button, Grid, Box, LinearProgress } from '@mui/material';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
@@ -35,22 +35,29 @@ function MyResume(){
           }
      }
 
+     const Loader = () =>{
+          return (
+          <Box sx={{ width: '100%'}} ><LinearProgress className="resume-loader"/></Box>
+          )
+     }
+
      return(
           <div className="resume-main">
                <span className="resume-head">My resume</span>
               
                <div className="resume-container">
-               
+              
                     <Document 
                     file={resume}
                     onLoadSuccess={resumeOnLoad}
                     className='resume-pdf'
-                    loading='Loading resume...'>
+                    loading={Loader}
+                    >
                     <Page pageNumber={pageNumber} />
                     <p>Page {pageNumber} of {numPages}</p>
                     <Grid container xs={12} justifyContent="center">
-                         <Grid item xs={4}><NavigateBeforeIcon onClick={() => controlPage(false)}  sx={{ fontSize: 38 }}/></Grid>
-                         <Grid item xs={4}><NavigateNextIcon onClick={() => controlPage(true)} sx={{ fontSize: 38 }}/></Grid>
+                         <Grid item xs={4}><NavigateBeforeIcon className='resume-back' onClick={() => controlPage(false)}  sx={{ fontSize: 38 }}/></Grid>
+                         <Grid item xs={4}><NavigateNextIcon className='resume-next' onClick={() => controlPage(true)} sx={{ fontSize: 38 }}/></Grid>
                     </Grid>
                     </Document>
                </div>
