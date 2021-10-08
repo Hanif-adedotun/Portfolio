@@ -5,6 +5,29 @@
      background-color: var(--primary);
      min-height: max-content;
 }
+.certificates-head{
+     margin-bottom: 10% !important;
+     font-weight: bold;
+     color: var(--contrast);
+     font-size: large !important;
+}
+.certificates-container{
+     margin: 2em auto;
+}
+.certificates-img-container{
+     width: 10em;
+     height: 10em;
+     margin: auto;
+     background-color: var(--altacc);
+     border-radius: 5px;
+}
+.certificates-title{
+     color: var(--altacc);
+}
+.certificates-org{
+     color: var(--altacc);
+     font-weight: bold;
+}
 /* Footer CSS */
 #footer-cert{
      color: var(--contrast);
