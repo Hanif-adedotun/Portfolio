@@ -4,10 +4,11 @@
 .nav{
     text-align: center;
     font-family: Quicksand !important;
+    background-color: var(--primary);
 }
 .nav-appBar{
   background-color: var(--primary) !important;
-  opacity: 1;
+  opacity: .95;
   backdrop-filter: saturate(180%) blur(10px) !important;
 }
 

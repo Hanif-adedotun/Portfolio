@@ -56,15 +56,15 @@ function Contact({onClose}){
                          {/* Solial Media Icons */}
                          <Grid container justifyContent="center" className='social-icon-container'>
                               <Grid item xs={3}>
-                                   <LinkedInIcon sx={{ fontSize: 32 }} className='social-icon'/>
+                                   <a href={'https://www.linkedin.com/in/hanif-adedotun'} className='social-icon'><LinkedInIcon sx={{ fontSize: 32 }} /></a>
                               </Grid>
 
                               <Grid item xs={3}>
-                                   <GitHubIcon sx={{ fontSize: 32 }}/>
+                                   <a href={'https://github.com/Hanif-adedotun'} className='social-icon'><GitHubIcon sx={{ fontSize: 32 }}/></a>
                               </Grid>
 
                               <Grid item xs={3}>
-                                   <TwitterIcon sx={{ fontSize: 32 }}/>
+                                   <a href={'https://twitter.com/HanifAdedotun'} className='social-icon'><TwitterIcon sx={{ fontSize: 32 }}/></a>
                               </Grid>
                          </Grid>
 

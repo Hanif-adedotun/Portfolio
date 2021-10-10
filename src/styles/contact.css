@@ -36,10 +36,15 @@
      color: var(--secondary);
 }
 .social-icon-container{
-     margin-top: 30% !important;
+     margin-top: 20% !important;
+}
+
+.social-icon{
+     text-decoration: none;
+     color: inherit;
 }
 .social-icon:hover{
-     color: var(--primary) !important;
+     color: var(--contrast) !important;
 }
 /* Form styles */
 .contact-form{

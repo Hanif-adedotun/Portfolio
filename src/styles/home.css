@@ -54,6 +54,7 @@
   margin: 5em 0;
 }
 .profile-image{
+  /* display: block; */
   width: 25em;
   height: 25em;
   background-color: var(--secondary);
@@ -62,8 +63,11 @@
 
 .profile-skills{
   margin: 5em 0;
+  border: 2px solid red;
+  /* display: block; */
 }
 .skills-head{
+  display: block !important;
   font-weight:bolder;
   font-size: x-large;
   color: var(--primary);
