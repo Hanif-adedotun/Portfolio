@@ -1,0 +1,26 @@
+/* To import the colors of the website */
+@import url("../utility/colours.css");
+
+.project-head{
+     display: block;
+     font-weight: bold;
+     color: var(--contrast);
+     font-size: large !important;
+}
+.proj-tag{
+     color: var(--altacc);
+     justify-self: center;
+}
+.tab-head{
+     border: 2px solid red;
+     width: fit-content;
+}
+.tab-head Tab{
+     font: small !important;
+}
+.project-tab{
+     color: var(--altacc); 
+}
+.tab-active{
+     color: var(--contrast) !important;
+}

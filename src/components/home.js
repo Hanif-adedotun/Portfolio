@@ -5,7 +5,11 @@ import '../styles/home.css';
 // Scrolling text
 import { TextLoop } from "react-text-loop-next";
 
+// Materiul UI
 import {Grid} from '@mui/material';
+
+// SVG Icons
+import Divider from '../images/divider.svg';
 
 function App() {
   const skills = {
@@ -63,9 +67,13 @@ function App() {
                     )}
                   </Grid>
                 )}
+
+               
                   <span className='skills-footer'>...and of course HTML and CSS</span>
               </Grid>
           </Grid>
+
+          <span><img src={Divider} alt='divider' className='divider'/></span>
 
                {/* Footer */}
                 <Footer/>
