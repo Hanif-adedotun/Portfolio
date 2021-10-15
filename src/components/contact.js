@@ -15,7 +15,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 
 function Contact({onClose}){
      const [value, setValue] = useState({
-          'name': '',
+           'name': '',
           'email': '',
           'message': '',
      });

@@ -60,7 +60,10 @@
   background-color: var(--secondary);
   border-radius: 10px;
 }
-
+.image{
+  height: auto;
+  width: 50%;
+}
 .profile-skills{
   margin: 5em 0;
 }
@@ -77,12 +80,48 @@
   color: var(--accent);
   font-weight: bold;
 }
-.divider{
-  height: 100%;
-  width: 60%;
-}
+
 .skills-footer{
   font-weight:  bold;
+}
+.divider-container{
+  display: block;
+  margin: 3em auto !important;
+}
+.divider{
+  height: 40%;
+  width: 80%;
+}
+
+/* Me Section */
+.person-icon{
+  height: auto;
+  width: 80%;
+}
+/* Education Section */
+.books-icon{
+  height: auto;
+  width: 50%;
+}
+/* Experience Section */
+.worker-icon{
+  height: auto;
+  width: 100%;
+}
+/* Genenal Section */
+.card-container{
+  margin: auto;
+  min-width: 50%;
+  width: max-content;
+  height: max-content;
+  border-radius: 10px;
+  background: rgba(17, 34, 51, 0.56);
+}
+.card-icon{
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background-color: var(--contrast);
 }
 @media only screen and (max-width: 600px) {
   .bg{

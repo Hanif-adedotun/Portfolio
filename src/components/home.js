@@ -7,9 +7,14 @@ import { TextLoop } from "react-text-loop-next";
 
 // Materiul UI
 import {Grid} from '@mui/material';
+import SchoolIcon from '@mui/icons-material/School';
+import WorkIcon from '@mui/icons-material/Work';
 
 // SVG Icons
 import Divider from '../images/divider.svg';
+import Person from '../images/icons/person2.svg';
+import Books from '../images/icons/books.svg';
+import Worker from '../images/icons/work.svg';
 
 function App() {
   const skills = {
@@ -22,8 +27,7 @@ function App() {
     <div className='home-cont'>
 
       <div className="App">
-          {/* <img src={Home_bg} alt='' className='bg'/> */}
-        
+       
         <div className='home-main'>
         
             <h2>Hello, I'm <span className="text-contrast"> Hanif</span></h2>
@@ -73,7 +77,57 @@ function App() {
               </Grid>
           </Grid>
 
-          <span><img src={Divider} alt='divider' className='divider'/></span>
+          <span className='divider-container'><img src={Divider} alt='divider' className='divider'/></span>
+
+            {/* Me section */}
+            <h2>Who I am</h2>
+          <Grid container justifyContent="center" alignItems='center'>
+            <Grid Item  sm={6} xs={12} >
+           
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh urna metus vulputate quam mauris sagittis. Non morbi cras nisl vel. Enim iaculis vel massa arcu quis arcu, nunc, ullamcorper. Donec tincidunt platea vestibulum suspendisse est vitae. Nec, at nulla consectetur pharetra ultricies dui id. Sit nascetur habitant vel nisi,</p>
+            </Grid>
+
+            <Grid Item  sm={6} xs={12}>
+                  <img src={Person} alt='A person SVG Icon' className='person-icon'/> 
+            </Grid>
+          </Grid>
+
+          {/* Education section */}
+          <h2>Education</h2>
+          <Grid container justifyContent="center" alignItems='center'>
+
+            <Grid Item  sm={6} xs={12}>
+                <div className='card-container'>
+                  <Grid container>
+                    <Grid Item xs={2}><span className='card-icon'><SchoolIcon color='inherit'/></span></Grid>
+                    <Grid Item xs={10} justifyContent="left">
+                      <p>TimeLine</p>
+                      <h2>Title</h2>
+                      <p>Subject</p>
+                    </Grid>
+                  </Grid>
+                </div>
+            </Grid>  
+
+            <Grid Item  sm={6} xs={12}>
+                  <img src={Books} alt='Books SVG Icon' className='books-icon'/> 
+            </Grid>
+          </Grid>
+
+           {/* Work section */}
+           <h2>Work Experience</h2>
+          <Grid container justifyContent="center" alignItems='center'>
+
+            <Grid Item  sm={6} xs={12}>
+                  <img src={Worker} alt='A worker SVG Icon' className='worker-icon'/> 
+            </Grid>
+
+            <Grid Item  sm={6} xs={12} >
+            <p>My work experiences</p>
+            </Grid>  
+
+            
+          </Grid>
 
                {/* Footer */}
                 <Footer/>

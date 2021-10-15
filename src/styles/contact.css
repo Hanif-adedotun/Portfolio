@@ -68,6 +68,7 @@
      justify-self: end !important;
 }
 
+
 @media only screen and (max-width: 600px) {
      .contact-modal-box{
           min-width: 70vw;
