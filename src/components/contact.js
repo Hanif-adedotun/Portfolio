@@ -12,17 +12,38 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
+// Email
+import { send } from 'emailjs-com';
 
 function Contact({onClose}){
      const [value, setValue] = useState({
-           'name': '',
-          'email': '',
+          'name': '',
+          'to_name': 'Hanif Adedotun',
           'message': '',
+          'email': '',          
      });
  
      const handleChange = (e) => {
           setValue({...value, [e.target.name]: e.target.value})
      };
+
+     const [submitText, setSubmitText] = useState('Send Message');
+
+     const handleSubmit = (e) =>{
+          e.preventDefault();
+          setSubmitText('Sending...');
+          console.log(value);
+
+          send("service_er2wrqn","template_9rrsmoo", value, 'user_DKVKF7hrR4qlSNPbCl8e3').then((res) => {
+               console.log('SUCCESS!', res.status, res.text);
+               setSubmitText('Message Sent!');
+               setTimeout(()=> setSubmitText('Send Message'),3000);
+          }).catch((err) => {
+               console.log('EMAIL FAILED...', err);
+               setSubmitText(`Couldn't send message`);
+               setTimeout(()=> setSubmitText('Send Message'),3000);
+          })
+     }
 
      return(
           <Box className={'contact-modal-box'}>
@@ -36,7 +57,7 @@ function Contact({onClose}){
                </Grid>
 
                <Grid container justifyContent="center">
-                    <Grid  item xs={6}>
+                    <Grid  item  xs={12} sm={6}>
                          <h2>Contact me</h2>
 
                          <p>Fill the form to send a quick message to me</p>
@@ -74,7 +95,8 @@ function Contact({onClose}){
                     <Grid 
                     container 
                     item 
-                    xs={6} 
+                    xs={12} 
+                    sm={6}
                     sx={{boxShadow:4}}
                     className="contact-form" 
                     justifyContent="center">
@@ -131,7 +153,7 @@ function Contact({onClose}){
                               />
                          </FormControl>
 
-                         <Button size='small' variant="contained" className="form-send">Send Message</Button>
+                         <Button size='small' variant="contained" className="form-send" onClick={handleSubmit}>{submitText}</Button>
                     </Grid>
                </Grid>
 

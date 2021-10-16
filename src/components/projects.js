@@ -18,7 +18,13 @@ function Projects(){
      setValue(newValue);
      };
 
-     
+     const websites={
+          1:{
+               'name': ['StartVest','https://startvest.io'],
+               'summary': 'This is a brief Summary of  how the projects work, the problem they are solving  as well as the progress on them.',
+               'tools': ['React', 'Bootstrap 4', 'Django', 'Firebase', 'REST api']
+          }
+     }    
      return(
           <div>
                <span className="project-head">A view of my projects</span>
@@ -45,17 +51,17 @@ function Projects(){
 
                <TabPanel value={0} index={0}>
                <Grid container xs={12} justifyContent="center" spacing={5}>
-                   {/* {Object.values(certificates).map((v,i) =>  */}
-                    <Grid item xs={12} sm={6} key={1} className='certificates-container' >
-                         <div className='certificates-img-container'>
+                   {Object.values(websites).map((v,i) => 
+                    <Grid item xs={12} sm={6} key={1} className='web-container' >
+                         <div className='web-img-container'>
                               'Image'
                              {/* {(v.img) ? <img className='cert-img' src={v.img} alt='Certificate snapshot'></img> : 'Image of certificate'} */}
                          </div>
-                         <div className='certificates-title'><a href={'v.link'} target='_blank' rel="noreferrer">{'v.name'}</a></div>
-                         <div className='certificates-org'>{'v.org'}</div>
-                         <div  className='certificates-year'>{'v.year'}</div>
+                         <div className='web-title'><a href={v.name[1]} target='_blank' rel="noreferrer">{v.name[0]}</a></div>
+                         <div className='web-summary'>summary</div>
+                         <div  className='web-year'>{Object.values(v.tools).map((tool,i) => <span key={i} className='web-tool'>{tool}</span>)}</div>
                     </Grid>
-                   {/* )} */}
+                   )}
                </Grid>
                </TabPanel>
 
@@ -68,8 +74,9 @@ function Projects(){
                </TabPanel>
                </TabContext >
                </div>
+               
                {/* Footer */}
-               <Footer/>
+               <span id="footer-proj"><Footer/></span>
           </div>
      )
 }

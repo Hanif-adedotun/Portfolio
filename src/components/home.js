@@ -23,6 +23,21 @@ function App() {
     3: ['MongoDB', 'Figma'],
     4: ['Python']
   }
+  const education = {
+    1:{
+      'ongoing': true,
+      'time': '2019-2024',
+      'title': 'Bsc. Computer Engineering',
+      'org': ['Nile university of Nigeria', 'https://www.nileuniversity.edu.ng/'],
+    }
+  }
+  const experiences = {
+    1:{
+      'time': '2021-Present',
+      'title': 'Development Lead - AI & ML',
+      'org': ['Google Deleper Student Club - Nile University', 'https://www.nileuniversity.edu.ng/'],
+    }
+  }
   return (
     <div className='home-cont'>
 
@@ -80,54 +95,72 @@ function App() {
           <span className='divider-container'><img src={Divider} alt='divider' className='divider'/></span>
 
             {/* Me section */}
-            <h2>Who I am</h2>
-          <Grid container justifyContent="center" alignItems='center'>
-            <Grid Item  sm={6} xs={12} >
-           
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh urna metus vulputate quam mauris sagittis. Non morbi cras nisl vel. Enim iaculis vel massa arcu quis arcu, nunc, ullamcorper. Donec tincidunt platea vestibulum suspendisse est vitae. Nec, at nulla consectetur pharetra ultricies dui id. Sit nascetur habitant vel nisi,</p>
-            </Grid>
+            <div className='section'>
+              <Grid container justifyContent="center" alignItems='center'>
+                <Grid Item  sm={6} xs={12} >
+                <h2>Who I am</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh urna metus vulputate quam mauris sagittis. Non morbi cras nisl vel. Enim iaculis vel massa arcu quis arcu, nunc, ullamcorper. Donec tincidunt platea vestibulum suspendisse est vitae. Nec, at nulla consectetur pharetra ultricies dui id. Sit nascetur habitant vel nisi,</p>
+                </Grid>
 
-            <Grid Item  sm={6} xs={12}>
-                  <img src={Person} alt='A person SVG Icon' className='person-icon'/> 
-            </Grid>
-          </Grid>
+                <Grid Item  sm={6} xs={12}>
+                      <img src={Person} alt='A person SVG Icon' className='person-icon'/> 
+                </Grid>
+              </Grid>
+          </div>
 
           {/* Education section */}
+          <div className='section'>
           <h2>Education</h2>
           <Grid container justifyContent="center" alignItems='center'>
 
-            <Grid Item  sm={6} xs={12}>
-                <div className='card-container'>
-                  <Grid container>
-                    <Grid Item xs={2}><span className='card-icon'><SchoolIcon color='inherit'/></span></Grid>
-                    <Grid Item xs={10} justifyContent="left">
-                      <p>TimeLine</p>
-                      <h2>Title</h2>
-                      <p>Subject</p>
+            <Grid Item container sm={6} xs={12} >
+              {(Object.values(education).map((edu,i) => 
+                <div className='card-container' key={i}>
+                  <Grid container >
+                    <Grid Item  xs={3}><div className='card-icon'><SchoolIcon color='inherit' fontSize='large'/></div></Grid>
+                    <Grid Item  xs={9} justifyContent="center" className='card-text'>
+                      <span className='card-time'>{edu.time} {(edu.ongoing) ? <span className='ongoing'>Ongoing...</span>:''}</span>
+                      <span className='card-title'>{edu.title}</span>
+                      <span className='card-org'>{edu.org[0]}</span>
                     </Grid>
                   </Grid>
                 </div>
-            </Grid>  
+                ))}
+          </Grid>  
 
             <Grid Item  sm={6} xs={12}>
                   <img src={Books} alt='Books SVG Icon' className='books-icon'/> 
             </Grid>
           </Grid>
+          </div>
+
 
            {/* Work section */}
+           <div className='section'>
            <h2>Work Experience</h2>
           <Grid container justifyContent="center" alignItems='center'>
 
             <Grid Item  sm={6} xs={12}>
                   <img src={Worker} alt='A worker SVG Icon' className='worker-icon'/> 
             </Grid>
-
-            <Grid Item  sm={6} xs={12} >
-            <p>My work experiences</p>
-            </Grid>  
-
             
+            <Grid Item container sm={6} xs={12} >
+              {(Object.values(experiences).map((edu,i) => 
+                <div className='card-container' key={i}>
+                  <Grid container >
+                    <Grid Item  xs={3}><div className='card-icon'><WorkIcon color='inherit' fontSize='large'/></div></Grid>
+                    <Grid Item  xs={9} justifyContent="center" className='card-text'>
+                      <span className='card-time'>{edu.time}</span>
+                      <span className='card-title'>{edu.title}</span>
+                      <span className='card-org'>{edu.org[0]}</span>
+                    </Grid>
+                  </Grid>
+                </div>
+                ))}
+
+            </Grid>    
           </Grid>
+          </div>
 
                {/* Footer */}
                 <Footer/>
