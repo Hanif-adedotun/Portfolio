@@ -19,7 +19,7 @@ import {Menu as MenuIcon} from '@mui/icons-material';
 
 // React router dom
 import {
-     HashRouter,
+     BrowserRouter as Router,
      Switch,
      Route,
      NavLink,
@@ -66,7 +66,7 @@ const Navigation = (props) => {
      
      return(
           <div className="nav">
-          <HashRouter basename='/'>
+          <Router basename='/'>
           <AppBar position="sticky" className="nav-appBar" elevation={0}>
                <Toolbar className='nav-toolbar'>
                     <Typography variant="h6" color="inherit" component="div" sx={{ flexGrow: 1, textAlign:'left' }}>
@@ -143,7 +143,7 @@ const Navigation = (props) => {
                </Switch>
                </div>
 
-          </HashRouter>
+          </Router>
 
           {/* Modal for Contact me */}
           <ModalUnstyled 

@@ -17,12 +17,15 @@
      background-color: var(--altacc);
      margin: 2em auto;
      width: max-content;
-     max-width: 90%;
+     max-width: 80%;
      border-radius: 10px;
      padding: 2em;
 }
-.resume-loader{
+.resume-load-cont{
      color: var(--primary) !important;
+}
+.resume-pdf{
+     max-width: 80% !important;
 }
 .resume-dowload{
      border-color: var(--contrast) !important;

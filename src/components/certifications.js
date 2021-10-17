@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import '../styles/certificates.css';
 
 // Material UI
@@ -6,6 +6,7 @@ import {Grid} from '@mui/material';
 
 // Footer
 import Footer from './footer';
+
 // Certificates
 import Excel2013 from '../images/certificates/excel2013.jpg';
 import PP2016 from '../images/certificates/powerpoint2016.jpg';
@@ -59,11 +60,17 @@ const certificates = {
 }
 
 function Certifications(){
+     useEffect(() => 
+     window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        })
+     ,[]);
      return(
           <div className='certificates-main'>
                <span className='certificates-head'>These are my Certificates</span>
 
-               <Grid container xs={12} justifyContent="center" spacing={5}>
+               <Grid container xs={12} justifyContent="center" >
                    {Object.values(certificates).map((v,i) => 
                     <Grid item xs={12} sm={6} key={i} className='certificates-container' >
                          <div className='certificates-img-container'>

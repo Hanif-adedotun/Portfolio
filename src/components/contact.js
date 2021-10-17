@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import '../styles/contact.css';
 
 // Material UI Components
@@ -16,6 +16,13 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import { send } from 'emailjs-com';
 
 function Contact({onClose}){
+     useEffect(() => 
+     window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        })
+     ,[]);
+
      const [value, setValue] = useState({
           'name': '',
           'to_name': 'Hanif Adedotun',
@@ -57,7 +64,7 @@ function Contact({onClose}){
                </Grid>
 
                <Grid container justifyContent="center">
-                    <Grid  item  xs={12} sm={6}>
+                    <Grid  item  xs={6}>
                          <h2>Contact me</h2>
 
                          <p>Fill the form to send a quick message to me</p>
@@ -95,8 +102,7 @@ function Contact({onClose}){
                     <Grid 
                     container 
                     item 
-                    xs={12} 
-                    sm={6}
+                    xs={6}
                     sx={{boxShadow:4}}
                     className="contact-form" 
                     justifyContent="center">

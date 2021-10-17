@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import Footer from './footer';
 import '../styles/projects.css'
 // Material UI 
@@ -11,7 +11,17 @@ import ComputerIcon from '@mui/icons-material/Computer';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 
 
+// Logos
+import StartVest from '../images/logo.png';
+
 function Projects(){
+     useEffect(() => 
+     window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        })
+     ,[]);
+
      const [value, setValue] = useState(0);
 
      const handleChange = (event, newValue) => {
@@ -20,9 +30,34 @@ function Projects(){
 
      const websites={
           1:{
+               'img': StartVest,
                'name': ['StartVest','https://startvest.io'],
                'summary': 'This is a brief Summary of  how the projects work, the problem they are solving  as well as the progress on them.',
-               'tools': ['React', 'Bootstrap 4', 'Django', 'Firebase', 'REST api']
+               'tools': ['React', 'Bootstrap 4', 'Django', 'Firebase', 'REST']
+          },
+          2:{
+               'img': false,
+               'name': ['Voltex Middleware', 'https://github.com/Hanif-adedotun/Nodejs/tree/master/voltex_react-app'],
+               'summary': 'This is a tool built to automatically create forms for frontend applications, it saves and energy for creating a backend for forms only. It is easy to hook to any frontend application easily',
+               'tools': ['MySql', 'MongoDB', 'Nodejs', 'React', 'Bootstrap', 'REST']
+          },
+          3:{
+               'img': false,
+               'name': ['Number to words Converter', 'https://hanif-adedotun.github.io/Number-Converter/'],
+               'summary': 'This javascript tool converts numbers to words in Nigerian currency. This is an open source software and can be distributed and edited provided the original developer is acknowledged.',
+               'tools': ['HTML', 'CSS', 'Vanilla Javascript', 'JQuery']
+          },
+          4:{
+               'img': false,
+               'name': ['E commerce store', 'https://hanif-adedotun.github.io/Khalifa-designs/'],
+               'summary': 'A frontend desgn of an E-commerce store selling branded T-shirts to customers using the name Khalifa designs.', 
+               'tools': ['HTML', 'CSS', 'Vanilla Javascript', 'JQuery']
+          },
+          5:{
+               'img': false,
+               'name': ['NTB Dashboard','https://github.com/Hanif-adedotun/htdocs/tree/master/NTB%20Databse'],
+               'summary': '',
+               'tools': ['PHP', 'MySql', 'AJAX', 'jQuery']
           }
      }    
      return(
@@ -37,7 +72,8 @@ function Projects(){
                TabIndicatorProps={{
                     style: {
                       backgroundColor: "#1DCFF6",
-                      color: "#1DCFF6"
+                      color: "#1DCFF6",
+                      fontFamily: 'quicksand'
                      }
                     }}
                     textColor="#fff"
@@ -54,11 +90,10 @@ function Projects(){
                    {Object.values(websites).map((v,i) => 
                     <Grid item xs={12} sm={6} key={1} className='web-container' >
                          <div className='web-img-container'>
-                              'Image'
-                             {/* {(v.img) ? <img className='cert-img' src={v.img} alt='Certificate snapshot'></img> : 'Image of certificate'} */}
+                             {(v.img) ? <img className='web-img' src={v.img} alt='Certificate snapshot'></img> : 'Image'}
                          </div>
                          <div className='web-title'><a href={v.name[1]} target='_blank' rel="noreferrer">{v.name[0]}</a></div>
-                         <div className='web-summary'>summary</div>
+                         <div className='web-summary'>{v.summary}</div>
                          <div  className='web-year'>{Object.values(v.tools).map((tool,i) => <span key={i} className='web-tool'>{tool}</span>)}</div>
                     </Grid>
                    )}

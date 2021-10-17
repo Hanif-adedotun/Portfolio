@@ -1,8 +1,8 @@
-import {React, useState} from 'react';
+import {React, useEffect, useState} from 'react';
 import '../styles/resume.css';
 
 // Material UI
-import {Button, Grid, Box, LinearProgress } from '@mui/material';
+import {Button, Grid, LinearProgress } from '@mui/material';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
@@ -14,6 +14,12 @@ import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import resume from '../resume/resume-v1.pdf';
 
 function MyResume(){
+     useEffect(() => 
+     window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        })
+     ,[]);
 
      const [numPages, setNumPages] = useState(null);
      const [pageNumber, setPageNumber] = useState(1);
@@ -37,7 +43,7 @@ function MyResume(){
 
      const Loader = () =>{
           return (
-          <Box sx={{ width: '100%'}} ><LinearProgress className="resume-loader"/></Box>
+          <div className="resume-load-cont"><LinearProgress className="resume-loader"/></div>
           )
      }
 
@@ -62,7 +68,7 @@ function MyResume(){
                     </Document>
                </div>
 
-               
+          
                <Button variant="outlined" className='resume-dowload' endIcon={<FileDownloadIcon />}>
                <a href={resume} download='Hanif Resume.pdf' className='resume-dowload-link'>Download Resume</a>
                </Button>

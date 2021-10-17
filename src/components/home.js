@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import Footer from './footer';
 import '../styles/home.css';
 
@@ -17,6 +17,13 @@ import Books from '../images/icons/books.svg';
 import Worker from '../images/icons/work.svg';
 
 function App() {
+  useEffect(() => 
+     window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        })
+     ,[]);
+
   const skills = {
     1: ['Javascript', 'React'],
     2: ['PHP', 'MySql'],
@@ -148,8 +155,8 @@ function App() {
               {(Object.values(experiences).map((edu,i) => 
                 <div className='card-container' key={i}>
                   <Grid container >
-                    <Grid Item  xs={3}><div className='card-icon'><WorkIcon color='inherit' fontSize='large'/></div></Grid>
-                    <Grid Item  xs={9} justifyContent="center" className='card-text'>
+                    <Grid Item  xs={2}><div className='card-icon'><WorkIcon color='inherit' fontSize='large'/></div></Grid>
+                    <Grid Item  xs={10} justifyContent="center" className='card-text'>
                       <span className='card-time'>{edu.time}</span>
                       <span className='card-title'>{edu.title}</span>
                       <span className='card-org'>{edu.org[0]}</span>
