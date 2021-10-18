@@ -7,8 +7,8 @@
     background-color: var(--primary);
 }
 .nav-appBar{
-  background-color: #112233e3 !important;
-  backdrop-filter: saturate(100%) blur(5px) !important;
+  background-color: #112233de !important;
+  backdrop-filter: saturate(100%) blur(4px) !important;
 }
 
 .nav-toolbar{
@@ -17,7 +17,7 @@
 }
 
 .nav-drawer{
-  backdrop-filter: saturate(120%) blur(2px) !important;
+  backdrop-filter: saturate(100%) blur(3px) !important;
 }
 .nav-drawer-div{
   background-color: var(--primary) !important;

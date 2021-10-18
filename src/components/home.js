@@ -24,12 +24,13 @@ function App() {
         })
      ,[]);
 
-  const skills = {
-    1: ['Javascript', 'React'],
-    2: ['PHP', 'MySql'],
-    3: ['MongoDB', 'Figma'],
-    4: ['Python']
-  }
+  const summary = [
+    'I am a technology enthusiast, a fast learner and I have a never ending quest to learn new things everyday. I work well with people and I pay great attention to details.',
+    'I am a full stack developer and a graphics designer.I am currently researching on Machine learning, Blockchain technology and the Internet of Things.',
+    'I have been programming for about 3 years, during which i have developed projects which are available on my GitHub account below.'
+  ]
+  const skills = ['Javascript', 'React', 'PHP', 'MySql', 'MongoDB', 'Figma', 'Python', 'Machine Learning'];
+
   const education = {
     1:{
       'ongoing': true,
@@ -80,22 +81,18 @@ function App() {
           </div>
 
           <Grid container justifyContent="center"  className='profile-container'>
-              <Grid container  sm={6} xs={12} justifyContent="center" className='profile-image-container'>
+              <Grid container md={6} xs={12} justifyContent="center" className='profile-image-container'>
                 <div className='profile-image'></div>
               </Grid>
 
-              <Grid container  sm={4} xs={12} spacing={2} justifyContent="center" className='profile-skills'>
-                <span className='skills-head'>My Top Skills</span>
-                {Object.values(skills).map((skill,i) =>
-                  <Grid container item xs={10}  spacing={5} justifyContent="center">
-                    {Object.values(skill).map((v,i) =>
-                      <Grid item xs={5}><div className={'skill-name'}>{v}</div></Grid>
-                    )}
+              <Grid container md={4} xs={9} justifyContent="center" className='profile-skills'>
+                <Grid item xs={12}><span className='skills-head'>My Top Skills</span></Grid>
+                {skills.map((skill,i) =>
+                  <Grid item xs={5}  justifyContent="center" className='skill-container'>
+                     <div className={'skill-name'}>{skill}</div>
                   </Grid>
-                )}
-
-               
-                  <span className='skills-footer'>...and of course HTML and CSS</span>
+                )}               
+                  <Grid item xs={12}><span className='skills-footer'>...and of course HTML and CSS</span></Grid>
               </Grid>
           </Grid>
 
@@ -104,12 +101,14 @@ function App() {
             {/* Me section */}
             <div className='section'>
               <Grid container justifyContent="center" alignItems='center'>
-                <Grid Item  sm={6} xs={12} >
-                <h2>Who I am</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh urna metus vulputate quam mauris sagittis. Non morbi cras nisl vel. Enim iaculis vel massa arcu quis arcu, nunc, ullamcorper. Donec tincidunt platea vestibulum suspendisse est vitae. Nec, at nulla consectetur pharetra ultricies dui id. Sit nascetur habitant vel nisi,</p>
+                <Grid Item md={6}  xs={12} >
+                  <h2 className='skills-head'>Who I am</h2>
+                  {summary.map((v,i) => 
+                    <div className='profile-summary'>{v}</div>
+                  )}
                 </Grid>
 
-                <Grid Item  sm={6} xs={12}>
+                <Grid Item md={6}  xs={12}>
                       <img src={Person} alt='A person SVG Icon' className='person-icon'/> 
                 </Grid>
               </Grid>
@@ -117,7 +116,7 @@ function App() {
 
           {/* Education section */}
           <div className='section'>
-          <h2>Education</h2>
+          <h2 className='skills-head'>Education</h2>
           <Grid container justifyContent="center" alignItems='center'>
 
             <Grid Item container sm={6} xs={12} >
@@ -144,7 +143,7 @@ function App() {
 
            {/* Work section */}
            <div className='section'>
-           <h2>Work Experience</h2>
+           <h2 className='skills-head'>Work Experience</h2>
           <Grid container justifyContent="center" alignItems='center'>
 
             <Grid Item  sm={6} xs={12}>

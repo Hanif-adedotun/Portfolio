@@ -45,7 +45,8 @@
      color: inherit;
 }
 .social-icon:hover{
-     color: var(--contrast) !important;
+     color: var(--primary) !important;
+     
 }
 /* Form styles */
 .contact-form{
@@ -60,13 +61,22 @@
      margin-bottom: 2em !important;
      border-color: var(--accent) !important;
 }
-
+.input-icon{
+     color: var(--secondary) !important; 
+}
 .form-send{
      background-color: var(--secondary) !important;
      font-family: Quicksand !important;
      font-size: small !important;
-     font-weight: bold;
-     justify-self: end !important;
+     width: max-content !important;
+     color: var(--accent) !important;
+     border-radius: 5px !important;
+}
+
+.form-send:hover{
+     font-weight: bold !important;
+     background-color: var(--accent) !important;
+     color: var(--primary) !important;
 }
 
 

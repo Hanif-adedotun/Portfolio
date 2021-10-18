@@ -13,19 +13,22 @@ import WidgetsIcon from '@mui/icons-material/Widgets';
 
 // Logos
 import StartVest from '../images/logo.png';
+import Oninure from '../images/graphics/oninure.png';
 
 function Projects(){
-     useEffect(() => 
+     useEffect(() => {
      window.scrollTo({
           top: 0,
           behavior: "smooth"
-        })
+        });
+     }
      ,[]);
 
-     const [value, setValue] = useState(0);
+     const [value, setValue] = useState(Number(localStorage.getItem('nav')) || 0);
 
      const handleChange = (event, newValue) => {
      setValue(newValue);
+     localStorage.setItem('nav', newValue);
      };
 
      const websites={
@@ -60,6 +63,12 @@ function Projects(){
                'tools': ['PHP', 'MySql', 'AJAX', 'jQuery']
           }
      }    
+     const graphics ={
+          1:{
+               'name': 'Oninure Logo',
+               'img': Oninure,
+          }
+     }
      return(
           <div>
                <span className="project-head">A view of my projects</span>
@@ -85,12 +94,13 @@ function Projects(){
                     <Tab value={2} className={(value===2) ? 'tab-active':''} icon={<BrushIcon />} label="Graphics design" />
                </TabList>
 
+                    {/* Web design section */}
                <TabPanel value={0} index={0}>
                <Grid container xs={12} justifyContent="center" spacing={5}>
                    {Object.values(websites).map((v,i) => 
-                    <Grid item xs={12} sm={6} key={1} className='web-container' >
+                    <Grid item xs={12} sm={6} key={i} className='web-container' >
                          <div className='web-img-container'>
-                             {(v.img) ? <img className='web-img' src={v.img} alt='Certificate snapshot'></img> : 'Image'}
+                             {(v.img) ? <img className='web-img' src={v.img} alt={`${v.name[0]} logo`}></img> : 'Image'}
                          </div>
                          <div className='web-title'><a href={v.name[1]} target='_blank' rel="noreferrer">{v.name[0]}</a></div>
                          <div className='web-summary'>{v.summary}</div>
@@ -100,12 +110,23 @@ function Projects(){
                </Grid>
                </TabPanel>
 
+                    {/* Project design section */}
                <TabPanel value={1} index={1}>
                Item Two
                </TabPanel>
 
+                    {/* Graphic design tab */}
                <TabPanel value={2} index={2}>
-               Item Three
+                    <Grid container xs={12} justifyContent="center" spacing={5}>
+                    {Object.values(graphics).map((v,i) => 
+                         <Grid item xs={12} sm={6} key={i} className='graphics-container' >
+                              <div className='graphics-img-container'>
+                              {(v.img) ? <img className='graphics-img' src={v.img} alt='graphics design '></img> : 'Image'}
+                              </div>
+                              <div className='web-title'>{v.name}</div>
+                         </Grid>
+                    )}
+                    </Grid>
                </TabPanel>
                </TabContext >
                </div>

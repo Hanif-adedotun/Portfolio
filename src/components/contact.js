@@ -35,15 +35,29 @@ function Contact({onClose}){
      };
 
      const [submitText, setSubmitText] = useState('Send Message');
+     
 
      const handleSubmit = (e) =>{
           e.preventDefault();
-          setSubmitText('Sending...');
-          console.log(value);
+          setSubmitText('sending...');
+ 
+          setTimeout(() => setValue({
+               'name': '',
+               'email': '',
+               'message': ''
+          }), 2000);
 
-          send("service_er2wrqn","template_9rrsmoo", value, 'user_DKVKF7hrR4qlSNPbCl8e3').then((res) => {
+                             
+          send(process.env.REACT_APP_ServiceID,process.env.REACT_APP_TemplateID, value, process.env.REACT_APP_UserID).then((res) => {
                console.log('SUCCESS!', res.status, res.text);
                setSubmitText('Message Sent!');
+
+               setValue({
+                    'name': '',
+                    'email': '',
+                    'message': ''
+               });
+
                setTimeout(()=> setSubmitText('Send Message'),3000);
           }).catch((err) => {
                console.log('EMAIL FAILED...', err);
@@ -120,7 +134,7 @@ function Contact({onClose}){
                          InputProps={{
                               startAdornment: (
                               <InputAdornment position="start">
-                              <AccountBoxIcon />
+                              <AccountBoxIcon classNamw='input-icon' />
                               </InputAdornment>
                               ),
                          }}
@@ -159,7 +173,15 @@ function Contact({onClose}){
                               />
                          </FormControl>
 
-                         <Button size='small' variant="contained" className="form-send" onClick={handleSubmit}>{submitText}</Button>
+                         <Button 
+                         size='small' 
+                         variant="contained" 
+                         className="form-send" 
+                         onClick={handleSubmit}>
+                         {submitText}
+                         </Button>
+          
+                         
                     </Grid>
                </Grid>
 

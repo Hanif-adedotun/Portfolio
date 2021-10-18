@@ -67,6 +67,27 @@
      margin: 1em 1em .5em 0;
      font-size: small;
 }
+/* Graphics tab */
+.graphics-container{
+     margin: 1em auto;
+     text-align: center;
+}
+.graphics-img-container{
+     width: max-content;
+     max-width: 100%;
+     height: max-content;
+     background-color: transparent;
+     /* border-radius: 10px; */
+     color: var(--altacc);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.graphics-img{
+     border-radius: 10px;
+     width: 80%;
+     height: auto;
+}
 /* Footer CSS */
 #footer-proj{
      color: var(--contrast);
