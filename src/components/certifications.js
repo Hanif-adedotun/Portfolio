@@ -11,7 +11,9 @@ import Footer from './footer';
 import Excel2013 from '../images/certificates/excel2013.jpg';
 import PP2016 from '../images/certificates/powerpoint2016.jpg';
 import AIUdemy from '../images/certificates/ai-udemy.png';
-import DataUdemy from '../images/certificates/dataUdemy.PNG';
+import Solution from '../images/certificates/solution.jpg';
+import TTB from '../images/certificates/TTB.jpg';
+import BusF from '../images/certificates/BF.jpg';
 
 const certificates = {
      1:{
@@ -36,27 +38,34 @@ const certificates = {
           'link': 'https://www.credly.com/badges/a964634c-5205-4059-929b-333668281ed1/public_url'
      },
      4:{
-          'name':'AWS Concepts',
-          'org': 'Udemy',
-          'img': false,
+          'name':'Google Solution Challange 2021',
+          'org': 'Google Developer student challange',
+          'img': Solution,
           'year': '2021',
-          'link': 'https://www.udemy.com/share/101r3GAEMZdVhbTH8C/'
+          'link': 'https://drive.google.com/file/d/1nx-qA9ZnbyR15-qayYo9RktJJxw0zjoP/view?usp=sharing'
      },
      5:{
-          'name':'Intrduction to Data Science using Python',
-          'org': 'Udemy',
-          'img': DataUdemy,
+          'name': 'Teamwork and Team Building',
+          'org': 'Nigeria Association of Computing Students (NACOS)',
+          'img': TTB,
           'year': '2021',
-          'link': 'https://www.udemy.com/share/101rPyAEMZdVhbTH8C/'
+          'link': 'https://drive.google.com/file/d/1LVdvIoBq9vt7I9GC120NqRm-ux2TUuZl/view?usp=sharing'
      },
      6:{
-          'name':'Lego Robotics Championship',
-          'org': 'LEGO',
-          'img': false,
-          'year': '2019',
-          'physical': true,
-          'link': '',
-     }
+          'name': 'Business Foundation',
+          'org': 'Nigeria Association of Computing Students (NACOS)',
+          'img': BusF,
+          'year': '2021',
+          'link': 'https://drive.google.com/file/d/1wBJIRBX1Yovimp9E2OtyvB4ncUsqt0dU/view?usp=sharing'
+     },
+     // 7:{
+     //      'name':'Lego Robotics Championship',
+     //      'org': 'LEGO',
+     //      'img': false,
+     //      'year': '2019',
+     //      'physical': true,
+     //      'link': '',
+     // }
 }
 
 function Certifications(){

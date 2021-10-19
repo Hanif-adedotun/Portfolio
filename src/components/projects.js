@@ -12,8 +12,12 @@ import WidgetsIcon from '@mui/icons-material/Widgets';
 
 
 // Logos
-import StartVest from '../images/logo.png';
+import StartVest from '../images/web/logo.png';
 import Oninure from '../images/graphics/oninure.png';
+import VM from '../images/web/vm.png';
+import NTB from '../images/web/ntb.PNG';
+import Convert from '../images/web/convert.PNG';
+import Khalifa from '../images/web/klf.PNG';
 
 function Projects(){
      useEffect(() => {
@@ -39,25 +43,25 @@ function Projects(){
                'tools': ['React', 'Bootstrap 4', 'Django', 'Firebase', 'REST']
           },
           2:{
-               'img': false,
+               'img': VM,
                'name': ['Voltex Middleware', 'https://github.com/Hanif-adedotun/Nodejs/tree/master/voltex_react-app'],
                'summary': 'This is a tool built to automatically create forms for frontend applications, it saves and energy for creating a backend for forms only. It is easy to hook to any frontend application easily',
                'tools': ['MySql', 'MongoDB', 'Nodejs', 'React', 'Bootstrap', 'REST']
           },
           3:{
-               'img': false,
+               'img': Convert,
                'name': ['Number to words Converter', 'https://hanif-adedotun.github.io/Number-Converter/'],
                'summary': 'This javascript tool converts numbers to words in Nigerian currency. This is an open source software and can be distributed and edited provided the original developer is acknowledged.',
                'tools': ['HTML', 'CSS', 'Vanilla Javascript', 'JQuery']
           },
           4:{
-               'img': false,
+               'img': Khalifa,
                'name': ['E commerce store', 'https://hanif-adedotun.github.io/Khalifa-designs/'],
                'summary': 'A frontend desgn of an E-commerce store selling branded T-shirts to customers using the name Khalifa designs.', 
                'tools': ['HTML', 'CSS', 'Vanilla Javascript', 'JQuery']
           },
           5:{
-               'img': false,
+               'img': NTB,
                'name': ['NTB Dashboard','https://github.com/Hanif-adedotun/htdocs/tree/master/NTB%20Databse'],
                'summary': '',
                'tools': ['PHP', 'MySql', 'AJAX', 'jQuery']
@@ -112,7 +116,7 @@ function Projects(){
 
                     {/* Project design section */}
                <TabPanel value={1} index={1}>
-               Item Two
+               <div className='coming-soon'>Coming soon....</div>
                </TabPanel>
 
                     {/* Graphic design tab */}

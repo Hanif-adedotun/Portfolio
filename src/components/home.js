@@ -10,6 +10,9 @@ import {Grid} from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
 
+// My picture
+import Hanif from '../images/hanif.jpg';
+
 // SVG Icons
 import Divider from '../images/divider.svg';
 import Person from '../images/icons/person2.svg';
@@ -20,7 +23,7 @@ function App() {
   useEffect(() => 
      window.scrollTo({
           top: 0,
-          behavior: "smooth"
+          // behavior: "smooth"
         })
      ,[]);
 
@@ -35,15 +38,27 @@ function App() {
     1:{
       'ongoing': true,
       'time': '2019-2024',
-      'title': 'Bsc. Computer Engineering',
+      'title': 'BSc. Computer Engineering',
       'org': ['Nile university of Nigeria', 'https://www.nileuniversity.edu.ng/'],
-    }
+    },
+    2:{
+      'ongoing': false,
+      'time': '2016-2019',
+      'title': 'Sec. School leaving certificate',
+      'org': ['Glisten International Academy', 'https://glisteninternationalacademy.com/secondary-school/'],
+    },
+
   }
   const experiences = {
     1:{
       'time': '2021-Present',
       'title': 'Development Lead - AI & ML',
-      'org': ['Google Deleper Student Club - Nile University', 'https://www.nileuniversity.edu.ng/'],
+      'org': ['Google Developer Student Club - Nile University Chapter', 'https://www.nileuniversity.edu.ng/'],
+    },
+    2:{
+      'time': 'Mar 2021 - Sep 2021',
+      'title': 'Internship',
+      'org': ['Utility ware', 'https://www.linkedin.com/company/utility-ware/'],
     }
   }
   return (
@@ -58,7 +73,7 @@ function App() {
 
           <div className='home-main-loop'>
               I am somewhere between <TextLoop 
-              interval={3000} 
+              interval={2500} 
               adjustingSpeed={500} 
               springConfig={{ stiffness: 120, damping: 20 }}
               className='home-text-loop'
@@ -82,7 +97,7 @@ function App() {
 
           <Grid container justifyContent="center"  className='profile-container'>
               <Grid container md={6} xs={12} justifyContent="center" className='profile-image-container'>
-                <div className='profile-image'></div>
+                <div className='profile-image'><img src={Hanif} alt='A potrait of me' className='image'/></div>
               </Grid>
 
               <Grid container md={4} xs={9} justifyContent="center" className='profile-skills'>
@@ -118,7 +133,6 @@ function App() {
           <div className='section'>
           <h2 className='skills-head'>Education</h2>
           <Grid container justifyContent="center" alignItems='center'>
-
             <Grid Item container sm={6} xs={12} >
               {(Object.values(education).map((edu,i) => 
                 <div className='card-container' key={i}>
@@ -127,7 +141,7 @@ function App() {
                     <Grid Item  xs={9} justifyContent="center" className='card-text'>
                       <span className='card-time'>{edu.time} {(edu.ongoing) ? <span className='ongoing'>Ongoing...</span>:''}</span>
                       <span className='card-title'>{edu.title}</span>
-                      <span className='card-org'>{edu.org[0]}</span>
+                      <span className='card-org'><a href={edu.org[1]} target='_blank' rel="noreferrer">{edu.org[0]}</a></span>
                     </Grid>
                   </Grid>
                 </div>
@@ -154,8 +168,8 @@ function App() {
               {(Object.values(experiences).map((edu,i) => 
                 <div className='card-container' key={i}>
                   <Grid container >
-                    <Grid Item  xs={2}><div className='card-icon'><WorkIcon color='inherit' fontSize='large'/></div></Grid>
-                    <Grid Item  xs={10} justifyContent="center" className='card-text'>
+                    <Grid Item  xs={3} sm={2}><div className='card-icon'><WorkIcon color='inherit' fontSize='large'/></div></Grid>
+                    <Grid Item  xs={9} justifyContent="center" className='card-text'>
                       <span className='card-time'>{edu.time}</span>
                       <span className='card-title'>{edu.title}</span>
                       <span className='card-org'>{edu.org[0]}</span>

@@ -53,14 +53,20 @@
 }
 .profile-image{
   /* display: block; */
-  width: 25em;
-  height: 25em;
-  background-color: var(--secondary);
+  width: 30em;
+  height: 30em;
+  background-color: transparent;
   border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .image{
   height: auto;
-  width: 50%;
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 .profile-skills{
   margin: 4em  0 0 0;
@@ -122,10 +128,11 @@
   font-size: x-large;
 }
 .card-container{
-  padding: 0 2em 0  0;
-  margin: auto;
-  min-width: 50%;
-  /* width: max-content; */
+  padding: 0  1em 0 0;
+  margin: 2em auto;
+  min-width: 60%;
+  max-width: 80%;
+  width: max-content;
   height: max-content;
   border-radius: 10px;
   background: rgba(17, 34, 51, 0.56);
@@ -171,6 +178,11 @@
   font-weight: bold;
   color: var(--accent);
   margin-bottom: 2em;
+}
+.card-org a{
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 @media only screen and (max-width: 600px) {
   .bg{

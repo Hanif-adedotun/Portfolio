@@ -24,9 +24,9 @@
 .resume-load-cont{
      color: var(--primary) !important;
 }
-.resume-pdf{
-     max-width: 80% !important;
-}
+/* .resume-page{
+     width: 100vw !important;
+} */
 .resume-dowload{
      border-color: var(--contrast) !important;
      color: var(--contrast) !important;

@@ -59,7 +59,7 @@ function MyResume(){
                     className='resume-pdf'
                     loading={Loader}
                     >
-                    <Page pageNumber={pageNumber} />
+                    <Page pageNumber={pageNumber} className='resume-page' width={400}/>
                     <p>Page {pageNumber} of {numPages}</p>
                     <Grid container xs={12} justifyContent="center">
                          <Grid item xs={4}><NavigateBeforeIcon className='resume-back' onClick={() => controlPage(false)}  sx={{ fontSize: 38 }}/></Grid>
