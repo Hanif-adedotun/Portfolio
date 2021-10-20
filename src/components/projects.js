@@ -11,13 +11,25 @@ import ComputerIcon from '@mui/icons-material/Computer';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 
 
-// Logos
+// Web Logos
 import StartVest from '../images/web/logo.png';
-import Oninure from '../images/graphics/oninure.png';
-import VM from '../images/web/vm.png';
+import VM from '../images/web/vm2.svg';
 import NTB from '../images/web/ntb.PNG';
 import Convert from '../images/web/convert.PNG';
 import Khalifa from '../images/web/klf.PNG';
+
+// Graphics Logos
+import Oninure from '../images/graphics/oninure.png';
+import Hanif from '../images/graphics/hanif.png';
+import KD from '../images/graphics/KD.png';
+import VMP from '../images/graphics/vm.png';
+import MYaks from '../images/graphics/MYaks.png';
+import O4P from '../images/graphics/olive4peace.png';
+import Royals from '../images/graphics/Royals.png';
+import SC from '../images/graphics/SC.png';
+import UtilityWare from '../images/graphics/Utility.png';
+import Zaithoon from '../images/graphics/zaithoon.png';
+
 
 function Projects(){
      useEffect(() => {
@@ -39,7 +51,7 @@ function Projects(){
           1:{
                'img': StartVest,
                'name': ['StartVest','https://startvest.io'],
-               'summary': 'This is a brief Summary of  how the projects work, the problem they are solving  as well as the progress on them.',
+               'summary': 'StartVest is an equity crowdfunding platform that allows people with creative ideas to register and get funded. We provide everyone the option to invest in startups, and we also give startups the platform to post job vacancies for job seekers.',
                'tools': ['React', 'Bootstrap 4', 'Django', 'Firebase', 'REST']
           },
           2:{
@@ -56,7 +68,7 @@ function Projects(){
           },
           4:{
                'img': Khalifa,
-               'name': ['E commerce store', 'https://hanif-adedotun.github.io/Khalifa-designs/'],
+               'name': ['Al-Kahlifa Store', 'https://hanif-adedotun.github.io/Khalifa-designs/'],
                'summary': 'A frontend desgn of an E-commerce store selling branded T-shirts to customers using the name Khalifa designs.', 
                'tools': ['HTML', 'CSS', 'Vanilla Javascript', 'JQuery']
           },
@@ -67,12 +79,20 @@ function Projects(){
                'tools': ['PHP', 'MySql', 'AJAX', 'jQuery']
           }
      }    
-     const graphics ={
-          1:{
-               'name': 'Oninure Logo',
-               'img': Oninure,
-          }
-     }
+     const graphics = [
+          ['Oninure Logo', Oninure],
+          ['Personal Name Logo', Hanif],
+          ['Khalifa Store Logo', KD],
+          ['MYaks store Banner', MYaks],
+          ['Olive 4 peace logo', O4P],
+          ['The Royals Logo', Royals],
+          ['Startup Campus', SC],
+          ['Utility Ware Staff Banner', UtilityWare],
+          ['Zaithoon Academy', Zaithoon],
+          ['Voltex Middleware', VMP]
+     ]
+         
+     
      return(
           <div>
                <span className="project-head">A view of my projects</span>
@@ -122,12 +142,12 @@ function Projects(){
                     {/* Graphic design tab */}
                <TabPanel value={2} index={2}>
                     <Grid container xs={12} justifyContent="center" spacing={5}>
-                    {Object.values(graphics).map((v,i) => 
+                    {graphics.map((v,i) => 
                          <Grid item xs={12} sm={6} key={i} className='graphics-container' >
                               <div className='graphics-img-container'>
-                              {(v.img) ? <img className='graphics-img' src={v.img} alt='graphics design '></img> : 'Image'}
+                              {(v[1]) ? <img className='graphics-img' src={v[1]} alt='graphics design '></img> : 'Image'}
                               </div>
-                              <div className='web-title'>{v.name}</div>
+                              <div className='web-title'>{v[0]}</div>
                          </Grid>
                     )}
                     </Grid>

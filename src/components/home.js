@@ -5,6 +5,9 @@ import '../styles/home.css';
 // Scrolling text
 import { TextLoop } from "react-text-loop-next";
 
+// Anmation
+import {Slide} from "react-awesome-reveal";
+
 // Materiul UI
 import {Grid} from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
@@ -44,7 +47,7 @@ function App() {
     2:{
       'ongoing': false,
       'time': '2016-2019',
-      'title': 'Sec. School leaving certificate',
+      'title': 'Secondary School certificate',
       'org': ['Glisten International Academy', 'https://glisteninternationalacademy.com/secondary-school/'],
     },
 
@@ -57,7 +60,7 @@ function App() {
     },
     2:{
       'time': 'Mar 2021 - Sep 2021',
-      'title': 'Internship',
+      'title': 'Full stack web developer - Internship',
       'org': ['Utility ware', 'https://www.linkedin.com/company/utility-ware/'],
     }
   }
@@ -96,15 +99,21 @@ function App() {
           </div>
 
           <Grid container justifyContent="center"  className='profile-container'>
+            
               <Grid container md={6} xs={12} justifyContent="center" className='profile-image-container'>
+               <Slide direction='left'>
                 <div className='profile-image'><img src={Hanif} alt='A potrait of me' className='image'/></div>
+                </Slide>
               </Grid>
+              
 
               <Grid container md={4} xs={9} justifyContent="center" className='profile-skills'>
                 <Grid item xs={12}><span className='skills-head'>My Top Skills</span></Grid>
                 {skills.map((skill,i) =>
                   <Grid item xs={5}  justifyContent="center" className='skill-container'>
+                    <Slide direction='up' cascade >
                      <div className={'skill-name'}>{skill}</div>
+                     </Slide>
                   </Grid>
                 )}               
                   <Grid item xs={12}><span className='skills-footer'>...and of course HTML and CSS</span></Grid>

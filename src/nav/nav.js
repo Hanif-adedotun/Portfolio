@@ -85,7 +85,7 @@ const Navigation = (props) => {
                     <MenuIcon/>
                     </IconButton>
                     :
-                    <div>
+                    <div className='nav-links-container'>
                     <Button color="inherit"><NavLink to='/projects' className='nav-links' activeClassName="nav-links-active">Projects</NavLink></Button>
                     <Button color="inherit"><NavLink to='/resume' className='nav-links' activeClassName="nav-links-active">Resume</NavLink></Button>
                     <Button color="inherit"><NavLink to='/certificates' className='nav-links' activeClassName="nav-links-active">Certifications</NavLink></Button>

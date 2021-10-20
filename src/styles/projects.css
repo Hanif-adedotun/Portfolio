@@ -27,15 +27,16 @@
 .web-container{
      margin: 1em auto;
      text-align: left;
+
 }
 .web-img-container{
      width: 50%;
      height: 10em;
      max-height: max-content;
      /* margin: auto; */
-     background-color: var(--accent);
+     /* background-color: var(--accent); */
 
-     border-radius: 10px;
+     /* border-radius: 10px; */
      color: var(--altacc);
      display: flex;
      justify-content: center;
@@ -43,7 +44,7 @@
 }
 .web-img{
      border-radius: 5px;
-     width: 90%;
+     width: 95%;
      height: auto;
 }
 .web-title{
@@ -80,6 +81,8 @@
      margin: 1em auto;
      text-align: center;
 }
+
+
 .graphics-img-container{
      width: max-content;
      max-width: 100%;
@@ -93,10 +96,18 @@
 }
 .graphics-img{
      border-radius: 10px;
-     width: 80%;
+     width: 65%;
      height: auto;
 }
+
 /* Footer CSS */
 #footer-proj{
      color: var(--contrast);
+}
+
+@media only screen and (max-width: 600px) {
+     .graphics-img{
+          width: 90%;
+          height: auto;
+     }
 }

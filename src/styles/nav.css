@@ -38,6 +38,10 @@
   margin: auto 1em;
   color: var(--accent) ;
   font-family: Quicksand;
+  font-size: large;
+}
+.nav-links:hover{
+  border-bottom: 2px solid var(--contrast);
 }
 
 .nav-links-active{
@@ -48,7 +52,8 @@
   background-color: var(--contrast) !important;
   color: var(--primary) !important;
   font-weight: bold !important;
-  font-family: Quicksand !important;
+  font-size: large;
+  font-family: Quicksand ;
   /* padding: .2em .5em !important; */
   border-radius: 5px !important;
 }
