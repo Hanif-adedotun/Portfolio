@@ -21,6 +21,10 @@
         overflow-y: scroll;
 }
 
+.contact-cont{
+     overflow-y: scroll !important;
+}
+
 .contact-link-container{
      margin: 2em auto;
 }
@@ -85,9 +89,10 @@
           min-width: 70vw;
      }
      .contact-modal-box{
-          padding: 0  15px 0 1em; /* top right botttom left */
+          padding: 2em  15px 0 1em; /* top right botttom left */
   }
      .contact-form{
           padding: 2em 10px;
   }
+  
 }

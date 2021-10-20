@@ -1,0 +1,25 @@
+/* To import the colors of the website */
+@import url("../utility/colours.css");
+
+.main-four{
+     height: 90vh;
+     color: var(--accent);
+     
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.cont-four h1{
+     font-size: 300%;
+}
+.cont-four h3{
+     font-size: 200%;
+}
+.contrast-four{
+     color: var(--contrast);
+}
+.four-link{
+     text-decoration: none;
+     color: var(--contrast);
+}

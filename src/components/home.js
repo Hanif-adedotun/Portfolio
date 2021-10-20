@@ -22,6 +22,7 @@ import Person from '../images/icons/person2.svg';
 import Books from '../images/icons/books.svg';
 import Worker from '../images/icons/work.svg';
 
+
 function App() {
   useEffect(() => 
      window.scrollTo({
@@ -190,7 +191,7 @@ function App() {
             </Grid>    
           </Grid>
           </div>
-
+       
                {/* Footer */}
                 <Footer/>
         </div>

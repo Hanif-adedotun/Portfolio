@@ -1,13 +1,17 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-function footer(){
+import '../styles/404.css';
+
+function four(){
      return(
-          <div className='404'>
-               <h1>404 Not Found</h1>
-               <h3>Page does not exist, check out my projects <Link to={'/resume'}>here</Link></h3>
+          <div className='main-four'>
+               <div className='cont-four'>
+               <h1><span className='contrast-four'>404</span> - Not Found</h1>
+               <h3>Page does not exist, check out my projects <Link to={'/projects'} className='four-link'>here</Link></h3>
+               </div> 
           </div>
      )
 }
 
-export default footer;
+export default four;
