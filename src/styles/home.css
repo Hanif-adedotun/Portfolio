@@ -22,7 +22,6 @@
  background-color: var(--primary);
 }
 
-
 .home-main h2{
   /* margin-top: 40vh; */
   font-family: Quicksand !important;
@@ -189,6 +188,13 @@
     transform: rotate(90deg);
     width: 100%;
     height: 100%;
+  }
+  .home-main h2{
+    /* font-family: Quicksand !important; */
+    font-size: 3em !important;
+  }
+  .home-main-loop{
+    font-size: x-large !important;
   }
 
   .skill-container{
