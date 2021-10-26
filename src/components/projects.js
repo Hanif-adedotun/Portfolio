@@ -106,16 +106,17 @@ function Projects(){
                     style: {
                       backgroundColor: "#1DCFF6",
                       color: "#1DCFF6",
-                      fontFamily: 'quicksand'
+                      fontFamily: 'quicksand',
+                      font: 'x-small'
                      }
                     }}
                     textColor="#fff"
                className='tab-head'
                value={value} 
                onChange={handleChange} centered>
-                    <Tab value={0} className={(value===0) ? 'tab-active':''} icon={<ComputerIcon />} label="Web design" />
-                    <Tab value={1} className={(value===1) ? 'tab-active':''} icon={<WidgetsIcon />} label="Project design" />
-                    <Tab value={2} className={(value===2) ? 'tab-active':''} icon={<BrushIcon />} label="Graphics design" />
+                    <Tab value={0} className={(value===0) ? 'tab-active':'tab-not-active'} icon={<ComputerIcon />} label="Web design" />
+                    <Tab value={1} className={(value===1) ? 'tab-active':'tab-not-active'} icon={<WidgetsIcon />} label="Project design" />
+                    <Tab value={2} className={(value===2) ? 'tab-active':'tab-not-active'} icon={<BrushIcon />} label="Graphics design" />
                </TabList>
 
                     {/* Web design section */}

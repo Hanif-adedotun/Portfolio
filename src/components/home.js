@@ -34,7 +34,7 @@ function App() {
   const summary = [
     'I am a technology enthusiast, a fast learner and I have a never ending quest to learn new things everyday. I work well with people and I pay great attention to details.',
     'I am a full stack developer and a graphics designer.I am currently researching on Machine learning, Blockchain technology and the Internet of Things.',
-    'I have been programming for about 3 years, during which i have developed projects which are available on my GitHub account below.'
+    'I have been programming for about 3 years, during which I have developed projects which are available on my GitHub account below.'
   ]
   const skills = ['Javascript', 'React', 'PHP', 'MySql', 'MongoDB', 'Figma', 'Python', 'Machine Learning'];
 

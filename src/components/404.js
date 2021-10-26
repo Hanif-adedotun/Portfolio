@@ -10,6 +10,8 @@ function four(){
                <h1><span className='contrast-four'>404</span> - Not Found</h1>
                <h3>Page does not exist, check out my projects <Link to={'/projects'} className='four-link'>here</Link></h3>
                </div> 
+               
+
           </div>
      )
 }

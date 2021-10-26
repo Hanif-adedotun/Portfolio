@@ -11,17 +11,20 @@
      color: var(--altacc);
      justify-self: center;
 }
-/* .tab-head{
-     border: 2px solid red;
-} */
-.tab-head Tab{
-     font: small !important;
-}
+
+
 .project-tab{
      color: var(--altacc); 
 }
 .tab-active{
-     color: var(--contrast) !important;
+     font-family: Quicksand !important;
+     color: var(--contrast) !important; 
+     font: medium !important;
+}
+.tab-not-active{
+     font-family: Quicksand !important;
+     font-size: small !important;
+     text-transform: uppercase;
 }
 /* Web design styles*/
 .web-container{

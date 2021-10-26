@@ -174,14 +174,16 @@ function Contact({onClose}){
                          rows={4}
                               />
                          </FormControl>
-
+                         
+                         <Grid container xs={12} justifyContent="center">
                          <Button 
-                         size='small' 
+                         size='medium' 
                          variant="contained" 
                          className="form-send" 
                          onClick={handleSubmit}>
                          {submitText}
                          </Button>
+                         </Grid>
           
                          
                     </Grid>
