@@ -72,8 +72,9 @@ function App() {
        
         <div className='home-main'>
         
+         
             <h2>Hello, I'm <span className="text-contrast"> Hanif</span></h2>
-
+         
 
           <div className='home-main-loop'>
               I am somewhere between <TextLoop 
@@ -134,7 +135,9 @@ function App() {
                 </Grid>
 
                 <Grid Item md={6}  xs={12}>
+                <Slide direction="right">
                       <img src={Person} alt='A person SVG Icon' className='person-icon'/> 
+                </Slide>
                 </Grid>
               </Grid>
           </div>
@@ -145,21 +148,29 @@ function App() {
           <Grid container justifyContent="center" alignItems='center'>
             <Grid Item container sm={6} xs={12} >
               {(Object.values(education).map((edu,i) => 
+             
                 <div className='card-container' key={i}>
+                   
                   <Grid container >
                     <Grid Item  xs={3}><div className='card-icon'><SchoolIcon color='inherit' fontSize='large'/></div></Grid>
                     <Grid Item  xs={9} justifyContent="center" className='card-text'>
+                      
                       <span className='card-time'>{edu.time} {(edu.ongoing) ? <span className='ongoing'>Ongoing...</span>:''}</span>
                       <span className='card-title'>{edu.title}</span>
                       <span className='card-org'><a href={edu.org[1]} target='_blank' rel="noreferrer">{edu.org[0]}</a></span>
+                    
                     </Grid>
                   </Grid>
+                 
                 </div>
+          
                 ))}
           </Grid>  
 
             <Grid Item  sm={6} xs={12}>
+            <Slide direction="right">
                   <img src={Books} alt='Books SVG Icon' className='books-icon'/> 
+            </Slide>
             </Grid>
           </Grid>
           </div>
@@ -170,12 +181,17 @@ function App() {
            <h2 className='skills-head'>Work Experience</h2>
           <Grid container justifyContent="center" alignItems='center'>
 
+            
             <Grid Item  sm={6} xs={12}>
+                <Slide direction="left">
                   <img src={Worker} alt='A worker SVG Icon' className='worker-icon'/> 
+                </Slide>
             </Grid>
+           
             
             <Grid Item container sm={6} xs={12} >
               {(Object.values(experiences).map((edu,i) => 
+             
                 <div className='card-container' key={i}>
                   <Grid container >
                     <Grid Item  xs={3} sm={2}><div className='card-icon'><WorkIcon color='inherit' fontSize='large'/></div></Grid>
@@ -186,6 +202,7 @@ function App() {
                     </Grid>
                   </Grid>
                 </div>
+                
                 ))}
 
             </Grid>    
