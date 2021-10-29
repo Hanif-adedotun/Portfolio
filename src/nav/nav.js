@@ -151,7 +151,6 @@ const Navigation = (props) => {
           onClose={handleClose}
           className={'contact-modal'}
           BackdropComponent={Backdrop}
-          style={{ overflowY: 'scroll' }}
           >
                <Contact onClose={handleClose}/>
           </ModalUnstyled>

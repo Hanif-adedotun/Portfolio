@@ -15,20 +15,21 @@
         background-color: var(--accent);
         border-radius: 15px;
         color: var(--secondary);
-        padding: 0  10px 0 3em; /* top right botttom left */
+        padding: 0  15px 0 3em; /* top right botttom left */
         min-width: 40vw;
-        /* font-size: small !important; */
-        overflow-y: scroll;
-}
-
-.contact-cont{
-     overflow-y: scroll !important;
 }
 
 .contact-link-container{
      margin: 2em auto;
 }
-
+.contact-show-container{
+     margin: 2em auto;
+     margin-bottom: 1em;
+}
+.contact-move:hover{
+     cursor: pointer;
+     font-weight: bold;
+}
 .contact-link-container a:hover{
      font-weight: bold;     
 }
@@ -61,12 +62,14 @@
      margin: 1em 0 !important;
      padding: 2em .2em;
 }
+
 .form-input{
      margin-bottom: 2em !important;
      border-color: var(--accent) !important;
 }
 .input-icon{
      color: var(--secondary) !important; 
+     opacity: .6;
 }
 .form-send{
      background-color: var(--secondary) !important;
@@ -84,15 +87,15 @@
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
      .contact-modal-box{
           min-width: 70vw;
      }
      .contact-modal-box{
-          padding: 10%  15px 0 1em; /* top right botttom left */
+          padding: 0  6% 0 6%; /* top right botttom left */
   }
      .contact-form{
-          padding: 2em 10px;
+          padding: 1em 10px;
   }
   
 }

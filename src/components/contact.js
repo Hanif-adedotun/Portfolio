@@ -2,7 +2,7 @@ import {React, useState, useEffect} from 'react';
 import '../styles/contact.css';
 
 // Material UI Components
-import {IconButton, Grid, Box, TextField, InputAdornment, FormControl, Button} from '@mui/material';
+import {IconButton, Grid, Box, TextField, InputAdornment, FormControl, Button, useTheme, useMediaQuery} from '@mui/material';
 import {CloseOutlined} from '@mui/icons-material';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -11,6 +11,8 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 // Email
 import { send } from 'emailjs-com';
@@ -22,6 +24,8 @@ function Contact({onClose}){
           behavior: "smooth"
         })
      ,[]);
+
+    
 
      const [value, setValue] = useState({
           'name': '',
@@ -35,7 +39,8 @@ function Contact({onClose}){
      };
 
      const [submitText, setSubmitText] = useState('Send Message');
-     
+
+   
 
      const handleSubmit = (e) =>{
           e.preventDefault();
@@ -66,20 +71,40 @@ function Contact({onClose}){
           })
      }
 
+     const theme = useTheme();
+     const ismobile = useMediaQuery(theme.breakpoints.down('700'));
+     const [screen, setScreen] = useState('default');
+
+     useEffect(() => {
+          setScreen(localStorage.getItem('screen'));
+        console.log(screen);
+     }, [screen])
+
      return(
           <Box className={'contact-modal-box'}>
                
-               <Grid container spacing={2} justifyContent="flex-end">
+               <Grid container justifyContent="flex-end">
+                    {(ismobile && screen==='form') ? 
+                    <Grid item xs={11}>
+                         <IconButton onClick={() => {setScreen('default'); localStorage.setItem('screen', 'default')}}>
+                              <ArrowBackIosIcon />
+                         </IconButton>
+                    </Grid>
+                    :''}
+
                     <Grid item xs={1}>
                          <IconButton onClick={onClose}>
                               <CloseOutlined />
                          </IconButton>
                     </Grid>  
+
+                    
                </Grid>
 
                <Grid container justifyContent="center">
-             
-                    <Grid  item  xs={12} sm={6}>
+
+                  {(ismobile && screen === 'form') ? '' :
+                    <Grid  item xs={(ismobile) ? 12:6}>
                          <h2>Contact me</h2>
 
                          <p>Fill the form to send a quick message to me</p>
@@ -95,6 +120,12 @@ function Contact({onClose}){
                          <Box alignItems="center" display="flex" className='contact-link-container'>
                               <LocationOnIcon className="contact-icon"/> Abuja, Nigeria
                          </Box>
+
+                         {(ismobile) ? 
+                         <Box alignSelf="center" alignItems="center" display="flex" className='contact-show-container'>
+                              <span className="contact-move" onClick={() => {setScreen('form'); localStorage.setItem('screen', 'form')}}>Send a message</span> <ArrowRightIcon className="contact-icon"/>
+                         </Box>
+                         : ''}
 
                          {/* Solial Media Icons */}
                          <Grid container justifyContent="center" className='social-icon-container'>
@@ -112,17 +143,18 @@ function Contact({onClose}){
                          </Grid>
 
                     </Grid>
-                    
+                    }
 
+                    {(ismobile && screen === 'default') ? '' :
                     <Grid 
                     container 
                     item 
-                    xs={12}
-                    sm={6}
+                    xs={(ismobile) ? 12:6}
                     sx={{boxShadow:4}}
                     className="contact-form" 
                     justifyContent="center">
 
+                    {(ismobile && screen === 'form') ? <h2>Send a message to me</h2>:''}
                       <FormControl>
                       <TextField
                          required
@@ -133,10 +165,11 @@ function Contact({onClose}){
                          autoComplete='name'
                          className='form-input'
                          size='small'
+                         
                          InputProps={{
                               startAdornment: (
                               <InputAdornment position="start">
-                              <AccountBoxIcon classNamw='input-icon' />
+                              <AccountBoxIcon className='input-icon' />
                               </InputAdornment>
                               ),
                          }}
@@ -155,7 +188,7 @@ function Contact({onClose}){
                          InputProps={{
                               startAdornment: (
                               <InputAdornment position="start">
-                              <EmailIcon />
+                              <EmailIcon className='input-icon'/>
                               </InputAdornment>
                               ),
                          }}
@@ -175,7 +208,7 @@ function Contact({onClose}){
                               />
                          </FormControl>
                          
-                         <Grid container xs={12} justifyContent="center">
+                         <Grid container item xs={12} justifyContent="center">
                          <Button 
                          size='medium' 
                          variant="contained" 
@@ -187,7 +220,7 @@ function Contact({onClose}){
           
                          
                     </Grid>
-                    
+                    }
                </Grid>
               
           </Box>

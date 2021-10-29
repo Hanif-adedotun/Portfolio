@@ -102,17 +102,17 @@ function App() {
 
           <Grid container justifyContent="center"  className='profile-container'>
             
-              <Grid container md={6} xs={12} justifyContent="center" className='profile-image-container'>
+              <Grid item md={6} xs={12} justifyContent="center" className='profile-image-container'>
                <Slide direction='left'>
                 <div className='profile-image'><img src={Hanif} alt='A potrait of me' className='image'/></div>
                 </Slide>
               </Grid>
               
 
-              <Grid container md={4} xs={9} justifyContent="center" className='profile-skills'>
+              <Grid container item md={4} xs={9} justifyContent="center" className='profile-skills'>
                 <Grid item xs={12}><span className='skills-head'>My Top Skills</span></Grid>
                 {skills.map((skill,i) =>
-                  <Grid item xs={5}  justifyContent="center" className='skill-container'>
+                  <Grid item xs={5}  justifyContent="center" className='skill-container' key={i}>
                     <Slide direction='up' cascade >
                      <div className={'skill-name'}>{skill}</div>
                      </Slide>
@@ -126,15 +126,15 @@ function App() {
 
             {/* Me section */}
             <div className='section'>
-              <Grid container justifyContent="center" alignItems='center'>
-                <Grid Item md={6}  xs={12} >
+              <Grid container justifyContent="center" alignitems='center'>
+                <Grid item md={6}  xs={12} >
                   <h2 className='skills-head'>Who I am</h2>
                   {summary.map((v,i) => 
-                    <div className='profile-summary'>{v}</div>
+                    <div className='profile-summary' key={i}>{v}</div>
                   )}
                 </Grid>
 
-                <Grid Item md={6}  xs={12}>
+                <Grid item md={6}  xs={12}>
                 <Slide direction="right">
                       <img src={Person} alt='A person SVG Icon' className='person-icon'/> 
                 </Slide>
@@ -145,15 +145,15 @@ function App() {
           {/* Education section */}
           <div className='section'>
           <h2 className='skills-head'>Education</h2>
-          <Grid container justifyContent="center" alignItems='center'>
-            <Grid Item container sm={6} xs={12} >
+          <Grid container justifyContent="center" alignitems='center'>
+            <Grid item container sm={6} xs={12} >
               {(Object.values(education).map((edu,i) => 
              
                 <div className='card-container' key={i}>
                    
                   <Grid container >
-                    <Grid Item  xs={3}><div className='card-icon'><SchoolIcon color='inherit' fontSize='large'/></div></Grid>
-                    <Grid Item  xs={9} justifyContent="center" className='card-text'>
+                    <Grid item  xs={3}><div className='card-icon'><SchoolIcon color='inherit' fontSize='large'/></div></Grid>
+                    <Grid item  xs={9} justifyContent="center" className='card-text'>
                       
                       <span className='card-time'>{edu.time} {(edu.ongoing) ? <span className='ongoing'>Ongoing...</span>:''}</span>
                       <span className='card-title'>{edu.title}</span>
@@ -167,7 +167,7 @@ function App() {
                 ))}
           </Grid>  
 
-            <Grid Item  sm={6} xs={12}>
+            <Grid item  sm={6} xs={12}>
             <Slide direction="right">
                   <img src={Books} alt='Books SVG Icon' className='books-icon'/> 
             </Slide>
@@ -179,23 +179,23 @@ function App() {
            {/* Work section */}
            <div className='section'>
            <h2 className='skills-head'>Work Experience</h2>
-          <Grid container justifyContent="center" alignItems='center'>
+          <Grid container justifyContent="center" alignitems='center'>
 
             
-            <Grid Item  sm={6} xs={12}>
+            <Grid item  sm={6} xs={12}>
                 <Slide direction="left">
                   <img src={Worker} alt='A worker SVG Icon' className='worker-icon'/> 
                 </Slide>
             </Grid>
            
             
-            <Grid Item container sm={6} xs={12} >
+            <Grid item container sm={6} xs={12} >
               {(Object.values(experiences).map((edu,i) => 
              
                 <div className='card-container' key={i}>
                   <Grid container >
-                    <Grid Item  xs={3} sm={2}><div className='card-icon'><WorkIcon color='inherit' fontSize='large'/></div></Grid>
-                    <Grid Item  xs={9} justifyContent="center" className='card-text'>
+                    <Grid item  xs={3} sm={2}><div className='card-icon'><WorkIcon color='inherit' fontSize='large'/></div></Grid>
+                    <Grid item  xs={9} justifyContent="center" className='card-text'>
                       <span className='card-time'>{edu.time}</span>
                       <span className='card-title'>{edu.title}</span>
                       <span className='card-org'>{edu.org[0]}</span>
