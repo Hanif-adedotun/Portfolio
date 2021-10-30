@@ -37,6 +37,7 @@ function Projects(){
           top: 0,
           behavior: "smooth"
         });
+        document.title = "Projects | Hanif Adedotun";
      }
      ,[]);
 

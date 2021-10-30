@@ -18,11 +18,13 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { send } from 'emailjs-com';
 
 function Contact({onClose}){
-     useEffect(() => 
+     useEffect(() => {
      window.scrollTo({
           top: 0,
           behavior: "smooth"
-        })
+        });
+        document.title = "Contact me | Hanif Adedotun";
+     }
      ,[]);
 
     

@@ -2,7 +2,7 @@ import {React, useEffect, useState} from 'react';
 import '../styles/resume.css';
 
 // Material UI
-import {Button, Grid, LinearProgress } from '@mui/material';
+import {Button, Grid, LinearProgress , useTheme, useMediaQuery} from '@mui/material';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
@@ -14,12 +14,17 @@ import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import resume from '../resume/resume-v2.pdf';
 
 function MyResume(){
-     useEffect(() => 
+     useEffect(() => {
      window.scrollTo({
           top: 0,
           behavior: "smooth"
-        })
+        });
+     document.title = "Resume | Hanif Adedotun";
+     }
      ,[]);
+
+     const theme = useTheme();
+     const ismobile = useMediaQuery(theme.breakpoints.down('700'));
 
      const [numPages, setNumPages] = useState(null);
      const [pageNumber, setPageNumber] = useState(1);
@@ -59,7 +64,7 @@ function MyResume(){
                     className='resume-pdf'
                     loading={Loader}
                     >
-                    <Page pageNumber={pageNumber} className='resume-page' width={400}/>
+                    <Page pageNumber={pageNumber} className='resume-page' width={(ismobile) ? 400 : 700} scale={1}/>
                     <p>Page {pageNumber} of {numPages}</p>
                     <Grid container xs={12} justifyContent="center">
                          <Grid item xs={4}><NavigateBeforeIcon className='resume-back' onClick={() => controlPage(false)}  sx={{ fontSize: 38 }}/></Grid>

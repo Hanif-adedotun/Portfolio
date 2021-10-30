@@ -69,11 +69,13 @@ const certificates = {
 }
 
 function Certifications(){
-     useEffect(() => 
+     useEffect(() => {
      window.scrollTo({
           top: 0,
           behavior: "smooth"
-        })
+        });
+        document.title = "Certificates | Hanif Adedotun";
+     }
      ,[]);
      return(
           <div className='certificates-main'>

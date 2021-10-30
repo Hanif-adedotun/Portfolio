@@ -24,11 +24,13 @@ import Worker from '../images/icons/work.svg';
 
 
 function App() {
-  useEffect(() => 
+  useEffect(() => {
      window.scrollTo({
           top: 0,
           // behavior: "smooth"
-        })
+        });
+        document.title = "Portfolio | Hanif Adedotun";
+  }
      ,[]);
 
   const summary = [
