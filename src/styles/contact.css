@@ -18,18 +18,33 @@
         padding: 0  15px 0 3em; /* top right botttom left */
         min-width: 40vw;
 }
-
+.backb-cont{
+     margin-top: .5em ;
+     font-size: medium !important;
+     font-weight: bold ;
+}
+.backb{
+     font-size: medium !important;
+}
 .contact-link-container{
      margin: 2em auto;
 }
 .contact-show-container{
      margin: 2em auto;
      margin-bottom: 1em;
-}
-.contact-move:hover{
+     background-color: var(--secondary);
+     color: var(--accent);
+     border-radius: 10px;
+     width: max-content;
      cursor: pointer;
-     font-weight: bold;
 }
+.contact-show-container:hover{
+     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.contact-move{
+     margin-left: 1em;
+}
+
 .contact-link-container a:hover{
      font-weight: bold;     
 }

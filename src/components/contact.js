@@ -76,9 +76,9 @@ function Contact({onClose}){
      const [screen, setScreen] = useState('default');
 
      useEffect(() => {
-          setScreen(localStorage.getItem('screen'));
-        console.log(screen);
-     }, [screen])
+          const v = localStorage.getItem('screen');
+          setScreen( (v) ? v : 'default' );
+     }, [])
 
      return(
           <Box className={'contact-modal-box'}>
@@ -86,8 +86,8 @@ function Contact({onClose}){
                <Grid container justifyContent="flex-end">
                     {(ismobile && screen==='form') ? 
                     <Grid item xs={11}>
-                         <IconButton onClick={() => {setScreen('default'); localStorage.setItem('screen', 'default')}}>
-                              <ArrowBackIosIcon />
+                         <IconButton className="backb-cont" onClick={() => {setScreen('default'); localStorage.setItem('screen', 'default')}}>
+                              <ArrowBackIosIcon className="backb"/> Back
                          </IconButton>
                     </Grid>
                     :''}
@@ -122,8 +122,8 @@ function Contact({onClose}){
                          </Box>
 
                          {(ismobile) ? 
-                         <Box alignSelf="center" alignItems="center" display="flex" className='contact-show-container'>
-                              <span className="contact-move" onClick={() => {setScreen('form'); localStorage.setItem('screen', 'form')}}>Send a message</span> <ArrowRightIcon className="contact-icon"/>
+                         <Box alignSelf="center" alignItems="center" display="flex" className='contact-show-container' onClick={() => {setScreen('form'); localStorage.setItem('screen', 'form')}}>
+                              <span className="contact-move" >Send a message</span> <ArrowRightIcon />
                          </Box>
                          : ''}
 
