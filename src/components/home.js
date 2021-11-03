@@ -79,7 +79,7 @@ function App() {
          
 
           <div className='home-main-loop'>
-              I am somewhere between <TextLoop 
+              I am somewhat of <TextLoop 
               interval={2500} 
               adjustingSpeed={500} 
               springConfig={{ stiffness: 120, damping: 20 }}
