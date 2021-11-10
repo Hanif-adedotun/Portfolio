@@ -57,7 +57,7 @@ const Navigation = (props) => {
      };
 
      const theme = useTheme();
-     const ismobile = useMediaQuery(theme.breakpoints.down('700'))
+     const ismobile = useMediaQuery(theme.breakpoints.down('750'))
        
      // Modal Functions
      const[open, setOpen] = useState(false);
