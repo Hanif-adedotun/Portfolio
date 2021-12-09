@@ -78,7 +78,7 @@ function MyResume(){
                     </div>
                     :
                     <div>
-                    {(loading) ? <Loader/> : null}
+                      {(loading) ? <Loader/> : null}
                     <PDFReader 
                     url={resume} 
                     page={pageNumber} 
@@ -88,11 +88,18 @@ function MyResume(){
                     isShowFooter={false}
                     currentPage={pageNumber}
                     />
+
+                    {(loading) ? null : 
+                    <div>
                     <p>Page {pageNumber} of {numPages}</p>
                     <Grid container justifyContent="center">
                          <Grid item xs={4}><NavigateBeforeIcon className='resume-back' onClick={() => controlPage(false)}  sx={{ fontSize: 38 }}/></Grid>
                          <Grid item xs={4}><NavigateNextIcon className='resume-next' onClick={() => controlPage(true)} sx={{ fontSize: 38 }}/></Grid>
                     </Grid>
+                    </div>
+                    }
+                    
+                    
                     </div>
                     }
                     
