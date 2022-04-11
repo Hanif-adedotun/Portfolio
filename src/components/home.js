@@ -33,12 +33,18 @@ function App() {
   }
      ,[]);
 
-  const summary = [
+  // const summary = [
+  //   'I am a technology enthusiast, a fast learner and I have a never ending quest to learn new things everyday. I work well with people and I pay great attention to details.',
+  //   'I am a full stack developer and a graphics designer.I am currently researching on Machine learning, Blockchain technology and the Internet of Things.',
+  //   'I have been programming for about 3 years, during which I have developed projects which are available on my GitHub account below.'
+  // ]
+  const summary =[
+    'Hey! I am Hanif, I love everything technology and how its used to solve problems.',
     'I am a technology enthusiast, a fast learner and I have a never ending quest to learn new things everyday. I work well with people and I pay great attention to details.',
-    'I am a full stack developer and a graphics designer.I am currently researching on Machine learning, Blockchain technology and the Internet of Things.',
-    'I have been programming for about 3 years, during which I have developed projects which are available on my GitHub account below.'
+    'My journey into tech started about 5 years ago, from graphics designs to creating websites with html and css, to creating my first full stack project 2 years ago and then recently transitioning into machine learning and A.I it\'s importance in shaping future technologies and how we can use it to accelerate our growth as a nation and continent at large.',
+    'I am currently building a startup that helps in democratising early stage startup funding in Nigeria and giving opportunities to small businesses and enterprises.',
   ]
-  const skills = ['Javascript', 'React', 'PHP', 'MySql', 'MongoDB', 'Figma', 'Python', 'Machine Learning'];
+  const skills = ['Javascript', 'React', 'PHP', 'C++', 'Nodejs','MySql', 'MongoDB', 'Figma', 'Python', 'Machine Learning'];
 
   const education = {
     1:{
