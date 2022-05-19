@@ -63,7 +63,7 @@ function App() {
   }
   const experiences = {
     1:{
-      'time': '2021-Present',
+      'time': '2021 - Present',
       'title': 'Development Lead - AI & ML',
       'org': ['Google Developer Student Club - Nile University Chapter', 'https://www.nileuniversity.edu.ng/'],
     },
@@ -71,6 +71,11 @@ function App() {
       'time': 'Mar 2021 - Sep 2021',
       'title': 'Full stack web developer - Internship',
       'org': ['Utility ware', 'https://www.linkedin.com/company/utility-ware/'],
+    },
+    2:{
+      'time': 'Dec 2021 - Present',
+      'title': 'Campus Ambassador',
+      'org': ['Cowrywise', 'https://www.cowrywise.com'],
     }
   }
   return (

@@ -140,7 +140,7 @@ function Contact({onClose}){
                               </Grid>
 
                               <Grid item xs={3}>
-                                   <a href={'https://twitter.com/Hanif_adedotun'} className='social-icon'><TwitterIcon sx={{ fontSize: 32 }}/></a>
+                                   <a href={'https://twitter.com/devhanif'} className='social-icon'><TwitterIcon sx={{ fontSize: 32 }}/></a>
                               </Grid>
                          </Grid>
 
