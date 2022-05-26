@@ -12,7 +12,7 @@ import WidgetsIcon from '@mui/icons-material/Widgets';
 
 
 // Web Logos
-import StartVest from '../images/web/logo.png';
+import StartVest from '../images/web/logo-2.png';
 import VM from '../images/web/vm2.svg';
 import NTB from '../images/web/ntb.PNG';
 import Convert from '../images/web/convert.PNG';

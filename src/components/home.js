@@ -72,7 +72,7 @@ function App() {
       'title': 'Full stack web developer - Internship',
       'org': ['Utility ware', 'https://www.linkedin.com/company/utility-ware/'],
     },
-    2:{
+    3:{
       'time': 'Dec 2021 - Present',
       'title': 'Campus Ambassador',
       'org': ['Cowrywise', 'https://www.cowrywise.com'],
