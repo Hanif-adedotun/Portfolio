@@ -1,6 +1,4 @@
 name: Build and Deploy
-env:
-   CI: false
 on:
   push:
     branches:
@@ -16,6 +14,8 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm run deploy
+        env:
+          CI: false
           
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
