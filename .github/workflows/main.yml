@@ -10,6 +10,11 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2 
+      
+      - name: setup git config
+        run: |
+          git config user.name "Hanif Adedotun"
+          git config user.email "hanif.adedotun@gmail.com"
         
       - name: Install and Build 🔧
         run: |
