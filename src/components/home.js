@@ -46,38 +46,43 @@ function App() {
   ]
   const skills = ['Javascript', 'React', 'PHP', 'C++', 'Nodejs','MySql', 'MongoDB', 'Figma', 'Python', 'Machine Learning'];
 
-  const education = {
-    1:{
+  const education = [
+    {
       'ongoing': true,
       'time': '2019-2024',
       'title': 'BSc. Computer Engineering',
       'org': ['Nile university of Nigeria', 'https://www.nileuniversity.edu.ng/'],
     },
-    2:{
+    {
       'ongoing': false,
       'time': '2016-2019',
       'title': 'Secondary School certificate',
       'org': ['Glisten International Academy', 'https://glisteninternationalacademy.com/secondary-school/'],
     },
 
-  }
-  const experiences = {
-    1:{
-      'time': '2021 - Present',
-      'title': 'Development Lead - AI & ML',
+  ]
+  const experiences = [
+    {
+      'time': 'June 2022 - Present',
+      'title': 'Software Engineer',
+      'org': ['Devtranet - Codetivate hackathon', 'https://codetivate.thedynamics.tech/'],
+    },
+    {
+      'time': 'Jan 2021 - Present',
+      'title': 'AI & ML Lead',
       'org': ['Google Developer Student Club - Nile University Chapter', 'https://www.nileuniversity.edu.ng/'],
     },
-    2:{
+    {
       'time': 'Mar 2021 - Sep 2021',
       'title': 'Full stack web developer - Internship',
       'org': ['Utility ware', 'https://www.linkedin.com/company/utility-ware/'],
     },
-    3:{
+    {
       'time': 'Dec 2021 - Present',
       'title': 'Campus Ambassador',
       'org': ['Cowrywise', 'https://www.cowrywise.com'],
     }
-  }
+  ]
   return (
     <div className='home-cont'>
 
