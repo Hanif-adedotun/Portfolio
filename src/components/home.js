@@ -42,7 +42,7 @@ function App() {
     'Hey! I am Hanif, I love everything technology and how its used to solve problems.',
     'I am a technology enthusiast, a fast learner and I have a never ending quest to learn new things everyday. I work well with people and I pay great attention to details.',
     'My journey into tech started about 5 years ago, from graphics designs to creating websites with html and css, to creating my first full stack project 2 years ago and then recently transitioning into machine learning and A.I it\'s importance in shaping future technologies and how we can use it to accelerate our growth as a nation and continent at large.',
-    'I am currently building a startup that helps in democratising early stage startup funding in Nigeria and giving opportunities to small businesses and enterprises.',
+    'I am currently building a social platform that is bridging the gap between learning and the industry, by providing a community of interns sharing their experiences.',
   ]
   const skills = ['Javascript', 'React', 'PHP', 'C++', 'Nodejs','MySql', 'MongoDB', 'Figma', 'Python', 'Machine Learning'];
 
@@ -65,7 +65,7 @@ function App() {
     {
       'time': 'June 2022 - Present',
       'title': 'Software Engineer',
-      'org': ['Devtranet - Codetivate hackathon', 'https://codetivate.thedynamics.tech/'],
+      'org': ['Devtranet', 'https://devtranet.tech/'],
     },
     {
       'time': 'Jan 2021 - Present',
@@ -105,7 +105,7 @@ function App() {
                 "a Graphics Designer",
                 "an Engineering Student",
                 "a Machine Learning enthusiast",
-                "a Blockchain advocate"
+                "a web3 advocate"
               ]}/>           
           </div>
 
@@ -211,12 +211,12 @@ function App() {
               {(Object.values(experiences).map((edu,i) => 
              
                 <div className='card-container' key={i}>
-                  <Grid container >
+                  <Grid container justifyContent="flex-start">
                     <Grid item  xs={3} sm={2}><div className='card-icon'><WorkIcon color='inherit' fontSize='large'/></div></Grid>
-                    <Grid item  xs={9} justifyContent="center" className='card-text'>
+                    <Grid item  xs={9} justifyContent="flex-start" className='card-text'>
                       <span className='card-time'>{edu.time}</span>
                       <span className='card-title'>{edu.title}</span>
-                      <span className='card-org'>{edu.org[0]}</span>
+                      <span className='card-org'><a href={edu.org[1]} target='_blank' rel="noreferrer">{edu.org[0]}</a></span>
                     </Grid>
                   </Grid>
                 </div>

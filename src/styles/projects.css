@@ -50,6 +50,11 @@
      width: 95%;
      height: auto;
 }
+.blue-img{
+     border-radius: 5px;
+     width: auto;
+     height: 95%;
+}
 .web-title{
      color: var(--contrast);
      font-size: large;
