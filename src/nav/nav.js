@@ -14,7 +14,7 @@ import { AppBar,
        useMediaQuery, 
        styled} from '@mui/material';
 
-import ModalUnstyled from '@mui/core/ModalUnstyled';
+import ModalUnstyled from '@mui/base/ModalUnstyled';
 import {Menu as MenuIcon} from '@mui/icons-material';
 
 // React router dom
