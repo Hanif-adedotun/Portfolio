@@ -14,7 +14,7 @@ import { AppBar,
        useMediaQuery, 
        styled} from '@mui/material';
 
-import ModalUnstyled from '@mui/base/ModalUnstyled';
+import { Dialog } from '@mui/material';
 import {Menu as MenuIcon} from '@mui/icons-material';
 
 // React router dom
@@ -146,14 +146,14 @@ const Navigation = (props) => {
           </HashRouter>
 
           {/* Modal for Contact me */}
-          <ModalUnstyled 
+          <Dialog 
           open={open}
           onClose={handleClose}
           className={'contact-modal'}
           BackdropComponent={Backdrop}
           >
                <Contact onClose={handleClose}/>
-          </ModalUnstyled>
+          </Dialog>
           </div>
      )
 }

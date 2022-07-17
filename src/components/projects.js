@@ -166,7 +166,7 @@ function Projects(){
                    {applications.map((v,i) => 
                     <Grid item xs={12} sm={6} key={i} className='web-container' >
                          <div className='web-img-container'>
-                             {(v.img) ? <img className={(v.name[0] == "Bluegram" ? 'blue-img':'web-img')} src={v.img} alt={`${v.name[0]} logo`}></img> : 'Image'}
+                             {(v.img) ? <img className={(v.name[0] === "Bluegram" ? 'blue-img':'web-img')} src={v.img} alt={`${v.name[0]} logo`}></img> : 'Image'}
                          </div>
                          <div className='web-title'><a href={v.name[1]} target='_blank' rel="noreferrer">{v.name[0]}</a> <OpenInNewIcon/></div>
                          <div className='web-summary'>{v.summary}</div>
