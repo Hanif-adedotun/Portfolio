@@ -19,6 +19,7 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm config set legacy-peer-deps true
+          git remote set-url origin https://{Hanif-adedotun}:{hanifadedotun12345}@github.com/{Hanif-adedotun}/Portfolio.git
           npm ci
           npm run deploy
           
