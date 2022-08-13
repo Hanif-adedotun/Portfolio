@@ -13,14 +13,18 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import WebAssetIcon from '@mui/icons-material/WebAsset';
 
 // Web Logos
-import StartVest from '../images/web/logo-2.png';
-import VM from '../images/web/vm2.svg';
+import StartVest from '../images/web/startvest.jpg';
+import VM from '../images/web/voltex.png';
 import NTB from '../images/web/ntb.PNG';
+import Han from '../images/web/hanif.jpg';
 import Convert from '../images/web/convert.PNG';
-import Khalifa from '../images/web/klf.PNG';
-import Devtranet from '../images/web/devtranet.svg';
+import Salim from '../images/web/ss.jpg';
+import Eesher from '../images/web/es.jpg';
+import Umar from '../images/web/uy.jpg';
+import Devtranet from '../images/web/devtranet.jpg';
 import TaxiApp from '../images/web/taxiApp.jpg';
 import Bluegram from '../images/web/bluegram.png';
+
 // Graphics Logos
 import Oninure from '../images/graphics/oninure.png';
 import Hanif from '../images/graphics/hanif.png';
@@ -77,16 +81,28 @@ function Projects(){
                'tools': ['HTML', 'CSS', 'Vanilla Javascript', 'JQuery']
           },
           {
-               'img': Khalifa,
-               'name': ['Al-Kahlifa Store', 'https://hanif-adedotun.github.io/Khalifa-designs/'],
-               'summary': 'A frontend desgn of an E-commerce store selling branded T-shirts to customers using the name Khalifa designs.', 
+               'img': Salim,
+               'name': ['Salim Store', 'https://salimtilde7.github.io/ecommerce/index.html'],
+               'summary': 'A frontend desgn of an E-commerce store selling branded T-shirts to customers using the name Salim Store.', 
                'tools': ['HTML', 'CSS', 'Vanilla Javascript', 'JQuery']
           },
           {
-               'img': NTB,
-               'name': ['NTB Dashboard','https://github.com/Hanif-adedotun/htdocs/tree/master/NTB%20Databse'],
-               'summary': '',
-               'tools': ['PHP', 'MySql', 'AJAX', 'jQuery']
+               'img': Eesher,
+               'name': ['Eesher’s style Blog', 'https://aisha2003.github.io/eeshers-style/#/'],
+               'summary': 'A simple blog made with html, css and javascript', 
+               'tools': ['HTML', 'CSS', 'Vanilla Javascript', 'JQuery']
+          },
+          {
+               'img': Umar,
+               'name': ['Umar Yusuf\'s Blog', 'https://umaryusuf001.github.io/umar-yusuf/#/'],
+               'summary': 'A simple blog made with html, css and javascript', 
+               'tools': ['HTML', 'CSS', 'Vanilla Javascript', 'JQuery']
+          },
+          {
+               'img': Han,
+               'name': ['My Portfolio website','www.devhanif.com'],
+               'summary': 'The website contains my professional summary, skills, education, certificates, experiences and so much more, it is basically a portal into how I solve problems and the steps I am taking on my professional Journey',
+               'tools': ['ReactJs', 'Material U', 'Mobile friendly', 'Top SEO', 'Github Actions']
           }
      ]  
      const applications=[

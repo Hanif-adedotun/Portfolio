@@ -28,18 +28,14 @@
 }
 /* Web design styles*/
 .web-container{
-     margin: 1em auto;
+     margin: 3em auto;
      text-align: left;
 
 }
 .web-img-container{
-     width: 50%;
-     height: 10em;
+     width: 70%;
+     height: 15em;
      max-height: max-content;
-     /* margin: auto; */
-     /* background-color: var(--accent); */
-
-     /* border-radius: 10px; */
      color: var(--altacc);
      display: flex;
      justify-content: center;
@@ -117,5 +113,8 @@
      .graphics-img{
           width: 90%;
           height: auto;
+     }
+     .web-img-container{
+          width: 100%;
      }
 }

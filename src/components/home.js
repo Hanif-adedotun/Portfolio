@@ -44,7 +44,7 @@ function App() {
     'My journey into tech started about 5 years ago, from graphics designs to creating websites with html and css, to creating my first full stack project 2 years ago and then recently transitioning into machine learning and A.I it\'s importance in shaping future technologies and how we can use it to accelerate our growth as a nation and continent at large.',
     'I am currently building a social platform that is bridging the gap between learning and the industry, by providing a community of interns sharing their experiences.',
   ]
-  const skills = ['Javascript', 'React', 'PHP', 'C++', 'Nodejs','MySql', 'MongoDB', 'Figma', 'Python', 'Machine Learning'];
+  const skills = ['Javascript', 'React', 'NextJs', 'PHP', 'C++', 'Nodejs','MySql', 'MongoDB', 'Figma', 'Python', 'Machine Learning'];
 
   const education = [
     {
@@ -64,7 +64,7 @@ function App() {
   const experiences = [
     {
       'time': 'June 2022 - Present',
-      'title': 'Software Engineer',
+      'title': 'Backend Software Engineer',
       'org': ['Devtranet', 'https://devtranet.tech/'],
     },
     {
