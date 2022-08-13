@@ -5,7 +5,7 @@
      display: block;
      font-weight: bold;
      color: var(--contrast);
-     font-size: large !important;
+     font-size: 2em !important;
 }
 .proj-tag{
      color: var(--altacc);

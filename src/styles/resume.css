@@ -10,7 +10,7 @@
      margin-bottom: 2em !important;
      font-weight: bold;
      color: var(--contrast);
-     font-size: large !important;     
+     font-size: 2em !important;   
 }
 .MuiLinearProgress-colorPrimary{
      color: var(--primary);

@@ -15,7 +15,6 @@ import WebAssetIcon from '@mui/icons-material/WebAsset';
 // Web Logos
 import StartVest from '../images/web/startvest.jpg';
 import VM from '../images/web/voltex.png';
-import NTB from '../images/web/ntb.PNG';
 import Han from '../images/web/hanif.jpg';
 import Convert from '../images/web/convert.PNG';
 import Salim from '../images/web/ss.jpg';
@@ -83,7 +82,7 @@ function Projects(){
           {
                'img': Salim,
                'name': ['Salim Store', 'https://salimtilde7.github.io/ecommerce/index.html'],
-               'summary': 'A frontend desgn of an E-commerce store selling branded T-shirts to customers using the name Salim Store.', 
+               'summary': 'A frontend design of an E-commerce store selling branded T-shirts to customers using the name Salim Store.', 
                'tools': ['HTML', 'CSS', 'Vanilla Javascript', 'JQuery']
           },
           {

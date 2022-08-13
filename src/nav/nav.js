@@ -32,6 +32,7 @@ import Resume from '../components/resume';
 import Projects from '../components/projects';
 import Contact from '../components/contact';
 import Certifications from '../components/certifications';
+import Blog from '../components/blog';
 import NotFound from '../components/404';
 
 // Backdrop for the modal dialog
@@ -89,6 +90,7 @@ const Navigation = (props) => {
                     <Button color="inherit"><NavLink to='/projects' className='nav-links' activeClassName="nav-links-active">Projects</NavLink></Button>
                     <Button color="inherit"><NavLink to='/resume' className='nav-links' activeClassName="nav-links-active">Resume</NavLink></Button>
                     <Button color="inherit"><NavLink to='/certificates' className='nav-links' activeClassName="nav-links-active">Certifications</NavLink></Button>
+                    <Button color="inherit"><NavLink to='/blog' className='nav-links' activeClassName="nav-links-active">Blog</NavLink></Button>
                     <Button sx={{boxShadow: 4}} className='nav-link-contact' variant='contained' onClick={handleOpen}>Contact me</Button>
                     </div>
                     }
@@ -126,6 +128,10 @@ const Navigation = (props) => {
                     </ListItem>
 
                     <ListItem>
+                         <Button onClick={handleDrawerToggle}><NavLink to='/blog' className='nav-links' activeClassName="nav-links-active">Blog</NavLink></Button>
+                    </ListItem>
+
+                    <ListItem>
                          <Button sx={{boxShadow: 2}} onClick={() => {handleDrawerToggle(); handleOpen()}} className='nav-link-contact' variant='contained'>Contact me</Button>
                     </ListItem>
                </List>
@@ -139,6 +145,7 @@ const Navigation = (props) => {
                     <Route exact path="/resume"><Resume/></Route>
                     <Route exact path="/projects"><Projects/></Route>
                     <Route exact path="/certificates"><Certifications/></Route>
+                    <Route exact path="/blog"><Blog/></Route>
                     <Route><NotFound/></Route>
                </Switch>
                </div>
