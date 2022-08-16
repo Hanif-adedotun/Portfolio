@@ -15,7 +15,7 @@ jobs:
         run: |
           git config user.name "Hanif Adedotun"
           git config user.email "hanif.adedotun@gmail.com"
-          git remote add origin https://{Hanif-adedotun}:{hanifadedotun12345}@github.com/{Hanif-adedotun}/Portfolio.git
+          git remote set-url origin https://{Hanif-adedotun}:{hanifadedotun12345}@github.com/{Hanif-adedotun}/Portfolio.git
         
       - name: Install and Build 🔧
         run: |
