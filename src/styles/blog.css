@@ -1,0 +1,18 @@
+/* To import the colors of the website */
+@import url("../utility/colours.css");
+
+/* Project design tab */
+.coming-soon{
+     min-height: 86.5vh;
+     font-size: 7em;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: var(--contrast);
+     font-weight: bold;
+}
+
+/* Footer CSS */
+#footer-cert{
+     color: var(--contrast);
+}

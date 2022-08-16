@@ -1,0 +1,52 @@
+/* To import the colors of the website */
+@import url("../utility/colours.css");
+
+.certificates-main{
+     background-color: var(--primary);
+     min-height: max-content;
+}
+.certificates-head{
+     display: block;
+     margin-bottom: 7% !important;
+     font-weight: bold;
+     color: var(--contrast);
+     font-size: 2em !important;
+}
+.certificates-container{
+     margin-bottom: 5em !important;
+}
+.certificates-img-container{
+     width: 70%;
+     height: 20em;
+     margin: auto;
+     background-color: transparent;
+     /* border-radius: 10px; */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+.cert-img{
+     border-radius: 10px;
+     width: 80%;
+     height: auto;
+     margin: 1em auto;
+}
+.certificates-title{
+     color: var(--altacc);
+}
+.certificates-title a{
+     color: inherit;
+     cursor: pointer;
+     text-decoration: none !important;
+}
+.certificates-org{
+     color: var(--altacc);
+     font-weight: bold;
+}
+.certificates-year{
+     color: var(--altacc);
+}
+/* Footer CSS */
+#footer-cert{
+     color: var(--contrast);
+}
