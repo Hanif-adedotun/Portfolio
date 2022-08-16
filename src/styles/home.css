@@ -101,9 +101,15 @@
 }
 
 /* Me Section */
+.img-cover-1{
+  background-color: var(--accent);
+  height: 100%;
+  width: 80%;
+  transform: rotate(90deg);
+}
 .person-icon{
   height: auto;
-  width: 80%;
+  width: 100%;
 }
 /* Education Section */
 .books-icon{
@@ -127,7 +133,7 @@
   font-size: large;
 }
 .card-container{
-  padding: 0  1em 0 0;
+  padding: 1em 1em 1em 0;
   margin: 2em auto;
   min-width: 60%;
   max-width: 80%;
@@ -168,20 +174,24 @@
 .card-title{
   display: block;
   font-weight: bold;
-  font-size: large;
+  font-size: medium;
   color: var(--accent);
   margin-bottom: .3em;
 }
 .card-org{
   display: block;
   font-weight: bold;
-  color: var(--accent);
-  margin-bottom: 2em;
+  font-size: large;
+  color: var(--contrast);
+  margin-bottom: .5em;
 }
 .card-org a{
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+}
+.card-desc{
+  color: var(--accent);
 }
 @media only screen and (max-width: 600px) {
   .bg{

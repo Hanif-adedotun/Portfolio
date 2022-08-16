@@ -3,7 +3,7 @@
   "name": "Hanif Adedotun Portfolio",
   "icons": [
     {
-      "src": "logo.png",
+      "src": "/logo.png",
       "type": "image/png",
       "sizes": "192x192"
     }

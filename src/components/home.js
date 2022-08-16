@@ -66,21 +66,25 @@ function App() {
       'time': 'June 2022 - Present',
       'title': 'Backend Software Engineer',
       'org': ['Devtranet', 'https://devtranet.tech/'],
+      'desc': `Devtranet is a global network for developers and technologists to connect, build, and discover opportunities.`,   
     },
     {
-      'time': 'Jan 2021 - Present',
+      'time': 'January 2021 - August 2022',
       'title': 'AI & ML Lead',
       'org': ['Google Developer Student Club - Nile University Chapter', 'https://www.nileuniversity.edu.ng/'],
+      'desc': `I was appointed as the development lead in the Artificial Intelligence team. This wad a platform for me to create awareness of the impact of AI in our lives and how to help students build solutions using the technology`
     },
     {
       'time': 'Mar 2021 - Sep 2021',
       'title': 'Full stack web developer - Internship',
       'org': ['Utility ware', 'https://www.linkedin.com/company/utility-ware/'],
+      'desc': `I was a full stack web developer intern at Utility ware, a company that provides services to the public. I was responsible for developing the frontend and backend of the company's website.`
     },
     {
       'time': 'Dec 2021 - Present',
       'title': 'Campus Ambassador',
       'org': ['Cowrywise', 'https://www.cowrywise.com'],
+      'desc': `I am volunteering as a Cowrywise ambassador to enlighten students and non-students alike about boosting their financial health through knowledge about savings and investment opportunities on the Cowrywise platform.`
     }
   ]
   return (
@@ -154,7 +158,9 @@ function App() {
 
                 <Grid item md={6}  xs={12}>
                 <Slide direction="right">
-                      <img src={Person} alt='A person SVG Icon' className='person-icon'/> 
+                      <div className='img-cover-1'>
+                        <img src={Person} alt='A person SVG Icon' className='person-icon'/> 
+                      </div>
                 </Slide>
                 </Grid>
               </Grid>
@@ -208,15 +214,16 @@ function App() {
            
             
             <Grid item container sm={6} xs={12} >
-              {(Object.values(experiences).map((edu,i) => 
+              {(Object.values(experiences).map((work,i) => 
              
                 <div className='card-container' key={i}>
                   <Grid container justifyContent="flex-start">
                     <Grid item  xs={3} sm={2}><div className='card-icon'><WorkIcon color='inherit' fontSize='large'/></div></Grid>
                     <Grid item  xs={9} justifyContent="flex-start" className='card-text'>
-                      <span className='card-time'>{edu.time}</span>
-                      <span className='card-title'>{edu.title}</span>
-                      <span className='card-org'><a href={edu.org[1]} target='_blank' rel="noreferrer">{edu.org[0]}</a></span>
+                      <span className='card-time'>{work.time}</span>
+                      <span className='card-title'>{work.title}</span>
+                      <span className='card-org'><a href={work.org[1]} target='_blank' rel="noreferrer">{work.org[0]}</a></span>
+                      <span className='card-desc'>{work.desc}</span>
                     </Grid>
                   </Grid>
                 </div>
