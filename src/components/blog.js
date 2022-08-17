@@ -14,7 +14,7 @@ export default function Blog() {
 
      return(
           <div>
-               <div className='coming-soon'>Coming soon....</div>
+               <div className='blog-coming-soon'>Coming soon....</div>
 
                <span id='footer-cert'><Footer/></span>
           </div>

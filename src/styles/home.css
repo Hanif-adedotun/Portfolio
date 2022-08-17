@@ -101,12 +101,6 @@
 }
 
 /* Me Section */
-.img-cover-1{
-  background-color: var(--accent);
-  height: 100%;
-  width: 80%;
-  transform: rotate(90deg);
-}
 .person-icon{
   height: auto;
   width: 100%;
@@ -135,7 +129,7 @@
 .card-container{
   padding: 1em 1em 1em 0;
   margin: 2em auto;
-  min-width: 60%;
+  min-width: 70%;
   max-width: 80%;
   width: max-content;
   height: max-content;

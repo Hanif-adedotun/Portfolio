@@ -72,7 +72,7 @@ function App() {
       'time': 'January 2021 - August 2022',
       'title': 'AI & ML Lead',
       'org': ['Google Developer Student Club - Nile University Chapter', 'https://www.nileuniversity.edu.ng/'],
-      'desc': `I was appointed as the development lead in the Artificial Intelligence team. This wad a platform for me to create awareness of the impact of AI in our lives and how to help students build solutions using the technology`
+      'desc': `I was appointed as the development lead in the Artificial Intelligence team. This was a platform for me to create awareness of the impact of AI in our lives and how to help students build solutions using the technology`
     },
     {
       'time': 'Mar 2021 - Sep 2021',

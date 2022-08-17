@@ -141,6 +141,8 @@ function Projects(){
                <div className="project-tab">
                <TabContext value={value}>
                <TabList 
+               variant="scrollable"
+               scrollButtons={false}
                TabIndicatorProps={{
                     style: {
                       backgroundColor: "#1DCFF6",

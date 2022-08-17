@@ -2,9 +2,9 @@
 @import url("../utility/colours.css");
 
 /* Project design tab */
-.coming-soon{
-     min-height: 86.5vh;
-     font-size: 7em;
+.blog-coming-soon{
+     min-height: 90vh;
+     font-size: 4em;
      display: flex;
      align-items: center;
      justify-content: center;

@@ -28,9 +28,8 @@
 }
 /* Web design styles*/
 .web-container{
-     margin: 3em auto;
+     margin: 1em auto;
      text-align: left;
-
 }
 .web-img-container{
      width: 70%;
@@ -74,7 +73,7 @@
 /* Project design tab */
 .coming-soon{
      min-height: 60vh;
-     font-size: xx-large;
+     font-size: x-large;
      display: flex;
      align-items: center;
      justify-content: center;
@@ -115,6 +114,9 @@
           height: auto;
      }
      .web-img-container{
+          width: 100%;
+     }
+     .web-container{
           width: 100%;
      }
 }
