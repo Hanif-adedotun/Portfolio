@@ -39,6 +39,9 @@
   color: var(--accent) ;
   font-family: Quicksand;
   font-size: large;
+  display: flex;
+  align-content: center;
+  justify-content: first baseline;
 }
 .nav-links:hover{
   border-bottom: 2px solid var(--contrast);

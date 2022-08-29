@@ -12,9 +12,17 @@
      justify-self: center;
 }
 
-
+.tab-head{
+     padding: 0 1em;
+     width: max-content;
+     margin: auto;
+}
+.cont-tablist{
+     overflow-x: auto !important;
+}
 .project-tab{
      color: var(--altacc); 
+     
 }
 .tab-active{
      font-family: Quicksand !important;

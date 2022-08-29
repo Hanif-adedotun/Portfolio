@@ -116,6 +116,10 @@ const Navigation = (props) => {
           <div  className={'nav-drawer-div'}>
                <List>
                     <ListItem>
+                         <Button onClick={handleDrawerToggle}><NavLink to='/' className='nav-links' activeClassName="nav-links-active">Home</NavLink></Button>
+                    </ListItem>
+
+                    <ListItem>
                          <Button onClick={handleDrawerToggle}><NavLink to='/projects' className='nav-links' activeClassName="nav-links-active">Projects</NavLink></Button>
                     </ListItem>
 

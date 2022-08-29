@@ -140,6 +140,7 @@ function Projects(){
 
                <div className="project-tab">
                <TabContext value={value}>
+               <div className="cont-tablist">
                <TabList 
                variant="scrollable"
                scrollButtons={false}
@@ -160,7 +161,7 @@ function Projects(){
                     <Tab value={2} className={(value===2) ? 'tab-active':'tab-not-active'} icon={<WidgetsIcon />} label="Project design" />
                     <Tab value={3} className={(value===3) ? 'tab-active':'tab-not-active'} icon={<BrushIcon />} label="Graphics design" />
                </TabList>
-
+               </div>
                     {/* Web design section */}
                <TabPanel value={0} index={0}>
                <Grid container xs={12} justifyContent="center" spacing={5}>
