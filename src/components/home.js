@@ -33,11 +33,14 @@ function App() {
   }
      ,[]);
 
-  // const summary = [
-  //   'I am a technology enthusiast, a fast learner and I have a never ending quest to learn new things everyday. I work well with people and I pay great attention to details.',
-  //   'I am a full stack developer and a graphics designer.I am currently researching on Machine learning, Blockchain technology and the Internet of Things.',
-  //   'I have been programming for about 3 years, during which I have developed projects which are available on my GitHub account below.'
-  // ]
+  const HanifImages = [
+    '/hanif.jpg',
+    '/hanif.png',
+    '/hanif2.jpg'
+  ]
+  function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
   const summary =[
     'Hey! I am Hanif, I love everything technology and how its used to solve problems.',
     'I am a technology enthusiast, a fast learner and I have a never ending quest to learn new things everyday. I work well with people and I pay great attention to details.',
@@ -63,6 +66,18 @@ function App() {
   ]
   const experiences = [
     {
+      'time': 'Aug 2022 - Present',
+      'title': 'Community Lead',
+      'org': ['GDSC Nile University', 'https://gdsc.community.dev/nile-university-of-nigeria/'],
+      'desc': `I have taken on the responsibility to help students grow as developers and empower these students to impact their communities with technology. Through this experience I hope to be leaving a legacy of impact but also growing as an individual and contributing in a meaningful way to the greater developer ecosystem`
+    },
+    {
+      'time': 'Sept 2022 - Present',
+      'title': 'Co-founder',
+      'org': ['Ntrna technologies', 'https://getinterna.com/'],
+      'desc': `Our flagship product Interna, is a solution designed to provide internship opportunities to every student, equip them with professional tools and provide a community of students who have undergone internships and students who are looking for internships.`
+    },
+    {
       'time': 'June 2022 - Present',
       'title': 'Backend Software Engineer',
       'org': ['Devtranet', 'https://devtranet.tech/'],
@@ -79,12 +94,6 @@ function App() {
       'title': 'Full stack web developer - Internship',
       'org': ['Utility ware', 'https://www.linkedin.com/company/utility-ware/'],
       'desc': `I was a full stack web developer intern at Utility ware, a company that provides services to the public. I was responsible for developing the frontend and backend of the company's website.`
-    },
-    {
-      'time': 'Dec 2021 - Present',
-      'title': 'Campus Ambassador',
-      'org': ['Cowrywise', 'https://www.cowrywise.com'],
-      'desc': `I am volunteering as a Cowrywise ambassador to enlighten students and non-students alike about boosting their financial health through knowledge about savings and investment opportunities on the Cowrywise platform.`
     }
   ]
   return (
@@ -126,7 +135,13 @@ function App() {
             
               <Grid item md={6} xs={12} justifyContent="center" className='profile-image-container'>
                <Slide direction='left'>
-                <div className='profile-image'><img src={Hanif} alt='A potrait of me' className='image'/></div>
+               <div className='profile-image-card1'>
+                  <div className='profile-image-card2'>
+                    <div className='profile-image'>
+                      <img src={HanifImages[getRndInteger(0, HanifImages.length)]} alt='A potrait of me' className='image'/>
+                    </div>
+                  </div>
+                </div>
                 </Slide>
               </Grid>
               
@@ -136,7 +151,7 @@ function App() {
                 {skills.map((skill,i) =>
                   <Grid item xs={5}  justifyContent="center" className='skill-container' key={i}>
                     <Slide direction='up' cascade >
-                     <div className={'skill-name'}>{skill}</div>
+                     <div className={`skill-name ${(i%2===0) ? 'skill-name-alt': ''}`}>{skill}</div>
                      </Slide>
                   </Grid>
                 )}               

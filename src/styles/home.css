@@ -8,6 +8,7 @@
   background-position: center;
   background-attachment: fixed;
   padding-top: 1px;
+  overflow-x: hidden;
 }
 
 .App {
@@ -50,6 +51,20 @@
 .profile-container{
   margin: 5em 0;
 }
+.profile-image-card1{
+  width: 30em;
+  height: 30em;
+  transform: rotate(14deg);
+  background-color: var(--secondary);
+  border-radius: 10px;
+}
+.profile-image-card2{
+  width: 30em;
+  height: 30em;
+  transform: rotate(-7deg);
+  background-color: var(--contrast);
+  border-radius: 10px;
+}
 .profile-image{
   /* display: block; */
   width: 30em;
@@ -60,10 +75,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: rotate(-7deg);
 }
 .image{
   height: auto;
-  width: 90%;
+  width: 100%;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
@@ -86,7 +102,10 @@
   color: var(--accent);
   font-weight: bold;
 }
-
+.skill-name-alt{
+  background-color: var(--contrast);
+  color: var(--primary);
+}
 .skills-footer{
   display: block;
   font-weight:  bold;
@@ -193,9 +212,24 @@
     width: 100%;
     height: 100%;
   }
-  .profile-image{
-    width: 95%;
+  .profile-image-card1{
+    /* visibility: hidden; */
+    width: 80%;
     margin: auto;
+    height: 300px;
+    /* transform: rotate(0); */
+    margin-bottom: 3em;
+  }
+  .profile-image-card2{
+    /* visibility: hidden; */
+    width: 100%;
+    height: 100%;
+    /* transform: rotate(0); */
+  }
+  .profile-image{
+    width: 100%;
+    height: 100%;
+    /* transform: rotate(0); */
   }
   .home-main h2{
     /* font-family: Quicksand !important; */

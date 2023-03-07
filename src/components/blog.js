@@ -8,13 +8,18 @@ export default function Blog() {
                top: 0,
                behavior: "smooth"
              });
-             document.title = "Blog | Coming soon...";
-          }
+             document.title = "Blog | Redirecting to Medium...";
+          },
+          setTimeout(() => {
+               window.location.href = "https://medium.com/@hanif.adedotun";
+          },2000)
           ,[]);
+
+     
 
      return(
           <div>
-               <div className='blog-coming-soon'>Coming soon....</div>
+               <div className='blog-coming-soon'>Redirecting to Medium....</div>
 
                <span id='footer-cert'><Footer/></span>
           </div>
