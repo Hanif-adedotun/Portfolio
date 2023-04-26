@@ -42,10 +42,15 @@ function App() {
     return Math.floor(Math.random() * (max - min) ) + min;
   }
   const summary =[
-    'Hey! I am Hanif, I love everything technology and how its used to solve problems.',
-    'I am a technology enthusiast, a fast learner and I have a never ending quest to learn new things everyday. I work well with people and I pay great attention to details.',
-    'My journey into tech started about 5 years ago, from graphics designs to creating websites with html and css, to creating my first full stack project 2 years ago and then recently transitioning into machine learning and A.I it\'s importance in shaping future technologies and how we can use it to accelerate our growth as a nation and continent at large.',
-    'I am currently building a social platform that is bridging the gap between learning and the industry, by providing a community of interns sharing their experiences.',
+    'Hello there! My name is Hanif, and I have a passion for technology and using it to solve problems.', 
+
+    'Over the years, I have explored various aspects of tech - from designing graphics to creating websites using HTML and CSS. I have been delving into the exciting world of machine learning and A.I. I am passionate about the role that these emerging technologies play in shaping our future, and how they can be used to accelerate growth in our nation and beyond.',
+    
+    'Currently, I am building a startup that solves the problem of a lack of information about internship opportunities while providing interns with the tools they need to excel.',
+    
+    'My tech stack includes React, NodeJS, NextJs, PHP, Python, Java, MongoDB, Typescript, Corel Draw, Figma, and many more. I am always on the lookout for new challenges and opportunities to grow my skills and knowledge.',
+    
+    'Let us connect and explore the possibilities together'
   ]
   const skills = ['Javascript', 'React', 'NextJs', 'PHP', 'C++', 'Nodejs','MySql', 'MongoDB', 'Figma', 'Python', 'Machine Learning'];
 
@@ -66,16 +71,16 @@ function App() {
   ]
   const experiences = [
     {
-      'time': 'Aug 2022 - Present',
-      'title': 'Community Lead',
-      'org': ['GDSC Nile University', 'https://gdsc.community.dev/nile-university-of-nigeria/'],
-      'desc': `I have taken on the responsibility to help students grow as developers and empower these students to impact their communities with technology. Through this experience I hope to be leaving a legacy of impact but also growing as an individual and contributing in a meaningful way to the greater developer ecosystem`
-    },
-    {
       'time': 'Sept 2022 - Present',
       'title': 'Co-founder',
       'org': ['Ntrna technologies', 'https://getinterna.com/'],
       'desc': `Our flagship product Interna, is a solution designed to provide internship opportunities to every student, equip them with professional tools and provide a community of students who have undergone internships and students who are looking for internships.`
+    },
+    {
+      'time': 'Aug 2022 - Present',
+      'title': 'Community Lead',
+      'org': ['GDSC Nile University', 'https://gdsc.community.dev/nile-university-of-nigeria/'],
+      'desc': `I have taken on the responsibility to help students grow as developers and empower these students to impact their communities with technology. Through this experience I hope to be leaving a legacy of impact but also growing as an individual and contributing in a meaningful way to the greater developer ecosystem`
     },
     {
       'time': 'June 2022 - Present',
@@ -108,17 +113,18 @@ function App() {
          
 
           <div className='home-main-loop'>
-              I am somewhat of <TextLoop 
+              <TextLoop 
               interval={2500} 
               adjustingSpeed={500} 
               springConfig={{ stiffness: 120, damping: 20 }}
               className='home-text-loop'
               children={[
-                "a Full Stack Developer",
-                "a Graphics Designer",
-                "an Engineering Student",
-                "a Machine Learning enthusiast",
-                "a web3 advocate"
+                "Full Stack Developer",
+                "Visionary",
+                "Graphics Designer",
+                "Engineering Student",
+                "Machine Learning enthusiast",
+                "Web3 believer"
               ]}/>           
           </div>
 
@@ -138,6 +144,7 @@ function App() {
                <div className='profile-image-card1'>
                   <div className='profile-image-card2'>
                     <div className='profile-image'>
+                      <img src={HanifImages[getRndInteger(0, HanifImages.length)]} alt='A potrait of me' className='image'/>
                       <img src={HanifImages[getRndInteger(0, HanifImages.length)]} alt='A potrait of me' className='image'/>
                     </div>
                   </div>
