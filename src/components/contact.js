@@ -53,8 +53,7 @@ function Contact({onClose}){
                'email': '',
                'message': ''
           }), 2000);
-
-                             
+      
           send(process.env.REACT_APP_ServiceID,process.env.REACT_APP_TemplateID, value, process.env.REACT_APP_UserID).then((res) => {
                console.log('SUCCESS!', res.status, res.text);
                setSubmitText('Message Sent!');
