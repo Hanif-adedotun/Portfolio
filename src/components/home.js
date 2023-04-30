@@ -145,7 +145,6 @@ function App() {
                   <div className='profile-image-card2'>
                     <div className='profile-image'>
                       <img src={HanifImages[getRndInteger(0, HanifImages.length)]} alt='A potrait of me' className='image'/>
-                      {/* <img src={HanifImages[getRndInteger(0, HanifImages.length)]} alt='A potrait of me' className='image'/> */}
                     </div>
                   </div>
                 </div>
