@@ -2,24 +2,27 @@ import {React, useEffect} from 'react';
 import Footer from './footer';
 import '../styles/home.css';
 
+// Technologies
+import {technologies} from '../utility/technologies';
+
 // Scrolling text
 import { TextLoop } from "react-text-loop-next";
 
 // Anmation
 import {Slide} from "react-awesome-reveal";
 
+import {Link} from "react-router-dom";
+
 // Materiul UI
-import {Grid} from '@mui/material';
+import {Grid, Button} from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
 
 // My picture
-import Hanif from '../images/hanif.jpg';
+import {education, summary, experiences} from '../utility/aboutme';
 
 // SVG Icons
 import Divider from '../images/divider.svg';
-import Person from '../images/icons/person2.svg';
-import Books from '../images/icons/books.svg';
 import Worker from '../images/icons/work.svg';
 
 
@@ -41,77 +44,23 @@ function App() {
   function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
   }
-  const summary =[
-    'Hello there! My name is Hanif, and I have a passion for technology and using it to solve problems.', 
 
-    'Over the years, I have explored various aspects of tech - from designing graphics to creating websites using HTML and CSS. I have been delving into the exciting world of machine learning and A.I. I am passionate about the role that these emerging technologies play in shaping our future, and how they can be used to accelerate growth in our nation and beyond.',
-    
-    'Currently, I am building a startup that solves the problem of a lack of information about internship opportunities while providing interns with the tools they need to excel.',
-    
-    'My tech stack includes React, NodeJS, NextJs, PHP, Python, Java, MongoDB, Typescript, Corel Draw, Figma, and many more. I am always on the lookout for new challenges and opportunities to grow my skills and knowledge.',
-    
-    'Let us connect and explore the possibilities together'
-  ]
-  const skills = ['Javascript', 'React', 'NextJs', 'PHP', 'C++', 'Nodejs','MySql', 'MongoDB', 'Figma', 'Python', 'Machine Learning'];
-
-  const education = [
-    {
-      'ongoing': true,
-      'time': '2019-2024',
-      'title': 'BSc. Computer Engineering',
-      'org': ['Nile university of Nigeria', 'https://www.nileuniversity.edu.ng/'],
-    },
-    {
-      'ongoing': false,
-      'time': '2016-2019',
-      'title': 'Secondary School certificate',
-      'org': ['Glisten International Academy', 'https://glisteninternationalacademy.com/secondary-school/'],
-    },
-
-  ]
-  const experiences = [
-    {
-      'time': 'Sept 2022 - Present',
-      'title': 'Co-founder',
-      'org': ['Ntrna technologies', 'https://getinterna.com/'],
-      'desc': `Our flagship product Interna, is a solution designed to provide internship opportunities to every student, equip them with professional tools and provide a community of students who have undergone internships and students who are looking for internships.`
-    },
-    {
-      'time': 'Aug 2022 - Present',
-      'title': 'Community Lead',
-      'org': ['GDSC Nile University', 'https://gdsc.community.dev/nile-university-of-nigeria/'],
-      'desc': `I have taken on the responsibility to help students grow as developers and empower these students to impact their communities with technology. Through this experience I hope to be leaving a legacy of impact but also growing as an individual and contributing in a meaningful way to the greater developer ecosystem`
-    },
-    {
-      'time': 'June 2022 - Present',
-      'title': 'Backend Software Engineer',
-      'org': ['Devtranet', 'https://devtranet.tech/'],
-      'desc': `Devtranet is a global network for developers and technologists to connect, build, and discover opportunities.`,   
-    },
-    {
-      'time': 'January 2021 - August 2022',
-      'title': 'AI & ML Lead',
-      'org': ['Google Developer Student Club - Nile University Chapter', 'https://www.nileuniversity.edu.ng/'],
-      'desc': `I was appointed as the development lead in the Artificial Intelligence team. This was a platform for me to create awareness of the impact of AI in our lives and how to help students build solutions using the technology`
-    },
-    {
-      'time': 'Mar 2021 - Sep 2021',
-      'title': 'Full stack web developer - Internship',
-      'org': ['Utility ware', 'https://www.linkedin.com/company/utility-ware/'],
-      'desc': `I was a full stack web developer intern at Utility ware, a company that provides services to the public. I was responsible for developing the frontend and backend of the company's website.`
-    }
-  ]
   return (
     <div className='home-cont'>
 
       <div className="App">
        
         <div className='home-main'>
-        
-         
-            <h2>Hello, I'm <span className="text-contrast"> Hanif</span></h2>
-         
 
+          <img src='/home_avatar.svg' className='home_image' alt="Hanif's alter ego"/>
+        
+        <div>
+          <p className='intro-text'>Hello, I am  Hanif</p>   
+          <img src="/assets/scratch.svg" width={'100px'} alt="Scratch" className='scratch'/>
+        </div>
+
+          {/* <h2><span className="text-contrast"> Hanif</span></h2> */}
+              
           <div className='home-main-loop'>
               <TextLoop 
               interval={2500} 
@@ -120,7 +69,7 @@ function App() {
               className='home-text-loop'
               children={[
                 "Full Stack Developer",
-                "Visionary",
+                "Community Lead",
                 "Graphics Designer",
                 "Engineering Student",
                 "Machine Learning enthusiast",
@@ -128,18 +77,17 @@ function App() {
               ]}/>           
           </div>
 
+          <Button variant="outlined" className='resume-dowload' >
+            <Link to='/resume'> My resume</Link>
+          </Button>
+
         </div> 
       </div>
-        
         <div className='skills-section'>
           
-          <div className='skills-eulogy'>I’ll probably be the shortest person in a room, 
-            but trust me not in knowledge...
-          </div>
-
           <Grid container justifyContent="center"  className='profile-container'>
             
-              <Grid item md={6} xs={12} justifyContent="center" className='profile-image-container'>
+              <Grid item md={5} xs={12} justifyContent="center" className='profile-image-container'>
                <Slide direction='left'>
                <div className='profile-image-card1'>
                   <div className='profile-image-card2'>
@@ -152,23 +100,30 @@ function App() {
               </Grid>
               
 
-              <Grid container item md={4} xs={9} justifyContent="center" className='profile-skills'>
-                <Grid item xs={12}><span className='skills-head'>My Top Skills</span></Grid>
-                {skills.map((skill,i) =>
+              <Grid container item md={6} xs={9} justifyContent="center" className='profile-skills'>
+                {/* <Grid item xs={12}><span className='skills-head'>Who is Hanif?</span></Grid> */}
+                <h2 className='skills-head'>Who I am</h2>
+                  <Slide direction='up' triggerOnce>
+                    {summary.map((v,i) => 
+                      <div className='profile-summary' key={i}>{v}</div>
+                    )}
+                  </Slide>
+
+                {/* {skills.map((skill,i) =>
                   <Grid item xs={5}  justifyContent="center" className='skill-container' key={i}>
                     <Slide direction='up' cascade >
                      <div className={`skill-name ${(i%2===0) ? 'skill-name-alt': ''}`}>{skill}</div>
                      </Slide>
                   </Grid>
                 )}               
-                  <Grid item xs={12}><span className='skills-footer'>...and of course HTML and CSS</span></Grid>
+                  <Grid item xs={12}><span className='skills-footer'>...and of course HTML and CSS</span></Grid> */}
               </Grid>
           </Grid>
 
           <span className='divider-container'><img src={Divider} alt='divider' className='divider'/></span>
 
             {/* Me section */}
-            <div className='section'>
+            {/* <div className='section'>
               <Grid container justifyContent="center" alignitems='center'>
                 <Grid item md={6}  xs={12} >
                   <h2 className='skills-head'>Who I am</h2>
@@ -185,19 +140,39 @@ function App() {
                 </Slide>
                 </Grid>
               </Grid>
+          </div> */}
+
+          {/* technologies section */}
+          <div className='section tech-section'>
+            <h2>Technologies I work with</h2>
+            <Grid container spacing={2}>
+            {technologies.map((categories,i) =>
+                  <Grid item xs={12} md={6}  justifyContent="center" key={i}>
+                    <h2>{categories.title}{typeof(categories.stack)}</h2>
+                    <div>
+                      {categories.stack.map((tech, i) => {
+                        <>
+                        {tech}
+                        <img src={tech} key={i} height={50} alt="tech"/>
+                        </>
+                      })}
+                    </div>
+                    
+                  </Grid>
+                )} 
+            </Grid>
           </div>
 
           {/* Education section */}
           <div className='section'>
           <h2 className='skills-head'>Education</h2>
           <Grid container justifyContent="center" alignitems='center'>
-            <Grid item container sm={6} xs={12} >
               {(Object.values(education).map((edu,i) => 
              
                 <div className='card-container' key={i}>
                    
-                  <Grid container >
-                    <Grid item  xs={3}><div className='card-icon'><SchoolIcon color='inherit' fontSize='large'/></div></Grid>
+                  <Grid container md={12}>
+                    <Grid item  xs={3} justifyContent="center"><div className='card-icon'><SchoolIcon color='inherit' fontSize='large'/></div></Grid>
                     <Grid item  xs={9} justifyContent="center" className='card-text'>
                       
                       <span className='card-time'>{edu.time} {(edu.ongoing) ? <span className='ongoing'>Ongoing...</span>:''}</span>
@@ -210,13 +185,6 @@ function App() {
                 </div>
           
                 ))}
-          </Grid>  
-
-            <Grid item  sm={6} xs={12}>
-            <Slide direction="right">
-                  <img src={Books} alt='Books SVG Icon' className='books-icon'/> 
-            </Slide>
-            </Grid>
           </Grid>
           </div>
 

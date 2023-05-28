@@ -3,20 +3,20 @@
 
 .home-cont{
   background-color: var(--primary);
-  background-image: url("../images/home_bg.svg");
+  background-image: url("../images/home_bg_v2.png");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   padding-top: 1px;
   overflow-x: hidden;
+  height: 100vh;
 }
 
 .App {
   text-align: center;
   background: transparent;
   color: white;
-  min-height: 70vh;
-  margin-top: 30vh;
+  border: 2px solid red;
 }
 .bg-img{
  
@@ -27,6 +27,20 @@
   /* margin-top: 40vh; */
   font-family: Quicksand !important;
   font-size: 4em !important;
+}
+.home_image{
+  width: 200px;
+  height: auto;
+  margin: auto;
+  /* bo?rder: 2px solid red; */
+}
+.scratch{
+  margin-top: -200px;
+  margin-right: -20px;
+}
+.intro-text{
+font-weight: 400;
+font-size: 24px;
 }
 .home-main-loop{
   font-size: 2em !important;
@@ -39,17 +53,18 @@
   color: var(--contrast);
 }
 .skills-section{
+  padding-top: 2em !important;
   min-height: 50vh;
   background-color: var(--accent);
 }
 
-.skills-eulogy{
+/* .skills-eulogy{
   color: var(--primary);
   font-size: 120% !important;
   margin: 2em auto !important;
-}
+} */
 .profile-container{
-  margin: 5em 0;
+  margin: 5em 0 2em 0;
 }
 .profile-image-card1{
   width: 30em;
@@ -120,9 +135,19 @@
 }
 
 /* Me Section */
-.person-icon{
+/* .person-icon{
   height: auto;
   width: 100%;
+} */
+
+/* Technology section */
+.tech-section{
+  padding-top: 2em !important;
+  min-height: 100vh;
+  background-color: var(--primary);
+}
+.tech-section h2{
+  color: white;
 }
 /* Education Section */
 .books-icon{
@@ -142,18 +167,18 @@
 .profile-summary{
   text-align: left;
   max-width: 80%;
-  margin: 0 auto 1em auto;
+  margin: 0 0 1.5em auto;
   font-size: large;
 }
 .card-container{
   padding: 1em 1em 1em 0;
   margin: 2em auto;
-  min-width: 70%;
-  max-width: 80%;
+  min-width: 40%;
+  max-width: 60%;
   width: max-content;
   height: max-content;
   border-radius: 10px;
-  background: rgba(17, 34, 51, 0.56);
+  background: rgba(17, 34, 51);
 }
 .card-icon{
   margin: .5em auto 0 .5em;
@@ -162,7 +187,7 @@
   border-radius: 50%;
   padding: .5em;
   background-color: var(--contrast);
-  color: rgba(17, 34, 51, 0.56);
+  color: rgba(17, 34, 51);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,15 +212,15 @@
 .card-title{
   display: block;
   font-weight: bold;
-  font-size: medium;
+  font-size: 24px;
   color: var(--accent);
   margin-bottom: .3em;
 }
 .card-org{
   display: block;
-  font-weight: bold;
-  font-size: large;
-  color: var(--contrast);
+  font-weight: medium;
+  font-size: 20px;
+  color: var(--accent);
   margin-bottom: .5em;
 }
 .card-org a{
@@ -211,6 +236,11 @@
     transform: rotate(90deg);
     width: 100%;
     height: 100%;
+  }
+  /* .App{
+    min-height: 70vh;
+    margin-top: 30vh;
+  } */
   }
   .profile-image-card1{
     /* visibility: hidden; */
@@ -230,6 +260,9 @@
     width: 100%;
     height: 100%;
     /* transform: rotate(0); */
+  }
+  .home_image{
+    width: 150px;
   }
   .home-main h2{
     /* font-family: Quicksand !important; */
@@ -258,10 +291,12 @@
     height: auto;
     width: 40%;
   }
-
-
-}
-
+  .card-title{
+    font-size: 16px;
+  }
+  .card-org{
+    font-size: 14px;
+  }
 
 
 
