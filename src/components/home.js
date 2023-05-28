@@ -54,18 +54,18 @@ function App() {
 
           <img src='/home_avatar.svg' className='home_image' alt="Hanif's alter ego"/>
         
-        <div>
-          <p className='intro-text'>Hello, I am  Hanif</p>   
+        
+          <p className='intro-text'>Hey, I am  Hanif 👋</p>   
           <img src="/assets/scratch.svg" width={'100px'} alt="Scratch" className='scratch'/>
-        </div>
+     
 
           {/* <h2><span className="text-contrast"> Hanif</span></h2> */}
               
           <div className='home-main-loop'>
               <TextLoop 
-              interval={2500} 
+              interval={3000} 
               adjustingSpeed={500} 
-              springConfig={{ stiffness: 120, damping: 20 }}
+              springConfig={{ stiffness: 120, damping: 10 }}
               className='home-text-loop'
               children={[
                 "Full Stack Developer",
@@ -77,7 +77,7 @@ function App() {
               ]}/>           
           </div>
 
-          <Button variant="outlined" className='resume-dowload' >
+          <Button variant="outlined" className='resume-button' >
             <Link to='/resume'> My resume</Link>
           </Button>
 
@@ -85,9 +85,9 @@ function App() {
       </div>
         <div className='skills-section'>
           
-          <Grid container justifyContent="center"  className='profile-container'>
+          <Grid container justifyContent="center" alignItems={"center"}  className='profile-container'>
             
-              <Grid item md={5} xs={12} justifyContent="center" className='profile-image-container'>
+              <Grid item md={5} xs={12} justifyContent="center"  className='profile-image-container'>
                <Slide direction='left'>
                <div className='profile-image-card1'>
                   <div className='profile-image-card2'>

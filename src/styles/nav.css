@@ -52,12 +52,11 @@
 }
 
 .nav-link-contact{
-  background-color: var(--contrast) !important;
-  color: var(--primary) !important;
+  color: var(--contrast) !important;
   font-weight: bold !important;
   font-size: large;
-  font-family: Quicksand ;
-  /* padding: .2em .5em !important; */
+  /* font-family: Quicksand ; */
+  border: 2px solid var(--contrast) !important;
   border-radius: 5px !important;
   margin: auto;
 }
