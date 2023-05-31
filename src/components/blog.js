@@ -11,7 +11,7 @@ export default function Blog() {
              document.title = "Blog | Redirecting to Medium...";
           },
           setTimeout(() => {
-               window.location.href = "https://medium.com/@hanif.adedotun";
+               window.location.href = "https://medium.com/@devhanif";
           },2000)
           ,[]);
 
