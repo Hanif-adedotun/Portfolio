@@ -1,6 +1,7 @@
 import {React, useEffect} from 'react';
 import Footer from './footer';
 import '../styles/home.css';
+import Typewriter from 'typewriter-effect';
 
 // Technologies
 import {technologies} from '../utility/technologies';
@@ -54,18 +55,34 @@ function App() {
 
           <img src='/home_avatar.svg' className='home_image' alt="Hanif's alter ego"/>
         
-        
-          <p className='intro-text'>Hey, I am  Hanif 👋</p>   
-          <img src="/assets/scratch.svg" width={'100px'} alt="Scratch" className='scratch'/>
-     
+          <div>
+            <p className='intro-text'>Hey, I am Hanif Adedotun👋</p>   
+            <img src="/assets/scratch.svg" width={'100px'} alt="Scratch" className='scratch'/>
+          </div>
 
           {/* <h2><span className="text-contrast"> Hanif</span></h2> */}
               
-          <div className='home-main-loop'>
-              <TextLoop 
+          
+            <div ClassName='home-tex-loop'>
+              <Typewriter   
+                  onInit={(typewriter) => {
+                    typewriter
+                    .typeString("Full Stack Developer")
+                    .pauseFor(300)
+                    .deleteAll()
+
+                    .typeString("Community Lead")
+                    .pauseFor(300)
+                    .deleteAll()
+                    .start();
+                  }}
+                  options={{loop: true, skipAddStyles:true}}
+                />
+              </div>
+              {/* <TextLoop 
               interval={3000} 
               adjustingSpeed={500} 
-              springConfig={{ stiffness: 120, damping: 10 }}
+              springConfig={{ stiffness: 120, damping: 1 }}
               className='home-text-loop'
               children={[
                 "Full Stack Developer",
@@ -74,12 +91,14 @@ function App() {
                 "Engineering Student",
                 "Machine Learning enthusiast",
                 "Web3 believer"
-              ]}/>           
-          </div>
+              ]}/>            */}
+          
 
-          <Button variant="outlined" className='resume-button' >
-            <Link to='/resume'> My resume</Link>
-          </Button>
+          <Link to='/resume'> 
+            <Button variant="outlined" className='resume-button' >
+             My resume
+            </Button>
+          </Link>
 
         </div> 
       </div>
@@ -145,18 +164,17 @@ function App() {
           {/* technologies section */}
           <div className='section tech-section'>
             <h2>Technologies I work with</h2>
-            <Grid container spacing={2}>
+            <Grid container columnSpacing={2}  rowSpacing={12} className="tech-section-container" justifyContent="space-around">
             {technologies.map((categories,i) =>
-                  <Grid item xs={12} md={6}  justifyContent="center" key={i}>
-                    <h2>{categories.title}{typeof(categories.stack)}</h2>
-                    <div>
-                      {categories.stack.map((tech, i) => {
-                        <>
-                        {tech}
-                        <img src={tech} key={i} height={50} alt="tech"/>
-                        </>
-                      })}
-                    </div>
+                  <Grid item xs={10} md={5}   key={i}>
+                    <h2>{categories.title}</h2>
+                    <Grid container spacing={1} justifyContent="center" className='tech-section-icons'>
+                      {categories.stack.map((tech, i) => 
+                        <Grid item xs={3} >
+                        <img src={tech} key={i} height={'25px'} alt="tech"/>
+                        </Grid>
+                      )}
+                    </Grid>
                     
                   </Grid>
                 )} 
@@ -165,27 +183,28 @@ function App() {
 
           {/* Education section */}
           <div className='section'>
-          <h2 className='skills-head'>Education</h2>
-          <Grid container justifyContent="center" alignitems='center'>
-              {(Object.values(education).map((edu,i) => 
-             
-                <div className='card-container' key={i}>
-                   
-                  <Grid container md={12}>
-                    <Grid item  xs={3} justifyContent="center"><div className='card-icon'><SchoolIcon color='inherit' fontSize='large'/></div></Grid>
-                    <Grid item  xs={9} justifyContent="center" className='card-text'>
-                      
-                      <span className='card-time'>{edu.time} {(edu.ongoing) ? <span className='ongoing'>Ongoing...</span>:''}</span>
-                      <span className='card-title'>{edu.title}</span>
-                      <span className='card-org'><a href={edu.org[1]} target='_blank' rel="noreferrer">{edu.org[0]}</a></span>
+            <h2 className='skills-head'>Education</h2>
+            <Grid container justifyContent="center" alignitems='center'>
+                {(Object.values(education).map((edu,i) => 
+              
+                  // <div className='card-container' key={i}>
                     
+                    <Grid container sm={6} xs={12} className='card-container'>
+                      <Grid item  xs={3} justifyContent="center"><div className='card-icon'><SchoolIcon color='inherit' fontSize='large'/></div></Grid>
+                      <Grid item  xs={9} justifyContent="center" className='card-text'>
+                        
+                        <span className='card-time'>{edu.time} {(edu.ongoing) ? <span className='ongoing'>Ongoing...</span>:''}</span>
+                        <span className='card-title'>{edu.title}</span>
+                        <span className='card-org'><a href={edu.org[1]} target='_blank' rel="noreferrer">{edu.org[0]}</a></span>
+                      
+                      </Grid>
                     </Grid>
-                  </Grid>
-                 
-                </div>
-          
-                ))}
-          </Grid>
+                  
+                  // </div>
+            
+                  ))}
+            </Grid>
+            <div className='timeline-bar'></div>
           </div>
 
 

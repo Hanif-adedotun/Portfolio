@@ -26,7 +26,6 @@
  background-color: var(--primary);
 }
 .home-main{
-  border: 2px solid red;
   height: max-content;
 }
 .home-main h2{
@@ -38,26 +37,32 @@
   width: 200px;
   height: auto;
   margin: auto;
-  /* bo?rder: 2px solid red; */
 }
 .scratch{
-  margin-top: -100%; 
+  position: absolute;
+  margin-top: -28px; 
   margin-right: -20px;
-  border: 2px solid red;
 }
 .intro-text{
 font-weight: 400;
 font-size: 24px;
 }
-.home-text-loop{
-  color: var(--contrast);
-  font-weight: bold;
+.home-tex-loop{
+  color: var(--contrast) !important;
+  font-weight: bold !important;
   font-size: 32px !important;
-  margin: 2em auto;
+  margin: 2em auto !important;
 }
 .resume-button{
   color: var(--contrast) !important;
   text-decoration: none !important;
+  font-family: montserrat !important;
+  border: 2px solid var(--contrast) !important;
+  border-radius: 5px !important;
+}
+.resume-button:hover{
+  background-color: var(--contrast) !important;
+  color: var(--primary) !important;
 }
 .text-contrast{
   color: var(--contrast);
@@ -75,7 +80,6 @@ font-size: 24px;
 } */
 .profile-container{
   margin: 5em 0;
-  border: 2px solid red;
 }
 .profile-image-card1{
   width: 30em;
@@ -153,12 +157,25 @@ font-size: 24px;
 
 /* Technology section */
 .tech-section{
-  padding-top: 2em !important;
+  padding: 4em 1em;
   min-height: 100vh;
   background-color: var(--primary);
 }
 .tech-section h2{
-  color: white;
+  font-size: 36px;
+  color: var(--accent);
+}
+.tech-section-container{
+  margin-top: 4em;
+}
+.tech-section-container h2{
+  font-size: 24px;
+  color: var(--contrast);
+}
+.tech-section-icons{
+  background: rgba(29, 207, 247, 0.1);
+  border-radius: 20px;
+  padding: 1em 1em;
 }
 /* Education Section */
 .books-icon{
@@ -248,10 +265,9 @@ font-size: 24px;
     width: 100%;
     height: 100%;
   }
-  /* .App{
-    min-height: 70vh;
-    margin-top: 30vh;
-  } */
+  .tech-section-container{
+    margin-top: 3em;
+  }
   }
   .profile-image-card1{
     /* visibility: hidden; */
@@ -278,9 +294,6 @@ font-size: 24px;
   .home-main h2{
     /* font-family: Quicksand !important; */
     font-size: 3em !important;
-  }
-  .home-main-loop{
-    font-size: x-large !important;
   }
 
   .skill-container{

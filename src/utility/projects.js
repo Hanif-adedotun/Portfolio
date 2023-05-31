@@ -12,8 +12,9 @@ import Zaithoon from '../images/graphics/zaithoon.png';
 
 // Web Logos
 import StartVest from '../images/web/startvest.jpg';
+import Interna from '../images/web/interna.jpg';
 import VM from '../images/web/voltex.png';
-import Han from '../images/web/hanif.jpg';
+import Han from '../images/web/hanif.png';
 import Convert from '../images/web/convert.PNG';
 import Salim from '../images/web/ss.jpg';
 import Eesher from '../images/web/es.jpg';
@@ -58,6 +59,12 @@ export const websites=[
           'tools': ['Nextjs', 'Typescript', 'Vercel', 'AWS', 'MongoDB']
      },
      {
+          'img': Interna,
+          'name': ['Interna','https://getinterna.com'],
+          'summary': 'Interna is a solution designed to provide internship opportunities to every student, equip them with professional tools and provide a community of students who have undergone internships and students who are looking for internships.',
+          'tools': ['Nextjs', 'Vercel', 'Firebase', 'MongoDB', 'Google Cloud Platform']
+     },
+     {
           'img': StartVest,
           'name': ['StartVest','https://startvest.io'],
           'summary': 'StartVest is an equity crowdfunding platform that allows people with creative ideas to register and get funded. We provide everyone the option to invest in startups, and we also give startups the platform to post job vacancies for job seekers.',
@@ -75,12 +82,12 @@ export const websites=[
           'summary': 'This javascript tool converts numbers to words in Nigerian currency. This is an open source software and can be distributed and edited provided the original developer is acknowledged.',
           'tools': ['HTML', 'CSS', 'Vanilla Javascript', 'JQuery']
      },
-     {
-          'img': Salim,
-          'name': ['Salim Store', 'https://salimtilde7.github.io/ecommerce/index.html'],
-          'summary': 'A frontend design of an E-commerce store selling branded T-shirts to customers using the name Salim Store.', 
-          'tools': ['HTML', 'CSS', 'Vanilla Javascript', 'JQuery']
-     },
+     // {
+     //      'img': Salim,
+     //      'name': ['Salim Store', 'https://salimtilde7.github.io/ecommerce/index.html'],
+     //      'summary': 'A frontend design of an E-commerce store selling branded T-shirts to customers using the name Salim Store.', 
+     //      'tools': ['HTML', 'CSS', 'Vanilla Javascript', 'JQuery']
+     // },
      {
           'img': Eesher,
           'name': ['Eesher’s style Blog', 'https://aisha2003.github.io/eeshers-style/#/'],
