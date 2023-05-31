@@ -22,12 +22,17 @@ export const education = [
        'title': 'Secondary School certificate',
        'org': ['Glisten International Academy', 'https://glisteninternationalacademy.com/secondary-school/'],
      },
- 
+     {
+      'ongoing': false,
+      'time': '2013-2016',
+      'title': 'Secondary School certificate',
+      'org': ['Efab International School', 'https://www.efabinternationalschool.com/'],
+    }, 
    ]
 export const experiences = [
      {
        'time': 'Sept 2022 - Present',
-       'title': 'Co-founder',
+       'title': 'Co-founder/COO',
        'org': ['Ntrna technologies', 'https://getinterna.com/'],
        'desc': `Our flagship product Interna, is a solution designed to provide internship opportunities to every student, equip them with professional tools and provide a community of students who have undergone internships and students who are looking for internships.`
      },

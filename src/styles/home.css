@@ -190,7 +190,7 @@ font-size: 24px;
 
 /* Genenal Section */
 .section{
-  margin: 5% auto;
+  margin: 20% auto;
 }
 .profile-summary{
   text-align: left;
@@ -201,8 +201,8 @@ font-size: 24px;
 .card-container{
   padding: 1em 1em 1em 0;
   margin: 2em auto;
-  min-width: 40%;
-  max-width: 60%;
+  min-width: 70%;
+  max-width: 70%;
   width: max-content;
   height: max-content;
   border-radius: 10px;
@@ -268,6 +268,9 @@ font-size: 24px;
   .tech-section-container{
     margin-top: 3em;
   }
+  .home-tex-loop{
+    font-size: 16px !important;
+  }
   }
   .profile-image-card1{
     /* visibility: hidden; */
@@ -307,13 +310,11 @@ font-size: 24px;
 
   /* Experience Section */
   .worker-icon{
-    height: auto;
-    width: 60%;
+    display: none;
   }
   /* Education Section */
   .books-icon{
-    height: auto;
-    width: 40%;
+    display: none;
   }
   .card-title{
     font-size: 16px;

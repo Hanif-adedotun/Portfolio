@@ -6,9 +6,6 @@ import Typewriter from 'typewriter-effect';
 // Technologies
 import {technologies} from '../utility/technologies';
 
-// Scrolling text
-import { TextLoop } from "react-text-loop-next";
-
 // Anmation
 import {Slide} from "react-awesome-reveal";
 
@@ -25,6 +22,7 @@ import {education, summary, experiences} from '../utility/aboutme';
 // SVG Icons
 import Divider from '../images/divider.svg';
 import Worker from '../images/icons/work.svg';
+import Books from '../images/icons/books.svg';
 
 
 function App() {
@@ -63,7 +61,8 @@ function App() {
           {/* <h2><span className="text-contrast"> Hanif</span></h2> */}
               
           
-            <div ClassName='home-tex-loop'>
+            <h2 ClassName='home-tex-loop'>
+              <span className="text-contrast">
               <Typewriter   
                   onInit={(typewriter) => {
                     typewriter
@@ -71,14 +70,24 @@ function App() {
                     .pauseFor(300)
                     .deleteAll()
 
-                    .typeString("Community Lead")
+                    .typeString("GDSC Community Lead")
                     .pauseFor(300)
                     .deleteAll()
+
+                    .typeString("Machine Learning Engineer")
+                    .pauseFor(300)
+                    .deleteAll()
+
+                    .typeString("Graphics Designer")
+                    .pauseFor(300)
+                    .deleteAll()
+
                     .start();
                   }}
-                  options={{loop: true, skipAddStyles:true}}
+                  options={{loop: true, skipAddStyles:false}}
                 />
-              </div>
+                </span>
+              </h2>
               {/* <TextLoop 
               interval={3000} 
               adjustingSpeed={500} 
@@ -128,39 +137,13 @@ function App() {
                     )}
                   </Slide>
 
-                {/* {skills.map((skill,i) =>
-                  <Grid item xs={5}  justifyContent="center" className='skill-container' key={i}>
-                    <Slide direction='up' cascade >
-                     <div className={`skill-name ${(i%2===0) ? 'skill-name-alt': ''}`}>{skill}</div>
-                     </Slide>
-                  </Grid>
-                )}               
-                  <Grid item xs={12}><span className='skills-footer'>...and of course HTML and CSS</span></Grid> */}
+
               </Grid>
           </Grid>
 
           <span className='divider-container'><img src={Divider} alt='divider' className='divider'/></span>
 
-            {/* Me section */}
-            {/* <div className='section'>
-              <Grid container justifyContent="center" alignitems='center'>
-                <Grid item md={6}  xs={12} >
-                  <h2 className='skills-head'>Who I am</h2>
-                  {summary.map((v,i) => 
-                    <div className='profile-summary' key={i}>{v}</div>
-                  )}
-                </Grid>
-
-                <Grid item md={6}  xs={12}>
-                <Slide direction="right">
-                      <div className='img-cover-1'>
-                        <img src={Person} alt='A person SVG Icon' className='person-icon'/> 
-                      </div>
-                </Slide>
-                </Grid>
-              </Grid>
-          </div> */}
-
+ 
           {/* technologies section */}
           <div className='section tech-section'>
             <h2>Technologies I work with</h2>
@@ -185,9 +168,10 @@ function App() {
           <div className='section'>
             <h2 className='skills-head'>Education</h2>
             <Grid container justifyContent="center" alignitems='center'>
+             <Grid item container sm={6} xs={12} >
                 {(Object.values(education).map((edu,i) => 
               
-                  // <div className='card-container' key={i}>
+                  <div className='card-container' key={i}>
                     
                     <Grid container sm={6} xs={12} className='card-container'>
                       <Grid item  xs={3} justifyContent="center"><div className='card-icon'><SchoolIcon color='inherit' fontSize='large'/></div></Grid>
@@ -200,9 +184,16 @@ function App() {
                       </Grid>
                     </Grid>
                   
-                  // </div>
+                   </div>
             
                   ))}
+              </Grid>
+
+              <Grid item  sm={6} xs={0}>
+                <Slide direction="right">
+                      <img src={Books} alt='Books SVG Icon' className='books-icon'/> 
+                </Slide>
+              </Grid>
             </Grid>
             <div className='timeline-bar'></div>
           </div>
@@ -231,7 +222,7 @@ function App() {
                       <span className='card-time'>{work.time}</span>
                       <span className='card-title'>{work.title}</span>
                       <span className='card-org'><a href={work.org[1]} target='_blank' rel="noreferrer">{work.org[0]}</a></span>
-                      <span className='card-desc'>{work.desc}</span>
+                      {/* <span className='card-desc'>{work.desc}</span> */}
                     </Grid>
                   </Grid>
                 </div>
