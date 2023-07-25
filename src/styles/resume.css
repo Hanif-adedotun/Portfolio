@@ -5,6 +5,7 @@
 .resume-main{
      background-color: var(--primary);
      min-height: max-content;
+     /* overflow-y: scroll !important; */
 }
 .resume-head{
      margin-bottom: 2em !important;
@@ -24,6 +25,11 @@
      border-radius: 10px;
      padding: 1.5em;
      overflow-x: scroll;
+}
+.mobile-resume-container{
+     height: max-content;
+     min-height: 80vh;
+     overflow: hidden;
 }
 .resume-load-cont{
      color: var(--primary) !important;

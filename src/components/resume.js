@@ -13,6 +13,13 @@ import Footer from '../components/footer';
 // import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
 import resume from '../resume/cv.pdf';
 
+// import { pdfjs } from 'react-pdf';
+
+// pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+//   'pdfjs-dist/build/pdf.worker.min.js',
+//   import.meta.url,
+// ).toString();
+
 // New pdf viewer
 import { MobilePDFReader, PDFReader } from 'reactjs-pdf-reader';
 
@@ -64,40 +71,41 @@ function MyResume(){
 
                
               
-               <div className="resume-container">               
+                    <div>  
                     {(ismobile) ? 
-                    <div>
-                    {(loading) ? <Loader/> : null}
-                    <MobilePDFReader 
-                    url={resume} 
-                    page={pageNumber} 
-                    onDocumentComplete={resumeOnLoad} 
-                    className='resume-pdf'
-                    isShowFooter={false}
-                    />
+                    <div className='mobile-resume-container'>
+                         {(loading) ? <Loader/> : null}
+                         <MobilePDFReader 
+                         url={resume} 
+                         page={pageNumber} 
+                         onDocumentComplete={resumeOnLoad} 
+                         className='resume-pdf'
+                         isShowFooter={false}
+                         scale='auto'
+                         />
                     </div>
                     :
-                    <div>
+                    <div className="resume-container">  
                       {(loading) ? <Loader/> : null}
-                    <PDFReader 
-                    url={resume} 
-                    page={pageNumber} 
-                    onDocumentComplete ={resumeOnLoad} 
-                    className='resume-pdf'
-                    width={700}
-                    isShowFooter={false}
-                    currentPage={pageNumber}
-                    />
+                         <PDFReader 
+                         url={resume} 
+                         page={pageNumber} 
+                         onDocumentComplete ={resumeOnLoad} 
+                         className='resume-pdf'
+                         width={700}
+                         isShowFooter={false}
+                         currentPage={pageNumber}
+                         />
 
-                    {(loading) ? null : 
-                    <div>
-                    <p>Page {pageNumber} of {numPages}</p>
-                    <Grid container justifyContent="center">
-                         <Grid item xs={4}><NavigateBeforeIcon className='resume-back' onClick={() => controlPage(false)}  sx={{ fontSize: 38 }}/></Grid>
-                         <Grid item xs={4}><NavigateNextIcon className='resume-next' onClick={() => controlPage(true)} sx={{ fontSize: 38 }}/></Grid>
-                    </Grid>
-                    </div>
-                    }
+                         {(loading) ? null : 
+                         <div>
+                         <p>Page {pageNumber} of {numPages}</p>
+                         <Grid container justifyContent="center">
+                              <Grid item xs={4}><NavigateBeforeIcon className='resume-back' onClick={() => controlPage(false)}  sx={{ fontSize: 38 }}/></Grid>
+                              <Grid item xs={4}><NavigateNextIcon className='resume-next' onClick={() => controlPage(true)} sx={{ fontSize: 38 }}/></Grid>
+                         </Grid>
+                         </div>
+                         }
                     
                     
                     </div>
