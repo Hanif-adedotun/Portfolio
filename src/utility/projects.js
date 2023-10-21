@@ -16,7 +16,6 @@ import Interna from '../images/web/interna.jpg';
 import VM from '../images/web/voltex.png';
 import Han from '../images/web/hanif.png';
 import Convert from '../images/web/convert.PNG';
-import Salim from '../images/web/ss.jpg';
 import Eesher from '../images/web/es.jpg';
 import Umar from '../images/web/uy.jpg';
 import Devtranet from '../images/web/devtranet.jpg';

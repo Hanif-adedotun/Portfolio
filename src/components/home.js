@@ -150,7 +150,7 @@ function App() {
             <Grid container columnSpacing={2}  rowSpacing={12} className="tech-section-container" justifyContent="space-around">
             {technologies.map((categories,i) =>
                   <Grid item xs={10} md={5}   key={i}>
-                    <h2>{categories.title}</h2>
+                    <h2 key={i}>{categories.title}</h2>
                     <Grid container spacing={1} justifyContent="center" className='tech-section-icons'>
                       {categories.stack.map((tech, i) => 
                         <Grid item xs={3} >
