@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.263acf49.css",
-    "main.js": "/static/js/main.eafca905.js",
-    "static/js/787.b9ec5bb0.chunk.js": "/static/js/787.b9ec5bb0.chunk.js",
+    "main.css": "/static/css/main.c4059e28.css",
+    "main.js": "/static/js/main.60f71f78.js",
+    "static/js/511.11399c34.chunk.js": "/static/js/511.11399c34.chunk.js",
     "static/media/Royals.png": "/static/media/Royals.7692a0dc48945bd6d7a7.png",
     "static/media/Utility.png": "/static/media/Utility.654b528f71d789222b9e.png",
     "static/media/TTB.jpg": "/static/media/TTB.b373b12231cd46019acb.jpg",
@@ -22,7 +22,6 @@
     "static/media/SC.png": "/static/media/SC.efd60abc9c9d44044aa2.png",
     "static/media/es.jpg": "/static/media/es.1709e7b5f3de0de2b3ee.jpg",
     "static/media/bluegram.png": "/static/media/bluegram.a69e8a75e9df4d22e9b9.png",
-    "static/media/ss.jpg": "/static/media/ss.f65de462ffc67dd40bed.jpg",
     "static/media/startvest.jpg": "/static/media/startvest.b576916ab69ee88858a4.jpg",
     "static/media/devtranet.jpg": "/static/media/devtranet.4c1d0277357d1e7f2e6f.jpg",
     "static/media/interna.jpg": "/static/media/interna.e802920550865de88ad6.jpg",
@@ -53,12 +52,12 @@
     "static/media/quicksand-vietnamese-700-normal.woff2": "/static/media/quicksand-vietnamese-700-normal.ec6f5f885fea28b1f115.woff2",
     "index.html": "/index.html",
     "static/media/divider.svg": "/static/media/divider.bd22956f97bded8b98c63f0552b687a8.svg",
-    "main.263acf49.css.map": "/static/css/main.263acf49.css.map",
-    "main.eafca905.js.map": "/static/js/main.eafca905.js.map",
-    "787.b9ec5bb0.chunk.js.map": "/static/js/787.b9ec5bb0.chunk.js.map"
+    "main.c4059e28.css.map": "/static/css/main.c4059e28.css.map",
+    "main.60f71f78.js.map": "/static/js/main.60f71f78.js.map",
+    "511.11399c34.chunk.js.map": "/static/js/511.11399c34.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.263acf49.css",
-    "static/js/main.eafca905.js"
+    "static/css/main.c4059e28.css",
+    "static/js/main.60f71f78.js"
   ]
 }
