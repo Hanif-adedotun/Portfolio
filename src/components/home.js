@@ -20,7 +20,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import {education, summary, experiences} from '../utility/aboutme';
 
 // SVG Icons
-import Divider from '../images/divider.svg';
+// import Divider from '../images/divider.svg';
 import Worker from '../images/icons/work.svg';
 import Books from '../images/icons/books.svg';
 
@@ -36,9 +36,7 @@ function App() {
      ,[]);
 
   const HanifImages = [
-    '/hanif.jpg',
-    '/hanif.png',
-    '/hanif2.jpg'
+    '/hanifnew.jpg',
   ]
   function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
@@ -66,19 +64,15 @@ function App() {
               <Typewriter   
                   onInit={(typewriter) => {
                     typewriter
-                    .typeString("Full Stack Developer")
+                    .typeString("Software Engineer")
                     .pauseFor(300)
                     .deleteAll()
 
-                    .typeString("GDSC Community Lead")
-                    .pauseFor(300)
-                    .deleteAll()
+                      .typeString("AI Engineer")
+                      .pauseFor(300)
+                      .deleteAll()
 
-                    .typeString("Machine Learning Engineer")
-                    .pauseFor(300)
-                    .deleteAll()
-
-                    .typeString("Graphics Designer")
+                    .typeString("BCI Researcher")
                     .pauseFor(300)
                     .deleteAll()
 
@@ -128,7 +122,7 @@ function App() {
               </Grid>
               
 
-              <Grid container item md={6} xs={9} justifyContent="center" className='profile-skills'>
+              <Grid container item md={6} xs={10} justifyContent="center" className='profile-skills'>
                 {/* <Grid item xs={12}><span className='skills-head'>Who is Hanif?</span></Grid> */}
                 <h2 className='skills-head'>Who I am</h2>
                   <Slide direction='up' triggerOnce>
@@ -141,7 +135,7 @@ function App() {
               </Grid>
           </Grid>
 
-          <span className='divider-container'><img src={Divider} alt='divider' className='divider'/></span>
+          {/* <span className='divider-container'><img src={Divider} alt='divider' className='divider'/></span> */}
 
  
           {/* technologies section */}

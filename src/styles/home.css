@@ -113,9 +113,6 @@ font-size: 24px;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-.profile-skills{
-  margin: 4em  0 0 0;
-}
 .skills-head{
   display: block !important;
   font-weight:bolder;
@@ -194,8 +191,7 @@ font-size: 24px;
 }
 .profile-summary{
   text-align: left;
-  max-width: 80%;
-  margin: 0 0 1.5em auto;
+  margin: 1.5em .5em;
   font-size: large;
 }
 .card-container{
@@ -278,7 +274,7 @@ font-size: 24px;
     margin: auto;
     height: 300px;
     /* transform: rotate(0); */
-    margin-bottom: 3em;
+    margin-bottom: 6em;
   }
   .profile-image-card2{
     /* visibility: hidden; */

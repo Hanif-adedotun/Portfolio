@@ -11,7 +11,7 @@ import Footer from '../components/footer';
 
 // PDF Viewer
 // import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
-import resume from '../resume/cv.pdf';
+import resume from '../resume/resume-v3.pdf';
 
 // import { pdfjs } from 'react-pdf';
 
