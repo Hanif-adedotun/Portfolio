@@ -1,0 +1,131 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import { Icon } from "astro-icon/components";
+import projects from "../data/projects.json";
+import posts from "../data/posts.json";
+import awards from "../data/awards.json";
+import about from "../data/about.json";
+import blogPosts from "../data/blog-posts.json";
+---
+
+<Layout title="Portfolio">
+  <div class="min-h-screen p-6 max-w-4xl mx-auto">
+    <Header />
+
+    <main class="space-y-12">
+      <section>
+        <p class="text-sm leading-relaxed">
+          {about.text.join(" ")}
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl text-gray-900 dark:text-white mb-4">Latest posts</h2>
+        <div class="space-y-2">
+          {
+            blogPosts.slice(0, 5).map((post) => (
+              <div class="flex gap-4 text-sm">
+                <span class="text-gray-500">
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </span>
+                <a
+                  href={`/blog/${post.slug}`}
+                  class="hover:text-gray-900 dark:hover:text-white underline"
+                >
+                  {post.title}
+                </a>
+              </div>
+            ))
+          }
+        </div>
+        <a
+          href="/blog"
+          class="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white block mt-4 underline"
+        >
+          View all articles →
+        </a>
+      </section>
+
+      <section>
+        <h2 class="text-xl text-gray-900 dark:text-white mb-4">
+          Featured projects
+        </h2>
+        <div class="space-y-6">
+          {
+            projects.map((project) => (
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <h3 class="text-gray-900 dark:text-white font-medium">
+                    {project.name[0]}
+                  </h3>
+                  <a
+                    href={project.name[1]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    aria-label={`Visit ${project.name[0]}`}
+                  >
+                    <Icon name="mdi:web" class="w-4 h-4" />
+                  </a>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                  {project.summary}
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                  {project.tools.map((tool: string) => (
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <a
+          href="/projects"
+          class="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white block mt-4 underline"
+        >
+          View all projects →
+        </a>
+      </section>
+
+      <section>
+        <h2 class="text-xl text-gray-900 dark:text-white mb-4">Awards</h2>
+        <div class="space-y-2">
+          {
+            awards.map((award) => (
+              <div class="flex gap-4 text-sm">
+                <span class="text-gray-500 shrink-0">{award.date}</span>
+                <span class="text-gray-700 dark:text-gray-300">
+                  {award.title}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 text-center"
+    >
+      <p class="mb-2">
+        © {new Date().getFullYear()} Hanif Adedotun. | All Rights Reserved.
+      </p>
+      <p>
+        Source code is available at
+        <a
+          href="https://github.com/Hanif-adedotun/Portfolio-v2"
+          class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+          >github.com/hanif-adedotun/Portfolio-v2</a
+        >
+      </p>
+    </footer>
+  </div>
+</Layout>

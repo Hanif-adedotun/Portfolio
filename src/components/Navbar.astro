@@ -1,0 +1,40 @@
+---
+const navItems = [
+  { name: "Home", path: "/" },
+  { name: "Blog", path: "/blog" },
+  { name: "Certifications", path: "/certifications" },
+  { name: "Projects", path: "/projects" },
+  { name: "Publications", path: "/publications" },
+  { name: "CV", path: "/cv" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="text-sm">
+  <span class="text-gray-500 dark:text-gray-400">&gt;_</span>
+  {
+    navItems.map((item, index) => {
+      const isActive = currentPath === item.path || 
+        (item.path !== "/" && currentPath.startsWith(item.path));
+      return (
+        <a
+          href={item.path}
+          class={`transition-colors ml-2 ${
+            isActive
+              ? "text-contrast"
+              : "hover:text-gray-900 dark:hover:text-white"
+          }`}
+        >
+          {item.name}
+        </a>
+      );
+    })
+  }
+</nav>
+
+<style>
+  nav a {
+    margin-left: 0.5rem;
+  }
+</style>
