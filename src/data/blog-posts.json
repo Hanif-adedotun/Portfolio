@@ -1,5 +1,49 @@
 [
   {
+    "slug": "2025-in-review",
+    "title": "2025: In Review",
+    "date": "2025-01-01",
+    "author": "Hanif Adedotun",
+    "intro": "I feel very empty writing this, not because I didn't achieve what I set out this year, but more so because life took a 180° turn, I found myself juggling the Nigerian imposed service year and my full time remote job.",
+    "sections": [
+      {
+        "id": "growth",
+        "title": "Growth and Learning",
+        "content": [
+          "I learned a lot this year, especially from working as a Teaching Assistant at a university — it was a great experience, almost like cosplaying as a lecturer.",
+          "I was far more intentional about my professional life: creating structure in my daily tasks as an engineer, and being deliberate about delivering work with attention to detail.",
+          "That intentionality paid off, earning me a promotion to Lead Software Engineer.",
+          "While I did not read as many books as I planned — four out of ten — it was still a year of meaningful growth."
+        ]
+      },
+      {
+        "id": "achievements",
+        "title": "Achievements",
+        "content": [
+          "Looking at my win list, I definitely had some good moments:",
+          "> Managed three projects from idea to launch at work",
+          "> Built an AI powered unit test case generator Hiro",
+          "> Built an AI powered headline agent",
+          "> Invited to speak at four different events",
+          "> Got featured in an interview by NTA",
+          "> Pitched Neurosync (my startup) to everyone willing to listen at OSCAfest",
+          "> Got a contract role at a web3 company",
+          "> Got a contract to build an AI solution for the Government",
+          "> Got promoted to a lead Engineer",
+          "> I met all my financial goals"
+        ]
+      },
+      {
+        "id": "looking-forward",
+        "title": "Looking Forward",
+        "content": [
+          "Going into 2026, I just have two guiding actions words, Visibility and Volume.",
+          "See you all same time next year! 🥂"
+        ]
+      }
+    ]
+  },
+  {
     "slug": "where-product-design-meets-systems-thinking",
     "title": "Where Product Design Meets Systems Thinking",
     "date": "2024-12-15",
