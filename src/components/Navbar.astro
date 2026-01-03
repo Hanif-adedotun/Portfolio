@@ -12,7 +12,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <nav class="text-sm">
-  <span class="text-gray-500 dark:text-gray-400">&gt;_</span>
+  <span class="text-gray-500 dark:text-gray-400 animate-fade-in">&gt;_</span>
   {
     navItems.map((item, index) => {
       const isActive = currentPath === item.path || 
@@ -20,13 +20,17 @@ const currentPath = Astro.url.pathname;
       return (
         <a
           href={item.path}
-          class={`transition-colors ml-2 ${
+          class={`transition-all duration-300 ml-2 relative group ${
             isActive
               ? "text-contrast"
               : "hover:text-gray-900 dark:hover:text-white"
           }`}
+          style={`animation-delay: ${index * 50}ms`}
         >
-          {item.name}
+          <span class="animate-fade-in">{item.name}</span>
+          {isActive && (
+            <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-contrast animate-slide-in"></span>
+          )}
         </a>
       );
     })
@@ -36,5 +40,20 @@ const currentPath = Astro.url.pathname;
 <style>
   nav a {
     margin-left: 0.5rem;
+  }
+  
+  nav a:not(.active):hover::after {
+    content: '';
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    width: 0;
+    height: 0.5px;
+    background-color: currentColor;
+    transition: width 0.3s ease-out;
+  }
+  
+  nav a:not(.active):hover::after {
+    width: 100%;
   }
 </style>

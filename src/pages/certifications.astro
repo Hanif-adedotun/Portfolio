@@ -9,7 +9,7 @@ import certificates from "../data/certificates.json";
     <Header />
 
     <main class="space-y-12">
-      <section>
+      <section class="animate-fade-in-up">
         <h2 class="text-xl text-gray-900 dark:text-white mb-2">
           Certifications
         </h2>
@@ -20,19 +20,22 @@ import certificates from "../data/certificates.json";
 
         <div class="space-y-3">
           {
-            certificates.map((cert) => (
-              <div class="flex gap-4 text-sm">
-                <span class="text-gray-500 shrink-0">{cert.year}</span>
+            certificates.map((cert, index) => (
+              <div 
+                class="flex gap-4 text-sm transition-all duration-300 hover:translate-x-1 group"
+                style={`animation: fadeInUp 0.5s ease-out ${index * 100}ms both`}
+              >
+                <span class="text-gray-500 shrink-0 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">{cert.year}</span>
                 <div>
                   <a
                     href={cert.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="hover:text-gray-900 dark:hover:text-white underline"
+                    class="hover:text-gray-900 dark:hover:text-white hover:text-contrast transition-colors duration-300 underline"
                   >
                     {cert.name}
                   </a>
-                  <p class="text-gray-500 dark:text-gray-500 text-xs mt-0.5">
+                  <p class="text-gray-500 dark:text-gray-500 text-xs mt-0.5 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
                     {cert.org}
                   </p>
                 </div>
@@ -44,7 +47,7 @@ import certificates from "../data/certificates.json";
     </main>
 
     <footer
-      class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 text-center"
+      class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 text-center animate-fade-in-delay"
     >
       <p class="mb-2">
         © {new Date().getFullYear()} Hanif Adedotun. | All Rights Reserved.
@@ -53,7 +56,7 @@ import certificates from "../data/certificates.json";
         Source code is available at
         <a
           href="https://github.com/Hanif-adedotun/Portfolio-v2"
-          class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+          class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 underline"
           >github.com/hanif-adedotun/Portfolio-v2</a
         >
       </p>

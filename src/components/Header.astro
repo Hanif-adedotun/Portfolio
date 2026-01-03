@@ -8,7 +8,7 @@ import { Icon } from "astro-icon/components";
     <Navbar />
     <button
       id="theme-toggle"
-      class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-colors"
+      class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95"
       aria-label="Toggle theme"
     >
       <span class="dark:hidden">🌙</span>
@@ -16,11 +16,11 @@ import { Icon } from "astro-icon/components";
     </button>
   </div>
 
-  <section class="flex items-start gap-6">
+  <section class="flex items-start gap-6 animate-fade-in-up">
     <img
       src="/assets/sq-logo.jpg"
       alt="Profile"
-      class="w-28 h-28 rounded-lg"
+      class="w-28 h-28 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg"
     />
     <div>
       <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">
@@ -32,7 +32,7 @@ import { Icon } from "astro-icon/components";
           href="https://github.com/hanif-adedotun"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110"
           aria-label="GitHub"
         >
           <Icon name="mdi:github" class="w-5 h-5" />
@@ -41,7 +41,7 @@ import { Icon } from "astro-icon/components";
           href="https://x.com/@devhanif"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110"
           aria-label="X (Twitter)"
         >
           <Icon name="mdi:twitter" class="w-5 h-5" />
@@ -50,14 +50,14 @@ import { Icon } from "astro-icon/components";
           href="https://linkedin.com/in/hanif-adedotun"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110"
           aria-label="LinkedIn"
         >
           <Icon name="mdi:linkedin" class="w-5 h-5" />
         </a>
         <a
           href="/feed.xml"
-          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110"
           aria-label="RSS Feed"
         >
           <Icon name="mdi:rss" class="w-5 h-5" />

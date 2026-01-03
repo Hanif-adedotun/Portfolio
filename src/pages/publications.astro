@@ -10,7 +10,7 @@ import publications from "../data/publications.json";
     <Header />
 
     <main class="space-y-8 mt-8">
-      <section>
+      <section class="animate-fade-in-up">
         <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
           Publications
         </h1>
@@ -21,7 +21,7 @@ import publications from "../data/publications.json";
           href="https://scholar.google.com/citations?user=FpK8icMAAAAJ&hl=en"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-sm text-contrast hover:opacity-80 transition-opacity"
+          class="inline-flex items-center gap-2 text-sm text-contrast hover:opacity-80 transition-all duration-300 hover:scale-105"
         >
           <Icon name="mdi:google" class="w-5 h-5" />
           View Google Scholar Profile
@@ -30,15 +30,18 @@ import publications from "../data/publications.json";
 
       <section>
         <div class="space-y-4">
-          {publications.map((publication) => (
-            <article class="border-b border-gray-200 dark:border-gray-800 pb-8 last:border-0">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+          {publications.map((publication, index) => (
+            <article 
+              class="border-b border-gray-200 dark:border-gray-800 pb-8 last:border-0 transition-all duration-300 hover:translate-x-1 group"
+              style={`animation: fadeInUp 0.5s ease-out ${index * 100}ms both`}
+            >
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-contrast transition-colors duration-300">
                 {publication.link ? (
                   <a
                     href={publication.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="hover:text-contrast transition-colors"
+                    class="hover:text-contrast transition-colors duration-300"
                   >
                     {publication.title}
                   </a>
@@ -46,14 +49,14 @@ import publications from "../data/publications.json";
                   publication.title
                 )}
               </h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-2 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                 {publication.authors.join(", ")}
               </p>
-              <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">
+              <p class="text-sm text-gray-500 dark:text-gray-500 mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors duration-300">
                 {publication.venue} • {publication.year}
               </p>
               {publication.description && (
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed">
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                   {publication.description}
                 </p>
               )}
@@ -64,7 +67,7 @@ import publications from "../data/publications.json";
     </main>
 
     <footer
-      class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 text-center"
+      class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 text-center animate-fade-in-delay"
     >
       <p class="mb-2">
         © {new Date().getFullYear()} Hanif Adedotun. | All Rights Reserved.
@@ -73,7 +76,7 @@ import publications from "../data/publications.json";
         Source code is available at
         <a
           href="https://github.com/Hanif-adedotun/Portfolio-v2"
-          class="text-gray-600 dark:text-gray-400 hover:text-contrast transition-colors"
+          class="text-gray-600 dark:text-gray-400 hover:text-contrast transition-colors duration-300 underline"
           >github.com/hanif-adedotun/Portfolio-v2</a
         >
       </p>

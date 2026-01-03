@@ -9,21 +9,24 @@ import blogPosts from "../data/blog-posts.json";
     <Header />
 
     <main class="space-y-12">
-      <section>
+      <section class="animate-fade-in-up">
         <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
           All Articles
         </h1>
         <div class="space-y-6">
-          {blogPosts.map((post) => (
-            <article class="border-b border-gray-200 dark:border-gray-800 pb-6 last:border-0">
+          {blogPosts.map((post, index) => (
+            <article 
+              class="border-b border-gray-200 dark:border-gray-800 pb-6 last:border-0 transition-all duration-300 hover:translate-x-1"
+              style={`animation: fadeInUp 0.5s ease-out ${index * 100}ms both`}
+            >
               <a
                 href={`/blog/${post.slug}`}
-                class="block group hover:opacity-80 transition-opacity"
+                class="block group transition-all duration-300"
               >
-                <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:underline">
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-contrast transition-colors duration-300 group-hover:underline">
                   {post.title}
                 </h2>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2">
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                   {post.intro}
                 </p>
                 <div class="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-500">
