@@ -2,32 +2,38 @@
   {
     "img": "Hiro",
     "name": ["Hiro", "https://hiro.hanif.one"],
-    "summary": "Hiro is an AI tool designed to automatically generate unit test cases and requirement documentation for your codebase, regardless of the programming language or framework you're using.",
-    "tools": ["Python", "LangChain", "Streamlit"]
+    "summary": "An AI observability agent designed to automatically to manage and generate text coverage for your codebase.",
+    "tools": ["Python", "LangChain", "Astro"]
   },
   {
-    "img": "Devtranet",
-    "name": ["Devtranet", "https://devtranet.tech"],
-    "summary": "Devtranet is a global network for developers and technologists to connect, build, and discover opportunities. Backed by DigitalOcean, JetBrains, Sketch, Linode, among others",
-    "tools": ["Nextjs", "Typescript", "AWS"]
+    "img": "Vaul",
+    "name": ["Vaul", "https://vaul.hanif.one"],
+    "summary": "A native desktop application to manage terminal commands easily",
+    "tools": ["Go", "Wails"]
   },
   {
+    "img": "Headlines Agent",
+    "name": ["Headlines Agent", "https://github.com/Hanif-adedotun/ML-Series/tree/main/HEADLINE-AGENT"],
+    "summary": "An AI agent that fetches the latest technology news headlines and allows users to send them via email with custom credentials.",
+    "tools": ["Python", "LangGraph", "Streamlit"]
+  },
+  
+  {
+    "img": "VM",
+    "name": ["Voltex Middleware", "https://github.com/Hanif-adedotun/Nodejs/tree/master/voltex_react-app"],
+    "summary": "Automatically spin off production ready forms for your static frontend applications",
+    "tools": ["Nodejs", "React", "Bootstrap"]
+  },{
     "img": "Interna",
     "name": ["Interna", "https://getinterna.com"],
-    "summary": "Interna is a solution designed to provide internship opportunities to every student, equip them with professional tools and provide a community of students who have undergone internships and students who are looking for internships.",
+    "summary": "A platform for students to find internships and for companies to find interns.",
     "tools": ["Nextjs", "Vercel", "GCP"]
   },
   {
     "img": "StartVest",
     "name": ["StartVest", "https://startvest.io"],
-    "summary": "StartVest is an equity crowdfunding platform that allows people with creative ideas to register and get funded. We provide everyone the option to invest in startups, and we also give startups the platform to post job vacancies for job seekers.",
+    "summary": "StartVest is an equity crowdfunding platform that allows people with creative ideas to register and get funded. We provide everyone the option to invest in startups.",
     "tools": ["Bootstrap", "Django", "Firebase"]
-  },
-  {
-    "img": "VM",
-    "name": ["Voltex Middleware", "https://github.com/Hanif-adedotun/Nodejs/tree/master/voltex_react-app"],
-    "summary": "This is a tool built to automatically create forms for frontend applications, it saves and energy for creating a backend for forms only. It is easy to hook to any frontend application easily",
-    "tools": ["MySql", "MongoDB", "Nodejs", "React", "Bootstrap", "REST"]
   }
 ]
 
