@@ -60,7 +60,7 @@ import blogPosts from "../data/blog-posts.json";
         </h2>
         <div class="space-y-6">
           {
-            projects.map((project, index) => (
+            projects.slice(0, 3).map((project, index) => (
               <div 
                 class="transition-all duration-300 hover:translate-x-1 group"
                 style={`animation: fadeInUp 0.5s ease-out ${index * 100}ms both`}
