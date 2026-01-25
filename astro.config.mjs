@@ -1,12 +1,12 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
-import tailwind from '@astrojs/tailwind';
 import icon from 'astro-icon';
 import react from '@astrojs/react';
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  integrations: [mdx(), tailwind(), icon(), react()],
+  site: "https://v2.hanif.one",
+  integrations: [mdx(), icon(), react()],
   vite: {
     plugins: [tailwindcss()],
   },

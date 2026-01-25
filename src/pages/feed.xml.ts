@@ -1,8 +1,10 @@
 import type { APIRoute } from "astro";
 import blogPosts from "../data/blog-posts.json";
 
-export const GET: APIRoute = ({ site, url }) => {
-  const siteUrl = site?.href || `${url.protocol}//${url.host}`;
+export const prerender = true;
+
+export const GET: APIRoute = ({ site }) => {
+  const siteUrl = (site?.href ?? "https://v2.hanif.one").replace(/\/$/, "");
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
