@@ -2,7 +2,7 @@
   {
     "img": "Hiro",
     "name": ["Hiro", "https://hiro.hanif.one"],
-    "summary": "An AI observability agent designed to automatically to manage and generate text coverage for your codebase.",
+    "summary": "An AI observability agent designed to automatically to manage and generate test coverage for your codebase.",
     "tools": ["Python", "LangChain", "Astro"]
   },
   {
