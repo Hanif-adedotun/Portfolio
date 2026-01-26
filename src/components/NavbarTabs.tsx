@@ -112,14 +112,14 @@ export default function NavbarTabs({ currentPath }: NavbarTabsProps) {
 
   return (
     <Tabs defaultValue={activeValue} orientation="horizontal">
-      <TabsList className="inline-flex h-10">
+      <TabsList className="inline-flex h-10  bg-background/90 ">
         {navItems.map((item) => (
           <TabsTrigger
             key={item.value}
             value={item.value}
             asChild
-            className={`gap-2 hover:text-contrast transition-all duration-300 ${
-              activeValue === item.value ? "text-contrast" : ""
+            className={`gap-2 hover:text-contrast hover:bg-muted [&.active]:bg-muted  transition-all duration-300 ${
+              activeValue === item.value ? "text-contrast bg-muted" : ""
             }`}
           >
             <a href={item.path}>
