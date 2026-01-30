@@ -1,5 +1,318 @@
 [
   {
+    "slug": "headline-agent-ai-agent-grabs-latest-tech-news-inbox",
+    "title": "Headline Agent: An AI agent that grabs the latest tech news and drops it straight into your inbox",
+    "date": "2025-08-28",
+    "author": "Hanif",
+    "intro": "In a world where LLMs have evolved beyond the ability to perform smart interactions and respond to prompts, AI agents have provided a great platform for models to carry out various tasks that require high reasoning, while also adapting to a task without any need for human intervention.",
+    "sections": [
+      {
+        "id": "introduction-ai-agents",
+        "title": "Introduction to AI Agents",
+        "content": [
+          "AI agents are autonomous systems that can perform complex tasks on behalf of a user without requiring the user's intervention. It can create its workflows and utilize available tools to complete complex tasks. This system can reason, act, adapt, and make good decisions, which sets it apart from non-agentic chatbots.",
+          "These agents ensure the natural language processing functionalities of LLMs, and the features of other tools (i.e, automations, tool calling, etc) to create a 'smart assistant.' So, with this workflow, the agent learns to adapt to the user's expectations over time.",
+          "The ability of AI agents to store information about past interactions allows them to prepare for future actions with high accuracy in the comprehension of their responses.",
+          "The news headline agent is a practical example of an AI agent; it combines natural language processing, web scraping, and automation to complete a task, bringing results that allow users to get the latest tech news from reputable sources right in their email."
+        ]
+      },
+      {
+        "id": "about-headline-agent",
+        "title": "About Headline Agent",
+        "content": [
+          "Headline agent is a practical example of how AI agents work, utilizing various tools. Its functionalities come from leveraging LLMs and real-time crawling with Firecrawl to perform certain tasks. The primary purpose of the Headline agent is to grab tech news from reputable websites like Techcabal and other sources across the web and send it to your email in a clean, readable format. This could be a daily email or based on demand."
+        ]
+      },
+      {
+        "id": "architecture-workflow",
+        "title": "Architecture/Workflow of Headline Agent",
+        "content": [
+          "The internal flow of this agent starts with certain requirements and initialization. We will walk through the overview of how Headline agents work from tool calling to LLMs, and the Email sender stage."
+        ]
+      },
+      {
+        "id": "prerequisites",
+        "title": "Prerequisites",
+        "content": [
+          "The agent requires a few APIs and tools to perform various tasks in different stages of the process. You can load them in the .env files to securely access to them.",
+          "FireCrawl API: This tool is responsible for crawling the web sources and extracting content.",
+          "GROQ API runs the LLM via Langchain, which in this case is the Deepseek model.",
+          "Tavily Search API is handy for fallback web search, especially when dealing with unknown prompt queries.",
+          "GNews API is a backup news source that the agent uses to extract content. Although the primary source is TechCabal, the Headline agent can also leverage other reputable sources like GNews.",
+          "SMTP email sender leverages the smtplib to send formatted and structured emails at the end of the whole workflow."
+        ]
+      },
+      {
+        "id": "tool-calling",
+        "title": "Tool Calling",
+        "content": [
+          "When it comes to tool calling, two primary actions happen with this agent. The headline agent searches for content using the 'get_technology_news' query that is initialized from FireCrawl. This tool scrapes TechCabal, filters it, and returns it to the LLM for processing.",
+          "Another tool registered to this agent's workflow is Tavily's advanced search. It helps to retrieve and summarize real-time web results."
+        ]
+      },
+      {
+        "id": "llm-decision-node",
+        "title": "LLM Decision Node",
+        "content": [
+          "LLMs are a big part of AI agents, and this agent leverages Groq's deepseek-r1-distill-llama-70b. This model receives a prompt, checks if it needs a tool, and returns a response. In this sequence, the LLM is instructed on when to use the tool, what tools are available, and how to format the results."
+        ]
+      },
+      {
+        "id": "pydantic-structured-response",
+        "title": "Pyndantic AI for Structured LLM response",
+        "content": [
+          "The LLM is tied to a Pydantic schema called 'HeadlineResponse' which has two functions: Ensures that the output contains a list, and makes each list come with a headline and description."
+        ]
+      },
+      {
+        "id": "email-sender-smtp",
+        "title": "Email Sender Via SMTP",
+        "content": [
+          "This agent utilizes SMTP email sender; thanks to smtplib, it can parse the final response into headlines, package them, and send them. The smtplib is a Python library that performs this process with a simple function 'send_news_email.'"
+        ]
+      },
+      {
+        "id": "building-streamlit-ui",
+        "title": "Building a Simple UI using Streamlit",
+        "content": [
+          "Now that we've got all the requirements set up, creating a simple UI to wrap this agent is necessary. The obvious option here is Streamlit as it is a clean a fast way to run through the workflow of the the Headline agent."
+        ]
+      },
+      {
+        "id": "how-headline-agent-built",
+        "title": "How the Headline Agent Was Built",
+        "content": [
+          "Let's walk through how to build this headline agent and get it to send news headlines to your email."
+        ]
+      },
+      {
+        "id": "installing-packages",
+        "title": "Installing Required Packages",
+        "content": [
+          "```bash\n!pip install -r requirements.txt\n```",
+          "This code installs the required packages for building AI agents and applications using Langchain and LangGraph. These are crucial for integrating models, tools, and APIs. Firecrawl here helps with data web scraping, while 'pydantic' is great for data evaluation. 'python-dotenv' plays the role of managing the environment variables."
+        ]
+      },
+      {
+        "id": "fetching-data",
+        "title": "Fetching Data",
+        "content": [
+          "The news source for this agent is TechCabal, and it will need to crawl the site to get this news. Tools like FireCrawl and the AI assistant are crucial in this stage of the workflow. The headline agent uses the firecrawl API to get news content from Techcabal's homepage on the date of the request. It can also filter news according to category, as intended in the code line that specifies news that starts with '#startup' and '#fintech.' This returns a response with a detailed headline and description of the news items."
+        ]
+      },
+      {
+        "id": "sending-news-smtp",
+        "title": "Sending News Summary Using an SMTP Server",
+        "content": [
+          "The agent requires sending an email summary using an SMTP Server. It first sets up the sender's credentials and email structure, pulling dynamic news content from news_data and injecting it into a predefined HTML template.",
+          "When the agent gets the news content, it formats the email body and creates a loop that structures each news item with a headline and description."
+        ]
+      },
+      {
+        "id": "fetching-news-web-search",
+        "title": "Fetching News From Web Search Using AI Tools",
+        "content": [
+          "The headline agent can also leverage alternative sources for finding tech news. This code indicates how the agent fetches tech news or performs a web search using AI tools, formats the result, and emails it.",
+          "The @tool-decorated search_web function queries the internet using Tavily with advanced depth and limited results. The ChatGroq language model is configured with tools and generates structured headline outputs, which are processed by the call_model function.",
+          "The email_sender function takes the final structured message, parses it into headline-description pairs, and sends it via email using a previously defined email function."
+        ]
+      },
+      {
+        "id": "ai-powered-workflow-stategraph",
+        "title": "The AI-Powered Workflow of the Headline Agent Using StateGraph",
+        "content": [
+          "The workflow of this agent is quite straightforward. It starts at the LLM node, where it converts the user's input. The LLM then makes a decision based on its input, which triggers the use of various tools available to perform certain tasks (i.e, webscraping or web search). It then proceeds to format and send an email using the email_sender node. Finally, the workflow ends when the email is delivered.",
+          "The Link to run the Agent on Google Colab can be found here"
+        ]
+      },
+      {
+        "id": "creating-streamlit-ui",
+        "title": "Creating Streamlit UI",
+        "content": [
+          "Now, we'll create a simple UI to house everything in the headline agent. Let's start by following a few steps, starting from importing the necessary modules to set up the Streamlit app and configuration.",
+          "Here are the five steps to run your Streamlit app locally:",
+          "Navigate to project directory: cd HEADLINE-AGENT #your project folder path",
+          "Install dependencies (Streamlit, python-dotenv, etc.): pip install requirements.txt",
+          "Create an .env file for the Environment Variables: TAVILY_API_KEY=your_tavily_api_key, GROQ_KEY=your_groq_api_key, GNEWS_KEY=your_gnews_api_key, FIRE_CRAWL_KEY=your_firecrawl_api_key",
+          "Run the app with Streamlit: streamlit run streamlit.py",
+          "You can proceed to the app in your browser to see the UI (auto-opens at http://localhost:8501). The UI looks user-friendly and allows you to prompt the Agents, which fetches news updates and then sends them to the email you enter."
+        ]
+      },
+      {
+        "id": "how-to-run-locally",
+        "title": "How to Run Locally",
+        "content": [
+          "So, it's time to wrap this up with a brief guide on how to run the headline agent locally:",
+          "The first command requires you to install the requirements.txt file: pip install -r requirements.txt",
+          "Finally, we'll use Python 3 to run the code and execute every line of code in it: python3 agent.py",
+          "And your output looks as in the image below;"
+        ]
+      },
+      {
+        "id": "wrapping-up",
+        "title": "Wrapping Up",
+        "content": [
+          "The Headline agent is a practical demonstration of how AI agents easily integrate various tasks and automated workflows. This agent uses web scraping, LLM reasoning, and agentic workflows to send tech updates to your email. It ensures that effective tools like FireCrawl, Tavily Search, and Pydantic are used to provide real-time updates.",
+          "Headline agents only demonstrate a glimpse of how you can use Agentic workflows to automate your work, and there are lots of capabilities these agents have yet to explore.",
+          "The full source code can be found here, feel free to star and fork the project, happy coding!",
+          "A big shout-out to Maigari David for writing the article!"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "pymupdf-python-library-reduces-pdf-size",
+    "title": "Pymupdf: A Python Library That Reduces the Size of PDF files",
+    "date": "2025-08-30",
+    "author": "Hanif",
+    "intro": "Many libraries and tools perform various tasks in processing files, images, and documents. PDF files are a good example of files that can undergo several processing stages using Python libraries and AI models. Reducing the size of a PDF file can be necessary for various reasons, and various tools can accomplish this. One fascinating way is to use the PyMuPDF library.",
+    "sections": [
+      {
+        "id": "what-is-pymupdf",
+        "title": "What is PyMuPDF?",
+        "content": [
+          "PyMuPDF is a Python library that excels in extracting, analyzing, manipulating, and converting data from PDF files and other document formats. With this library, you can extract text and images from a PDF file. But its capabilities do not end here. PyMuPDF can also extract vector graphics and merge PDF files.",
+          "Another interesting feature of this library is its ability to manipulate and process PDF files. This library can perform a range of tasks, including adding watermarks and images, as well as embedding and attaching files."
+        ]
+      },
+      {
+        "id": "how-pdfs-get-bloated",
+        "title": "How Do PDFs Get Bloated?",
+        "content": [
+          "There are several reasons why a PDF file can become too large. High image resolutions, embedded fonts, unused objects, and other factors can affect the size of these files. Compressing them is a very effective optimization technique, as it can provide a better overall experience. Compressing larger PDF files is important for several reasons, including saving storage space, improving web performance, and facilitating easy sharing.",
+          "Reducing PDF files using PyMuPDF involves a seamless method. This library can operate in low-resource environments and yield excellent results. We'll explore how this technique creates the tool and how you can achieve your desired results."
+        ]
+      },
+      {
+        "id": "how-to-reduce-pdf",
+        "title": "How to Reduce PDF Using this Library",
+        "content": [
+          "We can begin by setting up the environment and utilizing PyMuPDF to compress the size of a PDF file. Then, we can install the essential modules for processing the file. So, let's dive in."
+        ]
+      },
+      {
+        "id": "setting-up-environment",
+        "title": "Setting up the environment",
+        "content": [
+          "To run this operation, you must install the PyMuPDF Python library, which allows you to work with PDF files and other document formats.",
+          "```python\n!pip install pymupdf\nimport os\nimport fitz  # PyMuPDF\n```",
+          "This operation requires two libraries: OS and Fitz. The OS library provides functions that enable interaction with the operating system by managing file paths. The PyMuPDF library's main module is Fitz, responsible for handling PDFs and other document formats. Fitz can easily open, load, read, and manipulate PDF files, which is particularly significant for tasks involving size reduction."
+        ]
+      },
+      {
+        "id": "compressing-pdf-file",
+        "title": "Compressing the PDF file",
+        "content": [
+          "```python\ndef compress_pdf(input_path, output_path, zoom_x=0.75, zoom_y=0.75):\n   try:\n       document = fitz.open(\"input_path\")\n       new_document = fitz.open()\n```",
+          "This function is designed to compress PDF files by reducing the size of their pages. The function loads the original PDF file using the PyMuPDF library, also known as fitz.open function. Then, it creates a new empty document that allows you to add the compressed file.",
+          "In addition to setting the function that opens the original file and creates a new document, you must set the structure for compressing the file in a suitable format.",
+          "```python\nfor page_num in range(len(document)):\n           page = document.load_page(page_num)\n           mat = fitz.Matrix(zoom_x, zoom_y)\n           pix = page.get_pixmap(matrix=mat, alpha=False)\n           img_bytes = pix.tobytes(\"jpeg\")\n           new_page = new_document.new_page(width=pix.width, height=pix.height)\n           new_page.insert_image(new_page.rect, stream=img_bytes)\n```",
+          "This block loops through each page of the original PDF. For every page, it creates a scaling matrix (fitz.Matrix) to reduce the page content, renders the page as a pixmap (image), converts it to JPEG bytes, and then inserts the image into a new, blank page in the new, compressed PDF. This process effectively reduces the file size by saving the visual content as images."
+        ]
+      },
+      {
+        "id": "saving-compressed-pdf",
+        "title": "Saving Newly Compressed PDF",
+        "content": [
+          "```python\nnew_document.save(output_path)\nnew_document.close()\ndocument.close()\n```",
+          "This code helps you save the newly compressed PDF file to the output_path. However, it closes the original and compressed documents to free up memory. This ensures all changes are written and no files are left open in memory."
+        ]
+      },
+      {
+        "id": "results",
+        "title": "Results",
+        "content": [
+          "```python\nprint(f\"✅ Compressed: {output_path}\")\nprint(f\"   Original: {os.path.getsize(input_path)/1024:.2f} KB\")\nprint(f\"   Compressed: {os.path.getsize(output_path)/1024:.2f} KB\")\n```",
+          "With this code, you can display the path to the compressed file and also view the sizes of the original and the new documents. This operation is carried out using the os.path module. getsize() to get the size of the new document. The output is also formatted to two decimal points, which helps with readability."
+        ]
+      },
+      {
+        "id": "batch-compression-error-handling",
+        "title": "Batch PDF Compression and Error Handling",
+        "content": [
+          "```python\nexcept Exception as e:\n       print(f\"❌ Error compressing {input_path}: {str(e)}\")\n```",
+          "```python\nif __name__ == \"__main__\":\n   folder = \"/content\"\n\n   if not os.path.isdir(folder):\n       raise FileNotFoundError(f\"Folder '{folder}' does not exist.\")\n\n   pdf_files = [f for f in os.listdir(folder) if f.endswith(\".pdf\")]\n\n   if not pdf_files:\n       print(\"⚠️ No PDF files found in the folder.\")\n   else:\n       for filename in pdf_files:\n           input_pdf = os.path.join(folder, filename)\n           output_pdf = os.path.join(folder, filename.replace(\".pdf\", \"-compressed.pdf\"))\n           compress_pdf(input_pdf, output_pdf)\n```",
+          "This code handles errors during compression with a try-except block. If something goes wrong, it catches the exception and prints an error message showing which file failed and why. Then, in the main execution block, it sets a folder path (in this case, /content) where the PDF files are located.",
+          "It checks if the folder exists and raises an error if it doesn't. Next, it looks for all PDF files in that folder. If no PDFs are found in the folder, a warning is printed. Otherwise, it loops through each PDF file, creates a new output filename for the compressed version, and calls the compress_pdf() function to perform the compression.",
+          "Running this code locally yields the output of your compressed document, tagged as 'compressed.' All these operations are in the folder; you can get a resized PDF."
+        ]
+      },
+      {
+        "id": "application-of-pymupdf",
+        "title": "Application of PyMuPDF for Reducing File Size",
+        "content": [
+          "This tool is particularly useful in various settings where file size reduction is crucial. Good examples include Email Attachment optimization, improved web and app performance, and archiving and storage management.",
+          "In many corporate workplaces, email attachments are limited (e.g., 20MB), but with PyMuPDF, you can compress files, reports, proposals, and other documents to stay within the given limits.",
+          "A reduced size can also enhance loading speed and improve the user experience. This is especially necessary for institutions, banks, academic institutions, and legal organizations that host online PDF files.",
+          "Optimizing storage is another reason why the tool is relevant. Hospitals, firms, government agencies, and even some businesses store a large archive of PDF documents. Reducing file size is essential for saving storage and memory."
+        ]
+      },
+      {
+        "id": "exploring-pymupdf-with-streamlit",
+        "title": "Exploring PyMuPDF With Streamlit",
+        "content": [
+          "You can apply this compressor using a simple user interface with Streamlit to power the compression algorithm. This tool can help you set up a page that can handle these files. Therefore, you can test the compressor while also allowing usage for individuals with a deep technical understanding of coding.",
+          "This section will explain a simple guide to setting up a page to run this compression tool."
+        ]
+      },
+      {
+        "id": "page-setup",
+        "title": "Page Setup",
+        "content": [
+          "The first step in using Streamlit is to utilize its page setup features. This allows you to create a centered heading and minimalist interface where you can add attributes, links, buttons, file uploads, and other inputs. In this case, using PyMuPDF would require adding an interface to upload files, which brings us to the next step."
+        ]
+      },
+      {
+        "id": "file-handling",
+        "title": "File Handling",
+        "content": [
+          "You can use the bordered container on Streamlit to create a file uploader that accepts only PDF files. This attribute helps you handle the uploaded file effectively, as it allows you to avoid saving the file on disk."
+        ]
+      },
+      {
+        "id": "user-control",
+        "title": "User Control (Added Feature)",
+        "content": [
+          "This tool features a high-quality slider that ranges from 0 to 100, allowing users to control the desired compression level precisely.",
+          "Displays an informative message explaining that a lower quality setting results in a smaller file size. Features a large \"Compress PDF\" button that spans the width of the container, making it highly visible and easy to click."
+        ]
+      },
+      {
+        "id": "processing-flow",
+        "title": "Processing Flow",
+        "content": [
+          "When a PDF is uploaded, the app captures the file name and size, then enables compression options. Upon clicking \"Compress PDF,\" a loading spinner appears, the file is processed using temporary storage, and the compression algorithm is executed.",
+          "After compression, it displays file size comparisons, provides a download button, and shows an error message if compression fails."
+        ]
+      },
+      {
+        "id": "running-streamlit-locally",
+        "title": "Running Streamlit Locally",
+        "content": [
+          "As we mentioned earlier, this platform allows you to set up a simple User Interface to host your mini projects. It also permits simple attributes, such as buttons, file uploaders, and links. Here is a simple guide on how to run this;",
+          "Clone the GitHub repo - Navigate to and clone the GitHub Repository at: https://github.com/Hanif-adedotun/compress-pdf",
+          "Navigate to the root of the folder - Open up the terminal on the path",
+          "Run pip install -r requirements.txt",
+          "Run streamlit streamlit.py",
+          "Open up your browser at localhost:8501",
+          "Voila! You now have access to the localhost version of the project running on your system.",
+          "Install Streamlit - Pip install Streamlit",
+          "Once you have successfully installed it, you can run the Python code. If you encounter no errors, it means Streamlit has been installed successfully.",
+          "Run the Streamlit File - Streamlit run filename.py",
+          "This command will direct you to a local URL on your web browser, and you can then proceed to start building your page.",
+          "With this tool, you can use Streamlit's basic functions and attributes to run your mini projects, like the PDF compressor. There are lots of features you can add with little to no knowledge of HTML and CSS. Check out this guide for more information on using Streamlit."
+        ]
+      },
+      {
+        "id": "wrapping-up",
+        "title": "Wrapping Up",
+        "content": [
+          "The article examines how the PyMuPDF Python library effectively compresses the size of PDF files. Users can optimize PDFs for email, web, and storage by converting pages to compressed images and rebuilding the document."
+        ]
+      }
+    ]
+  },
+  {
     "slug": "2025-in-review",
     "title": "2025: In Review",
     "date": "2025-01-01",
