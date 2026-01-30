@@ -9,5 +9,11 @@ export default defineConfig({
   integrations: [mdx(), icon(), react()],
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      exclude: ['react-syntax-highlighter'],
+    },
+    ssr: {
+      external: ['react-syntax-highlighter'],
+    },
   },
 });
