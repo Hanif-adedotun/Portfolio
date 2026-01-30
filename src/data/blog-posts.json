@@ -1,5 +1,69 @@
 [
   {
+    "slug": "how-to-set-deepseek-as-default-model-cursor",
+    "title": "How to set Deepseek as your default model in Cursor",
+    "date": "2025-01-31",
+    "author": "Hanif",
+    "intro": "If you have limited RAM to run the local version of Deepseek, you can make use of their extremely cheap API and use it as your default model in Cursor.",
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introduction",
+        "content": [
+          "Deepseek has taken the internet by storm with its groundbreaking R1 model. According to benchmarks, it surpasses OpenAI's GPT-3.5-turbo in certain tasks.",
+          "This article won't dive into model comparisons but will show you how to seamlessly integrate Deepseek into your workflow using Cursor. If you want to understand how Deepseek-R1 works under the hood, you can read this great article by neuralnetworks",
+          "I personally couldn't run the deepseek-R1 model locally due to RAM constraints, so the next best thing is to use their extremely cheap API with literally no rate limits.",
+          "Let's get right into it!"
+        ]
+      },
+      {
+        "id": "step-1-install-cursor",
+        "title": "Step 1: Install or Update Cursor",
+        "content": [
+          "First things first, ensure you have the latest version of Cursor installed on your machine. If you haven't installed it yet, head over to the official Cursor website and download the version compatible with your operating system (Windows, macOS, or Linux).",
+          "If you already have Cursor installed, check for updates to make sure you're running the latest version. This ensures compatibility with Deepseek-R1 and access to the newest features."
+        ]
+      },
+      {
+        "id": "step-2-obtain-api-access",
+        "title": "Step 2: Obtain Deepseek-R1 API Access",
+        "content": [
+          "To use Deepseek-R1 in Cursor, you'll need access to its API. Here's how to get started:",
+          "Sign Up for Deepseek: Visit the Deepseek website (https://platform.deepseek.com/) and sign up.",
+          "Generate an API Key: Once registered, generate an API key from your account dashboard. This key will be used to authenticate your requests in Cursor.",
+          "Top up your wallet: Before you can use the Deepseek API (the chat web version is free, by the way), you need to top up your wallet, or nothing will work. You navigate to top-up, pay using your credit card or PayPal, and check the balance.",
+          "I encountered some problems using direct Debit/Credit Cards. It was not accepting my dollar card, so I had to use the PayPal option, (which is unfortunately not available in Nigeria). So, that's something to bear in mind.",
+          "Now that we have our API Key, let's set up Cursor to make use of the Deepseek R1 model."
+        ]
+      },
+      {
+        "id": "step-3-configure-cursor",
+        "title": "Step 3: Configure Cursor to Use Deepseek-R1",
+        "content": [
+          "Now that you have your API key, it's time to configure Cursor to use Deepseek-R1 as its default model.",
+          "Open Cursor Settings: Launch Cursor and navigate to the settings menu. You can usually find this under File > Preferences > Settings for windows and under Cursor > Settings > Cursor Settings",
+          "Locate the AI Model Settings: In the settings menu, look for the section labeled Models. This is where you can customize the AI model used by Cursor.",
+          "The Deepseek API is OpenAI-compatible, meaning you can use it with any software that supports OpenAI's API format.",
+          "Enter Your Deepseek API Key: Paste the API key you generated earlier into the designated field. This step authenticates your connection to Deepseek-R1.",
+          "Override Base URL: In order to ensure the models are using deepseek API, you have to override openAI base model URL to point to https://api.deepseek.com.",
+          "Set deepseek as the Default Model: In the same settings section, you'll see an option to select the default AI model. Choose deepseek-reasoner and deepseek-chat from the drop-down menu. deepseek-reasoner is the Deepseek-R1 model, and deepseek-chat is the Deepseek-v3 model. You can check out more details in their docs"
+        ]
+      },
+      {
+        "id": "wrapping-up",
+        "title": "Wrapping Up",
+        "content": [
+          "That's it! 🎉 You've successfully integrated Deepseek-R1 into Cursor using its API.",
+          "✅ No more RAM issues — you can now enjoy Deepseek's powerful capabilities without running it locally.",
+          "✅ Super cheap API with no rate limits — ideal for extended usage.",
+          "✅ Smooth AI-assisted coding experience — Deepseek's models work seamlessly with Cursor.",
+          "If you have any issues or want to explore more, check out Deepseek's official documentation or drop a comment below.",
+          "🚀 Happy coding! 🚀"
+        ]
+      }
+    ]
+  },
+  {
     "slug": "headline-agent-ai-agent-grabs-latest-tech-news-inbox",
     "title": "Headline Agent: An AI agent that grabs the latest tech news and drops it straight into your inbox",
     "date": "2025-08-28",

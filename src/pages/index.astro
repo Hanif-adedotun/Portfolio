@@ -9,7 +9,11 @@ import about from "../data/about.json";
 import blogPosts from "../data/blog-posts.json";
 ---
 
-<Layout title="Portfolio">
+<Layout 
+  title="Hanif Adedotun - Software Engineer & Developer Portfolio"
+  description="Hanif Adedotun - Software Engineer & Developer. Portfolio showcasing projects, blog posts, and technical expertise in modern web development."
+  canonicalUrl="https://v2.hanif.one/"
+>
   <div class="min-h-screen p-6 max-w-4xl mx-auto">
     <Header />
 
@@ -123,6 +127,31 @@ import blogPosts from "../data/blog-posts.json";
         </div>
       </section>
     </main>
+
+    {/* Structured Data - JSON-LD */}
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Hanif Adedotun",
+      "url": "https://v2.hanif.one",
+      "email": "hey@hanif.one",
+      "jobTitle": "Software Engineer",
+      "sameAs": [
+        "https://github.com/hanif-adedotun",
+        "https://x.com/@devhanif",
+        "https://linkedin.com/in/hanif-adedotun"
+      ]
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Hanif Adedotun - Portfolio",
+      "url": "https://v2.hanif.one",
+      "author": {
+        "@type": "Person",
+        "name": "Hanif Adedotun"
+      }
+    })} />
 
     <footer
       class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 text-center animate-fade-in-delay"

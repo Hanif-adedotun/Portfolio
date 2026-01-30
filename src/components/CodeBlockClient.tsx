@@ -1,11 +1,4 @@
-import { useEffect, useState, lazy, Suspense } from 'react';
-
-// Lazy load the syntax highlighter only on client
-const SyntaxHighlighter = lazy(() => 
-  import('react-syntax-highlighter').then(module => ({
-    default: module.Prism
-  }))
-);
+import { useEffect, useState } from 'react';
 
 // Custom light theme matching portfolio colors
 const customLightTheme = {
@@ -109,9 +102,25 @@ export default function CodeBlock({ code, language, sectionIndex, paraIndex, ind
   const [isDark, setIsDark] = useState(false);
   const [copied, setCopied] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [highlighterReady, setHighlighterReady] = useState(false);
+  const [HighlighterComponent, setHighlighterComponent] = useState<any>(null);
 
   useEffect(() => {
     setMounted(true);
+    
+    // Try to load syntax highlighter
+    if (typeof window !== 'undefined') {
+      import('react-syntax-highlighter')
+        .then((module) => {
+          setHighlighterComponent(() => module.Prism);
+          setHighlighterReady(true);
+        })
+        .catch((err) => {
+          console.warn('Failed to load syntax highlighter:', err);
+          // Continue without highlighting
+        });
+    }
+    
     // Check if dark mode is active
     const checkDarkMode = () => {
       setIsDark(document.documentElement.classList.contains('dark'));
@@ -211,12 +220,8 @@ export default function CodeBlock({ code, language, sectionIndex, paraIndex, ind
           <span className="copy-text">{copied ? 'Copied!' : 'Copy'}</span>
         </button>
       </div>
-      <Suspense fallback={
-        <pre className="p-5 overflow-x-auto m-0 bg-[#F8F9FC] dark:bg-[#0D1117]">
-          <code style={{ fontFamily: "'JetBrains Mono', monospace" }}>{code}</code>
-        </pre>
-      }>
-        <SyntaxHighlighter
+      {HighlighterComponent && highlighterReady ? (
+        <HighlighterComponent
           language={language || 'text'}
           style={isDark ? customDarkTheme : customLightTheme}
           customStyle={customStyle}
@@ -228,8 +233,22 @@ export default function CodeBlock({ code, language, sectionIndex, paraIndex, ind
           }}
         >
           {code}
-        </SyntaxHighlighter>
-      </Suspense>
+        </HighlighterComponent>
+      ) : (
+        <pre className="p-5 overflow-x-auto m-0 bg-[#F8F9FC] dark:bg-[#0D1117]">
+          <code 
+            className={`language-${language || 'text'}`}
+            style={{ 
+              fontFamily: "'JetBrains Mono', monospace", 
+              whiteSpace: 'pre', 
+              display: 'block',
+              color: isDark ? '#c9d1d9' : '#1f2937'
+            }}
+          >
+            {code}
+          </code>
+        </pre>
+      )}
     </div>
   );
 }

@@ -11,9 +11,20 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+const site = Astro.site || "https://v2.hanif.one";
+const postUrl = new URL(`/blog/${post.slug}`, site).href;
+const postDate = new Date(post.date).toISOString();
 ---
 
-<Layout title={post.title}>
+<Layout 
+  title={`${post.title} - Hanif Adedotun`}
+  description={post.intro || `Read ${post.title} by Hanif Adedotun`}
+  canonicalUrl={postUrl}
+  type="article"
+  author={post.author}
+  publishedTime={postDate}
+  section="Technology"
+>
   <div class="min-h-screen">
     <div class="max-w-7xl mx-auto px-6 py-8">
       <a
@@ -84,6 +95,31 @@ const { post } = Astro.props;
             ))}
           </div>
         </article>
+
+        {/* Structured Data - JSON-LD */}
+        <script type="application/ld+json" set:html={JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": post.title,
+          "description": post.intro || "",
+          "author": {
+            "@type": "Person",
+            "name": post.author,
+            "url": `${site}`
+          },
+          "datePublished": postDate,
+          "dateModified": postDate,
+          "publisher": {
+            "@type": "Person",
+            "name": "Hanif Adedotun",
+            "url": site
+          },
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": postUrl
+          },
+          "url": postUrl
+        })} />
 
         <!-- Table of Contents -->
         <aside class="hidden lg:block w-64 shrink-0 animate-fade-in-delay">
