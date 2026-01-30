@@ -1,0 +1,200 @@
+---
+import { parseContent } from '../lib/markdown';
+
+interface Props {
+  content: string;
+  sectionIndex: number;
+  paraIndex: number;
+}
+
+const { content, sectionIndex, paraIndex } = Astro.props;
+const parsed = parseContent(content);
+---
+
+{parsed.map((part, index) => {
+  if (part.type === 'code') {
+    return (
+      <div
+        class="code-block-wrapper my-8 rounded-xl overflow-hidden border border-gray-200/60 dark:border-gray-800/40 bg-[#F8F9FC] dark:bg-[#0D1117] shadow-sm hover:shadow-md transition-all duration-300"
+        style={`animation: fadeIn 0.5s ease-out ${(sectionIndex * 150) + (paraIndex * 50) + 300}ms both`}
+      >
+        <div class="flex items-center justify-between px-5 py-3 bg-white/40 dark:bg-[#161B22]/60 border-b border-gray-200/40 dark:border-gray-800/40 backdrop-blur-sm">
+          <div class="flex items-center gap-2">
+            <div class="flex gap-1.5">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-400/80"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-yellow-400/80"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-400/80"></div>
+            </div>
+            <span class="text-xs font-semibold text-gray-600 dark:text-white uppercase tracking-wider ml-2">
+              {part.language || 'code'}
+            </span>
+          </div>
+          <button
+            class="copy-code-btn group flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-contrast dark:hover:text-contrast transition-all duration-200 rounded-md hover:bg-gray-100/50 dark:hover:bg-gray-800/30"
+            title="Copy code"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre class="p-5 overflow-x-auto m-0 bg-[#F8F9FC] dark:bg-[#0D1117]"><code class={`language-${part.language || 'text'}`}>{part.content}</code></pre>
+      </div>
+    );
+  } else {
+    // Split text by newlines to handle multi-paragraph content
+    const paragraphs = part.content.split('\n\n').filter(p => p.trim());
+    return paragraphs.map((para, paraIdx) => (
+      <p
+        class="text-base text-gray-700 dark:text-gray-300 leading-relaxed transition-opacity duration-300"
+        style={`animation: fadeIn 0.5s ease-out ${(sectionIndex * 150) + (paraIndex * 50) + (index * 50) + (paraIdx * 50) + 300}ms both`}
+      >
+        {para}
+      </p>
+    ));
+  }
+})}
+
+<style>
+  .code-block-wrapper {
+    position: relative;
+  }
+  
+  .code-block-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(29, 207, 246, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .code-block-wrapper:hover::before {
+    opacity: 1;
+  }
+  
+  pre {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+  }
+  
+  pre code {
+    display: block;
+    white-space: pre;
+    font-weight: 400;
+  }
+  
+  /* Prism will handle colors, but set fallback */
+  pre code:not([class*="language-"]) {
+    color: #1f2937;
+  }
+  
+  .dark pre code:not([class*="language-"]) {
+    color: #c9d1d9;
+  }
+  
+  /* Smooth scrollbar for code blocks */
+  pre::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  pre::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  pre::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175, 0.3);
+    border-radius: 4px;
+  }
+  
+  pre::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 163, 175, 0.5);
+  }
+  
+  .dark pre::-webkit-scrollbar-thumb {
+    background: rgba(75, 85, 99, 0.4);
+  }
+  
+  .dark pre::-webkit-scrollbar-thumb:hover {
+    background: rgba(75, 85, 99, 0.6);
+  }
+  
+  /* Copy button animation */
+  .copy-code-btn .copy-text {
+    transition: all 0.2s ease;
+  }
+  
+  .copy-code-btn:hover svg {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+  }
+</style>
+
+<script>
+  function highlightCodeBlocks() {
+    // @ts-ignore - Prism is loaded from CDN
+    if (typeof window.Prism !== 'undefined' || typeof Prism !== 'undefined') {
+      // @ts-ignore
+      const PrismLib = window.Prism || Prism;
+      const codeBlocks = document.querySelectorAll('code[class*="language-"]:not([data-prism-processed])');
+      codeBlocks.forEach((block) => {
+        try {
+          PrismLib.highlightElement(block);
+        } catch (e) {
+          console.warn('Prism highlighting failed for block:', e);
+        }
+      });
+    }
+  }
+  
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', highlightCodeBlocks);
+  } else {
+    highlightCodeBlocks();
+  }
+  
+  // Also run after a short delay to ensure Prism is loaded
+  setTimeout(highlightCodeBlocks, 100);
+  
+  // Copy button functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('.copy-code-btn');
+    
+    copyButtons.forEach((button) => {
+      button.addEventListener('click', async () => {
+        // Find the code element in the same code block container
+        const codeBlock = button.closest('.code-block-wrapper');
+        const codeElement = codeBlock?.querySelector('code');
+        // Get the original code text (before Prism highlighting)
+        // Prism adds spans, so we need to get text content
+        const code = codeElement?.textContent || codeElement?.innerText || '';
+        
+        if (code && navigator.clipboard) {
+          try {
+            await navigator.clipboard.writeText(code);
+            const copyText = button.querySelector('.copy-text');
+            if (copyText) {
+              const originalText = copyText.textContent;
+              copyText.textContent = 'Copied!';
+              button.classList.add('text-contrast');
+              setTimeout(() => {
+                copyText.textContent = originalText;
+                button.classList.remove('text-contrast');
+              }, 2000);
+            }
+          } catch (err) {
+            console.error('Failed to copy code:', err);
+          }
+        }
+      });
+    });
+  });
+</script>
+
