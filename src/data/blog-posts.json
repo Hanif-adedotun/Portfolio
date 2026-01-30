@@ -1,5 +1,72 @@
 [
   {
+    "slug": "2024-the-year-of-resilience",
+    "title": "2024: The Year of Resilience",
+    "date": "2024-12-31",
+    "author": "Hanif",
+    "intro": "Year in Review, wins, losses and lessons. This year was a lot; I experienced my lowest and highest points in just 365 days. Never the less, it turned out to be my most productive year by miles.",
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introduction",
+        "content": [
+          "Sits down and spends like 30 minutes crying while replaying the year like a chaotic highlight reel.",
+          "This year was a lot; I experienced my lowest and highest points in just 365 days. Never the less, it turned out to be my most productive year by miles. I was intentional about going out of my comfort zone; I met amazing people, and in summary, I grew.",
+          "The first half tested me in so many ways I did not envision; I was juggling working on a very difficult final year project, trying to meet deadlines for submission, and then a remote role at a startup. It was very tough."
+        ]
+      },
+      {
+        "id": "academia",
+        "title": "📚 Academia",
+        "content": [
+          "Graduated with a First Class Degree in Computer Engineering 4.82/5 !!!",
+          "I won't classify myself as an exceptionally smart student, but one thing I remember telling myself in 2019 is that I would strive and do all my best to graduate with a first class. I always said it that if I wasn't already in first class, I would not put so much effort in school, it would have all gone to making myself better outside school, but I was able to 'balance' school and tech to the best of my abilities, and I am glad I did and not the extreme option.",
+          "My final year project was a major highlight for me; together with three excellent classmates, we were able to build a prototype of a robot controlled by thoughts only. Here is a video of the prototype.",
+          "I also co-authored and published a research paper on Predictive Modeling of Precast Concrete Compressive Strength Using Artificial Neural Networks"
+        ]
+      },
+      {
+        "id": "career",
+        "title": "👨🏽‍🎓 Career",
+        "content": [
+          "I had to make some hard decisions with regards to my career because I knew that I could not keep spreading myself thin and expecting to achieve a lot of progress. I got laid off after just a few months into a role, it definitely didn't help with my imposter syndrome, but it was a much-needed hard reset to figure out my priorities.",
+          "My Aguero moment started in September when I got:",
+          "A contract job to develop an education management system",
+          "Secured a new contract to design and implement advanced web scraping bots",
+          "Worked with a YC-backed AI startup to create integration tutorials of their SDK, empowering developers to seamlessly adopt their tools.",
+          "Secured a full-time role as a Software Engineer at a US-based company."
+        ]
+      },
+      {
+        "id": "competitions",
+        "title": "🏆 Competitions",
+        "content": [
+          "Well, as for competitions, it was a successful one for me, and by extension, my team building Neurosync. I represented a startup called Celia earlier in the year for the Wema Bank Hackaholics, and fortunately we got to the finals in Lagos, but unfortunately we could not secure the Top 10 position, nevertheless, it was a good learning moment for sure. Here is the recorded pitch.",
+          "At Neurosync, we had a successful year; we achieved:",
+          "Winners of the Project Exhibition across the Computing and Engineering Faculties at Nile University of Nigeria.",
+          "A first runner-up position at the Global Entrepreneurship Festival in Ondo.",
+          "A second runner-up position at the Nigerian Society of Engineers Innovation Competition."
+        ]
+      },
+      {
+        "id": "personal-accomplishment",
+        "title": "Personal accomplishment",
+        "content": [
+          "Prior to this year, I never imagined I could stay committed to a six-month training program — but I did, and I couldn't be more grateful. The experience not only pushed me to grow but also connected me with incredible, like-minded individuals from across Africa, all striving toward inspiring goals. Being part of such a vibrant and driven community was truly transformative."
+        ]
+      },
+      {
+        "id": "looking-back",
+        "title": "Looking Back",
+        "content": [
+          "Looking back at the year, I had to learn the hard way not to try to do everything at once. I am trying now to streamline and focus on just a few things that truly align with my future goals, and I want to put in every joule of energy I have within me, so help me, God.",
+          "I am truly grateful for just showing up everyday, I am no where close to where I want to be, but there is motion and hope. There is so much planned for the future.",
+          "Cheers to all we've overcome and all we've become 🥂"
+        ]
+      }
+    ]
+  },
+  {
     "slug": "how-to-set-deepseek-as-default-model-cursor",
     "title": "How to set Deepseek as your default model in Cursor",
     "date": "2025-01-31",
