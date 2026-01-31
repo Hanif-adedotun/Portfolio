@@ -1,5 +1,233 @@
 [
   {
+    "slug": "ml-series-practical-tutorial-building-cnn",
+    "title": "ML Series: A Practical Tutorial on Building a Convolutional Neural Network (CNN)",
+    "date": "2024-06-24",
+    "author": "Hanif",
+    "intro": "Welcome back to the ML Series, In the previous article in this series we implemented a Multiplayer Perceptron Model, that was an introduction into Neural Networks using a very basic architecture. Today we are going to be implementing a Convolutional Neural Network (CNN) using pyTorch and testing using the MNIST handwriting dataset.",
+    "sections": [
+      {
+        "id": "introduction-cnns",
+        "title": "Introduction to CNNs",
+        "content": [
+          "Imagine a computer program that can learn to recognize objects in pictures just by looking at a bunch of examples. That's the magic of Convolutional Neural Networks (CNNs)!",
+          "CNNs are a special type of artificial neural network inspired by the structure of the visual cortex in animals. They excel at tasks involving images and videos. The image fed into the Network passes through convolutional layers that act like filters to extract essential features such as edges, textures, and patterns. These features become progressively complex as they move through multiple layers.",
+          "The output from these layers is then flattened and fed into fully connected layers, which function similarly to a traditional neural network to perform classification. Ultimately, the CNN processes and learns from the image features, enabling it to output classifications such as identifying objects or recognizing handwritten digits.",
+          "This combination of feature extraction and classification within a single framework makes CNNs powerful tools for image recognition tasks."
+        ]
+      },
+      {
+        "id": "cnn-components",
+        "title": "Components of a CNN",
+        "content": [
+          "A Convolutional Neural Network makes use of two very distinct operations:",
+          "Convolutional Layers: These layers use filters (like tiny templates) to scan an image, identifying patterns and extracting features like edges, shapes, and textures.",
+          "Pooling Layers: These layers reduce the image size while retaining important features, making the network more efficient. The trade off of pooling is that, too much and important information can be lost in the process",
+          "Some other components of the Convolutional Network are:",
+          "Activation Function: An activation function (e.g., ReLU, sigmoid, tanh) is applied element wise to the output of the convolutional layer. It introduces non-linearity, allowing the network to learn complex patterns.",
+          "Fully Connected Layer: Transforms the output of the previous layers into a single, streamlined list (vector). Then, it applies fully connected operations, much like a multilayered perceptron, to make classifications or predictions.",
+          "Softmax or Output Layer: Generates the final output probabilities or values for the target classes or outputs"
+        ]
+      },
+      {
+        "id": "importing-packages",
+        "title": "Importing Required Packages",
+        "content": [
+          "So, first of all, we are going to import all the packages needed for our model",
+          "```python\nimport random\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport random\nimport torch\nimport torch.nn as nn\nimport torch.nn.functional as F\nimport torch.optim as optim\nfrom torchvision import datasets, transforms\nfrom torch.utils.data import DataLoader\nimport torchvision\nfrom keras.datasets import mnist\nfrom mlxtend.data import loadlocal_mnist\n%matplotlib inline\nimport os\n```"
+        ]
+      },
+      {
+        "id": "loading-dataset",
+        "title": "Loading the MNIST Dataset",
+        "content": [
+          "We are going to be using the MNIST dataset from Kaggle, you can go ahead and download it here. The next step is to divide it into test and train variables",
+          "```python\ntraining_images_filepath = '/kaggle/input/d/hojjatk/mnist-dataset/train-images.idx3-ubyte'\ntraining_labels_filepath = '/kaggle/input/d/hojjatk/mnist-dataset/train-labels.idx1-ubyte'\ntest_images_filepath = '/kaggle/input/d/hojjatk/mnist-dataset/t10k-images.idx3-ubyte'\ntest_labels_filepath = '/kaggle/input/d/hojjatk/mnist-dataset/t10k-labels.idx1-ubyte'\n\nX_train, y_train = loadlocal_mnist(training_images_filepath, training_labels_filepath)\nX_test, y_test = loadlocal_mnist(test_images_filepath, test_labels_filepath)\n```"
+        ]
+      },
+      {
+        "id": "previewing-data",
+        "title": "Previewing the Dataset",
+        "content": [
+          "To preview some of the handwritten text, we would use the show function, that takes in random five images from the dataset using the plt.imshow function.",
+          "```python\ndef show(image, title):\n    index = 1\n    plt.figure(figsize=(10,5))\n    for x in zip(image, title):\n        image = x[0]\n        title = x[1]\n        plt.subplot(2, 5, index)\n        plt.imshow(image, cmap=plt.cm.gray)\n        plt.title(x[1], fontsize = 9)\n        index += 1\n\nimage = []\ntitle = []\n\nX_train_reshape = X_train.reshape(60000, 28, 28)\nX_test_reshape = X_test.reshape(10000, 28, 28)\n\nfor i in range(0, 5):\n    r = random.randint(1, len(X_train_reshape))\n    image.append(X_train_reshape[r])\n    title.append('training image:' + str(y_train[r]))\n\nfor i in range(0, 5):\n    r = random.randint(1, len(X_test_reshape))\n    image.append(X_test_reshape[r])\n    title.append('testing image:' + str(y_test[r]))\n\nshow(image, title)\n```"
+        ]
+      },
+      {
+        "id": "creating-dataloader",
+        "title": "Creating DataLoader",
+        "content": [
+          "In machine learning, especially with large datasets, efficiently managing and processing data is crucial for training and evaluation. PyTorch's DataLoader is a powerful utility that simplifies this task by creating an iterable over a dataset, facilitating the handling of batches of data. It enables automatic batching, shuffling, and multi-threaded data loading, which accelerates the training process and improves model performance.",
+          "By converting data into manageable chunks and supporting parallel data processing, the DataLoader ensures that the training loop operates smoothly, even with extensive and complex datasets, thereby optimizing the computational workflow and enhancing model accuracy.",
+          "The CustomDataset class wraps your feature and label arrays into a format that PyTorch can understand. The DataLoader objects make it easy to iterate over the dataset in batches, which is essential for training and evaluating machine learning models efficiently. train_loader and test_loader allow you to load the training and testing data in batches, handle shuffling, and provide data in a format ready for training loops or evaluation",
+          "```python\nimport torch\nfrom torch.utils.data import Dataset, DataLoader\n\nclass CustomDataset(Dataset):\n    def __init__(self, X, y):\n        self.X = torch.tensor(X, dtype=torch.float32)\n        self.y = torch.tensor(y, dtype=torch.long)\n    \n    def __len__(self):\n        return len(self.X)\n    \n    def __getitem__(self, idx):\n        return self.X[idx], self.y[idx]\n\n# Create train and test datasets\ntrain_dataset = CustomDataset(X_train, y_train)\ntest_dataset = CustomDataset(X_test, y_test)\n\n# Create train and test loaders\ntrain_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)\ntest_loader = DataLoader(test_dataset, batch_size=1000, shuffle=False)\n```"
+        ]
+      },
+      {
+        "id": "setting-seed",
+        "title": "Setting Random Seed",
+        "content": [
+          "To ensure that each run of the code with the same seed yields the same results, we are going to be setting seed for NumPy and PyTorch",
+          "Consistency: Facilitates consistent model training and evaluation by fixing the randomness across different libraries and environments.",
+          "```python\ndef set_seed(seed):\n    # Set the seed for Python's built-in random module\n    random.seed(seed)\n    # Set the seed for NumPy\n    np.random.seed(seed)\n    # Set the seed for PyTorch\n    torch.manual_seed(seed)\n    # If using GPU\n    if torch.cuda.is_available():\n        torch.cuda.manual_seed(seed)\n        torch.cuda.manual_seed_all(seed)\n        # Ensure deterministic behavior in CUDA operations\n        torch.backends.cudnn.deterministic = True\n        torch.backends.cudnn.benchmark = False\n\nseed = 42\nset_seed(seed)\n```"
+        ]
+      },
+      {
+        "id": "defining-cnn-model",
+        "title": "Defining the CNN Model",
+        "content": [
+          "Then we define our CNN model, with three convolutional layers, and two fully connected layers, the activation function used in all the convolutional layers and the first fully connected layer is the reLu activation function, then a max pooling with a stride of two right before the fully connected layer. The output was passed through a Log softmax activation function because of it is a classification task.",
+          "```python\nclass CNN(nn.Module):\n    def __init__(self):\n        super(CNN, self).__init__()\n        # Convolutional layers\n        self.conv1 = nn.Conv2d(in_channels=1, out_channels=32, kernel_size=3, padding=1)\n        self.conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, padding=1)\n        self.conv3 = nn.Conv2d(in_channels=64, out_channels=128, kernel_size=3)\n        # Fully connected layers\n        self.fc1 = nn.Linear(21632, 128)  # Calculate input size after flattening\n        self.fc2 = nn.Linear(128, 10)\n\n    def forward(self, x):\n        x = F.relu(self.conv1(x))\n        x = F.relu(self.conv2(x))\n        x = F.relu(self.conv3(x))\n        \n        x = F.max_pool2d(x, 2)\n        x = F.relu(self.fc1(x.view(-1, 21632)))\n        x = self.fc2(x)\n        return F.log_softmax(x, dim=1)\n```"
+        ]
+      },
+      {
+        "id": "initializing-model",
+        "title": "Initializing Model and Optimizer",
+        "content": [
+          "Next step is to initialize our CNN model, define our optimizer with weight decay, and we would be using Cross Entropy Loss function. Then to speed up the training time for the model, we check if GPU is available on the device, then we load the data and model to the GPU (if available)",
+          "```python\n# Initialize the model\nmodel = CNN()\n\n# Define the loss function\ncriterion = nn.CrossEntropyLoss()\n\n# Define the optimizer with weight decay (L2 regularization)\noptimizer_with_weight_decay = optim.SGD(model.parameters(), lr=0.01, weight_decay=0.01)\n\n# Check if CUDA is available and move model and data to GPU if available\ndevice = torch.device(\"cuda:0\" if torch.cuda.is_available() else \"cpu\")\n\n# Move model to device\nmodel.to(device)\n\n# Move data to device\nfor data, target in train_loader:\n    data, target = data.to(device), target.to(device)\n```"
+        ]
+      },
+      {
+        "id": "training-model",
+        "title": "Training the Model",
+        "content": [
+          "Time to train our model! The model would be trained by going through a forward pass, then reshaped and the passed through an optimizer and loss function. Then back propagation is performed on the model, and the average loss for each epoch is calculated and displayed in a graph.",
+          "```python\ndef train(model, train_loader, optimizer, criterion, num_epochs):\n    model.train()\n    losses = []\n    average_losses = []\n    for epoch in range(num_epochs):\n        for batch_idx, (data, target) in enumerate(train_loader):\n            data, target = data.to(device), target.to(device)  # Move data to GPU\n            data = data.unsqueeze(1)  # Add a channel dimension (channels = 1 for grayscale images)\n            data = data.view(-1, 1, 28, 28)  # Reshape the data to match the expected input shape\n            optimizer.zero_grad()\n            output = model(data)\n            loss = criterion(output, target)\n            loss.backward()\n            optimizer.step()\n            if batch_idx % 100 == 0:\n                losses.append(loss.item())\n                print('Train Epoch: {} [{}/{} ({:.0f}%)]\\tLoss: {:.6f}'.format(\n                    epoch, batch_idx * len(data), len(train_loader.dataset),\n                    100. * batch_idx / len(train_loader), loss.item()))\n        average_losses = sum(losses) / len(losses)\n        losses = []\n    \n    plt.plot(average_losses, label=f'11 Epochs')\n    plt.xlabel('Iterations')\n    plt.ylabel('Loss')\n    plt.title('Training Loss')\n    plt.legend()\n    plt.show()\n```"
+        ]
+      },
+      {
+        "id": "testing-model",
+        "title": "Testing the Model",
+        "content": [
+          "We can test our CNN model on the test dataset. For each batch we passes the data through the model to get predictions. We then calculate the loss using a criterion, sum the loss over all batches, and determine the model's accuracy by comparing predicted labels with the actual labels.",
+          "Finally, it prints the average loss and overall accuracy, offering insight into the model's performance on unseen data. Which was 0.0003 for the average loss and a 99% accuracy!",
+          "```python\n# Test function\ndef test(model, test_loader):\n    model.eval()\n    test_loss = 0\n    correct = 0\n    with torch.no_grad():\n        for data, target in test_loader:\n            data, target = data.to(device), target.to(device)  # Move data to the same device as the model\n            data = data.unsqueeze(1)  # Add a channel dimension (channels = 1 for grayscale images)\n            data = data.view(-1, 1, 28, 28)  # Reshape the data to match the expected input shape\n            output = model(data)\n            test_loss += criterion(output, target).item()\n            pred = output.argmax(dim=1, keepdim=True)\n            correct += pred.eq(target.view_as(pred)).sum().item()\n\n    test_loss /= len(test_loader.dataset)\n    accuracy = 100. * correct / len(test_loader.dataset)\n    print('\\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\\n'.format(\n        test_loss, correct, len(test_loader.dataset), accuracy))\n```"
+        ]
+      },
+      {
+        "id": "running-training-testing",
+        "title": "Running Training and Testing",
+        "content": [
+          "With our Convolutional Neural Network (CNN) fully defined, we can proceed to train and test our model. We'll train the model for 11 epochs, allowing it to learn progressively from the data.",
+          "While a higher number of epochs generally helps the model capture intricate patterns and improve accuracy, it's crucial to balance this with the risk of overfitting, where the model performs well on training data but poorly on new, unseen data. Thus, careful monitoring and adjustment of epochs, along with other hyperparameters, ensure optimal model performance.",
+          "```python\ntrain(model, train_loader, optimizer_with_weight_decay, criterion, 11)\ntest(model, test_loader)\n```"
+        ]
+      },
+      {
+        "id": "live-model-demo",
+        "title": "Live Model hosted on Hugging Face spaces",
+        "content": [
+          "In order to visualize our handwriting model, I created a live demo on hugging face, which you can feel free to play with using the link below.",
+          "Handwriting Classifier - hanif-cnn-handwriting-classifier.hf.space"
+        ]
+      },
+      {
+        "id": "final-thoughts",
+        "title": "Final thoughts",
+        "content": [
+          "In this article, we have walked through the essential steps to build, train, and evaluate a Convolutional Neural Network using PyTorch, tailored for recognizing handwritten digits. From data preparation to defining the network architecture, training with appropriate techniques, and finally evaluating performance, each step plays a vital role in developing a robust machine learning model.",
+          "CNNs, with their powerful ability to capture spatial hierarchies in images, continue to be pivotal in various applications beyond digit recognition, such as object detection, image segmentation, and beyond. By understanding and applying these concepts, one can leverage CNNs to tackle complex visual recognition tasks."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-run-llm-locally-chatgpt-interface",
+    "title": "How to run an LLM locally with a ChatGPT like interface",
+    "date": "2024-08-02",
+    "author": "Hanif",
+    "intro": "A few days ago Meta released a new version of their open source Large Language Model (LLM) called the Llama 3.1 in three variants, the 8B, 70B, and 405B which represents the size of tokens, with the smallest being 8Billion tokens.",
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introduction",
+        "content": [
+          "A few days ago Meta released a new version of their open source Large Language Model (LLM) called the Llama 3.1 in three variants, the 8B, 70B, and 405B which represents the size of tokens, with the smallest being 8Billion tokens and according to their release article",
+          "Llama 3.1 405B is the first openly available model that rivals the top AI models when it comes to state-of-the-art capabilities in general knowledge, steerability, math, tool use, and multilingual translation.",
+          "The paper for the Llama 3 Herd of Models is also available here",
+          "I've always been fascinated by the open-source approach to developing large language models. Historically, open source has driven innovation and provided strong competition to the proprietary methods of major tech companies.",
+          "Another reason I wanted to try running a model locally is due to the nature of my workflow. I frequently ask ChatGPT to analyze numerous files, but the free plan has limitations for this use case. I figured having an open-source LLM running on my computer would reduce my reliance on ChatGPT's file upload feature. So, I decided to install Llama 3.1 using Ollama and OpenWebUI."
+        ]
+      },
+      {
+        "id": "initial-attempt",
+        "title": "Initial Attempt with Llama 3.1",
+        "content": [
+          "Well, that failed woefully. Despite downloading the smallest variant, which was the Llama3.1 8B of about ~5GB, using Ollama, and upon running it on the command line, asking it a question \"What i a GPU?\", well, that took about 10 minutes to fully write out the answer 😔. In hindsight that was not such a great idea, my Macbook air was not powerful enough to run the model.",
+          "I knew that was not going to work, nearly giving up, I came across a twitter(X) post from @Prince_Canuma, on a light weight LLM from Google Deep Mind called Gemma2. I then decided to read it, and used it as an alternative to Llama3.1 model."
+        ]
+      },
+      {
+        "id": "about-gemma2",
+        "title": "About Gemma 2 2B",
+        "content": [
+          "Gemma 2 2B is a newly released artificial intelligence model developed by Google DeepMind, representing the smallest variant in the Gemma 2 family, which also includes larger models of 9 billion and 27 billion parameters. This 2 billion parameter model is optimized for a variety of hardware, making it suitable for deployment on edge devices, laptops.",
+          "This lightweight model produces outsized results by learning from larger models through distillation. In fact, Gemma 2 2B surpasses all GPT-3.5 models on the Chatbot Arena, demonstrating its exceptional conversational AI abilities.",
+          "Despite its compact size, according to Deep Mind the model outperformed larger models like GPT-3.5 and Mixtral on the LMSYS Chatbot Arena benchmark. It achieved an Elo score of 1126, surpassing the scores of its larger counterparts."
+        ]
+      },
+      {
+        "id": "ollama",
+        "title": "Ollama",
+        "content": [
+          "Ollama is a lightweight, open-source tool designed to make it easy to run and manage large language models (LLMs) locally on personal computers. It's gained popularity for its simplicity and focus on local AI deployment."
+        ]
+      },
+      {
+        "id": "openwebui",
+        "title": "OpenWebUI",
+        "content": [
+          "OpenWebUI is an open-source project aimed at creating a web-based user interface for large language models (LLMs). It's designed to provide a customizable and extendable front-end for interacting with various AI models, similar to how ChatGPT's interface works for OpenAI's models."
+        ]
+      },
+      {
+        "id": "installing-gemma2",
+        "title": "How to install Gemma2 2B model locally using Ollama",
+        "content": [
+          "The first step is to download Ollama on your computer, it supports windows, mac and Linux operating systems. The application was just about 177MB",
+          "When that is done, extract the application from the zip file and install it. Then the next step is to navigate to the terminal and run the command:",
+          "```bash\nollama run gemma2:2b\n```",
+          "This downloads the gemma2 model on your computer, it might take a while since the whole model is about 1.6GB large"
+        ]
+      },
+      {
+        "id": "quantized-models",
+        "title": "Quantized Models",
+        "content": [
+          "Ollama also supports installing custom models and quantized models. Quantized models are machine learning models that have had their precision reduced to make them faster and more memory efficient.",
+          "It involves converting a model's high-precision floating-point values to lower-precision fixed-point or integer representations. For example, a model's 32-bit floating-point numbers (float32) can be converted to 8-bit integers (int8)",
+          "Hugging Face offers a variety of quantized models that you can download. For example, there is a quantized version of the Gemma2 model posted by Bartowski. You can find it at this model link",
+          "Just similar to the installation of ollama, you will have to download the model a GGUF file, and then once that is done. navigate to your terminal and type in the following command",
+          "```bash\nvim Modelfile\n```",
+          "This opens a new file called Modelfile, which you can think of as a Dockerfile for llms. Once the editor is opened up on the terminal, type FROM followed by the link to you downloaded model file with a gguf extension. You can also set other commands as detailed in the github docs",
+          "```bash\nFROM ./link_to_model/filename.gguf\n\nFROM ./downloads/gemma-2-9b-it-Q6_K_L.gguf\n```",
+          "You can then create the model from the Modelfile using the command below",
+          "```bash\nollama create choose-a-model-name -f Modelfile\n```",
+          "To see all of the models installed on Ollama, you can use the ollama list command to achieve that",
+          "```bash\nollama list\n```",
+          "There it is, the list should contain the model you just created, you can then use ollama run",
+          "```bash\nollama run choose-a-model-name \"Any Prompt you want to write\"\n```"
+        ]
+      },
+      {
+        "id": "running-openwebui",
+        "title": "Running OpenWebUI",
+        "content": [
+          "As explained above OpenWebUI provides a ChatGPT like interface where file upload is also supported. To run OpenWebUI with your ollama models, it can be achieved with just one command on the terminal. You can either install it using docker or manually, all of these are explained in their installation guide",
+          "```bash\ndocker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main\n```"
+        ]
+      },
+      {
+        "id": "demo",
+        "title": "Demo of testing Gemma2 locally",
+        "content": [
+          "Thank you for reading. Cheers! 🥂"
+        ]
+      }
+    ]
+  },
+  {
     "slug": "2024-the-year-of-resilience",
     "title": "2024: The Year of Resilience",
     "date": "2024-12-31",
