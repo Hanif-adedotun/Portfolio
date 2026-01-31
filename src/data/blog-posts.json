@@ -1,5 +1,281 @@
 [
   {
+    "slug": "three-years-hyper-growth-lessons-learned",
+    "title": "Three years of hyper-growth and the Lessons Learned",
+    "date": "2023-12-31",
+    "author": "Hanif",
+    "intro": "It is currently 3 a.m. (WAT), and the silence is deafening, quite apart from the constant cricket sound. Waking up before the crack of dawn has been a habit I have had for a while, but I took it up a notch by setting my alarm for 3 a.m., a decision that has made me way more productive than I used to be.",
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introduction",
+        "content": [
+          "It is currently 3 a.m. (WAT), and the silence is deafening, quite apart from the constant cricket sound. Waking up before the crack of dawn has been a habit I have had for a while, but I took it up a notch by setting my alarm for 3 a.m., a decision that has made me way more productive than I used to be.",
+          "As someone who entered the tech scene at a relatively young age, entering 2020 was soul-wrenching for me. My days consisted of scrolling through LinkedIn and feeling the biggest imposter syndrome every day. I saw teenagers doing incredible things, like starting businesses and working remotely for multinational corporations, and there I was, with nothing tangible to show for myself as a \"software developer,\" and my biggest project at the time was a half-baked website for my mother's business."
+        ]
+      },
+      {
+        "id": "year-2020",
+        "title": "2020: The Lockdown Period",
+        "content": [
+          "Then the lockdown period was announced (a blessing in disguise). I remember skipping almost all the online classes I had during that time and averaging about 6–8 hours every day of intense coding as well as reading, but overall taking daily, incremental steps toward achieving my goal.",
+          "I think that was the only thing that kept me sane during lockdown."
+        ]
+      },
+      {
+        "id": "year-2021",
+        "title": "2021: Building Foundations",
+        "content": [
+          "Fresh out of lockdown, 2021 came by, and that year I was determined to make the best use of the year, which led me to create my vision board (I did not complete up to 50%). However, it did ensure I was accountable for myself and what I spent my time doing.",
+          "If I were to pick a highlight from the year, it would be the amount of knowledge I gained from reading books—non-fiction books, to be precise; heck, I even read the whitepapers of Bitcoin and Ethereum. My reading diversity was evident because I read everything from 500+ page programming books to business books and everything in between.",
+          "Subsequently, my pursuit of growth led me to join the Google Developers Student Club (GDSC), and looking back, that was one of the best decisions I have made for my tech career. Through the community, I met three like-minded developers, two companies founded together, one national award, and several tech competitions later. I am grateful to have met them.",
+          "We came together to build an MVP of a product named Startvest for the 2021 Google Developers Solutions Challenge. The idea was simple: a crowdfunding platform for small businesses and startups to get access to funds as an alternative to VC funding, very similar to the business model of getEquity. The project won us a hackathon at our university and got us to the finals of the FSI National Competition, but ultimately it could not scale to a company for reasons we could not control at the time.",
+          "I ended the year on a high note, feeling like I finally had found my niche, and I was ready to take on the world the next year."
+        ]
+      },
+      {
+        "id": "year-2022",
+        "title": "2022: Building Interna",
+        "content": [
+          "2022 year rolled by, and my plan was to continue to build on the clarity and momentum I had gained from the previous year. I wrote down my vision board for the year and somewhere in the list, I wrote down \"Build a portfolio website\" with a major imposter syndrome.",
+          "Somewhere down the line during the first version of my portfolio website, and it was my favourite project I had created till date.",
+          "On a cold, windy Saturday night, I was having a discussion with a friend (now co-founder) about our education and, more specifically, how we wanted to shape our careers. We talked for hours on end about what we see ourselves doing in 10 years. The highlight from that very night was me telling him how I wanted to build a product that people will use before I graduate from university, I then remember him vividly saying that he found that there was an information gap in the SIWES program for students, at that point, none of us have had IT experience outside family, and we truly did not have an idea on how to go about positioning ourselves for internship openings, and that was the birth of Interna",
+          "I was so bullish on the idea because I had talked to other students who faced the same challenge. The next day, I drafted a business pitch document and sent it to my friend. It was from there on that I reached out to the three developers that I built Startvest with, told them about the idea, they were bullish on it, and we went on to build the foundations of the company.",
+          "Building is hard; building in Nigeria is 10x harder",
+          "A few months later, we built out the MVP of Interna and we were in the stage of idea validation and market surveying. There was a particular career event our school hosted, and in the course of visiting different stands for companies to pitch our idea, we stumbled upon a stand occupied by representatives from the Professor Ayodele Awojobi Design Competition (PAADC). We pitched our idea to them, and their immediate response was:",
+          "\"You have a strong idea, your presentation skills are good, apply for this year's cohort and you have a string chances of winning.\"",
+          "That was exactly what we did; we won the competition. It was a tough few months leading up to the grand finale at Lagos State University. The different stages were tough, and the competition was intense. I remember how we practiced days on end in school and still went over the pitch multiple times until midnight the night before the grand finale.",
+          "Five intense stages, 255 different teams from across universities in Nigeria, and a grand finale later, we emerged as the winners of the 6.0 edition. When our names were announced as the winners, I was filled with a sense of pride and accomplishment. It was a feeling of validation that all our hard work had paid off. The win was not just about us as individuals but also a reflection of the budding tech scene at Nile University."
+        ]
+      },
+      {
+        "id": "year-2023",
+        "title": "2023: Internship and Launch",
+        "content": [
+          "I spent the better half of 2023 completing my SIWES program at a private IT consulting firm in Abuja.",
+          "Prior to this internship, I had been building products that have been used by thousands of users, and then suddenly I was entrusted to work on a project for the Ministry of Water Resources that had an impact on more than 20 million Nigerians. Within a few weeks, I was facilitating training of the portal for stakeholders in the committee and, subsequently, for the Minister of Water Resources. It was during this program that I realised that the skills and knowledge I learned outside the university curriculum were what I was applying most in the field, and that was what set me apart from my peers working at the same company. This is not so subtle advice to anyone out there to learn skills relevant to the industry you want to break into, it makes you an attractive hire.",
+          "In retrospect, my highlight of the year would be the public launch of Interna after almost a year in private beta. The reception has been good so far, and our plan is to double down for next year."
+        ]
+      },
+      {
+        "id": "looking-forward",
+        "title": "Looking Forward",
+        "content": [
+          "Looking forward, I am optimistic about the new year, the lessons I am yet to learn, the journey, and most importantly, the people I am yet to connect with. My journey started with passion and curiosity, and along the way I have had to learn public speaking, professional writing, managing teams, and most importantly, grit, among others.",
+          "My mantra this coming year is that rent is due; go hard or go home.",
+          "See you all here, same time next year. Cheers 🥂"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "i-built-a-smart-home",
+    "title": "I built a smart home!",
+    "date": "2024-03-21",
+    "author": "Hanif",
+    "intro": "As a prerequisite for attaining my Bachelor's degree in Computer Engineering, I enrolled in a course titled Microcomputer Hardware and Software. An integral component of this course was the development of a project utilizing a microcontroller.",
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introduction",
+        "content": [
+          "As a prerequisite for attaining my Bachelor's degree in Computer Engineering, I enrolled in a course titled Microcomputer Hardware and Software. An integral component of this course was the development of a project utilizing a microcontroller.",
+          "The project topic given to me was \"smart home using Arduino,\" and then I decided that I was going to build a full prototype of a house, well as best as I could."
+        ]
+      },
+      {
+        "id": "project-overview",
+        "title": "Project Overview",
+        "content": [
+          "The simplified overview of the project is utilizing an Arduino uno microcontroller, setting up a circuit that connects a couple of LEDs, and an HC105 Bluetooth Module for low range real-time communication, which in turn is controlled by an android app called Arduino Bluetooth Control, I didn't build an app from scratch to connect to the Bluetooth module, because an already built app adds a level of abstraction and simplicity to the project."
+        ]
+      },
+      {
+        "id": "components-cost",
+        "title": "Components and Cost",
+        "content": [
+          "Most of the purchasing of components was done at Hub360, a premier electronics store with a presence in Abuja. As shown in the picture below, this project cost less than $50 from start to finish."
+        ]
+      },
+      {
+        "id": "circuit-setup",
+        "title": "Circuit Setup",
+        "content": [
+          "First things first, I had to create the basic electronic circuit, which consisted of connecting two LEDs to pins 8 and 9 of the Arduino Uno board, and the Bluetooth module to the 5 volt output, rx, tx and ground.",
+          "To interface with the Bluetooth module, I installed the Arduino Bluetooth Control app on Playstore."
+        ]
+      },
+      {
+        "id": "programming-arduino",
+        "title": "Programming the Arduino",
+        "content": [
+          "Once the connections were done, the next step was to test the Bluetooth module, that involved programming the Arduino Microcontroller (yay!)",
+          "Arduino primarily utilizes its own programming language, which is based on Wiring, a simplified version of C and C++. This language is specifically designed to be beginner-friendly, allowing users with varying levels of programming experience to easily grasp concepts and create projects.",
+          "```cpp\nvoid setup() {\npinMode(8,OUTPUT);\npinMode(4, OUTPUT);\n\nSerial.begin(9600);\ndigitalWrite(8,LOW);\ndigitalWrite(4,LOW);\n}\n\nvoid loop() {\nwhile(Serial.available() == 0) {}\n String val = Serial.readString();\n val.trim();\n Serial.println(val);\n \nif(val== \"offBulb1\"){\n  digitalWrite(8,LOW);\n}\nelse if(val==\"onBulb1\"){\n  digitalWrite(8,HIGH);\n}\nelse if(val==\"offBulb2\"){\n  digitalWrite(4,LOW);\n}\nelse if(val==\"onBulb2\"){\n  digitalWrite(4, HIGH);\n}\ndelay(50);\n}\n```"
+        ]
+      },
+      {
+        "id": "building-house-model",
+        "title": "Building the House Model",
+        "content": [
+          "Designing a full-scale model of a smart home system was uncharted territory for me. The closest I had ever come to such a project was glimpsing the architectural models proudly displayed by students. But I was determined to make it work. YouTube became my virtual mentor as I scoured through countless videos, seeking inspiration and guidance. After much searching, I stumbled upon a simple yet elegant design that sparked my imagination.",
+          "The process of building the house model then commenced, using a combination of cardboard, a lot of technical drawing knowledge, and a sprinkle of glue gun here and there.",
+          "After the ground floor was assembled essentially, the connections of the three LED bulbs were all done and arranged in parallel to an output pin, and then the servo motor at the top right, as shown in the image above, was connected to pin 9."
+        ]
+      },
+      {
+        "id": "garage-door-challenge",
+        "title": "The Garage Door Challenge",
+        "content": [
+          "I encountered a major struggle with the arm that would open up the garage door. According to design, I could only place the motor in the top right section of the house (as shown above), which meant I had to design a custom arm that would connect to the garage. After about 5 iterations later, I constructed a custom arm that was strong enough to effectively transfer the rotational movement to the garage door, and yet light enough so the servor motor could carry it.",
+          "After successfully assembling the ground floor components, the next step was to establish connections for the three LED bulbs on the ground floor, neatly arranged in parallel to an output pin.",
+          "Meanwhile, the servo motor positioned at the top right corner of the structure was linked to pin 9, to control the garage door. However, a significant hurdle emerged when it came to implementing the garage door mechanism. According to the design, the motor could only be situated in the top right section of the house, in which case it was necessary to create a custom arm to be attached to the garage door. After undergoing five iterations, I constructed a custom arm that was strong enough to effectively transfer rotational movement to the garage door (as shown below). This solution ensured that the servo motor could effortlessly execute its function without being burdened by excessive weight."
+        ]
+      },
+      {
+        "id": "top-section-assembly",
+        "title": "Top Section Assembly",
+        "content": [
+          "The top section was being designed by a teammate in another location, after it was done, it was time to bring them together and assemble them into a full house model.",
+          "The few electrical connections needed at the top section of the house were the three light bulbs, for which I drilled a hole in the floor separating the two floors. The LEDs were all connected in parallel to pin 9 of the Arduino, similar to the setup on the ground floor."
+        ]
+      },
+      {
+        "id": "power-solution",
+        "title": "Power Issues and Solution",
+        "content": [
+          "Just when I thought the finishing touches were in sight, a significant obstacle presented itself. Initially, powering the LEDs and servo motor with two 9V batteries seemed like a practical solution. However, as soon as I put the system to the test and initiated the garage door's motion via the Android app, disaster struck — the batteries drained rapidly, leaving the entire house powerless.",
+          "Determined to find a solution, I turned to a combination of ChatGPT's insights and the expertise of the ever reliable Indian YouTube creators. After delving into various tutorials and troubleshooting guides, a breakthrough emerged: a revised power architecture for the project. Implementing this solution involved harnessing the power of four 9V batteries.",
+          "The first two were connected in series to provide direct power to the motor, ensuring its smooth operation. Meanwhile, the remaining batteries were linked in parallel to supply ample power to the Arduino Uno Board and LEDs, effectively resolving the issue."
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "My thoughts/conclusion",
+        "content": [
+          "The batteries utilized proved suboptimal for the task at hand, as evident during the demonstration session where the 9V mercury batteries were rapidly depleted by the servo motor. This led to excessive battery consumption. In hindsight, opting for a heavy-duty battery could have mitigated this issue and minimized the reliance on multiple batteries.",
+          "I learned a lot during the development of this project, Although I envisioned that it would be very easy and straightforward to develop, I encountered a lot of unexpected problems that needed a hands-on fix within a tie frame",
+          "Furthermore, this experience highlighted the dynamic nature of project development. Unexpected obstacles often arise, requiring quick thinking and creative problem-solving.",
+          "With this newfound knowledge and determination, I am tackling my final year project, which is a whole lot more exciting, and I can wait to share it with you all!",
+          "The full code can be accessed here."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ml-series-basic-structure-neural-network-tutorial",
+    "title": "ML Series: The Basic Structure of a Neural Network: A step-by-step Tutorial in Python",
+    "date": "2024-04-15",
+    "author": "Hanif",
+    "intro": "Neural networks are algorithms created explicitly to simulate biological neural networks. The idea behind the Neural networks was to created an artificial system that would function like the human brain. At the basic level a Multi Layer Perceptron (MLP) is the simplest form of a Neural Network.",
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introduction",
+        "content": [
+          "Neural networks are algorithms created explicitly to simulate biological neural networks. The idea behind the Neural networks was to created an artificial system that would function like the human brain.",
+          "At the basic level a Multi Layer Perceptron (MLP) is the simplest form of a Neural Network.",
+          "MLPs were initially inspired by the Perceptron, a supervised machine learning algorithm for binary classification. The Perceptron was only capable of handling linearly separable data hence the multi-layer perception was introduced to overcome this limitation.",
+          "An MLP is an artificial neural network and it consists of an input layer, one or more hidden layers and an output layer, an activation function and a set of weights and biases:",
+          "In this article, we will implement a basic neural network from scratch making use of mainly the NumPy library.",
+          "The goal is to implement a Multilayer Perceptron, with an input layer, two hidden layers and an output layer. We will be making use of the Softmax activation function for the output and ReLu activation function for the hidden layers. The steps we are going to be taken are:",
+          "1. Data Preparation",
+          "2. Initialize parameters",
+          "3. Define activation functions",
+          "4. Initialize weights and biases",
+          "5. Forward Propagation",
+          "6. Backward Propagation",
+          "7. Train the Neural Network",
+          "8. Evaluate the accuracy on test data",
+          "9. Make Prediction"
+        ]
+      },
+      {
+        "id": "data-preparation",
+        "title": "1. Data Preparation",
+        "content": [
+          "We are going to be utilizing the iris dataset from sklearn, it is a simple dataset with, which has four features (Sepal Length, Sepal Width, Petal Length, Petal Width) and three flower classes (Iris Setosa, Iris Versicolor, Iris Virginica)",
+          "```python\nimport numpy as np\nimport copy\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.metrics import accuracy_score\n\n# Load Iris dataset\niris = load_iris()\nX = iris.data\ny = iris.target.reshape(-1,1)\n```"
+        ]
+      },
+      {
+        "id": "initialize-parameters",
+        "title": "2. Initialize Parameters",
+        "content": [
+          "The next step is to use one hot encoding for the y values, and the reason we are doing this is to convert the categorical labels into numerical vectors, making them compatible with our neural network. So we are going to split the data into test and training sets",
+          "```python\ndef one_hot_encode(y):\n     maps = {0: [1., 0., 0.], 1: [0., 1., 0.], 2: [0., 0., 1.]}\n     new_y = []\n     for i in y:\n        new_y.append(maps[i[0]])\n     return np.array(new_y)\n\ny_onehot = one_hot_encode(y)\n\n# Split the data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y_onehot, test_size=0.2, random_state=42)\n```"
+        ]
+      },
+      {
+        "id": "activation-functions",
+        "title": "3. Define activation functions",
+        "content": [
+          "Activation functions are functions that take in the in weighted sum of inputs and then, gives a real number (regression) or binary (classification). They are used to introduce a level of non-linearity in a network, which allows it to learn complex patterns.",
+          "For our neural network, we are going to be using the ReLU activation function for our hidden layers, and the Softmax activation function for the output layer.",
+          "```python\ndef relu(x):\n  return np.maximum(0, x)\n\ndef softmax(x):\n    e_x = np.exp(x - np.max(x, axis=1, keepdims=True))\n    return e_x / np.sum(e_x, axis=1, keepdims=True)\n\n# Define derivative of activation function (ReLU derivative)\ndef relu_derivative(x):\n  return np.where(x > 0, 1, 0)\n```"
+        ]
+      },
+      {
+        "id": "initialize-weights-biases",
+        "title": "4. Initialize weights and biases",
+        "content": [
+          "Here we initialized the weights and biases of each layer to train the neural network. The random module from Numpy takes care of that.",
+          "```python\n# Step 4: Initialize weights and biases\ndef initialize_parameters(hidden_size, hidden_size2):\n     # Define the network architecture\n     input_size = X_train.shape[1]  # 4 features\n     output_size = y_train.shape[1]  # 3 unique labels\n\n     # Initialize weights and biases\n     np.random.seed(42)\n     weights = {\n     'h1': np.random.uniform(-0.1, 0.1, (input_size, hidden_size)),\n     'h2': np.random.uniform(-0.1, 0.1, (hidden_size, hidden_size2)),\n     'out': np.random.uniform(-0.1, 0.1, (hidden_size2, output_size))\n     }\n     biases = {\n     'h1': np.random.uniform(-0.1, 0.1, hidden_size),\n     'h2': np.random.uniform(-0.1, 0.1, hidden_size2),\n     'out': np.random.uniform(-0.1, 0.1, output_size)\n     }\n     return weights, biases\n```"
+        ]
+      },
+      {
+        "id": "forward-propagation",
+        "title": "5. Forward Propagation",
+        "content": [
+          "The forward propagation algorithm takes in the weights and biases and computes the linear output and then passes it through an activation function, and then repeats it for each layer until an output value for each is obtained.",
+          "```python\ndef forward(X, weights, biases):\n    z1 = np.dot(X, weights['h1']) + biases['h1'] # W1.X + b1\n    a1 = relu(z1)\n    z2 = np.dot(a1, weights['h2']) + biases['h2'] # W2.A1 + b2\n    a2 = relu(z2)\n    z3 = np.dot(a2, weights['out']) + biases['out'] # Wout.A2 + bout\n    a3 = softmax(z3)\n    \n    return a1, a2, a3\n```"
+        ]
+      },
+      {
+        "id": "backward-propagation",
+        "title": "6. Backward Propagation",
+        "content": [
+          "The backward propagation algorithm is calculates the error of the output layer, propagating the error backward to the hidden layer, and computing the gradients using the chain rule. Then it goes a step further to update the weights and biases gotten from the back propagation.",
+          "```python\ndef backward_propagation(X, y, a1, a2, a3, learning_rate, weights, biases):\n    m = y.shape[0]\n    \n    dz3 = a3 - y\n    dw3 = np.dot(a2.T, dz3) / m\n    db3 = np.sum(dz3, axis=0) / m\n\n    dz2 = np.dot(dz3, weights['out'].T) * relu_derivative(a2)\n    dw2 = np.dot(a1.T, dz2) / m\n    db2 = np.sum(dz2, axis=0) / m\n\n    dz1 = np.dot(dz2, weights['h2'].T) * relu_derivative(a1)\n    dw1 = np.dot(X.T, dz1) / m\n    db1 = np.sum(dz1, axis=0) / m\n\n    # Update weights and biases\n    weights['h1'] -= learning_rate * dw1\n    weights['h2'] -= learning_rate * dw2\n    weights['out'] -= learning_rate * dw3\n    biases['h1'] -= learning_rate * db1\n    biases['h2'] -= learning_rate * db2\n    biases['out'] -= learning_rate * db3\n```"
+        ]
+      },
+      {
+        "id": "train-neural-network",
+        "title": "7. Train the Neural Network",
+        "content": [
+          "Then we move on to training the model, using the training data. The training process repeatedly performs forward propagation, and backward propagation to update the weights and biases, until the number of epochs has been reached.",
+          "```python\ndef train_mlp(hidden_layer_size, hidden_layer_size2, epochs, learning_rate):\n     scores_so_far = {}\n     weights, biases = initialize_parameters(hidden_layer_size, hidden_layer_size2)\n\n     # Training the network\n     for epoch in range(epochs):\n          a1, a2, a3 = forward(X_train, weights, biases)\n          backward_propagation(X_train, y_train, a1, a2, a3, learning_rate, weights, biases)\n\n          predictions = np.argmax(a3, axis=1)\n          true_labels = np.argmax(y_train, axis=1)\n\n          curr_accuracy = accuracy_score(true_labels, predictions)\n\n          print(f'Accuracy: {curr_accuracy}, epoch: {epoch}')\n```"
+        ]
+      },
+      {
+        "id": "evaluate-accuracy",
+        "title": "8. Evaluate the accuracy on test data",
+        "content": [
+          "Based on the data passed through, the accuracy of the predicted output values would be compared against the training set. The accuracy of both the train and test datasets are displayed.",
+          "```python\n      # Evaluate the model\n      scores_so_far[curr_accuracy] = [copy.deepcopy(weights), copy.deepcopy(biases), copy.deepcopy(a3)]\n      weights_new = scores_so_far[max(scores_so_far.keys())][0]\n      biases_new = scores_so_far[max(scores_so_far.keys())][1]    \n      \n      _, _, out_test = forward(X_test, weights_new, biases_new)\n      \n      y_pred_train = np.argmax(scores_so_far[max(scores_so_far.keys())][2], axis=1)\n      train_labels = np.argmax(y_train, axis=1)\n      \n      accuracy = accuracy_score(train_labels, y_pred_train)\n      \n      print(f'Model Train Accuracy: {accuracy * 100:.2f}')\n      \n      y_pred = np.argmax(out_test, axis=1)\n      test_labels = np.argmax(y_test, axis=1)\n      \n      accuracy = accuracy_score(test_labels, y_pred)\n      \n      print(f'Model Test Accuracy: {accuracy * 100:.2f}')\n\n      return weights, biases\n\n#Call the train_mlp function\nweights, biases = train_mlp(hidden_layer_size=90, hidden_layer_size2=55, epochs=200, learning_rate=0.1)\n```"
+        ]
+      },
+      {
+        "id": "make-prediction",
+        "title": "9. Make prediction",
+        "content": [
+          "We can then use the weights and biases from the training of the model to predict new values. Voila, we have a fully functional deep learning model!",
+          "```python\ndef predict(X):     \n     _, _, prediction = forward(X, weights, biases)\n     predictions = (prediction > 0.5).astype(int)\n     return predictions\n\npredictions = predict(X_test)\n```"
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusion",
+        "content": [
+          "We have been able to successfully develop a MultiLayer Perceptron Model from ground up using mainly the numpy library. The model created is the less complex version of the deep learning models that we use interact with everyday i.e. ChatGPT, Gemini, Google assistant, Midjourney etc.",
+          "The article Building a Neural Network from Scratch using Numpy and Math Libraries: A Step-by-Step Tutorial In Python was a major source of inspiration for my article.",
+          "Thank you for reading!",
+          "The full code to the project is highlighted below 👇"
+        ]
+      }
+    ]
+  },
+  {
     "slug": "ml-series-practical-tutorial-building-cnn",
     "title": "ML Series: A Practical Tutorial on Building a Convolutional Neural Network (CNN)",
     "date": "2024-06-24",
