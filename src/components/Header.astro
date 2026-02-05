@@ -46,7 +46,18 @@ import Snowfall from "react-snowfall";
       <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-1 tracking-tight">
         Hanif Adedotun
       </h1>
-      <p class="text-base text-gray-600 dark:text-gray-400 mb-2 font-medium">hey@hanif.one</p>
+      <div class="flex items-center gap-2 mb-2">
+        <p class="text-base text-gray-600 dark:text-gray-400 font-medium">hey@hanif.one</p>
+        <button
+          id="copy-email"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+          aria-label="Copy email address"
+          title="Copy email"
+        >
+          <Icon name="mdi:content-copy" class="w-4 h-4" id="copy-icon" />
+          <Icon name="mdi:check" class="w-4 h-4 hidden" id="check-icon" />
+        </button>
+      </div>
       <div class="flex gap-3 items-center mb-2">
         <a
           href="https://github.com/hanif-adedotun"
@@ -122,6 +133,50 @@ import Snowfall from "react-snowfall";
       snowfallIconOn?.classList.add("hidden");
       snowfallIconOff?.classList.remove("hidden");
       snowfallToggle?.setAttribute("aria-pressed", "false");
+    }
+  });
+
+  // Copy email functionality
+  const copyEmailButton = document.getElementById("copy-email");
+  const copyIcon = document.getElementById("copy-icon");
+  const checkIcon = document.getElementById("check-icon");
+  const email = "hey@hanif.one";
+
+  copyEmailButton?.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      
+      // Show check icon and hide copy icon
+      copyIcon?.classList.add("hidden");
+      checkIcon?.classList.remove("hidden");
+      copyEmailButton?.setAttribute("aria-label", "Email copied!");
+      
+      // Reset after 2 seconds
+      setTimeout(() => {
+        copyIcon?.classList.remove("hidden");
+        checkIcon?.classList.add("hidden");
+        copyEmailButton?.setAttribute("aria-label", "Copy email address");
+      }, 2000);
+    } catch (err) {
+      // Fallback for older browsers
+      const textArea = document.createElement("textarea");
+      textArea.value = email;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand("copy");
+        copyIcon?.classList.add("hidden");
+        checkIcon?.classList.remove("hidden");
+        setTimeout(() => {
+          copyIcon?.classList.remove("hidden");
+          checkIcon?.classList.add("hidden");
+        }, 2000);
+      } catch (fallbackErr) {
+        console.error("Failed to copy email:", fallbackErr);
+      }
+      document.body.removeChild(textArea);
     }
   });
 </script>
