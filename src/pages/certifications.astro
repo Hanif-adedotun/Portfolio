@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import certificates from "../data/certificates.json";
 ---
 
@@ -50,20 +51,6 @@ import certificates from "../data/certificates.json";
       </section>
     </main>
 
-    <footer
-      class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 text-xs text-gray-500 text-center animate-fade-in-delay"
-    >
-      <p class="mb-2">
-        © {new Date().getFullYear()} Hanif Adedotun. | All Rights Reserved.
-      </p>
-      <p>
-        Source code is available at
-        <a
-          href="https://github.com/Hanif-adedotun/Portfolio"
-          class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 underline"
-          >github.com/hanif-adedotun/Portfolio</a
-        >
-      </p>
-    </footer>
+    <Footer />
   </div>
 </Layout>

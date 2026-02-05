@@ -1,635 +1,196 @@
 [
   {
-    "slug": "three-years-hyper-growth-lessons-learned",
-    "title": "Three years of hyper-growth and the Lessons Learned",
-    "date": "2023-12-31",
-    "author": "Hanif",
-    "intro": "It is currently 3 a.m. (WAT), and the silence is deafening, quite apart from the constant cricket sound. Waking up before the crack of dawn has been a habit I have had for a while, but I took it up a notch by setting my alarm for 3 a.m., a decision that has made me way more productive than I used to be.",
+    "slug": "2025-in-review",
+    "title": "2025: In Review",
+    "date": "2026-01-01",
+    "author": "Hanif Adedotun",
+    "intro": "I feel very empty writing this, not because I didn't achieve what I set out this year, but more so because life took a 180° turn, I found myself juggling the Nigerian imposed service year and my full time remote job.",
     "sections": [
       {
-        "id": "introduction",
-        "title": "Introduction",
+        "id": "growth",
+        "title": "Growth and Learning",
         "content": [
-          "It is currently 3 a.m. (WAT), and the silence is deafening, quite apart from the constant cricket sound. Waking up before the crack of dawn has been a habit I have had for a while, but I took it up a notch by setting my alarm for 3 a.m., a decision that has made me way more productive than I used to be.",
-          "As someone who entered the tech scene at a relatively young age, entering 2020 was soul-wrenching for me. My days consisted of scrolling through LinkedIn and feeling the biggest imposter syndrome every day. I saw teenagers doing incredible things, like starting businesses and working remotely for multinational corporations, and there I was, with nothing tangible to show for myself as a \"software developer,\" and my biggest project at the time was a half-baked website for my mother's business."
+          "I learned a lot this year, especially from working as a Teaching Assistant at a university — it was a great experience, almost like cosplaying as a lecturer.",
+          "I was far more intentional about my professional life: creating structure in my daily tasks as an engineer, and being deliberate about delivering work with attention to detail.",
+          "That intentionality paid off, earning me a promotion to Lead Software Engineer.",
+          "While I did not read as many books as I planned — four out of ten — it was still a year of meaningful growth."
         ]
       },
       {
-        "id": "year-2020",
-        "title": "2020: The Lockdown Period",
+        "id": "achievements",
+        "title": "Achievements",
         "content": [
-          "Then the lockdown period was announced (a blessing in disguise). I remember skipping almost all the online classes I had during that time and averaging about 6–8 hours every day of intense coding as well as reading, but overall taking daily, incremental steps toward achieving my goal.",
-          "I think that was the only thing that kept me sane during lockdown."
-        ]
-      },
-      {
-        "id": "year-2021",
-        "title": "2021: Building Foundations",
-        "content": [
-          "Fresh out of lockdown, 2021 came by, and that year I was determined to make the best use of the year, which led me to create my vision board (I did not complete up to 50%). However, it did ensure I was accountable for myself and what I spent my time doing.",
-          "If I were to pick a highlight from the year, it would be the amount of knowledge I gained from reading books—non-fiction books, to be precise; heck, I even read the whitepapers of Bitcoin and Ethereum. My reading diversity was evident because I read everything from 500+ page programming books to business books and everything in between.",
-          "Subsequently, my pursuit of growth led me to join the Google Developers Student Club (GDSC), and looking back, that was one of the best decisions I have made for my tech career. Through the community, I met three like-minded developers, two companies founded together, one national award, and several tech competitions later. I am grateful to have met them.",
-          "We came together to build an MVP of a product named Startvest for the 2021 Google Developers Solutions Challenge. The idea was simple: a crowdfunding platform for small businesses and startups to get access to funds as an alternative to VC funding, very similar to the business model of getEquity. The project won us a hackathon at our university and got us to the finals of the FSI National Competition, but ultimately it could not scale to a company for reasons we could not control at the time.",
-          "I ended the year on a high note, feeling like I finally had found my niche, and I was ready to take on the world the next year."
-        ]
-      },
-      {
-        "id": "year-2022",
-        "title": "2022: Building Interna",
-        "content": [
-          "2022 year rolled by, and my plan was to continue to build on the clarity and momentum I had gained from the previous year. I wrote down my vision board for the year and somewhere in the list, I wrote down \"Build a portfolio website\" with a major imposter syndrome.",
-          "Somewhere down the line during the first version of my portfolio website, and it was my favourite project I had created till date.",
-          "On a cold, windy Saturday night, I was having a discussion with a friend (now co-founder) about our education and, more specifically, how we wanted to shape our careers. We talked for hours on end about what we see ourselves doing in 10 years. The highlight from that very night was me telling him how I wanted to build a product that people will use before I graduate from university, I then remember him vividly saying that he found that there was an information gap in the SIWES program for students, at that point, none of us have had IT experience outside family, and we truly did not have an idea on how to go about positioning ourselves for internship openings, and that was the birth of Interna",
-          "I was so bullish on the idea because I had talked to other students who faced the same challenge. The next day, I drafted a business pitch document and sent it to my friend. It was from there on that I reached out to the three developers that I built Startvest with, told them about the idea, they were bullish on it, and we went on to build the foundations of the company.",
-          "Building is hard; building in Nigeria is 10x harder",
-          "A few months later, we built out the MVP of Interna and we were in the stage of idea validation and market surveying. There was a particular career event our school hosted, and in the course of visiting different stands for companies to pitch our idea, we stumbled upon a stand occupied by representatives from the Professor Ayodele Awojobi Design Competition (PAADC). We pitched our idea to them, and their immediate response was:",
-          "\"You have a strong idea, your presentation skills are good, apply for this year's cohort and you have a string chances of winning.\"",
-          "That was exactly what we did; we won the competition. It was a tough few months leading up to the grand finale at Lagos State University. The different stages were tough, and the competition was intense. I remember how we practiced days on end in school and still went over the pitch multiple times until midnight the night before the grand finale.",
-          "Five intense stages, 255 different teams from across universities in Nigeria, and a grand finale later, we emerged as the winners of the 6.0 edition. When our names were announced as the winners, I was filled with a sense of pride and accomplishment. It was a feeling of validation that all our hard work had paid off. The win was not just about us as individuals but also a reflection of the budding tech scene at Nile University."
-        ]
-      },
-      {
-        "id": "year-2023",
-        "title": "2023: Internship and Launch",
-        "content": [
-          "I spent the better half of 2023 completing my SIWES program at a private IT consulting firm in Abuja.",
-          "Prior to this internship, I had been building products that have been used by thousands of users, and then suddenly I was entrusted to work on a project for the Ministry of Water Resources that had an impact on more than 20 million Nigerians. Within a few weeks, I was facilitating training of the portal for stakeholders in the committee and, subsequently, for the Minister of Water Resources. It was during this program that I realised that the skills and knowledge I learned outside the university curriculum were what I was applying most in the field, and that was what set me apart from my peers working at the same company. This is not so subtle advice to anyone out there to learn skills relevant to the industry you want to break into, it makes you an attractive hire.",
-          "In retrospect, my highlight of the year would be the public launch of Interna after almost a year in private beta. The reception has been good so far, and our plan is to double down for next year."
+          "Looking at my win list, I definitely had some good moments:",
+          "> Managed three projects from idea to launch at work",
+          "> Built an AI powered unit test case generator Hiro",
+          "> Built an AI powered headline agent",
+          "> Invited to speak at four different events",
+          "> Got featured in an interview by NTA",
+          "> Pitched Neurosync (my startup) to everyone willing to listen at OSCAfest",
+          "> Got a contract role at a web3 company",
+          "> Got a contract to build an AI solution for the Government",
+          "> Got promoted to a lead Engineer",
+          "> I met all my financial goals"
         ]
       },
       {
         "id": "looking-forward",
         "title": "Looking Forward",
         "content": [
-          "Looking forward, I am optimistic about the new year, the lessons I am yet to learn, the journey, and most importantly, the people I am yet to connect with. My journey started with passion and curiosity, and along the way I have had to learn public speaking, professional writing, managing teams, and most importantly, grit, among others.",
-          "My mantra this coming year is that rent is due; go hard or go home.",
-          "See you all here, same time next year. Cheers 🥂"
+          "Going into 2026, I just have two guiding actions words, Visibility and Volume.",
+          "See you all same time next year! 🥂"
         ]
       }
     ]
   },
   {
-    "slug": "i-built-a-smart-home",
-    "title": "I built a smart home!",
-    "date": "2024-03-21",
+    "slug": "pymupdf-python-library-reduces-pdf-size",
+    "title": "Pymupdf: A Python Library That Reduces the Size of PDF files",
+    "date": "2025-08-30",
     "author": "Hanif",
-    "intro": "As a prerequisite for attaining my Bachelor's degree in Computer Engineering, I enrolled in a course titled Microcomputer Hardware and Software. An integral component of this course was the development of a project utilizing a microcontroller.",
+    "intro": "Many libraries and tools perform various tasks in processing files, images, and documents. PDF files are a good example of files that can undergo several processing stages using Python libraries and AI models. Reducing the size of a PDF file can be necessary for various reasons, and various tools can accomplish this. One fascinating way is to use the PyMuPDF library.",
     "sections": [
       {
-        "id": "introduction",
-        "title": "Introduction",
+        "id": "what-is-pymupdf",
+        "title": "What is PyMuPDF?",
         "content": [
-          "As a prerequisite for attaining my Bachelor's degree in Computer Engineering, I enrolled in a course titled Microcomputer Hardware and Software. An integral component of this course was the development of a project utilizing a microcontroller.",
-          "The project topic given to me was \"smart home using Arduino,\" and then I decided that I was going to build a full prototype of a house, well as best as I could."
+          "PyMuPDF is a Python library that excels in extracting, analyzing, manipulating, and converting data from PDF files and other document formats. With this library, you can extract text and images from a PDF file. But its capabilities do not end here. PyMuPDF can also extract vector graphics and merge PDF files.",
+          "Another interesting feature of this library is its ability to manipulate and process PDF files. This library can perform a range of tasks, including adding watermarks and images, as well as embedding and attaching files."
         ]
       },
       {
-        "id": "project-overview",
-        "title": "Project Overview",
+        "id": "how-pdfs-get-bloated",
+        "title": "How Do PDFs Get Bloated?",
         "content": [
-          "The simplified overview of the project is utilizing an Arduino uno microcontroller, setting up a circuit that connects a couple of LEDs, and an HC105 Bluetooth Module for low range real-time communication, which in turn is controlled by an android app called Arduino Bluetooth Control, I didn't build an app from scratch to connect to the Bluetooth module, because an already built app adds a level of abstraction and simplicity to the project."
+          "There are several reasons why a PDF file can become too large. High image resolutions, embedded fonts, unused objects, and other factors can affect the size of these files. Compressing them is a very effective optimization technique, as it can provide a better overall experience. Compressing larger PDF files is important for several reasons, including saving storage space, improving web performance, and facilitating easy sharing.",
+          "Reducing PDF files using PyMuPDF involves a seamless method. This library can operate in low-resource environments and yield excellent results. We'll explore how this technique creates the tool and how you can achieve your desired results."
         ]
       },
       {
-        "id": "components-cost",
-        "title": "Components and Cost",
+        "id": "how-to-reduce-pdf",
+        "title": "How to Reduce PDF Using this Library",
         "content": [
-          "Most of the purchasing of components was done at Hub360, a premier electronics store with a presence in Abuja. As shown in the picture below, this project cost less than $50 from start to finish."
+          "We can begin by setting up the environment and utilizing PyMuPDF to compress the size of a PDF file. Then, we can install the essential modules for processing the file. So, let's dive in."
         ]
       },
       {
-        "id": "circuit-setup",
-        "title": "Circuit Setup",
+        "id": "setting-up-environment",
+        "title": "Setting up the environment",
         "content": [
-          "First things first, I had to create the basic electronic circuit, which consisted of connecting two LEDs to pins 8 and 9 of the Arduino Uno board, and the Bluetooth module to the 5 volt output, rx, tx and ground.",
-          "To interface with the Bluetooth module, I installed the Arduino Bluetooth Control app on Playstore."
+          "To run this operation, you must install the PyMuPDF Python library, which allows you to work with PDF files and other document formats.",
+          "```python\n!pip install pymupdf\nimport os\nimport fitz  # PyMuPDF\n```",
+          "This operation requires two libraries: OS and Fitz. The OS library provides functions that enable interaction with the operating system by managing file paths. The PyMuPDF library's main module is Fitz, responsible for handling PDFs and other document formats. Fitz can easily open, load, read, and manipulate PDF files, which is particularly significant for tasks involving size reduction."
         ]
       },
       {
-        "id": "programming-arduino",
-        "title": "Programming the Arduino",
+        "id": "compressing-pdf-file",
+        "title": "Compressing the PDF file",
         "content": [
-          "Once the connections were done, the next step was to test the Bluetooth module, that involved programming the Arduino Microcontroller (yay!)",
-          "Arduino primarily utilizes its own programming language, which is based on Wiring, a simplified version of C and C++. This language is specifically designed to be beginner-friendly, allowing users with varying levels of programming experience to easily grasp concepts and create projects.",
-          "```cpp\nvoid setup() {\npinMode(8,OUTPUT);\npinMode(4, OUTPUT);\n\nSerial.begin(9600);\ndigitalWrite(8,LOW);\ndigitalWrite(4,LOW);\n}\n\nvoid loop() {\nwhile(Serial.available() == 0) {}\n String val = Serial.readString();\n val.trim();\n Serial.println(val);\n \nif(val== \"offBulb1\"){\n  digitalWrite(8,LOW);\n}\nelse if(val==\"onBulb1\"){\n  digitalWrite(8,HIGH);\n}\nelse if(val==\"offBulb2\"){\n  digitalWrite(4,LOW);\n}\nelse if(val==\"onBulb2\"){\n  digitalWrite(4, HIGH);\n}\ndelay(50);\n}\n```"
+          "```python\ndef compress_pdf(input_path, output_path, zoom_x=0.75, zoom_y=0.75):\n   try:\n       document = fitz.open(\"input_path\")\n       new_document = fitz.open()\n```",
+          "This function is designed to compress PDF files by reducing the size of their pages. The function loads the original PDF file using the PyMuPDF library, also known as fitz.open function. Then, it creates a new empty document that allows you to add the compressed file.",
+          "In addition to setting the function that opens the original file and creates a new document, you must set the structure for compressing the file in a suitable format.",
+          "```python\nfor page_num in range(len(document)):\n           page = document.load_page(page_num)\n           mat = fitz.Matrix(zoom_x, zoom_y)\n           pix = page.get_pixmap(matrix=mat, alpha=False)\n           img_bytes = pix.tobytes(\"jpeg\")\n           new_page = new_document.new_page(width=pix.width, height=pix.height)\n           new_page.insert_image(new_page.rect, stream=img_bytes)\n```",
+          "This block loops through each page of the original PDF. For every page, it creates a scaling matrix (fitz.Matrix) to reduce the page content, renders the page as a pixmap (image), converts it to JPEG bytes, and then inserts the image into a new, blank page in the new, compressed PDF. This process effectively reduces the file size by saving the visual content as images."
         ]
       },
       {
-        "id": "building-house-model",
-        "title": "Building the House Model",
+        "id": "saving-compressed-pdf",
+        "title": "Saving Newly Compressed PDF",
         "content": [
-          "Designing a full-scale model of a smart home system was uncharted territory for me. The closest I had ever come to such a project was glimpsing the architectural models proudly displayed by students. But I was determined to make it work. YouTube became my virtual mentor as I scoured through countless videos, seeking inspiration and guidance. After much searching, I stumbled upon a simple yet elegant design that sparked my imagination.",
-          "The process of building the house model then commenced, using a combination of cardboard, a lot of technical drawing knowledge, and a sprinkle of glue gun here and there.",
-          "After the ground floor was assembled essentially, the connections of the three LED bulbs were all done and arranged in parallel to an output pin, and then the servo motor at the top right, as shown in the image above, was connected to pin 9."
+          "```python\nnew_document.save(output_path)\nnew_document.close()\ndocument.close()\n```",
+          "This code helps you save the newly compressed PDF file to the output_path. However, it closes the original and compressed documents to free up memory. This ensures all changes are written and no files are left open in memory."
         ]
       },
       {
-        "id": "garage-door-challenge",
-        "title": "The Garage Door Challenge",
+        "id": "results",
+        "title": "Results",
         "content": [
-          "I encountered a major struggle with the arm that would open up the garage door. According to design, I could only place the motor in the top right section of the house (as shown above), which meant I had to design a custom arm that would connect to the garage. After about 5 iterations later, I constructed a custom arm that was strong enough to effectively transfer the rotational movement to the garage door, and yet light enough so the servor motor could carry it.",
-          "After successfully assembling the ground floor components, the next step was to establish connections for the three LED bulbs on the ground floor, neatly arranged in parallel to an output pin.",
-          "Meanwhile, the servo motor positioned at the top right corner of the structure was linked to pin 9, to control the garage door. However, a significant hurdle emerged when it came to implementing the garage door mechanism. According to the design, the motor could only be situated in the top right section of the house, in which case it was necessary to create a custom arm to be attached to the garage door. After undergoing five iterations, I constructed a custom arm that was strong enough to effectively transfer rotational movement to the garage door (as shown below). This solution ensured that the servo motor could effortlessly execute its function without being burdened by excessive weight."
+          "```python\nprint(f\"✅ Compressed: {output_path}\")\nprint(f\"   Original: {os.path.getsize(input_path)/1024:.2f} KB\")\nprint(f\"   Compressed: {os.path.getsize(output_path)/1024:.2f} KB\")\n```",
+          "With this code, you can display the path to the compressed file and also view the sizes of the original and the new documents. This operation is carried out using the os.path module. getsize() to get the size of the new document. The output is also formatted to two decimal points, which helps with readability."
         ]
       },
       {
-        "id": "top-section-assembly",
-        "title": "Top Section Assembly",
+        "id": "batch-compression-error-handling",
+        "title": "Batch PDF Compression and Error Handling",
         "content": [
-          "The top section was being designed by a teammate in another location, after it was done, it was time to bring them together and assemble them into a full house model.",
-          "The few electrical connections needed at the top section of the house were the three light bulbs, for which I drilled a hole in the floor separating the two floors. The LEDs were all connected in parallel to pin 9 of the Arduino, similar to the setup on the ground floor."
+          "```python\nexcept Exception as e:\n       print(f\"❌ Error compressing {input_path}: {str(e)}\")\n```",
+          "```python\nif __name__ == \"__main__\":\n   folder = \"/content\"\n\n   if not os.path.isdir(folder):\n       raise FileNotFoundError(f\"Folder '{folder}' does not exist.\")\n\n   pdf_files = [f for f in os.listdir(folder) if f.endswith(\".pdf\")]\n\n   if not pdf_files:\n       print(\"⚠️ No PDF files found in the folder.\")\n   else:\n       for filename in pdf_files:\n           input_pdf = os.path.join(folder, filename)\n           output_pdf = os.path.join(folder, filename.replace(\".pdf\", \"-compressed.pdf\"))\n           compress_pdf(input_pdf, output_pdf)\n```",
+          "This code handles errors during compression with a try-except block. If something goes wrong, it catches the exception and prints an error message showing which file failed and why. Then, in the main execution block, it sets a folder path (in this case, /content) where the PDF files are located.",
+          "It checks if the folder exists and raises an error if it doesn't. Next, it looks for all PDF files in that folder. If no PDFs are found in the folder, a warning is printed. Otherwise, it loops through each PDF file, creates a new output filename for the compressed version, and calls the compress_pdf() function to perform the compression.",
+          "Running this code locally yields the output of your compressed document, tagged as 'compressed.' All these operations are in the folder; you can get a resized PDF."
         ]
       },
       {
-        "id": "power-solution",
-        "title": "Power Issues and Solution",
+        "id": "application-of-pymupdf",
+        "title": "Application of PyMuPDF for Reducing File Size",
         "content": [
-          "Just when I thought the finishing touches were in sight, a significant obstacle presented itself. Initially, powering the LEDs and servo motor with two 9V batteries seemed like a practical solution. However, as soon as I put the system to the test and initiated the garage door's motion via the Android app, disaster struck — the batteries drained rapidly, leaving the entire house powerless.",
-          "Determined to find a solution, I turned to a combination of ChatGPT's insights and the expertise of the ever reliable Indian YouTube creators. After delving into various tutorials and troubleshooting guides, a breakthrough emerged: a revised power architecture for the project. Implementing this solution involved harnessing the power of four 9V batteries.",
-          "The first two were connected in series to provide direct power to the motor, ensuring its smooth operation. Meanwhile, the remaining batteries were linked in parallel to supply ample power to the Arduino Uno Board and LEDs, effectively resolving the issue."
+          "This tool is particularly useful in various settings where file size reduction is crucial. Good examples include Email Attachment optimization, improved web and app performance, and archiving and storage management.",
+          "In many corporate workplaces, email attachments are limited (e.g., 20MB), but with PyMuPDF, you can compress files, reports, proposals, and other documents to stay within the given limits.",
+          "A reduced size can also enhance loading speed and improve the user experience. This is especially necessary for institutions, banks, academic institutions, and legal organizations that host online PDF files.",
+          "Optimizing storage is another reason why the tool is relevant. Hospitals, firms, government agencies, and even some businesses store a large archive of PDF documents. Reducing file size is essential for saving storage and memory."
         ]
       },
       {
-        "id": "conclusion",
-        "title": "My thoughts/conclusion",
+        "id": "exploring-pymupdf-with-streamlit",
+        "title": "Exploring PyMuPDF With Streamlit",
         "content": [
-          "The batteries utilized proved suboptimal for the task at hand, as evident during the demonstration session where the 9V mercury batteries were rapidly depleted by the servo motor. This led to excessive battery consumption. In hindsight, opting for a heavy-duty battery could have mitigated this issue and minimized the reliance on multiple batteries.",
-          "I learned a lot during the development of this project, Although I envisioned that it would be very easy and straightforward to develop, I encountered a lot of unexpected problems that needed a hands-on fix within a tie frame",
-          "Furthermore, this experience highlighted the dynamic nature of project development. Unexpected obstacles often arise, requiring quick thinking and creative problem-solving.",
-          "With this newfound knowledge and determination, I am tackling my final year project, which is a whole lot more exciting, and I can wait to share it with you all!",
-          "The full code can be accessed here."
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "ml-series-basic-structure-neural-network-tutorial",
-    "title": "ML Series: The Basic Structure of a Neural Network: A step-by-step Tutorial in Python",
-    "date": "2024-04-15",
-    "author": "Hanif",
-    "intro": "Neural networks are algorithms created explicitly to simulate biological neural networks. The idea behind the Neural networks was to created an artificial system that would function like the human brain. At the basic level a Multi Layer Perceptron (MLP) is the simplest form of a Neural Network.",
-    "sections": [
-      {
-        "id": "introduction",
-        "title": "Introduction",
-        "content": [
-          "Neural networks are algorithms created explicitly to simulate biological neural networks. The idea behind the Neural networks was to created an artificial system that would function like the human brain.",
-          "At the basic level a Multi Layer Perceptron (MLP) is the simplest form of a Neural Network.",
-          "MLPs were initially inspired by the Perceptron, a supervised machine learning algorithm for binary classification. The Perceptron was only capable of handling linearly separable data hence the multi-layer perception was introduced to overcome this limitation.",
-          "An MLP is an artificial neural network and it consists of an input layer, one or more hidden layers and an output layer, an activation function and a set of weights and biases:",
-          "In this article, we will implement a basic neural network from scratch making use of mainly the NumPy library.",
-          "The goal is to implement a Multilayer Perceptron, with an input layer, two hidden layers and an output layer. We will be making use of the Softmax activation function for the output and ReLu activation function for the hidden layers. The steps we are going to be taken are:",
-          "1. Data Preparation",
-          "2. Initialize parameters",
-          "3. Define activation functions",
-          "4. Initialize weights and biases",
-          "5. Forward Propagation",
-          "6. Backward Propagation",
-          "7. Train the Neural Network",
-          "8. Evaluate the accuracy on test data",
-          "9. Make Prediction"
+          "You can apply this compressor using a simple user interface with Streamlit to power the compression algorithm. This tool can help you set up a page that can handle these files. Therefore, you can test the compressor while also allowing usage for individuals with a deep technical understanding of coding.",
+          "This section will explain a simple guide to setting up a page to run this compression tool."
         ]
       },
       {
-        "id": "data-preparation",
-        "title": "1. Data Preparation",
+        "id": "page-setup",
+        "title": "Page Setup",
         "content": [
-          "We are going to be utilizing the iris dataset from sklearn, it is a simple dataset with, which has four features (Sepal Length, Sepal Width, Petal Length, Petal Width) and three flower classes (Iris Setosa, Iris Versicolor, Iris Virginica)",
-          "```python\nimport numpy as np\nimport copy\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.metrics import accuracy_score\n\n# Load Iris dataset\niris = load_iris()\nX = iris.data\ny = iris.target.reshape(-1,1)\n```"
+          "The first step in using Streamlit is to utilize its page setup features. This allows you to create a centered heading and minimalist interface where you can add attributes, links, buttons, file uploads, and other inputs. In this case, using PyMuPDF would require adding an interface to upload files, which brings us to the next step."
         ]
       },
       {
-        "id": "initialize-parameters",
-        "title": "2. Initialize Parameters",
+        "id": "file-handling",
+        "title": "File Handling",
         "content": [
-          "The next step is to use one hot encoding for the y values, and the reason we are doing this is to convert the categorical labels into numerical vectors, making them compatible with our neural network. So we are going to split the data into test and training sets",
-          "```python\ndef one_hot_encode(y):\n     maps = {0: [1., 0., 0.], 1: [0., 1., 0.], 2: [0., 0., 1.]}\n     new_y = []\n     for i in y:\n        new_y.append(maps[i[0]])\n     return np.array(new_y)\n\ny_onehot = one_hot_encode(y)\n\n# Split the data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y_onehot, test_size=0.2, random_state=42)\n```"
+          "You can use the bordered container on Streamlit to create a file uploader that accepts only PDF files. This attribute helps you handle the uploaded file effectively, as it allows you to avoid saving the file on disk."
         ]
       },
       {
-        "id": "activation-functions",
-        "title": "3. Define activation functions",
+        "id": "user-control",
+        "title": "User Control (Added Feature)",
         "content": [
-          "Activation functions are functions that take in the in weighted sum of inputs and then, gives a real number (regression) or binary (classification). They are used to introduce a level of non-linearity in a network, which allows it to learn complex patterns.",
-          "For our neural network, we are going to be using the ReLU activation function for our hidden layers, and the Softmax activation function for the output layer.",
-          "```python\ndef relu(x):\n  return np.maximum(0, x)\n\ndef softmax(x):\n    e_x = np.exp(x - np.max(x, axis=1, keepdims=True))\n    return e_x / np.sum(e_x, axis=1, keepdims=True)\n\n# Define derivative of activation function (ReLU derivative)\ndef relu_derivative(x):\n  return np.where(x > 0, 1, 0)\n```"
+          "This tool features a high-quality slider that ranges from 0 to 100, allowing users to control the desired compression level precisely.",
+          "Displays an informative message explaining that a lower quality setting results in a smaller file size. Features a large \"Compress PDF\" button that spans the width of the container, making it highly visible and easy to click."
         ]
       },
       {
-        "id": "initialize-weights-biases",
-        "title": "4. Initialize weights and biases",
+        "id": "processing-flow",
+        "title": "Processing Flow",
         "content": [
-          "Here we initialized the weights and biases of each layer to train the neural network. The random module from Numpy takes care of that.",
-          "```python\n# Step 4: Initialize weights and biases\ndef initialize_parameters(hidden_size, hidden_size2):\n     # Define the network architecture\n     input_size = X_train.shape[1]  # 4 features\n     output_size = y_train.shape[1]  # 3 unique labels\n\n     # Initialize weights and biases\n     np.random.seed(42)\n     weights = {\n     'h1': np.random.uniform(-0.1, 0.1, (input_size, hidden_size)),\n     'h2': np.random.uniform(-0.1, 0.1, (hidden_size, hidden_size2)),\n     'out': np.random.uniform(-0.1, 0.1, (hidden_size2, output_size))\n     }\n     biases = {\n     'h1': np.random.uniform(-0.1, 0.1, hidden_size),\n     'h2': np.random.uniform(-0.1, 0.1, hidden_size2),\n     'out': np.random.uniform(-0.1, 0.1, output_size)\n     }\n     return weights, biases\n```"
+          "When a PDF is uploaded, the app captures the file name and size, then enables compression options. Upon clicking \"Compress PDF,\" a loading spinner appears, the file is processed using temporary storage, and the compression algorithm is executed.",
+          "After compression, it displays file size comparisons, provides a download button, and shows an error message if compression fails."
         ]
       },
       {
-        "id": "forward-propagation",
-        "title": "5. Forward Propagation",
+        "id": "running-streamlit-locally",
+        "title": "Running Streamlit Locally",
         "content": [
-          "The forward propagation algorithm takes in the weights and biases and computes the linear output and then passes it through an activation function, and then repeats it for each layer until an output value for each is obtained.",
-          "```python\ndef forward(X, weights, biases):\n    z1 = np.dot(X, weights['h1']) + biases['h1'] # W1.X + b1\n    a1 = relu(z1)\n    z2 = np.dot(a1, weights['h2']) + biases['h2'] # W2.A1 + b2\n    a2 = relu(z2)\n    z3 = np.dot(a2, weights['out']) + biases['out'] # Wout.A2 + bout\n    a3 = softmax(z3)\n    \n    return a1, a2, a3\n```"
-        ]
-      },
-      {
-        "id": "backward-propagation",
-        "title": "6. Backward Propagation",
-        "content": [
-          "The backward propagation algorithm is calculates the error of the output layer, propagating the error backward to the hidden layer, and computing the gradients using the chain rule. Then it goes a step further to update the weights and biases gotten from the back propagation.",
-          "```python\ndef backward_propagation(X, y, a1, a2, a3, learning_rate, weights, biases):\n    m = y.shape[0]\n    \n    dz3 = a3 - y\n    dw3 = np.dot(a2.T, dz3) / m\n    db3 = np.sum(dz3, axis=0) / m\n\n    dz2 = np.dot(dz3, weights['out'].T) * relu_derivative(a2)\n    dw2 = np.dot(a1.T, dz2) / m\n    db2 = np.sum(dz2, axis=0) / m\n\n    dz1 = np.dot(dz2, weights['h2'].T) * relu_derivative(a1)\n    dw1 = np.dot(X.T, dz1) / m\n    db1 = np.sum(dz1, axis=0) / m\n\n    # Update weights and biases\n    weights['h1'] -= learning_rate * dw1\n    weights['h2'] -= learning_rate * dw2\n    weights['out'] -= learning_rate * dw3\n    biases['h1'] -= learning_rate * db1\n    biases['h2'] -= learning_rate * db2\n    biases['out'] -= learning_rate * db3\n```"
-        ]
-      },
-      {
-        "id": "train-neural-network",
-        "title": "7. Train the Neural Network",
-        "content": [
-          "Then we move on to training the model, using the training data. The training process repeatedly performs forward propagation, and backward propagation to update the weights and biases, until the number of epochs has been reached.",
-          "```python\ndef train_mlp(hidden_layer_size, hidden_layer_size2, epochs, learning_rate):\n     scores_so_far = {}\n     weights, biases = initialize_parameters(hidden_layer_size, hidden_layer_size2)\n\n     # Training the network\n     for epoch in range(epochs):\n          a1, a2, a3 = forward(X_train, weights, biases)\n          backward_propagation(X_train, y_train, a1, a2, a3, learning_rate, weights, biases)\n\n          predictions = np.argmax(a3, axis=1)\n          true_labels = np.argmax(y_train, axis=1)\n\n          curr_accuracy = accuracy_score(true_labels, predictions)\n\n          print(f'Accuracy: {curr_accuracy}, epoch: {epoch}')\n```"
-        ]
-      },
-      {
-        "id": "evaluate-accuracy",
-        "title": "8. Evaluate the accuracy on test data",
-        "content": [
-          "Based on the data passed through, the accuracy of the predicted output values would be compared against the training set. The accuracy of both the train and test datasets are displayed.",
-          "```python\n      # Evaluate the model\n      scores_so_far[curr_accuracy] = [copy.deepcopy(weights), copy.deepcopy(biases), copy.deepcopy(a3)]\n      weights_new = scores_so_far[max(scores_so_far.keys())][0]\n      biases_new = scores_so_far[max(scores_so_far.keys())][1]    \n      \n      _, _, out_test = forward(X_test, weights_new, biases_new)\n      \n      y_pred_train = np.argmax(scores_so_far[max(scores_so_far.keys())][2], axis=1)\n      train_labels = np.argmax(y_train, axis=1)\n      \n      accuracy = accuracy_score(train_labels, y_pred_train)\n      \n      print(f'Model Train Accuracy: {accuracy * 100:.2f}')\n      \n      y_pred = np.argmax(out_test, axis=1)\n      test_labels = np.argmax(y_test, axis=1)\n      \n      accuracy = accuracy_score(test_labels, y_pred)\n      \n      print(f'Model Test Accuracy: {accuracy * 100:.2f}')\n\n      return weights, biases\n\n#Call the train_mlp function\nweights, biases = train_mlp(hidden_layer_size=90, hidden_layer_size2=55, epochs=200, learning_rate=0.1)\n```"
-        ]
-      },
-      {
-        "id": "make-prediction",
-        "title": "9. Make prediction",
-        "content": [
-          "We can then use the weights and biases from the training of the model to predict new values. Voila, we have a fully functional deep learning model!",
-          "```python\ndef predict(X):     \n     _, _, prediction = forward(X, weights, biases)\n     predictions = (prediction > 0.5).astype(int)\n     return predictions\n\npredictions = predict(X_test)\n```"
-        ]
-      },
-      {
-        "id": "conclusion",
-        "title": "Conclusion",
-        "content": [
-          "We have been able to successfully develop a MultiLayer Perceptron Model from ground up using mainly the numpy library. The model created is the less complex version of the deep learning models that we use interact with everyday i.e. ChatGPT, Gemini, Google assistant, Midjourney etc.",
-          "The article Building a Neural Network from Scratch using Numpy and Math Libraries: A Step-by-Step Tutorial In Python was a major source of inspiration for my article.",
-          "Thank you for reading!",
-          "The full code to the project is highlighted below 👇"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "ml-series-practical-tutorial-building-cnn",
-    "title": "ML Series: A Practical Tutorial on Building a Convolutional Neural Network (CNN)",
-    "date": "2024-06-24",
-    "author": "Hanif",
-    "intro": "Welcome back to the ML Series, In the previous article in this series we implemented a Multiplayer Perceptron Model, that was an introduction into Neural Networks using a very basic architecture. Today we are going to be implementing a Convolutional Neural Network (CNN) using pyTorch and testing using the MNIST handwriting dataset.",
-    "sections": [
-      {
-        "id": "introduction-cnns",
-        "title": "Introduction to CNNs",
-        "content": [
-          "Imagine a computer program that can learn to recognize objects in pictures just by looking at a bunch of examples. That's the magic of Convolutional Neural Networks (CNNs)!",
-          "CNNs are a special type of artificial neural network inspired by the structure of the visual cortex in animals. They excel at tasks involving images and videos. The image fed into the Network passes through convolutional layers that act like filters to extract essential features such as edges, textures, and patterns. These features become progressively complex as they move through multiple layers.",
-          "The output from these layers is then flattened and fed into fully connected layers, which function similarly to a traditional neural network to perform classification. Ultimately, the CNN processes and learns from the image features, enabling it to output classifications such as identifying objects or recognizing handwritten digits.",
-          "This combination of feature extraction and classification within a single framework makes CNNs powerful tools for image recognition tasks."
-        ]
-      },
-      {
-        "id": "cnn-components",
-        "title": "Components of a CNN",
-        "content": [
-          "A Convolutional Neural Network makes use of two very distinct operations:",
-          "Convolutional Layers: These layers use filters (like tiny templates) to scan an image, identifying patterns and extracting features like edges, shapes, and textures.",
-          "Pooling Layers: These layers reduce the image size while retaining important features, making the network more efficient. The trade off of pooling is that, too much and important information can be lost in the process",
-          "Some other components of the Convolutional Network are:",
-          "Activation Function: An activation function (e.g., ReLU, sigmoid, tanh) is applied element wise to the output of the convolutional layer. It introduces non-linearity, allowing the network to learn complex patterns.",
-          "Fully Connected Layer: Transforms the output of the previous layers into a single, streamlined list (vector). Then, it applies fully connected operations, much like a multilayered perceptron, to make classifications or predictions.",
-          "Softmax or Output Layer: Generates the final output probabilities or values for the target classes or outputs"
-        ]
-      },
-      {
-        "id": "importing-packages",
-        "title": "Importing Required Packages",
-        "content": [
-          "So, first of all, we are going to import all the packages needed for our model",
-          "```python\nimport random\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport random\nimport torch\nimport torch.nn as nn\nimport torch.nn.functional as F\nimport torch.optim as optim\nfrom torchvision import datasets, transforms\nfrom torch.utils.data import DataLoader\nimport torchvision\nfrom keras.datasets import mnist\nfrom mlxtend.data import loadlocal_mnist\n%matplotlib inline\nimport os\n```"
-        ]
-      },
-      {
-        "id": "loading-dataset",
-        "title": "Loading the MNIST Dataset",
-        "content": [
-          "We are going to be using the MNIST dataset from Kaggle, you can go ahead and download it here. The next step is to divide it into test and train variables",
-          "```python\ntraining_images_filepath = '/kaggle/input/d/hojjatk/mnist-dataset/train-images.idx3-ubyte'\ntraining_labels_filepath = '/kaggle/input/d/hojjatk/mnist-dataset/train-labels.idx1-ubyte'\ntest_images_filepath = '/kaggle/input/d/hojjatk/mnist-dataset/t10k-images.idx3-ubyte'\ntest_labels_filepath = '/kaggle/input/d/hojjatk/mnist-dataset/t10k-labels.idx1-ubyte'\n\nX_train, y_train = loadlocal_mnist(training_images_filepath, training_labels_filepath)\nX_test, y_test = loadlocal_mnist(test_images_filepath, test_labels_filepath)\n```"
-        ]
-      },
-      {
-        "id": "previewing-data",
-        "title": "Previewing the Dataset",
-        "content": [
-          "To preview some of the handwritten text, we would use the show function, that takes in random five images from the dataset using the plt.imshow function.",
-          "```python\ndef show(image, title):\n    index = 1\n    plt.figure(figsize=(10,5))\n    for x in zip(image, title):\n        image = x[0]\n        title = x[1]\n        plt.subplot(2, 5, index)\n        plt.imshow(image, cmap=plt.cm.gray)\n        plt.title(x[1], fontsize = 9)\n        index += 1\n\nimage = []\ntitle = []\n\nX_train_reshape = X_train.reshape(60000, 28, 28)\nX_test_reshape = X_test.reshape(10000, 28, 28)\n\nfor i in range(0, 5):\n    r = random.randint(1, len(X_train_reshape))\n    image.append(X_train_reshape[r])\n    title.append('training image:' + str(y_train[r]))\n\nfor i in range(0, 5):\n    r = random.randint(1, len(X_test_reshape))\n    image.append(X_test_reshape[r])\n    title.append('testing image:' + str(y_test[r]))\n\nshow(image, title)\n```"
-        ]
-      },
-      {
-        "id": "creating-dataloader",
-        "title": "Creating DataLoader",
-        "content": [
-          "In machine learning, especially with large datasets, efficiently managing and processing data is crucial for training and evaluation. PyTorch's DataLoader is a powerful utility that simplifies this task by creating an iterable over a dataset, facilitating the handling of batches of data. It enables automatic batching, shuffling, and multi-threaded data loading, which accelerates the training process and improves model performance.",
-          "By converting data into manageable chunks and supporting parallel data processing, the DataLoader ensures that the training loop operates smoothly, even with extensive and complex datasets, thereby optimizing the computational workflow and enhancing model accuracy.",
-          "The CustomDataset class wraps your feature and label arrays into a format that PyTorch can understand. The DataLoader objects make it easy to iterate over the dataset in batches, which is essential for training and evaluating machine learning models efficiently. train_loader and test_loader allow you to load the training and testing data in batches, handle shuffling, and provide data in a format ready for training loops or evaluation",
-          "```python\nimport torch\nfrom torch.utils.data import Dataset, DataLoader\n\nclass CustomDataset(Dataset):\n    def __init__(self, X, y):\n        self.X = torch.tensor(X, dtype=torch.float32)\n        self.y = torch.tensor(y, dtype=torch.long)\n    \n    def __len__(self):\n        return len(self.X)\n    \n    def __getitem__(self, idx):\n        return self.X[idx], self.y[idx]\n\n# Create train and test datasets\ntrain_dataset = CustomDataset(X_train, y_train)\ntest_dataset = CustomDataset(X_test, y_test)\n\n# Create train and test loaders\ntrain_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)\ntest_loader = DataLoader(test_dataset, batch_size=1000, shuffle=False)\n```"
-        ]
-      },
-      {
-        "id": "setting-seed",
-        "title": "Setting Random Seed",
-        "content": [
-          "To ensure that each run of the code with the same seed yields the same results, we are going to be setting seed for NumPy and PyTorch",
-          "Consistency: Facilitates consistent model training and evaluation by fixing the randomness across different libraries and environments.",
-          "```python\ndef set_seed(seed):\n    # Set the seed for Python's built-in random module\n    random.seed(seed)\n    # Set the seed for NumPy\n    np.random.seed(seed)\n    # Set the seed for PyTorch\n    torch.manual_seed(seed)\n    # If using GPU\n    if torch.cuda.is_available():\n        torch.cuda.manual_seed(seed)\n        torch.cuda.manual_seed_all(seed)\n        # Ensure deterministic behavior in CUDA operations\n        torch.backends.cudnn.deterministic = True\n        torch.backends.cudnn.benchmark = False\n\nseed = 42\nset_seed(seed)\n```"
-        ]
-      },
-      {
-        "id": "defining-cnn-model",
-        "title": "Defining the CNN Model",
-        "content": [
-          "Then we define our CNN model, with three convolutional layers, and two fully connected layers, the activation function used in all the convolutional layers and the first fully connected layer is the reLu activation function, then a max pooling with a stride of two right before the fully connected layer. The output was passed through a Log softmax activation function because of it is a classification task.",
-          "```python\nclass CNN(nn.Module):\n    def __init__(self):\n        super(CNN, self).__init__()\n        # Convolutional layers\n        self.conv1 = nn.Conv2d(in_channels=1, out_channels=32, kernel_size=3, padding=1)\n        self.conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, padding=1)\n        self.conv3 = nn.Conv2d(in_channels=64, out_channels=128, kernel_size=3)\n        # Fully connected layers\n        self.fc1 = nn.Linear(21632, 128)  # Calculate input size after flattening\n        self.fc2 = nn.Linear(128, 10)\n\n    def forward(self, x):\n        x = F.relu(self.conv1(x))\n        x = F.relu(self.conv2(x))\n        x = F.relu(self.conv3(x))\n        \n        x = F.max_pool2d(x, 2)\n        x = F.relu(self.fc1(x.view(-1, 21632)))\n        x = self.fc2(x)\n        return F.log_softmax(x, dim=1)\n```"
-        ]
-      },
-      {
-        "id": "initializing-model",
-        "title": "Initializing Model and Optimizer",
-        "content": [
-          "Next step is to initialize our CNN model, define our optimizer with weight decay, and we would be using Cross Entropy Loss function. Then to speed up the training time for the model, we check if GPU is available on the device, then we load the data and model to the GPU (if available)",
-          "```python\n# Initialize the model\nmodel = CNN()\n\n# Define the loss function\ncriterion = nn.CrossEntropyLoss()\n\n# Define the optimizer with weight decay (L2 regularization)\noptimizer_with_weight_decay = optim.SGD(model.parameters(), lr=0.01, weight_decay=0.01)\n\n# Check if CUDA is available and move model and data to GPU if available\ndevice = torch.device(\"cuda:0\" if torch.cuda.is_available() else \"cpu\")\n\n# Move model to device\nmodel.to(device)\n\n# Move data to device\nfor data, target in train_loader:\n    data, target = data.to(device), target.to(device)\n```"
-        ]
-      },
-      {
-        "id": "training-model",
-        "title": "Training the Model",
-        "content": [
-          "Time to train our model! The model would be trained by going through a forward pass, then reshaped and the passed through an optimizer and loss function. Then back propagation is performed on the model, and the average loss for each epoch is calculated and displayed in a graph.",
-          "```python\ndef train(model, train_loader, optimizer, criterion, num_epochs):\n    model.train()\n    losses = []\n    average_losses = []\n    for epoch in range(num_epochs):\n        for batch_idx, (data, target) in enumerate(train_loader):\n            data, target = data.to(device), target.to(device)  # Move data to GPU\n            data = data.unsqueeze(1)  # Add a channel dimension (channels = 1 for grayscale images)\n            data = data.view(-1, 1, 28, 28)  # Reshape the data to match the expected input shape\n            optimizer.zero_grad()\n            output = model(data)\n            loss = criterion(output, target)\n            loss.backward()\n            optimizer.step()\n            if batch_idx % 100 == 0:\n                losses.append(loss.item())\n                print('Train Epoch: {} [{}/{} ({:.0f}%)]\\tLoss: {:.6f}'.format(\n                    epoch, batch_idx * len(data), len(train_loader.dataset),\n                    100. * batch_idx / len(train_loader), loss.item()))\n        average_losses = sum(losses) / len(losses)\n        losses = []\n    \n    plt.plot(average_losses, label=f'11 Epochs')\n    plt.xlabel('Iterations')\n    plt.ylabel('Loss')\n    plt.title('Training Loss')\n    plt.legend()\n    plt.show()\n```"
-        ]
-      },
-      {
-        "id": "testing-model",
-        "title": "Testing the Model",
-        "content": [
-          "We can test our CNN model on the test dataset. For each batch we passes the data through the model to get predictions. We then calculate the loss using a criterion, sum the loss over all batches, and determine the model's accuracy by comparing predicted labels with the actual labels.",
-          "Finally, it prints the average loss and overall accuracy, offering insight into the model's performance on unseen data. Which was 0.0003 for the average loss and a 99% accuracy!",
-          "```python\n# Test function\ndef test(model, test_loader):\n    model.eval()\n    test_loss = 0\n    correct = 0\n    with torch.no_grad():\n        for data, target in test_loader:\n            data, target = data.to(device), target.to(device)  # Move data to the same device as the model\n            data = data.unsqueeze(1)  # Add a channel dimension (channels = 1 for grayscale images)\n            data = data.view(-1, 1, 28, 28)  # Reshape the data to match the expected input shape\n            output = model(data)\n            test_loss += criterion(output, target).item()\n            pred = output.argmax(dim=1, keepdim=True)\n            correct += pred.eq(target.view_as(pred)).sum().item()\n\n    test_loss /= len(test_loader.dataset)\n    accuracy = 100. * correct / len(test_loader.dataset)\n    print('\\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\\n'.format(\n        test_loss, correct, len(test_loader.dataset), accuracy))\n```"
-        ]
-      },
-      {
-        "id": "running-training-testing",
-        "title": "Running Training and Testing",
-        "content": [
-          "With our Convolutional Neural Network (CNN) fully defined, we can proceed to train and test our model. We'll train the model for 11 epochs, allowing it to learn progressively from the data.",
-          "While a higher number of epochs generally helps the model capture intricate patterns and improve accuracy, it's crucial to balance this with the risk of overfitting, where the model performs well on training data but poorly on new, unseen data. Thus, careful monitoring and adjustment of epochs, along with other hyperparameters, ensure optimal model performance.",
-          "```python\ntrain(model, train_loader, optimizer_with_weight_decay, criterion, 11)\ntest(model, test_loader)\n```"
-        ]
-      },
-      {
-        "id": "live-model-demo",
-        "title": "Live Model hosted on Hugging Face spaces",
-        "content": [
-          "In order to visualize our handwriting model, I created a live demo on hugging face, which you can feel free to play with using the link below.",
-          "Handwriting Classifier - hanif-cnn-handwriting-classifier.hf.space"
-        ]
-      },
-      {
-        "id": "final-thoughts",
-        "title": "Final thoughts",
-        "content": [
-          "In this article, we have walked through the essential steps to build, train, and evaluate a Convolutional Neural Network using PyTorch, tailored for recognizing handwritten digits. From data preparation to defining the network architecture, training with appropriate techniques, and finally evaluating performance, each step plays a vital role in developing a robust machine learning model.",
-          "CNNs, with their powerful ability to capture spatial hierarchies in images, continue to be pivotal in various applications beyond digit recognition, such as object detection, image segmentation, and beyond. By understanding and applying these concepts, one can leverage CNNs to tackle complex visual recognition tasks."
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "how-to-run-llm-locally-chatgpt-interface",
-    "title": "How to run an LLM locally with a ChatGPT like interface",
-    "date": "2024-08-02",
-    "author": "Hanif",
-    "intro": "A few days ago Meta released a new version of their open source Large Language Model (LLM) called the Llama 3.1 in three variants, the 8B, 70B, and 405B which represents the size of tokens, with the smallest being 8Billion tokens.",
-    "sections": [
-      {
-        "id": "introduction",
-        "title": "Introduction",
-        "content": [
-          "A few days ago Meta released a new version of their open source Large Language Model (LLM) called the Llama 3.1 in three variants, the 8B, 70B, and 405B which represents the size of tokens, with the smallest being 8Billion tokens and according to their release article",
-          "Llama 3.1 405B is the first openly available model that rivals the top AI models when it comes to state-of-the-art capabilities in general knowledge, steerability, math, tool use, and multilingual translation.",
-          "The paper for the Llama 3 Herd of Models is also available here",
-          "I've always been fascinated by the open-source approach to developing large language models. Historically, open source has driven innovation and provided strong competition to the proprietary methods of major tech companies.",
-          "Another reason I wanted to try running a model locally is due to the nature of my workflow. I frequently ask ChatGPT to analyze numerous files, but the free plan has limitations for this use case. I figured having an open-source LLM running on my computer would reduce my reliance on ChatGPT's file upload feature. So, I decided to install Llama 3.1 using Ollama and OpenWebUI."
-        ]
-      },
-      {
-        "id": "initial-attempt",
-        "title": "Initial Attempt with Llama 3.1",
-        "content": [
-          "Well, that failed woefully. Despite downloading the smallest variant, which was the Llama3.1 8B of about ~5GB, using Ollama, and upon running it on the command line, asking it a question \"What i a GPU?\", well, that took about 10 minutes to fully write out the answer 😔. In hindsight that was not such a great idea, my Macbook air was not powerful enough to run the model.",
-          "I knew that was not going to work, nearly giving up, I came across a twitter(X) post from @Prince_Canuma, on a light weight LLM from Google Deep Mind called Gemma2. I then decided to read it, and used it as an alternative to Llama3.1 model."
-        ]
-      },
-      {
-        "id": "about-gemma2",
-        "title": "About Gemma 2 2B",
-        "content": [
-          "Gemma 2 2B is a newly released artificial intelligence model developed by Google DeepMind, representing the smallest variant in the Gemma 2 family, which also includes larger models of 9 billion and 27 billion parameters. This 2 billion parameter model is optimized for a variety of hardware, making it suitable for deployment on edge devices, laptops.",
-          "This lightweight model produces outsized results by learning from larger models through distillation. In fact, Gemma 2 2B surpasses all GPT-3.5 models on the Chatbot Arena, demonstrating its exceptional conversational AI abilities.",
-          "Despite its compact size, according to Deep Mind the model outperformed larger models like GPT-3.5 and Mixtral on the LMSYS Chatbot Arena benchmark. It achieved an Elo score of 1126, surpassing the scores of its larger counterparts."
-        ]
-      },
-      {
-        "id": "ollama",
-        "title": "Ollama",
-        "content": [
-          "Ollama is a lightweight, open-source tool designed to make it easy to run and manage large language models (LLMs) locally on personal computers. It's gained popularity for its simplicity and focus on local AI deployment."
-        ]
-      },
-      {
-        "id": "openwebui",
-        "title": "OpenWebUI",
-        "content": [
-          "OpenWebUI is an open-source project aimed at creating a web-based user interface for large language models (LLMs). It's designed to provide a customizable and extendable front-end for interacting with various AI models, similar to how ChatGPT's interface works for OpenAI's models."
-        ]
-      },
-      {
-        "id": "installing-gemma2",
-        "title": "How to install Gemma2 2B model locally using Ollama",
-        "content": [
-          "The first step is to download Ollama on your computer, it supports windows, mac and Linux operating systems. The application was just about 177MB",
-          "When that is done, extract the application from the zip file and install it. Then the next step is to navigate to the terminal and run the command:",
-          "```bash\nollama run gemma2:2b\n```",
-          "This downloads the gemma2 model on your computer, it might take a while since the whole model is about 1.6GB large"
-        ]
-      },
-      {
-        "id": "quantized-models",
-        "title": "Quantized Models",
-        "content": [
-          "Ollama also supports installing custom models and quantized models. Quantized models are machine learning models that have had their precision reduced to make them faster and more memory efficient.",
-          "It involves converting a model's high-precision floating-point values to lower-precision fixed-point or integer representations. For example, a model's 32-bit floating-point numbers (float32) can be converted to 8-bit integers (int8)",
-          "Hugging Face offers a variety of quantized models that you can download. For example, there is a quantized version of the Gemma2 model posted by Bartowski. You can find it at this model link",
-          "Just similar to the installation of ollama, you will have to download the model a GGUF file, and then once that is done. navigate to your terminal and type in the following command",
-          "```bash\nvim Modelfile\n```",
-          "This opens a new file called Modelfile, which you can think of as a Dockerfile for llms. Once the editor is opened up on the terminal, type FROM followed by the link to you downloaded model file with a gguf extension. You can also set other commands as detailed in the github docs",
-          "```bash\nFROM ./link_to_model/filename.gguf\n\nFROM ./downloads/gemma-2-9b-it-Q6_K_L.gguf\n```",
-          "You can then create the model from the Modelfile using the command below",
-          "```bash\nollama create choose-a-model-name -f Modelfile\n```",
-          "To see all of the models installed on Ollama, you can use the ollama list command to achieve that",
-          "```bash\nollama list\n```",
-          "There it is, the list should contain the model you just created, you can then use ollama run",
-          "```bash\nollama run choose-a-model-name \"Any Prompt you want to write\"\n```"
-        ]
-      },
-      {
-        "id": "running-openwebui",
-        "title": "Running OpenWebUI",
-        "content": [
-          "As explained above OpenWebUI provides a ChatGPT like interface where file upload is also supported. To run OpenWebUI with your ollama models, it can be achieved with just one command on the terminal. You can either install it using docker or manually, all of these are explained in their installation guide",
-          "```bash\ndocker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main\n```"
-        ]
-      },
-      {
-        "id": "demo",
-        "title": "Demo of testing Gemma2 locally",
-        "content": [
-          "Thank you for reading. Cheers! 🥂"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "2024-the-year-of-resilience",
-    "title": "2024: The Year of Resilience",
-    "date": "2024-12-31",
-    "author": "Hanif",
-    "intro": "Year in Review, wins, losses and lessons. This year was a lot; I experienced my lowest and highest points in just 365 days. Never the less, it turned out to be my most productive year by miles.",
-    "sections": [
-      {
-        "id": "introduction",
-        "title": "Introduction",
-        "content": [
-          "Sits down and spends like 30 minutes crying while replaying the year like a chaotic highlight reel.",
-          "This year was a lot; I experienced my lowest and highest points in just 365 days. Never the less, it turned out to be my most productive year by miles. I was intentional about going out of my comfort zone; I met amazing people, and in summary, I grew.",
-          "The first half tested me in so many ways I did not envision; I was juggling working on a very difficult final year project, trying to meet deadlines for submission, and then a remote role at a startup. It was very tough."
-        ]
-      },
-      {
-        "id": "academia",
-        "title": "📚 Academia",
-        "content": [
-          "Graduated with a First Class Degree in Computer Engineering 4.82/5 !!!",
-          "I won't classify myself as an exceptionally smart student, but one thing I remember telling myself in 2019 is that I would strive and do all my best to graduate with a first class. I always said it that if I wasn't already in first class, I would not put so much effort in school, it would have all gone to making myself better outside school, but I was able to 'balance' school and tech to the best of my abilities, and I am glad I did and not the extreme option.",
-          "My final year project was a major highlight for me; together with three excellent classmates, we were able to build a prototype of a robot controlled by thoughts only. Here is a video of the prototype.",
-          "I also co-authored and published a research paper on Predictive Modeling of Precast Concrete Compressive Strength Using Artificial Neural Networks"
-        ]
-      },
-      {
-        "id": "career",
-        "title": "👨🏽‍🎓 Career",
-        "content": [
-          "I had to make some hard decisions with regards to my career because I knew that I could not keep spreading myself thin and expecting to achieve a lot of progress. I got laid off after just a few months into a role, it definitely didn't help with my imposter syndrome, but it was a much-needed hard reset to figure out my priorities.",
-          "My Aguero moment started in September when I got:",
-          "A contract job to develop an education management system",
-          "Secured a new contract to design and implement advanced web scraping bots",
-          "Worked with a YC-backed AI startup to create integration tutorials of their SDK, empowering developers to seamlessly adopt their tools.",
-          "Secured a full-time role as a Software Engineer at a US-based company."
-        ]
-      },
-      {
-        "id": "competitions",
-        "title": "🏆 Competitions",
-        "content": [
-          "Well, as for competitions, it was a successful one for me, and by extension, my team building Neurosync. I represented a startup called Celia earlier in the year for the Wema Bank Hackaholics, and fortunately we got to the finals in Lagos, but unfortunately we could not secure the Top 10 position, nevertheless, it was a good learning moment for sure. Here is the recorded pitch.",
-          "At Neurosync, we had a successful year; we achieved:",
-          "Winners of the Project Exhibition across the Computing and Engineering Faculties at Nile University of Nigeria.",
-          "A first runner-up position at the Global Entrepreneurship Festival in Ondo.",
-          "A second runner-up position at the Nigerian Society of Engineers Innovation Competition."
-        ]
-      },
-      {
-        "id": "personal-accomplishment",
-        "title": "Personal accomplishment",
-        "content": [
-          "Prior to this year, I never imagined I could stay committed to a six-month training program — but I did, and I couldn't be more grateful. The experience not only pushed me to grow but also connected me with incredible, like-minded individuals from across Africa, all striving toward inspiring goals. Being part of such a vibrant and driven community was truly transformative."
-        ]
-      },
-      {
-        "id": "looking-back",
-        "title": "Looking Back",
-        "content": [
-          "Looking back at the year, I had to learn the hard way not to try to do everything at once. I am trying now to streamline and focus on just a few things that truly align with my future goals, and I want to put in every joule of energy I have within me, so help me, God.",
-          "I am truly grateful for just showing up everyday, I am no where close to where I want to be, but there is motion and hope. There is so much planned for the future.",
-          "Cheers to all we've overcome and all we've become 🥂"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "how-to-set-deepseek-as-default-model-cursor",
-    "title": "How to set Deepseek as your default model in Cursor",
-    "date": "2025-01-31",
-    "author": "Hanif",
-    "intro": "If you have limited RAM to run the local version of Deepseek, you can make use of their extremely cheap API and use it as your default model in Cursor.",
-    "sections": [
-      {
-        "id": "introduction",
-        "title": "Introduction",
-        "content": [
-          "Deepseek has taken the internet by storm with its groundbreaking R1 model. According to benchmarks, it surpasses OpenAI's GPT-3.5-turbo in certain tasks.",
-          "This article won't dive into model comparisons but will show you how to seamlessly integrate Deepseek into your workflow using Cursor. If you want to understand how Deepseek-R1 works under the hood, you can read this great article by neuralnetworks",
-          "I personally couldn't run the deepseek-R1 model locally due to RAM constraints, so the next best thing is to use their extremely cheap API with literally no rate limits.",
-          "Let's get right into it!"
-        ]
-      },
-      {
-        "id": "step-1-install-cursor",
-        "title": "Step 1: Install or Update Cursor",
-        "content": [
-          "First things first, ensure you have the latest version of Cursor installed on your machine. If you haven't installed it yet, head over to the official Cursor website and download the version compatible with your operating system (Windows, macOS, or Linux).",
-          "If you already have Cursor installed, check for updates to make sure you're running the latest version. This ensures compatibility with Deepseek-R1 and access to the newest features."
-        ]
-      },
-      {
-        "id": "step-2-obtain-api-access",
-        "title": "Step 2: Obtain Deepseek-R1 API Access",
-        "content": [
-          "To use Deepseek-R1 in Cursor, you'll need access to its API. Here's how to get started:",
-          "Sign Up for Deepseek: Visit the Deepseek website (https://platform.deepseek.com/) and sign up.",
-          "Generate an API Key: Once registered, generate an API key from your account dashboard. This key will be used to authenticate your requests in Cursor.",
-          "Top up your wallet: Before you can use the Deepseek API (the chat web version is free, by the way), you need to top up your wallet, or nothing will work. You navigate to top-up, pay using your credit card or PayPal, and check the balance.",
-          "I encountered some problems using direct Debit/Credit Cards. It was not accepting my dollar card, so I had to use the PayPal option, (which is unfortunately not available in Nigeria). So, that's something to bear in mind.",
-          "Now that we have our API Key, let's set up Cursor to make use of the Deepseek R1 model."
-        ]
-      },
-      {
-        "id": "step-3-configure-cursor",
-        "title": "Step 3: Configure Cursor to Use Deepseek-R1",
-        "content": [
-          "Now that you have your API key, it's time to configure Cursor to use Deepseek-R1 as its default model.",
-          "Open Cursor Settings: Launch Cursor and navigate to the settings menu. You can usually find this under File > Preferences > Settings for windows and under Cursor > Settings > Cursor Settings",
-          "Locate the AI Model Settings: In the settings menu, look for the section labeled Models. This is where you can customize the AI model used by Cursor.",
-          "The Deepseek API is OpenAI-compatible, meaning you can use it with any software that supports OpenAI's API format.",
-          "Enter Your Deepseek API Key: Paste the API key you generated earlier into the designated field. This step authenticates your connection to Deepseek-R1.",
-          "Override Base URL: In order to ensure the models are using deepseek API, you have to override openAI base model URL to point to https://api.deepseek.com.",
-          "Set deepseek as the Default Model: In the same settings section, you'll see an option to select the default AI model. Choose deepseek-reasoner and deepseek-chat from the drop-down menu. deepseek-reasoner is the Deepseek-R1 model, and deepseek-chat is the Deepseek-v3 model. You can check out more details in their docs"
+          "As we mentioned earlier, this platform allows you to set up a simple User Interface to host your mini projects. It also permits simple attributes, such as buttons, file uploaders, and links. Here is a simple guide on how to run this;",
+          "Clone the GitHub repo - Navigate to and clone the GitHub Repository at: https://github.com/Hanif-adedotun/compress-pdf",
+          "Navigate to the root of the folder - Open up the terminal on the path",
+          "Run pip install -r requirements.txt",
+          "Run streamlit streamlit.py",
+          "Open up your browser at localhost:8501",
+          "Voila! You now have access to the localhost version of the project running on your system.",
+          "Install Streamlit - Pip install Streamlit",
+          "Once you have successfully installed it, you can run the Python code. If you encounter no errors, it means Streamlit has been installed successfully.",
+          "Run the Streamlit File - Streamlit run filename.py",
+          "This command will direct you to a local URL on your web browser, and you can then proceed to start building your page.",
+          "With this tool, you can use Streamlit's basic functions and attributes to run your mini projects, like the PDF compressor. There are lots of features you can add with little to no knowledge of HTML and CSS. Check out this guide for more information on using Streamlit."
         ]
       },
       {
         "id": "wrapping-up",
         "title": "Wrapping Up",
         "content": [
-          "That's it! 🎉 You've successfully integrated Deepseek-R1 into Cursor using its API.",
-          "✅ No more RAM issues — you can now enjoy Deepseek's powerful capabilities without running it locally.",
-          "✅ Super cheap API with no rate limits — ideal for extended usage.",
-          "✅ Smooth AI-assisted coding experience — Deepseek's models work seamlessly with Cursor.",
-          "If you have any issues or want to explore more, check out Deepseek's official documentation or drop a comment below.",
-          "🚀 Happy coding! 🚀"
+          "The article examines how the PyMuPDF Python library effectively compresses the size of PDF files. Users can optimize PDFs for email, web, and storage by converting pages to compressed images and rebuilding the document."
         ]
       }
     ]
@@ -796,197 +357,132 @@
     ]
   },
   {
-    "slug": "pymupdf-python-library-reduces-pdf-size",
-    "title": "Pymupdf: A Python Library That Reduces the Size of PDF files",
-    "date": "2025-08-30",
+    "slug": "how-to-set-deepseek-as-default-model-cursor",
+    "title": "How to set Deepseek as your default model in Cursor",
+    "date": "2025-01-31",
     "author": "Hanif",
-    "intro": "Many libraries and tools perform various tasks in processing files, images, and documents. PDF files are a good example of files that can undergo several processing stages using Python libraries and AI models. Reducing the size of a PDF file can be necessary for various reasons, and various tools can accomplish this. One fascinating way is to use the PyMuPDF library.",
+    "intro": "If you have limited RAM to run the local version of Deepseek, you can make use of their extremely cheap API and use it as your default model in Cursor.",
     "sections": [
       {
-        "id": "what-is-pymupdf",
-        "title": "What is PyMuPDF?",
+        "id": "introduction",
+        "title": "Introduction",
         "content": [
-          "PyMuPDF is a Python library that excels in extracting, analyzing, manipulating, and converting data from PDF files and other document formats. With this library, you can extract text and images from a PDF file. But its capabilities do not end here. PyMuPDF can also extract vector graphics and merge PDF files.",
-          "Another interesting feature of this library is its ability to manipulate and process PDF files. This library can perform a range of tasks, including adding watermarks and images, as well as embedding and attaching files."
+          "Deepseek has taken the internet by storm with its groundbreaking R1 model. According to benchmarks, it surpasses OpenAI's GPT-3.5-turbo in certain tasks.",
+          "This article won't dive into model comparisons but will show you how to seamlessly integrate Deepseek into your workflow using Cursor. If you want to understand how Deepseek-R1 works under the hood, you can read this great article by neuralnetworks",
+          "I personally couldn't run the deepseek-R1 model locally due to RAM constraints, so the next best thing is to use their extremely cheap API with literally no rate limits.",
+          "Let's get right into it!"
         ]
       },
       {
-        "id": "how-pdfs-get-bloated",
-        "title": "How Do PDFs Get Bloated?",
+        "id": "step-1-install-cursor",
+        "title": "Step 1: Install or Update Cursor",
         "content": [
-          "There are several reasons why a PDF file can become too large. High image resolutions, embedded fonts, unused objects, and other factors can affect the size of these files. Compressing them is a very effective optimization technique, as it can provide a better overall experience. Compressing larger PDF files is important for several reasons, including saving storage space, improving web performance, and facilitating easy sharing.",
-          "Reducing PDF files using PyMuPDF involves a seamless method. This library can operate in low-resource environments and yield excellent results. We'll explore how this technique creates the tool and how you can achieve your desired results."
+          "First things first, ensure you have the latest version of Cursor installed on your machine. If you haven't installed it yet, head over to the official Cursor website and download the version compatible with your operating system (Windows, macOS, or Linux).",
+          "If you already have Cursor installed, check for updates to make sure you're running the latest version. This ensures compatibility with Deepseek-R1 and access to the newest features."
         ]
       },
       {
-        "id": "how-to-reduce-pdf",
-        "title": "How to Reduce PDF Using this Library",
+        "id": "step-2-obtain-api-access",
+        "title": "Step 2: Obtain Deepseek-R1 API Access",
         "content": [
-          "We can begin by setting up the environment and utilizing PyMuPDF to compress the size of a PDF file. Then, we can install the essential modules for processing the file. So, let's dive in."
+          "To use Deepseek-R1 in Cursor, you'll need access to its API. Here's how to get started:",
+          "Sign Up for Deepseek: Visit the Deepseek website (https://platform.deepseek.com/) and sign up.",
+          "Generate an API Key: Once registered, generate an API key from your account dashboard. This key will be used to authenticate your requests in Cursor.",
+          "Top up your wallet: Before you can use the Deepseek API (the chat web version is free, by the way), you need to top up your wallet, or nothing will work. You navigate to top-up, pay using your credit card or PayPal, and check the balance.",
+          "I encountered some problems using direct Debit/Credit Cards. It was not accepting my dollar card, so I had to use the PayPal option, (which is unfortunately not available in Nigeria). So, that's something to bear in mind.",
+          "Now that we have our API Key, let's set up Cursor to make use of the Deepseek R1 model."
         ]
       },
       {
-        "id": "setting-up-environment",
-        "title": "Setting up the environment",
+        "id": "step-3-configure-cursor",
+        "title": "Step 3: Configure Cursor to Use Deepseek-R1",
         "content": [
-          "To run this operation, you must install the PyMuPDF Python library, which allows you to work with PDF files and other document formats.",
-          "```python\n!pip install pymupdf\nimport os\nimport fitz  # PyMuPDF\n```",
-          "This operation requires two libraries: OS and Fitz. The OS library provides functions that enable interaction with the operating system by managing file paths. The PyMuPDF library's main module is Fitz, responsible for handling PDFs and other document formats. Fitz can easily open, load, read, and manipulate PDF files, which is particularly significant for tasks involving size reduction."
-        ]
-      },
-      {
-        "id": "compressing-pdf-file",
-        "title": "Compressing the PDF file",
-        "content": [
-          "```python\ndef compress_pdf(input_path, output_path, zoom_x=0.75, zoom_y=0.75):\n   try:\n       document = fitz.open(\"input_path\")\n       new_document = fitz.open()\n```",
-          "This function is designed to compress PDF files by reducing the size of their pages. The function loads the original PDF file using the PyMuPDF library, also known as fitz.open function. Then, it creates a new empty document that allows you to add the compressed file.",
-          "In addition to setting the function that opens the original file and creates a new document, you must set the structure for compressing the file in a suitable format.",
-          "```python\nfor page_num in range(len(document)):\n           page = document.load_page(page_num)\n           mat = fitz.Matrix(zoom_x, zoom_y)\n           pix = page.get_pixmap(matrix=mat, alpha=False)\n           img_bytes = pix.tobytes(\"jpeg\")\n           new_page = new_document.new_page(width=pix.width, height=pix.height)\n           new_page.insert_image(new_page.rect, stream=img_bytes)\n```",
-          "This block loops through each page of the original PDF. For every page, it creates a scaling matrix (fitz.Matrix) to reduce the page content, renders the page as a pixmap (image), converts it to JPEG bytes, and then inserts the image into a new, blank page in the new, compressed PDF. This process effectively reduces the file size by saving the visual content as images."
-        ]
-      },
-      {
-        "id": "saving-compressed-pdf",
-        "title": "Saving Newly Compressed PDF",
-        "content": [
-          "```python\nnew_document.save(output_path)\nnew_document.close()\ndocument.close()\n```",
-          "This code helps you save the newly compressed PDF file to the output_path. However, it closes the original and compressed documents to free up memory. This ensures all changes are written and no files are left open in memory."
-        ]
-      },
-      {
-        "id": "results",
-        "title": "Results",
-        "content": [
-          "```python\nprint(f\"✅ Compressed: {output_path}\")\nprint(f\"   Original: {os.path.getsize(input_path)/1024:.2f} KB\")\nprint(f\"   Compressed: {os.path.getsize(output_path)/1024:.2f} KB\")\n```",
-          "With this code, you can display the path to the compressed file and also view the sizes of the original and the new documents. This operation is carried out using the os.path module. getsize() to get the size of the new document. The output is also formatted to two decimal points, which helps with readability."
-        ]
-      },
-      {
-        "id": "batch-compression-error-handling",
-        "title": "Batch PDF Compression and Error Handling",
-        "content": [
-          "```python\nexcept Exception as e:\n       print(f\"❌ Error compressing {input_path}: {str(e)}\")\n```",
-          "```python\nif __name__ == \"__main__\":\n   folder = \"/content\"\n\n   if not os.path.isdir(folder):\n       raise FileNotFoundError(f\"Folder '{folder}' does not exist.\")\n\n   pdf_files = [f for f in os.listdir(folder) if f.endswith(\".pdf\")]\n\n   if not pdf_files:\n       print(\"⚠️ No PDF files found in the folder.\")\n   else:\n       for filename in pdf_files:\n           input_pdf = os.path.join(folder, filename)\n           output_pdf = os.path.join(folder, filename.replace(\".pdf\", \"-compressed.pdf\"))\n           compress_pdf(input_pdf, output_pdf)\n```",
-          "This code handles errors during compression with a try-except block. If something goes wrong, it catches the exception and prints an error message showing which file failed and why. Then, in the main execution block, it sets a folder path (in this case, /content) where the PDF files are located.",
-          "It checks if the folder exists and raises an error if it doesn't. Next, it looks for all PDF files in that folder. If no PDFs are found in the folder, a warning is printed. Otherwise, it loops through each PDF file, creates a new output filename for the compressed version, and calls the compress_pdf() function to perform the compression.",
-          "Running this code locally yields the output of your compressed document, tagged as 'compressed.' All these operations are in the folder; you can get a resized PDF."
-        ]
-      },
-      {
-        "id": "application-of-pymupdf",
-        "title": "Application of PyMuPDF for Reducing File Size",
-        "content": [
-          "This tool is particularly useful in various settings where file size reduction is crucial. Good examples include Email Attachment optimization, improved web and app performance, and archiving and storage management.",
-          "In many corporate workplaces, email attachments are limited (e.g., 20MB), but with PyMuPDF, you can compress files, reports, proposals, and other documents to stay within the given limits.",
-          "A reduced size can also enhance loading speed and improve the user experience. This is especially necessary for institutions, banks, academic institutions, and legal organizations that host online PDF files.",
-          "Optimizing storage is another reason why the tool is relevant. Hospitals, firms, government agencies, and even some businesses store a large archive of PDF documents. Reducing file size is essential for saving storage and memory."
-        ]
-      },
-      {
-        "id": "exploring-pymupdf-with-streamlit",
-        "title": "Exploring PyMuPDF With Streamlit",
-        "content": [
-          "You can apply this compressor using a simple user interface with Streamlit to power the compression algorithm. This tool can help you set up a page that can handle these files. Therefore, you can test the compressor while also allowing usage for individuals with a deep technical understanding of coding.",
-          "This section will explain a simple guide to setting up a page to run this compression tool."
-        ]
-      },
-      {
-        "id": "page-setup",
-        "title": "Page Setup",
-        "content": [
-          "The first step in using Streamlit is to utilize its page setup features. This allows you to create a centered heading and minimalist interface where you can add attributes, links, buttons, file uploads, and other inputs. In this case, using PyMuPDF would require adding an interface to upload files, which brings us to the next step."
-        ]
-      },
-      {
-        "id": "file-handling",
-        "title": "File Handling",
-        "content": [
-          "You can use the bordered container on Streamlit to create a file uploader that accepts only PDF files. This attribute helps you handle the uploaded file effectively, as it allows you to avoid saving the file on disk."
-        ]
-      },
-      {
-        "id": "user-control",
-        "title": "User Control (Added Feature)",
-        "content": [
-          "This tool features a high-quality slider that ranges from 0 to 100, allowing users to control the desired compression level precisely.",
-          "Displays an informative message explaining that a lower quality setting results in a smaller file size. Features a large \"Compress PDF\" button that spans the width of the container, making it highly visible and easy to click."
-        ]
-      },
-      {
-        "id": "processing-flow",
-        "title": "Processing Flow",
-        "content": [
-          "When a PDF is uploaded, the app captures the file name and size, then enables compression options. Upon clicking \"Compress PDF,\" a loading spinner appears, the file is processed using temporary storage, and the compression algorithm is executed.",
-          "After compression, it displays file size comparisons, provides a download button, and shows an error message if compression fails."
-        ]
-      },
-      {
-        "id": "running-streamlit-locally",
-        "title": "Running Streamlit Locally",
-        "content": [
-          "As we mentioned earlier, this platform allows you to set up a simple User Interface to host your mini projects. It also permits simple attributes, such as buttons, file uploaders, and links. Here is a simple guide on how to run this;",
-          "Clone the GitHub repo - Navigate to and clone the GitHub Repository at: https://github.com/Hanif-adedotun/compress-pdf",
-          "Navigate to the root of the folder - Open up the terminal on the path",
-          "Run pip install -r requirements.txt",
-          "Run streamlit streamlit.py",
-          "Open up your browser at localhost:8501",
-          "Voila! You now have access to the localhost version of the project running on your system.",
-          "Install Streamlit - Pip install Streamlit",
-          "Once you have successfully installed it, you can run the Python code. If you encounter no errors, it means Streamlit has been installed successfully.",
-          "Run the Streamlit File - Streamlit run filename.py",
-          "This command will direct you to a local URL on your web browser, and you can then proceed to start building your page.",
-          "With this tool, you can use Streamlit's basic functions and attributes to run your mini projects, like the PDF compressor. There are lots of features you can add with little to no knowledge of HTML and CSS. Check out this guide for more information on using Streamlit."
+          "Now that you have your API key, it's time to configure Cursor to use Deepseek-R1 as its default model.",
+          "Open Cursor Settings: Launch Cursor and navigate to the settings menu. You can usually find this under File > Preferences > Settings for windows and under Cursor > Settings > Cursor Settings",
+          "Locate the AI Model Settings: In the settings menu, look for the section labeled Models. This is where you can customize the AI model used by Cursor.",
+          "The Deepseek API is OpenAI-compatible, meaning you can use it with any software that supports OpenAI's API format.",
+          "Enter Your Deepseek API Key: Paste the API key you generated earlier into the designated field. This step authenticates your connection to Deepseek-R1.",
+          "Override Base URL: In order to ensure the models are using deepseek API, you have to override openAI base model URL to point to https://api.deepseek.com.",
+          "Set deepseek as the Default Model: In the same settings section, you'll see an option to select the default AI model. Choose deepseek-reasoner and deepseek-chat from the drop-down menu. deepseek-reasoner is the Deepseek-R1 model, and deepseek-chat is the Deepseek-v3 model. You can check out more details in their docs"
         ]
       },
       {
         "id": "wrapping-up",
         "title": "Wrapping Up",
         "content": [
-          "The article examines how the PyMuPDF Python library effectively compresses the size of PDF files. Users can optimize PDFs for email, web, and storage by converting pages to compressed images and rebuilding the document."
+          "That's it! 🎉 You've successfully integrated Deepseek-R1 into Cursor using its API.",
+          "✅ No more RAM issues — you can now enjoy Deepseek's powerful capabilities without running it locally.",
+          "✅ Super cheap API with no rate limits — ideal for extended usage.",
+          "✅ Smooth AI-assisted coding experience — Deepseek's models work seamlessly with Cursor.",
+          "If you have any issues or want to explore more, check out Deepseek's official documentation or drop a comment below.",
+          "🚀 Happy coding! 🚀"
         ]
       }
     ]
   },
   {
-    "slug": "2025-in-review",
-    "title": "2025: In Review",
-    "date": "2025-01-01",
-    "author": "Hanif Adedotun",
-    "intro": "I feel very empty writing this, not because I didn't achieve what I set out this year, but more so because life took a 180° turn, I found myself juggling the Nigerian imposed service year and my full time remote job.",
+    "slug": "2024-the-year-of-resilience",
+    "title": "2024: The Year of Resilience",
+    "date": "2024-12-31",
+    "author": "Hanif",
+    "intro": "Year in Review, wins, losses and lessons. This year was a lot; I experienced my lowest and highest points in just 365 days. Never the less, it turned out to be my most productive year by miles.",
     "sections": [
       {
-        "id": "growth",
-        "title": "Growth and Learning",
+        "id": "introduction",
+        "title": "Introduction",
         "content": [
-          "I learned a lot this year, especially from working as a Teaching Assistant at a university — it was a great experience, almost like cosplaying as a lecturer.",
-          "I was far more intentional about my professional life: creating structure in my daily tasks as an engineer, and being deliberate about delivering work with attention to detail.",
-          "That intentionality paid off, earning me a promotion to Lead Software Engineer.",
-          "While I did not read as many books as I planned — four out of ten — it was still a year of meaningful growth."
+          "Sits down and spends like 30 minutes crying while replaying the year like a chaotic highlight reel.",
+          "This year was a lot; I experienced my lowest and highest points in just 365 days. Never the less, it turned out to be my most productive year by miles. I was intentional about going out of my comfort zone; I met amazing people, and in summary, I grew.",
+          "The first half tested me in so many ways I did not envision; I was juggling working on a very difficult final year project, trying to meet deadlines for submission, and then a remote role at a startup. It was very tough."
         ]
       },
       {
-        "id": "achievements",
-        "title": "Achievements",
+        "id": "academia",
+        "title": "📚 Academia",
         "content": [
-          "Looking at my win list, I definitely had some good moments:",
-          "> Managed three projects from idea to launch at work",
-          "> Built an AI powered unit test case generator Hiro",
-          "> Built an AI powered headline agent",
-          "> Invited to speak at four different events",
-          "> Got featured in an interview by NTA",
-          "> Pitched Neurosync (my startup) to everyone willing to listen at OSCAfest",
-          "> Got a contract role at a web3 company",
-          "> Got a contract to build an AI solution for the Government",
-          "> Got promoted to a lead Engineer",
-          "> I met all my financial goals"
+          "Graduated with a First Class Degree in Computer Engineering 4.82/5 !!!",
+          "I won't classify myself as an exceptionally smart student, but one thing I remember telling myself in 2019 is that I would strive and do all my best to graduate with a first class. I always said it that if I wasn't already in first class, I would not put so much effort in school, it would have all gone to making myself better outside school, but I was able to 'balance' school and tech to the best of my abilities, and I am glad I did and not the extreme option.",
+          "My final year project was a major highlight for me; together with three excellent classmates, we were able to build a prototype of a robot controlled by thoughts only. Here is a video of the prototype.",
+          "I also co-authored and published a research paper on Predictive Modeling of Precast Concrete Compressive Strength Using Artificial Neural Networks"
         ]
       },
       {
-        "id": "looking-forward",
-        "title": "Looking Forward",
+        "id": "career",
+        "title": "👨🏽‍🎓 Career",
         "content": [
-          "Going into 2026, I just have two guiding actions words, Visibility and Volume.",
-          "See you all same time next year! 🥂"
+          "I had to make some hard decisions with regards to my career because I knew that I could not keep spreading myself thin and expecting to achieve a lot of progress. I got laid off after just a few months into a role, it definitely didn't help with my imposter syndrome, but it was a much-needed hard reset to figure out my priorities.",
+          "My Aguero moment started in September when I got:",
+          "A contract job to develop an education management system",
+          "Secured a new contract to design and implement advanced web scraping bots",
+          "Worked with a YC-backed AI startup to create integration tutorials of their SDK, empowering developers to seamlessly adopt their tools.",
+          "Secured a full-time role as a Software Engineer at a US-based company."
+        ]
+      },
+      {
+        "id": "competitions",
+        "title": "🏆 Competitions",
+        "content": [
+          "Well, as for competitions, it was a successful one for me, and by extension, my team building Neurosync. I represented a startup called Celia earlier in the year for the Wema Bank Hackaholics, and fortunately we got to the finals in Lagos, but unfortunately we could not secure the Top 10 position, nevertheless, it was a good learning moment for sure. Here is the recorded pitch.",
+          "At Neurosync, we had a successful year; we achieved:",
+          "Winners of the Project Exhibition across the Computing and Engineering Faculties at Nile University of Nigeria.",
+          "A first runner-up position at the Global Entrepreneurship Festival in Ondo.",
+          "A second runner-up position at the Nigerian Society of Engineers Innovation Competition."
+        ]
+      },
+      {
+        "id": "personal-accomplishment",
+        "title": "Personal accomplishment",
+        "content": [
+          "Prior to this year, I never imagined I could stay committed to a six-month training program — but I did, and I couldn't be more grateful. The experience not only pushed me to grow but also connected me with incredible, like-minded individuals from across Africa, all striving toward inspiring goals. Being part of such a vibrant and driven community was truly transformative."
+        ]
+      },
+      {
+        "id": "looking-back",
+        "title": "Looking Back",
+        "content": [
+          "Looking back at the year, I had to learn the hard way not to try to do everything at once. I am trying now to streamline and focus on just a few things that truly align with my future goals, and I want to put in every joule of energy I have within me, so help me, God.",
+          "I am truly grateful for just showing up everyday, I am no where close to where I want to be, but there is motion and hope. There is so much planned for the future.",
+          "Cheers to all we've overcome and all we've become 🥂"
         ]
       }
     ]
@@ -1089,6 +585,509 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-run-llm-locally-chatgpt-interface",
+    "title": "How to run an LLM locally with a ChatGPT like interface",
+    "date": "2024-08-02",
+    "author": "Hanif",
+    "intro": "A few days ago Meta released a new version of their open source Large Language Model (LLM) called the Llama 3.1 in three variants, the 8B, 70B, and 405B which represents the size of tokens, with the smallest being 8Billion tokens.",
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introduction",
+        "content": [
+          "A few days ago Meta released a new version of their open source Large Language Model (LLM) called the Llama 3.1 in three variants, the 8B, 70B, and 405B which represents the size of tokens, with the smallest being 8Billion tokens and according to their release article",
+          "Llama 3.1 405B is the first openly available model that rivals the top AI models when it comes to state-of-the-art capabilities in general knowledge, steerability, math, tool use, and multilingual translation.",
+          "The paper for the Llama 3 Herd of Models is also available here",
+          "I've always been fascinated by the open-source approach to developing large language models. Historically, open source has driven innovation and provided strong competition to the proprietary methods of major tech companies.",
+          "Another reason I wanted to try running a model locally is due to the nature of my workflow. I frequently ask ChatGPT to analyze numerous files, but the free plan has limitations for this use case. I figured having an open-source LLM running on my computer would reduce my reliance on ChatGPT's file upload feature. So, I decided to install Llama 3.1 using Ollama and OpenWebUI."
+        ]
+      },
+      {
+        "id": "initial-attempt",
+        "title": "Initial Attempt with Llama 3.1",
+        "content": [
+          "Well, that failed woefully. Despite downloading the smallest variant, which was the Llama3.1 8B of about ~5GB, using Ollama, and upon running it on the command line, asking it a question \"What i a GPU?\", well, that took about 10 minutes to fully write out the answer 😔. In hindsight that was not such a great idea, my Macbook air was not powerful enough to run the model.",
+          "I knew that was not going to work, nearly giving up, I came across a twitter(X) post from @Prince_Canuma, on a light weight LLM from Google Deep Mind called Gemma2. I then decided to read it, and used it as an alternative to Llama3.1 model."
+        ]
+      },
+      {
+        "id": "about-gemma2",
+        "title": "About Gemma 2 2B",
+        "content": [
+          "Gemma 2 2B is a newly released artificial intelligence model developed by Google DeepMind, representing the smallest variant in the Gemma 2 family, which also includes larger models of 9 billion and 27 billion parameters. This 2 billion parameter model is optimized for a variety of hardware, making it suitable for deployment on edge devices, laptops.",
+          "This lightweight model produces outsized results by learning from larger models through distillation. In fact, Gemma 2 2B surpasses all GPT-3.5 models on the Chatbot Arena, demonstrating its exceptional conversational AI abilities.",
+          "Despite its compact size, according to Deep Mind the model outperformed larger models like GPT-3.5 and Mixtral on the LMSYS Chatbot Arena benchmark. It achieved an Elo score of 1126, surpassing the scores of its larger counterparts."
+        ]
+      },
+      {
+        "id": "ollama",
+        "title": "Ollama",
+        "content": [
+          "Ollama is a lightweight, open-source tool designed to make it easy to run and manage large language models (LLMs) locally on personal computers. It's gained popularity for its simplicity and focus on local AI deployment."
+        ]
+      },
+      {
+        "id": "openwebui",
+        "title": "OpenWebUI",
+        "content": [
+          "OpenWebUI is an open-source project aimed at creating a web-based user interface for large language models (LLMs). It's designed to provide a customizable and extendable front-end for interacting with various AI models, similar to how ChatGPT's interface works for OpenAI's models."
+        ]
+      },
+      {
+        "id": "installing-gemma2",
+        "title": "How to install Gemma2 2B model locally using Ollama",
+        "content": [
+          "The first step is to download Ollama on your computer, it supports windows, mac and Linux operating systems. The application was just about 177MB",
+          "When that is done, extract the application from the zip file and install it. Then the next step is to navigate to the terminal and run the command:",
+          "```bash\nollama run gemma2:2b\n```",
+          "This downloads the gemma2 model on your computer, it might take a while since the whole model is about 1.6GB large"
+        ]
+      },
+      {
+        "id": "quantized-models",
+        "title": "Quantized Models",
+        "content": [
+          "Ollama also supports installing custom models and quantized models. Quantized models are machine learning models that have had their precision reduced to make them faster and more memory efficient.",
+          "It involves converting a model's high-precision floating-point values to lower-precision fixed-point or integer representations. For example, a model's 32-bit floating-point numbers (float32) can be converted to 8-bit integers (int8)",
+          "Hugging Face offers a variety of quantized models that you can download. For example, there is a quantized version of the Gemma2 model posted by Bartowski. You can find it at this model link",
+          "Just similar to the installation of ollama, you will have to download the model a GGUF file, and then once that is done. navigate to your terminal and type in the following command",
+          "```bash\nvim Modelfile\n```",
+          "This opens a new file called Modelfile, which you can think of as a Dockerfile for llms. Once the editor is opened up on the terminal, type FROM followed by the link to you downloaded model file with a gguf extension. You can also set other commands as detailed in the github docs",
+          "```bash\nFROM ./link_to_model/filename.gguf\n\nFROM ./downloads/gemma-2-9b-it-Q6_K_L.gguf\n```",
+          "You can then create the model from the Modelfile using the command below",
+          "```bash\nollama create choose-a-model-name -f Modelfile\n```",
+          "To see all of the models installed on Ollama, you can use the ollama list command to achieve that",
+          "```bash\nollama list\n```",
+          "There it is, the list should contain the model you just created, you can then use ollama run",
+          "```bash\nollama run choose-a-model-name \"Any Prompt you want to write\"\n```"
+        ]
+      },
+      {
+        "id": "running-openwebui",
+        "title": "Running OpenWebUI",
+        "content": [
+          "As explained above OpenWebUI provides a ChatGPT like interface where file upload is also supported. To run OpenWebUI with your ollama models, it can be achieved with just one command on the terminal. You can either install it using docker or manually, all of these are explained in their installation guide",
+          "```bash\ndocker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main\n```"
+        ]
+      },
+      {
+        "id": "demo",
+        "title": "Demo of testing Gemma2 locally",
+        "content": [
+          "Thank you for reading. Cheers! 🥂"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ml-series-practical-tutorial-building-cnn",
+    "title": "ML Series: A Practical Tutorial on Building a Convolutional Neural Network (CNN)",
+    "date": "2024-06-24",
+    "author": "Hanif",
+    "intro": "Welcome back to the ML Series, In the previous article in this series we implemented a Multiplayer Perceptron Model, that was an introduction into Neural Networks using a very basic architecture. Today we are going to be implementing a Convolutional Neural Network (CNN) using pyTorch and testing using the MNIST handwriting dataset.",
+    "sections": [
+      {
+        "id": "introduction-cnns",
+        "title": "Introduction to CNNs",
+        "content": [
+          "Imagine a computer program that can learn to recognize objects in pictures just by looking at a bunch of examples. That's the magic of Convolutional Neural Networks (CNNs)!",
+          "CNNs are a special type of artificial neural network inspired by the structure of the visual cortex in animals. They excel at tasks involving images and videos. The image fed into the Network passes through convolutional layers that act like filters to extract essential features such as edges, textures, and patterns. These features become progressively complex as they move through multiple layers.",
+          "The output from these layers is then flattened and fed into fully connected layers, which function similarly to a traditional neural network to perform classification. Ultimately, the CNN processes and learns from the image features, enabling it to output classifications such as identifying objects or recognizing handwritten digits.",
+          "This combination of feature extraction and classification within a single framework makes CNNs powerful tools for image recognition tasks."
+        ]
+      },
+      {
+        "id": "cnn-components",
+        "title": "Components of a CNN",
+        "content": [
+          "A Convolutional Neural Network makes use of two very distinct operations:",
+          "Convolutional Layers: These layers use filters (like tiny templates) to scan an image, identifying patterns and extracting features like edges, shapes, and textures.",
+          "Pooling Layers: These layers reduce the image size while retaining important features, making the network more efficient. The trade off of pooling is that, too much and important information can be lost in the process",
+          "Some other components of the Convolutional Network are:",
+          "Activation Function: An activation function (e.g., ReLU, sigmoid, tanh) is applied element wise to the output of the convolutional layer. It introduces non-linearity, allowing the network to learn complex patterns.",
+          "Fully Connected Layer: Transforms the output of the previous layers into a single, streamlined list (vector). Then, it applies fully connected operations, much like a multilayered perceptron, to make classifications or predictions.",
+          "Softmax or Output Layer: Generates the final output probabilities or values for the target classes or outputs"
+        ]
+      },
+      {
+        "id": "importing-packages",
+        "title": "Importing Required Packages",
+        "content": [
+          "So, first of all, we are going to import all the packages needed for our model",
+          "```python\nimport random\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport random\nimport torch\nimport torch.nn as nn\nimport torch.nn.functional as F\nimport torch.optim as optim\nfrom torchvision import datasets, transforms\nfrom torch.utils.data import DataLoader\nimport torchvision\nfrom keras.datasets import mnist\nfrom mlxtend.data import loadlocal_mnist\n%matplotlib inline\nimport os\n```"
+        ]
+      },
+      {
+        "id": "loading-dataset",
+        "title": "Loading the MNIST Dataset",
+        "content": [
+          "We are going to be using the MNIST dataset from Kaggle, you can go ahead and download it here. The next step is to divide it into test and train variables",
+          "```python\ntraining_images_filepath = '/kaggle/input/d/hojjatk/mnist-dataset/train-images.idx3-ubyte'\ntraining_labels_filepath = '/kaggle/input/d/hojjatk/mnist-dataset/train-labels.idx1-ubyte'\ntest_images_filepath = '/kaggle/input/d/hojjatk/mnist-dataset/t10k-images.idx3-ubyte'\ntest_labels_filepath = '/kaggle/input/d/hojjatk/mnist-dataset/t10k-labels.idx1-ubyte'\n\nX_train, y_train = loadlocal_mnist(training_images_filepath, training_labels_filepath)\nX_test, y_test = loadlocal_mnist(test_images_filepath, test_labels_filepath)\n```"
+        ]
+      },
+      {
+        "id": "previewing-data",
+        "title": "Previewing the Dataset",
+        "content": [
+          "To preview some of the handwritten text, we would use the show function, that takes in random five images from the dataset using the plt.imshow function.",
+          "```python\ndef show(image, title):\n    index = 1\n    plt.figure(figsize=(10,5))\n    for x in zip(image, title):\n        image = x[0]\n        title = x[1]\n        plt.subplot(2, 5, index)\n        plt.imshow(image, cmap=plt.cm.gray)\n        plt.title(x[1], fontsize = 9)\n        index += 1\n\nimage = []\ntitle = []\n\nX_train_reshape = X_train.reshape(60000, 28, 28)\nX_test_reshape = X_test.reshape(10000, 28, 28)\n\nfor i in range(0, 5):\n    r = random.randint(1, len(X_train_reshape))\n    image.append(X_train_reshape[r])\n    title.append('training image:' + str(y_train[r]))\n\nfor i in range(0, 5):\n    r = random.randint(1, len(X_test_reshape))\n    image.append(X_test_reshape[r])\n    title.append('testing image:' + str(y_test[r]))\n\nshow(image, title)\n```"
+        ]
+      },
+      {
+        "id": "creating-dataloader",
+        "title": "Creating DataLoader",
+        "content": [
+          "In machine learning, especially with large datasets, efficiently managing and processing data is crucial for training and evaluation. PyTorch's DataLoader is a powerful utility that simplifies this task by creating an iterable over a dataset, facilitating the handling of batches of data. It enables automatic batching, shuffling, and multi-threaded data loading, which accelerates the training process and improves model performance.",
+          "By converting data into manageable chunks and supporting parallel data processing, the DataLoader ensures that the training loop operates smoothly, even with extensive and complex datasets, thereby optimizing the computational workflow and enhancing model accuracy.",
+          "The CustomDataset class wraps your feature and label arrays into a format that PyTorch can understand. The DataLoader objects make it easy to iterate over the dataset in batches, which is essential for training and evaluating machine learning models efficiently. train_loader and test_loader allow you to load the training and testing data in batches, handle shuffling, and provide data in a format ready for training loops or evaluation",
+          "```python\nimport torch\nfrom torch.utils.data import Dataset, DataLoader\n\nclass CustomDataset(Dataset):\n    def __init__(self, X, y):\n        self.X = torch.tensor(X, dtype=torch.float32)\n        self.y = torch.tensor(y, dtype=torch.long)\n    \n    def __len__(self):\n        return len(self.X)\n    \n    def __getitem__(self, idx):\n        return self.X[idx], self.y[idx]\n\n# Create train and test datasets\ntrain_dataset = CustomDataset(X_train, y_train)\ntest_dataset = CustomDataset(X_test, y_test)\n\n# Create train and test loaders\ntrain_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)\ntest_loader = DataLoader(test_dataset, batch_size=1000, shuffle=False)\n```"
+        ]
+      },
+      {
+        "id": "setting-seed",
+        "title": "Setting Random Seed",
+        "content": [
+          "To ensure that each run of the code with the same seed yields the same results, we are going to be setting seed for NumPy and PyTorch",
+          "Consistency: Facilitates consistent model training and evaluation by fixing the randomness across different libraries and environments.",
+          "```python\ndef set_seed(seed):\n    # Set the seed for Python's built-in random module\n    random.seed(seed)\n    # Set the seed for NumPy\n    np.random.seed(seed)\n    # Set the seed for PyTorch\n    torch.manual_seed(seed)\n    # If using GPU\n    if torch.cuda.is_available():\n        torch.cuda.manual_seed(seed)\n        torch.cuda.manual_seed_all(seed)\n        # Ensure deterministic behavior in CUDA operations\n        torch.backends.cudnn.deterministic = True\n        torch.backends.cudnn.benchmark = False\n\nseed = 42\nset_seed(seed)\n```"
+        ]
+      },
+      {
+        "id": "defining-cnn-model",
+        "title": "Defining the CNN Model",
+        "content": [
+          "Then we define our CNN model, with three convolutional layers, and two fully connected layers, the activation function used in all the convolutional layers and the first fully connected layer is the reLu activation function, then a max pooling with a stride of two right before the fully connected layer. The output was passed through a Log softmax activation function because of it is a classification task.",
+          "```python\nclass CNN(nn.Module):\n    def __init__(self):\n        super(CNN, self).__init__()\n        # Convolutional layers\n        self.conv1 = nn.Conv2d(in_channels=1, out_channels=32, kernel_size=3, padding=1)\n        self.conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=3, padding=1)\n        self.conv3 = nn.Conv2d(in_channels=64, out_channels=128, kernel_size=3)\n        # Fully connected layers\n        self.fc1 = nn.Linear(21632, 128)  # Calculate input size after flattening\n        self.fc2 = nn.Linear(128, 10)\n\n    def forward(self, x):\n        x = F.relu(self.conv1(x))\n        x = F.relu(self.conv2(x))\n        x = F.relu(self.conv3(x))\n        \n        x = F.max_pool2d(x, 2)\n        x = F.relu(self.fc1(x.view(-1, 21632)))\n        x = self.fc2(x)\n        return F.log_softmax(x, dim=1)\n```"
+        ]
+      },
+      {
+        "id": "initializing-model",
+        "title": "Initializing Model and Optimizer",
+        "content": [
+          "Next step is to initialize our CNN model, define our optimizer with weight decay, and we would be using Cross Entropy Loss function. Then to speed up the training time for the model, we check if GPU is available on the device, then we load the data and model to the GPU (if available)",
+          "```python\n# Initialize the model\nmodel = CNN()\n\n# Define the loss function\ncriterion = nn.CrossEntropyLoss()\n\n# Define the optimizer with weight decay (L2 regularization)\noptimizer_with_weight_decay = optim.SGD(model.parameters(), lr=0.01, weight_decay=0.01)\n\n# Check if CUDA is available and move model and data to GPU if available\ndevice = torch.device(\"cuda:0\" if torch.cuda.is_available() else \"cpu\")\n\n# Move model to device\nmodel.to(device)\n\n# Move data to device\nfor data, target in train_loader:\n    data, target = data.to(device), target.to(device)\n```"
+        ]
+      },
+      {
+        "id": "training-model",
+        "title": "Training the Model",
+        "content": [
+          "Time to train our model! The model would be trained by going through a forward pass, then reshaped and the passed through an optimizer and loss function. Then back propagation is performed on the model, and the average loss for each epoch is calculated and displayed in a graph.",
+          "```python\ndef train(model, train_loader, optimizer, criterion, num_epochs):\n    model.train()\n    losses = []\n    average_losses = []\n    for epoch in range(num_epochs):\n        for batch_idx, (data, target) in enumerate(train_loader):\n            data, target = data.to(device), target.to(device)  # Move data to GPU\n            data = data.unsqueeze(1)  # Add a channel dimension (channels = 1 for grayscale images)\n            data = data.view(-1, 1, 28, 28)  # Reshape the data to match the expected input shape\n            optimizer.zero_grad()\n            output = model(data)\n            loss = criterion(output, target)\n            loss.backward()\n            optimizer.step()\n            if batch_idx % 100 == 0:\n                losses.append(loss.item())\n                print('Train Epoch: {} [{}/{} ({:.0f}%)]\\tLoss: {:.6f}'.format(\n                    epoch, batch_idx * len(data), len(train_loader.dataset),\n                    100. * batch_idx / len(train_loader), loss.item()))\n        average_losses = sum(losses) / len(losses)\n        losses = []\n    \n    plt.plot(average_losses, label=f'11 Epochs')\n    plt.xlabel('Iterations')\n    plt.ylabel('Loss')\n    plt.title('Training Loss')\n    plt.legend()\n    plt.show()\n```"
+        ]
+      },
+      {
+        "id": "testing-model",
+        "title": "Testing the Model",
+        "content": [
+          "We can test our CNN model on the test dataset. For each batch we passes the data through the model to get predictions. We then calculate the loss using a criterion, sum the loss over all batches, and determine the model's accuracy by comparing predicted labels with the actual labels.",
+          "Finally, it prints the average loss and overall accuracy, offering insight into the model's performance on unseen data. Which was 0.0003 for the average loss and a 99% accuracy!",
+          "```python\n# Test function\ndef test(model, test_loader):\n    model.eval()\n    test_loss = 0\n    correct = 0\n    with torch.no_grad():\n        for data, target in test_loader:\n            data, target = data.to(device), target.to(device)  # Move data to the same device as the model\n            data = data.unsqueeze(1)  # Add a channel dimension (channels = 1 for grayscale images)\n            data = data.view(-1, 1, 28, 28)  # Reshape the data to match the expected input shape\n            output = model(data)\n            test_loss += criterion(output, target).item()\n            pred = output.argmax(dim=1, keepdim=True)\n            correct += pred.eq(target.view_as(pred)).sum().item()\n\n    test_loss /= len(test_loader.dataset)\n    accuracy = 100. * correct / len(test_loader.dataset)\n    print('\\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\\n'.format(\n        test_loss, correct, len(test_loader.dataset), accuracy))\n```"
+        ]
+      },
+      {
+        "id": "running-training-testing",
+        "title": "Running Training and Testing",
+        "content": [
+          "With our Convolutional Neural Network (CNN) fully defined, we can proceed to train and test our model. We'll train the model for 11 epochs, allowing it to learn progressively from the data.",
+          "While a higher number of epochs generally helps the model capture intricate patterns and improve accuracy, it's crucial to balance this with the risk of overfitting, where the model performs well on training data but poorly on new, unseen data. Thus, careful monitoring and adjustment of epochs, along with other hyperparameters, ensure optimal model performance.",
+          "```python\ntrain(model, train_loader, optimizer_with_weight_decay, criterion, 11)\ntest(model, test_loader)\n```"
+        ]
+      },
+      {
+        "id": "live-model-demo",
+        "title": "Live Model hosted on Hugging Face spaces",
+        "content": [
+          "In order to visualize our handwriting model, I created a live demo on hugging face, which you can feel free to play with using the link below.",
+          "Handwriting Classifier - hanif-cnn-handwriting-classifier.hf.space"
+        ]
+      },
+      {
+        "id": "final-thoughts",
+        "title": "Final thoughts",
+        "content": [
+          "In this article, we have walked through the essential steps to build, train, and evaluate a Convolutional Neural Network using PyTorch, tailored for recognizing handwritten digits. From data preparation to defining the network architecture, training with appropriate techniques, and finally evaluating performance, each step plays a vital role in developing a robust machine learning model.",
+          "CNNs, with their powerful ability to capture spatial hierarchies in images, continue to be pivotal in various applications beyond digit recognition, such as object detection, image segmentation, and beyond. By understanding and applying these concepts, one can leverage CNNs to tackle complex visual recognition tasks."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ml-series-basic-structure-neural-network-tutorial",
+    "title": "ML Series: The Basic Structure of a Neural Network: A step-by-step Tutorial in Python",
+    "date": "2024-04-15",
+    "author": "Hanif",
+    "intro": "Neural networks are algorithms created explicitly to simulate biological neural networks. The idea behind the Neural networks was to created an artificial system that would function like the human brain. At the basic level a Multi Layer Perceptron (MLP) is the simplest form of a Neural Network.",
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introduction",
+        "content": [
+          "Neural networks are algorithms created explicitly to simulate biological neural networks. The idea behind the Neural networks was to created an artificial system that would function like the human brain.",
+          "At the basic level a Multi Layer Perceptron (MLP) is the simplest form of a Neural Network.",
+          "MLPs were initially inspired by the Perceptron, a supervised machine learning algorithm for binary classification. The Perceptron was only capable of handling linearly separable data hence the multi-layer perception was introduced to overcome this limitation.",
+          "An MLP is an artificial neural network and it consists of an input layer, one or more hidden layers and an output layer, an activation function and a set of weights and biases:",
+          "In this article, we will implement a basic neural network from scratch making use of mainly the NumPy library.",
+          "The goal is to implement a Multilayer Perceptron, with an input layer, two hidden layers and an output layer. We will be making use of the Softmax activation function for the output and ReLu activation function for the hidden layers. The steps we are going to be taken are:",
+          "1. Data Preparation",
+          "2. Initialize parameters",
+          "3. Define activation functions",
+          "4. Initialize weights and biases",
+          "5. Forward Propagation",
+          "6. Backward Propagation",
+          "7. Train the Neural Network",
+          "8. Evaluate the accuracy on test data",
+          "9. Make Prediction"
+        ]
+      },
+      {
+        "id": "data-preparation",
+        "title": "1. Data Preparation",
+        "content": [
+          "We are going to be utilizing the iris dataset from sklearn, it is a simple dataset with, which has four features (Sepal Length, Sepal Width, Petal Length, Petal Width) and three flower classes (Iris Setosa, Iris Versicolor, Iris Virginica)",
+          "```python\nimport numpy as np\nimport copy\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.metrics import accuracy_score\n\n# Load Iris dataset\niris = load_iris()\nX = iris.data\ny = iris.target.reshape(-1,1)\n```"
+        ]
+      },
+      {
+        "id": "initialize-parameters",
+        "title": "2. Initialize Parameters",
+        "content": [
+          "The next step is to use one hot encoding for the y values, and the reason we are doing this is to convert the categorical labels into numerical vectors, making them compatible with our neural network. So we are going to split the data into test and training sets",
+          "```python\ndef one_hot_encode(y):\n     maps = {0: [1., 0., 0.], 1: [0., 1., 0.], 2: [0., 0., 1.]}\n     new_y = []\n     for i in y:\n        new_y.append(maps[i[0]])\n     return np.array(new_y)\n\ny_onehot = one_hot_encode(y)\n\n# Split the data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y_onehot, test_size=0.2, random_state=42)\n```"
+        ]
+      },
+      {
+        "id": "activation-functions",
+        "title": "3. Define activation functions",
+        "content": [
+          "Activation functions are functions that take in the in weighted sum of inputs and then, gives a real number (regression) or binary (classification). They are used to introduce a level of non-linearity in a network, which allows it to learn complex patterns.",
+          "For our neural network, we are going to be using the ReLU activation function for our hidden layers, and the Softmax activation function for the output layer.",
+          "```python\ndef relu(x):\n  return np.maximum(0, x)\n\ndef softmax(x):\n    e_x = np.exp(x - np.max(x, axis=1, keepdims=True))\n    return e_x / np.sum(e_x, axis=1, keepdims=True)\n\n# Define derivative of activation function (ReLU derivative)\ndef relu_derivative(x):\n  return np.where(x > 0, 1, 0)\n```"
+        ]
+      },
+      {
+        "id": "initialize-weights-biases",
+        "title": "4. Initialize weights and biases",
+        "content": [
+          "Here we initialized the weights and biases of each layer to train the neural network. The random module from Numpy takes care of that.",
+          "```python\n# Step 4: Initialize weights and biases\ndef initialize_parameters(hidden_size, hidden_size2):\n     # Define the network architecture\n     input_size = X_train.shape[1]  # 4 features\n     output_size = y_train.shape[1]  # 3 unique labels\n\n     # Initialize weights and biases\n     np.random.seed(42)\n     weights = {\n     'h1': np.random.uniform(-0.1, 0.1, (input_size, hidden_size)),\n     'h2': np.random.uniform(-0.1, 0.1, (hidden_size, hidden_size2)),\n     'out': np.random.uniform(-0.1, 0.1, (hidden_size2, output_size))\n     }\n     biases = {\n     'h1': np.random.uniform(-0.1, 0.1, hidden_size),\n     'h2': np.random.uniform(-0.1, 0.1, hidden_size2),\n     'out': np.random.uniform(-0.1, 0.1, output_size)\n     }\n     return weights, biases\n```"
+        ]
+      },
+      {
+        "id": "forward-propagation",
+        "title": "5. Forward Propagation",
+        "content": [
+          "The forward propagation algorithm takes in the weights and biases and computes the linear output and then passes it through an activation function, and then repeats it for each layer until an output value for each is obtained.",
+          "```python\ndef forward(X, weights, biases):\n    z1 = np.dot(X, weights['h1']) + biases['h1'] # W1.X + b1\n    a1 = relu(z1)\n    z2 = np.dot(a1, weights['h2']) + biases['h2'] # W2.A1 + b2\n    a2 = relu(z2)\n    z3 = np.dot(a2, weights['out']) + biases['out'] # Wout.A2 + bout\n    a3 = softmax(z3)\n    \n    return a1, a2, a3\n```"
+        ]
+      },
+      {
+        "id": "backward-propagation",
+        "title": "6. Backward Propagation",
+        "content": [
+          "The backward propagation algorithm is calculates the error of the output layer, propagating the error backward to the hidden layer, and computing the gradients using the chain rule. Then it goes a step further to update the weights and biases gotten from the back propagation.",
+          "```python\ndef backward_propagation(X, y, a1, a2, a3, learning_rate, weights, biases):\n    m = y.shape[0]\n    \n    dz3 = a3 - y\n    dw3 = np.dot(a2.T, dz3) / m\n    db3 = np.sum(dz3, axis=0) / m\n\n    dz2 = np.dot(dz3, weights['out'].T) * relu_derivative(a2)\n    dw2 = np.dot(a1.T, dz2) / m\n    db2 = np.sum(dz2, axis=0) / m\n\n    dz1 = np.dot(dz2, weights['h2'].T) * relu_derivative(a1)\n    dw1 = np.dot(X.T, dz1) / m\n    db1 = np.sum(dz1, axis=0) / m\n\n    # Update weights and biases\n    weights['h1'] -= learning_rate * dw1\n    weights['h2'] -= learning_rate * dw2\n    weights['out'] -= learning_rate * dw3\n    biases['h1'] -= learning_rate * db1\n    biases['h2'] -= learning_rate * db2\n    biases['out'] -= learning_rate * db3\n```"
+        ]
+      },
+      {
+        "id": "train-neural-network",
+        "title": "7. Train the Neural Network",
+        "content": [
+          "Then we move on to training the model, using the training data. The training process repeatedly performs forward propagation, and backward propagation to update the weights and biases, until the number of epochs has been reached.",
+          "```python\ndef train_mlp(hidden_layer_size, hidden_layer_size2, epochs, learning_rate):\n     scores_so_far = {}\n     weights, biases = initialize_parameters(hidden_layer_size, hidden_layer_size2)\n\n     # Training the network\n     for epoch in range(epochs):\n          a1, a2, a3 = forward(X_train, weights, biases)\n          backward_propagation(X_train, y_train, a1, a2, a3, learning_rate, weights, biases)\n\n          predictions = np.argmax(a3, axis=1)\n          true_labels = np.argmax(y_train, axis=1)\n\n          curr_accuracy = accuracy_score(true_labels, predictions)\n\n          print(f'Accuracy: {curr_accuracy}, epoch: {epoch}')\n```"
+        ]
+      },
+      {
+        "id": "evaluate-accuracy",
+        "title": "8. Evaluate the accuracy on test data",
+        "content": [
+          "Based on the data passed through, the accuracy of the predicted output values would be compared against the training set. The accuracy of both the train and test datasets are displayed.",
+          "```python\n      # Evaluate the model\n      scores_so_far[curr_accuracy] = [copy.deepcopy(weights), copy.deepcopy(biases), copy.deepcopy(a3)]\n      weights_new = scores_so_far[max(scores_so_far.keys())][0]\n      biases_new = scores_so_far[max(scores_so_far.keys())][1]    \n      \n      _, _, out_test = forward(X_test, weights_new, biases_new)\n      \n      y_pred_train = np.argmax(scores_so_far[max(scores_so_far.keys())][2], axis=1)\n      train_labels = np.argmax(y_train, axis=1)\n      \n      accuracy = accuracy_score(train_labels, y_pred_train)\n      \n      print(f'Model Train Accuracy: {accuracy * 100:.2f}')\n      \n      y_pred = np.argmax(out_test, axis=1)\n      test_labels = np.argmax(y_test, axis=1)\n      \n      accuracy = accuracy_score(test_labels, y_pred)\n      \n      print(f'Model Test Accuracy: {accuracy * 100:.2f}')\n\n      return weights, biases\n\n#Call the train_mlp function\nweights, biases = train_mlp(hidden_layer_size=90, hidden_layer_size2=55, epochs=200, learning_rate=0.1)\n```"
+        ]
+      },
+      {
+        "id": "make-prediction",
+        "title": "9. Make prediction",
+        "content": [
+          "We can then use the weights and biases from the training of the model to predict new values. Voila, we have a fully functional deep learning model!",
+          "```python\ndef predict(X):     \n     _, _, prediction = forward(X, weights, biases)\n     predictions = (prediction > 0.5).astype(int)\n     return predictions\n\npredictions = predict(X_test)\n```"
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusion",
+        "content": [
+          "We have been able to successfully develop a MultiLayer Perceptron Model from ground up using mainly the numpy library. The model created is the less complex version of the deep learning models that we use interact with everyday i.e. ChatGPT, Gemini, Google assistant, Midjourney etc.",
+          "The article Building a Neural Network from Scratch using Numpy and Math Libraries: A Step-by-Step Tutorial In Python was a major source of inspiration for my article.",
+          "Thank you for reading!",
+          "The full code to the project is highlighted below 👇"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "i-built-a-smart-home",
+    "title": "I built a smart home!",
+    "date": "2024-03-21",
+    "author": "Hanif",
+    "intro": "As a prerequisite for attaining my Bachelor's degree in Computer Engineering, I enrolled in a course titled Microcomputer Hardware and Software. An integral component of this course was the development of a project utilizing a microcontroller.",
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introduction",
+        "content": [
+          "As a prerequisite for attaining my Bachelor's degree in Computer Engineering, I enrolled in a course titled Microcomputer Hardware and Software. An integral component of this course was the development of a project utilizing a microcontroller.",
+          "The project topic given to me was \"smart home using Arduino,\" and then I decided that I was going to build a full prototype of a house, well as best as I could."
+        ]
+      },
+      {
+        "id": "project-overview",
+        "title": "Project Overview",
+        "content": [
+          "The simplified overview of the project is utilizing an Arduino uno microcontroller, setting up a circuit that connects a couple of LEDs, and an HC105 Bluetooth Module for low range real-time communication, which in turn is controlled by an android app called Arduino Bluetooth Control, I didn't build an app from scratch to connect to the Bluetooth module, because an already built app adds a level of abstraction and simplicity to the project."
+        ]
+      },
+      {
+        "id": "components-cost",
+        "title": "Components and Cost",
+        "content": [
+          "Most of the purchasing of components was done at Hub360, a premier electronics store with a presence in Abuja. As shown in the picture below, this project cost less than $50 from start to finish."
+        ]
+      },
+      {
+        "id": "circuit-setup",
+        "title": "Circuit Setup",
+        "content": [
+          "First things first, I had to create the basic electronic circuit, which consisted of connecting two LEDs to pins 8 and 9 of the Arduino Uno board, and the Bluetooth module to the 5 volt output, rx, tx and ground.",
+          "To interface with the Bluetooth module, I installed the Arduino Bluetooth Control app on Playstore."
+        ]
+      },
+      {
+        "id": "programming-arduino",
+        "title": "Programming the Arduino",
+        "content": [
+          "Once the connections were done, the next step was to test the Bluetooth module, that involved programming the Arduino Microcontroller (yay!)",
+          "Arduino primarily utilizes its own programming language, which is based on Wiring, a simplified version of C and C++. This language is specifically designed to be beginner-friendly, allowing users with varying levels of programming experience to easily grasp concepts and create projects.",
+          "```cpp\nvoid setup() {\npinMode(8,OUTPUT);\npinMode(4, OUTPUT);\n\nSerial.begin(9600);\ndigitalWrite(8,LOW);\ndigitalWrite(4,LOW);\n}\n\nvoid loop() {\nwhile(Serial.available() == 0) {}\n String val = Serial.readString();\n val.trim();\n Serial.println(val);\n \nif(val== \"offBulb1\"){\n  digitalWrite(8,LOW);\n}\nelse if(val==\"onBulb1\"){\n  digitalWrite(8,HIGH);\n}\nelse if(val==\"offBulb2\"){\n  digitalWrite(4,LOW);\n}\nelse if(val==\"onBulb2\"){\n  digitalWrite(4, HIGH);\n}\ndelay(50);\n}\n```"
+        ]
+      },
+      {
+        "id": "building-house-model",
+        "title": "Building the House Model",
+        "content": [
+          "Designing a full-scale model of a smart home system was uncharted territory for me. The closest I had ever come to such a project was glimpsing the architectural models proudly displayed by students. But I was determined to make it work. YouTube became my virtual mentor as I scoured through countless videos, seeking inspiration and guidance. After much searching, I stumbled upon a simple yet elegant design that sparked my imagination.",
+          "The process of building the house model then commenced, using a combination of cardboard, a lot of technical drawing knowledge, and a sprinkle of glue gun here and there.",
+          "After the ground floor was assembled essentially, the connections of the three LED bulbs were all done and arranged in parallel to an output pin, and then the servo motor at the top right, as shown in the image above, was connected to pin 9."
+        ]
+      },
+      {
+        "id": "garage-door-challenge",
+        "title": "The Garage Door Challenge",
+        "content": [
+          "I encountered a major struggle with the arm that would open up the garage door. According to design, I could only place the motor in the top right section of the house (as shown above), which meant I had to design a custom arm that would connect to the garage. After about 5 iterations later, I constructed a custom arm that was strong enough to effectively transfer the rotational movement to the garage door, and yet light enough so the servor motor could carry it.",
+          "After successfully assembling the ground floor components, the next step was to establish connections for the three LED bulbs on the ground floor, neatly arranged in parallel to an output pin.",
+          "Meanwhile, the servo motor positioned at the top right corner of the structure was linked to pin 9, to control the garage door. However, a significant hurdle emerged when it came to implementing the garage door mechanism. According to the design, the motor could only be situated in the top right section of the house, in which case it was necessary to create a custom arm to be attached to the garage door. After undergoing five iterations, I constructed a custom arm that was strong enough to effectively transfer rotational movement to the garage door (as shown below). This solution ensured that the servo motor could effortlessly execute its function without being burdened by excessive weight."
+        ]
+      },
+      {
+        "id": "top-section-assembly",
+        "title": "Top Section Assembly",
+        "content": [
+          "The top section was being designed by a teammate in another location, after it was done, it was time to bring them together and assemble them into a full house model.",
+          "The few electrical connections needed at the top section of the house were the three light bulbs, for which I drilled a hole in the floor separating the two floors. The LEDs were all connected in parallel to pin 9 of the Arduino, similar to the setup on the ground floor."
+        ]
+      },
+      {
+        "id": "power-solution",
+        "title": "Power Issues and Solution",
+        "content": [
+          "Just when I thought the finishing touches were in sight, a significant obstacle presented itself. Initially, powering the LEDs and servo motor with two 9V batteries seemed like a practical solution. However, as soon as I put the system to the test and initiated the garage door's motion via the Android app, disaster struck — the batteries drained rapidly, leaving the entire house powerless.",
+          "Determined to find a solution, I turned to a combination of ChatGPT's insights and the expertise of the ever reliable Indian YouTube creators. After delving into various tutorials and troubleshooting guides, a breakthrough emerged: a revised power architecture for the project. Implementing this solution involved harnessing the power of four 9V batteries.",
+          "The first two were connected in series to provide direct power to the motor, ensuring its smooth operation. Meanwhile, the remaining batteries were linked in parallel to supply ample power to the Arduino Uno Board and LEDs, effectively resolving the issue."
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "My thoughts/conclusion",
+        "content": [
+          "The batteries utilized proved suboptimal for the task at hand, as evident during the demonstration session where the 9V mercury batteries were rapidly depleted by the servo motor. This led to excessive battery consumption. In hindsight, opting for a heavy-duty battery could have mitigated this issue and minimized the reliance on multiple batteries.",
+          "I learned a lot during the development of this project, Although I envisioned that it would be very easy and straightforward to develop, I encountered a lot of unexpected problems that needed a hands-on fix within a tie frame",
+          "Furthermore, this experience highlighted the dynamic nature of project development. Unexpected obstacles often arise, requiring quick thinking and creative problem-solving.",
+          "With this newfound knowledge and determination, I am tackling my final year project, which is a whole lot more exciting, and I can wait to share it with you all!",
+          "The full code can be accessed here."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "three-years-hyper-growth-lessons-learned",
+    "title": "Three years of hyper-growth and the Lessons Learned",
+    "date": "2023-12-31",
+    "author": "Hanif",
+    "intro": "It is currently 3 a.m. (WAT), and the silence is deafening, quite apart from the constant cricket sound. Waking up before the crack of dawn has been a habit I have had for a while, but I took it up a notch by setting my alarm for 3 a.m., a decision that has made me way more productive than I used to be.",
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "Introduction",
+        "content": [
+          "It is currently 3 a.m. (WAT), and the silence is deafening, quite apart from the constant cricket sound. Waking up before the crack of dawn has been a habit I have had for a while, but I took it up a notch by setting my alarm for 3 a.m., a decision that has made me way more productive than I used to be.",
+          "As someone who entered the tech scene at a relatively young age, entering 2020 was soul-wrenching for me. My days consisted of scrolling through LinkedIn and feeling the biggest imposter syndrome every day. I saw teenagers doing incredible things, like starting businesses and working remotely for multinational corporations, and there I was, with nothing tangible to show for myself as a \"software developer,\" and my biggest project at the time was a half-baked website for my mother's business."
+        ]
+      },
+      {
+        "id": "year-2020",
+        "title": "2020: The Lockdown Period",
+        "content": [
+          "Then the lockdown period was announced (a blessing in disguise). I remember skipping almost all the online classes I had during that time and averaging about 6–8 hours every day of intense coding as well as reading, but overall taking daily, incremental steps toward achieving my goal.",
+          "I think that was the only thing that kept me sane during lockdown."
+        ]
+      },
+      {
+        "id": "year-2021",
+        "title": "2021: Building Foundations",
+        "content": [
+          "Fresh out of lockdown, 2021 came by, and that year I was determined to make the best use of the year, which led me to create my vision board (I did not complete up to 50%). However, it did ensure I was accountable for myself and what I spent my time doing.",
+          "If I were to pick a highlight from the year, it would be the amount of knowledge I gained from reading books—non-fiction books, to be precise; heck, I even read the whitepapers of Bitcoin and Ethereum. My reading diversity was evident because I read everything from 500+ page programming books to business books and everything in between.",
+          "Subsequently, my pursuit of growth led me to join the Google Developers Student Club (GDSC), and looking back, that was one of the best decisions I have made for my tech career. Through the community, I met three like-minded developers, two companies founded together, one national award, and several tech competitions later. I am grateful to have met them.",
+          "We came together to build an MVP of a product named Startvest for the 2021 Google Developers Solutions Challenge. The idea was simple: a crowdfunding platform for small businesses and startups to get access to funds as an alternative to VC funding, very similar to the business model of getEquity. The project won us a hackathon at our university and got us to the finals of the FSI National Competition, but ultimately it could not scale to a company for reasons we could not control at the time.",
+          "I ended the year on a high note, feeling like I finally had found my niche, and I was ready to take on the world the next year."
+        ]
+      },
+      {
+        "id": "year-2022",
+        "title": "2022: Building Interna",
+        "content": [
+          "2022 year rolled by, and my plan was to continue to build on the clarity and momentum I had gained from the previous year. I wrote down my vision board for the year and somewhere in the list, I wrote down \"Build a portfolio website\" with a major imposter syndrome.",
+          "Somewhere down the line during the first version of my portfolio website, and it was my favourite project I had created till date.",
+          "On a cold, windy Saturday night, I was having a discussion with a friend (now co-founder) about our education and, more specifically, how we wanted to shape our careers. We talked for hours on end about what we see ourselves doing in 10 years. The highlight from that very night was me telling him how I wanted to build a product that people will use before I graduate from university, I then remember him vividly saying that he found that there was an information gap in the SIWES program for students, at that point, none of us have had IT experience outside family, and we truly did not have an idea on how to go about positioning ourselves for internship openings, and that was the birth of Interna",
+          "I was so bullish on the idea because I had talked to other students who faced the same challenge. The next day, I drafted a business pitch document and sent it to my friend. It was from there on that I reached out to the three developers that I built Startvest with, told them about the idea, they were bullish on it, and we went on to build the foundations of the company.",
+          "Building is hard; building in Nigeria is 10x harder",
+          "A few months later, we built out the MVP of Interna and we were in the stage of idea validation and market surveying. There was a particular career event our school hosted, and in the course of visiting different stands for companies to pitch our idea, we stumbled upon a stand occupied by representatives from the Professor Ayodele Awojobi Design Competition (PAADC). We pitched our idea to them, and their immediate response was:",
+          "\"You have a strong idea, your presentation skills are good, apply for this year's cohort and you have a string chances of winning.\"",
+          "That was exactly what we did; we won the competition. It was a tough few months leading up to the grand finale at Lagos State University. The different stages were tough, and the competition was intense. I remember how we practiced days on end in school and still went over the pitch multiple times until midnight the night before the grand finale.",
+          "Five intense stages, 255 different teams from across universities in Nigeria, and a grand finale later, we emerged as the winners of the 6.0 edition. When our names were announced as the winners, I was filled with a sense of pride and accomplishment. It was a feeling of validation that all our hard work had paid off. The win was not just about us as individuals but also a reflection of the budding tech scene at Nile University."
+        ]
+      },
+      {
+        "id": "year-2023",
+        "title": "2023: Internship and Launch",
+        "content": [
+          "I spent the better half of 2023 completing my SIWES program at a private IT consulting firm in Abuja.",
+          "Prior to this internship, I had been building products that have been used by thousands of users, and then suddenly I was entrusted to work on a project for the Ministry of Water Resources that had an impact on more than 20 million Nigerians. Within a few weeks, I was facilitating training of the portal for stakeholders in the committee and, subsequently, for the Minister of Water Resources. It was during this program that I realised that the skills and knowledge I learned outside the university curriculum were what I was applying most in the field, and that was what set me apart from my peers working at the same company. This is not so subtle advice to anyone out there to learn skills relevant to the industry you want to break into, it makes you an attractive hire.",
+          "In retrospect, my highlight of the year would be the public launch of Interna after almost a year in private beta. The reception has been good so far, and our plan is to double down for next year."
+        ]
+      },
+      {
+        "id": "looking-forward",
+        "title": "Looking Forward",
+        "content": [
+          "Looking forward, I am optimistic about the new year, the lessons I am yet to learn, the journey, and most importantly, the people I am yet to connect with. My journey started with passion and curiosity, and along the way I have had to learn public speaking, professional writing, managing teams, and most importantly, grit, among others.",
+          "My mantra this coming year is that rent is due; go hard or go home.",
+          "See you all here, same time next year. Cheers 🥂"
+        ]
+      }
+    ]
   }
 ]
-
