@@ -11,7 +11,7 @@ import blogPosts from "../data/blog-posts.json";
 ---
 
 <Layout 
-  title="Hanif Adedotun - Software Engineer & Developer Portfolio"
+  title="Hanif Adedotun - Software Engineer Portfolio"
   description="Hanif Adedotun - Software Engineer & Developer. Portfolio showcasing projects, blog posts, and technical expertise in modern web development."
   canonicalUrl="https://v2.hanif.one/"
 >
@@ -22,14 +22,53 @@ import blogPosts from "../data/blog-posts.json";
       {/* About Section - Enhanced */}
       <section class="animate-fade-in-up pt-4">
         <div class="space-y-4">
-          {about.text.map((v, index) => (
-            <p 
-              class="text-base leading-relaxed text-gray-700 dark:text-gray-300 transition-colors duration-300"
-              style={`animation: fadeInUp 0.6s ease-out ${index * 150}ms both`}
-            >
-              {v}
-            </p>
-          ))}
+          {about.text.map((paragraph, index) => {
+            // Handle both old string format and new segment format
+            if (typeof paragraph === 'string') {
+              return (
+                <p 
+                  class="text-base leading-relaxed text-gray-700 dark:text-gray-300 transition-colors duration-300"
+                  style={`animation: fadeInUp 0.6s ease-out ${index * 150}ms both`}
+                >
+                  {paragraph}
+                </p>
+              );
+            }
+            
+            // New segment-based format
+            return (
+              <p 
+                class="text-base leading-relaxed text-gray-700 dark:text-gray-300 transition-colors duration-300"
+                style={`animation: fadeInUp 0.6s ease-out ${index * 150}ms both`}
+              >
+                {paragraph.segments.map((segment, segIndex) => {
+                  if (segment.type === 'highlight') {
+                    return (
+                      <span 
+                        class="dark:!text-[#1DCFF6] !text-[#17b2d4] font-medium"
+                      >
+                        {segment.value}
+                      </span>
+                    );
+                  }
+                  if (segment.type === 'link' && segment.href) {
+                    const isExternal = segment.href.startsWith('http') || segment.href.startsWith('mailto:');
+                    return (
+                      <a
+                        href={segment.href}
+                        target={isExternal ? '_blank' : undefined}
+                        rel={segment.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        class="dark:!text-[#1DCFF6] !text-[#17b2d4] hover:underline underline-offset-2 decoration-2 transition-all duration-300"
+                      >
+                        {segment.value}
+                      </a>
+                    );
+                  }
+                  return <span>{segment.value}</span>;
+                })}
+              </p>
+            );
+          })}
         </div>
         <a
           href="https://docs.google.com/document/d/1sC0lsScDSwPbR-SpXfl6cY_rcB67E4sgOdKBeQMlWqc/edit?usp=sharing"

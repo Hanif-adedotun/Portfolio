@@ -4,16 +4,51 @@
     "I love tinkering with new technologies. I believe every problem has a befitting solution, I just have to spend enough time to figure it out.",
     "Fastest way to reach me is via X, and then my email above;"
   ],
-  "old-test-v2": [
+  "old-text-v2": [
     "Hi! I'm Hanif, a software engineer with about 2+ years of experience.",
     "I build solutions I find useful. I am constantly bringing ideas to life, and learning new things along the way.",
     "Fastest way to reach me is via X, and then my email above;"
   ],
-  "text": [
+  "old-text-v3": [
     "Hello there! 👋 Welcome to my corner of the internet!",
     "I wrote my first 'hello world' in 2016, and when I realised I could bring ideas to life, I felt like a superhero ever since. I spend most of my time working, and then a better part just building things I wished existed. (Tring to document more this year)",
     "I build solutions I find useful. I am constantly bringing ideas to life, and learning new things along the way.",
     "Fastest way to reach me is via X, and then my email above;"
+  ],
+  "text": [
+    {
+      "segments": [
+        {"type": "text", "value": "I am a "},
+        {"type": "highlight", "value": "Software Engineer,"},
+        {"type": "text", "value": "with a particular interest in exploring "},
+        {"type": "link", "value": "thought to Actions technologies", "href": "https://neurosyncbci.com"},
+        {"type": "text", "value": " (and of course, AI)."}
+      ]
+    },
+    {
+      "segments": [
+        {"type": "text", "value": "It has been a "},
+        {"type": "highlight", "value": "decade"},
+        {"type": "text", "value": " of helping bring ideas to life, whether that's building core production systems or "},
+        {"type": "link", "value": "standing on stages", "href": "https://youtu.be/7wxsJpKAEj4"},
+        {"type": "text", "value": " to convice people on why a product should be in thier lives."}
+      ]
+    },
+    {
+      "segments": [
+        {"type": "text", "value": "Beyond my day-to-day work, I maintain a steady stream of "},
+        {"type": "link", "value": "side projects,", "href": "/projects"},
+        {"type": "text", "value": "exploring ideas that are facinating to me."}
+      ]
+    },
+    {
+      "segments": [
+        {"type": "text", "value": "You can reach me on "},
+        {"type": "link", "value": "X", "href": "https://x.com/@devhanif"},
+        {"type": "text", "value": " or "},
+        {"type": "link", "value": "via email", "href": "mailto:hey@hanif.one"}
+      ]
+    }
   ]
 }
 
