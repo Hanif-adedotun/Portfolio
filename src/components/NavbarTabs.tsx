@@ -19,21 +19,23 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { name: "Home", path: "/", value: "home", Icon: Home },
+  { name: "CV", path: "/cv", value: "cv", Icon: FileText },
   { name: "Blog", path: "/blog", value: "blog", Icon: BookOpen },
+
+  { name: "Projects", path: "/projects", value: "projects", Icon: FolderKanban },
+  {
+    name: "Papers",
+    path: "/publications",
+    value: "publications",
+    Icon: Newspaper,
+  },
+
   {
     name: "Certifications",
     path: "/certifications",
     value: "certifications",
     Icon: Award,
   },
-  { name: "Projects", path: "/projects", value: "projects", Icon: FolderKanban },
-  {
-    name: "Publications",
-    path: "/publications",
-    value: "publications",
-    Icon: Newspaper,
-  },
-  { name: "CV", path: "/cv", value: "cv", Icon: FileText },
 ];
 
 const mobileNavItems: NavItem[] = [

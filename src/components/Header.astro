@@ -4,25 +4,18 @@ import { Icon } from "astro-icon/components";
 import Snowfall from "react-snowfall";
 ---
 
-<header class="mb-8">
+<header class="mb-12">
   <div id="snowfall" class="hidden">
     <Snowfall color="white" client:load snowflakeCount={100}/>
   </div>
   
-  <div class="flex justify-between items-center mb-8">
+  <div class="flex justify-between items-center mb-10">
     <Navbar />
-    <div class="flex items-center gap-3">
-    <button
-      id="theme-toggle"
-      class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95"
-      aria-label="Toggle theme"
-    >
-      <span class="dark:hidden">🌙</span>
-      <span class="hidden dark:inline">☀️</span>
-    </button>
+    <div class="flex items-center gap-4">
+    
     <button
       id="snowfall-toggle"
-      class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95"
+      class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
       aria-label="Toggle snowfall"
       aria-pressed="false"
     >
@@ -33,26 +26,45 @@ import Snowfall from "react-snowfall";
         <Icon name="mdi:snowflake-off" class="w-5 h-5" />
       </span>
     </button>
+    <button
+      id="theme-toggle"
+      class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+      aria-label="Toggle theme"
+    >
+      <span class="dark:hidden text-lg">🌙</span>
+      <span class="hidden dark:inline text-lg">☀️</span>
+    </button>
   </div>
   </div>
 
-  <section class="flex items-start gap-6 animate-fade-in-up">
+  <section class="flex items-start gap-6 animate-fade-in-up pb-4">
     <img
       src="/assets/sq-logo.jpg"
       alt="Profile"
-      class="w-28 h-28 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+      class="w-32 h-32 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 border-gray-200 dark:border-gray-800"
     />
-    <div>
-      <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+    <div class="flex-1">
+      <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-1 tracking-tight">
         Hanif Adedotun
       </h1>
-      <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">hey@hanif.one</p>
-      <div class="flex gap-3 items-center">
+      <div class="flex items-center gap-2 mb-2">
+        <p class="text-base text-gray-600 dark:text-gray-400 font-medium">hey@hanif.one</p>
+        <button
+          id="copy-email"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+          aria-label="Copy email address"
+          title="Copy email"
+        >
+          <Icon name="mdi:content-copy" class="w-4 h-4" id="copy-icon" />
+          <Icon name="mdi:check" class="w-4 h-4 hidden" id="check-icon" />
+        </button>
+      </div>
+      <div class="flex gap-3 items-center mb-2">
         <a
           href="https://github.com/hanif-adedotun"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
           aria-label="GitHub"
         >
           <Icon name="mdi:github" class="w-5 h-5" />
@@ -61,7 +73,7 @@ import Snowfall from "react-snowfall";
           href="https://x.com/@devhanif"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
           aria-label="X (Twitter)"
         >
           <Icon name="mdi:twitter" class="w-5 h-5" />
@@ -70,14 +82,14 @@ import Snowfall from "react-snowfall";
           href="https://linkedin.com/in/hanif-adedotun"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
           aria-label="LinkedIn"
         >
           <Icon name="mdi:linkedin" class="w-5 h-5" />
         </a>
         <a
           href="/feed.xml"
-          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
           aria-label="RSS Feed"
         >
           <Icon name="mdi:rss" class="w-5 h-5" />
@@ -87,7 +99,7 @@ import Snowfall from "react-snowfall";
         href="https://wakatime.com/@94742452-cde1-48b8-815f-7eca77837463"
         target="_blank"
         rel="noopener noreferrer"
-        class="mt-2 inline-block"
+        class="mt-2 inline-block transition-transform duration-300 hover:scale-105"
       >
         <img
           src="https://wakatime.com/badge/user/94742452-cde1-48b8-815f-7eca77837463.svg"
@@ -122,6 +134,50 @@ import Snowfall from "react-snowfall";
       snowfallIconOn?.classList.add("hidden");
       snowfallIconOff?.classList.remove("hidden");
       snowfallToggle?.setAttribute("aria-pressed", "false");
+    }
+  });
+
+  // Copy email functionality
+  const copyEmailButton = document.getElementById("copy-email");
+  const copyIcon = document.getElementById("copy-icon");
+  const checkIcon = document.getElementById("check-icon");
+  const email = "hey@hanif.one";
+
+  copyEmailButton?.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      
+      // Show check icon and hide copy icon
+      copyIcon?.classList.add("hidden");
+      checkIcon?.classList.remove("hidden");
+      copyEmailButton?.setAttribute("aria-label", "Email copied!");
+      
+      // Reset after 2 seconds
+      setTimeout(() => {
+        copyIcon?.classList.remove("hidden");
+        checkIcon?.classList.add("hidden");
+        copyEmailButton?.setAttribute("aria-label", "Copy email address");
+      }, 2000);
+    } catch (err) {
+      // Fallback for older browsers
+      const textArea = document.createElement("textarea");
+      textArea.value = email;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand("copy");
+        copyIcon?.classList.add("hidden");
+        checkIcon?.classList.remove("hidden");
+        setTimeout(() => {
+          copyIcon?.classList.remove("hidden");
+          checkIcon?.classList.add("hidden");
+        }, 2000);
+      } catch (fallbackErr) {
+        console.error("Failed to copy email:", fallbackErr);
+      }
+      document.body.removeChild(textArea);
     }
   });
 </script>

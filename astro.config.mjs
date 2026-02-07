@@ -6,8 +6,19 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://v2.hanif.one",
-  integrations: [mdx(), icon(), react()],
+  output: 'static',
+  integrations: [
+    mdx(), 
+    icon(), 
+    react()
+  ],
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      exclude: ['react-syntax-highlighter'],
+    },
+    ssr: {
+      external: ['react-syntax-highlighter'],
+    },
   },
 });
