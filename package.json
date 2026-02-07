@@ -13,7 +13,6 @@
     "@astrojs/mdx": "^2.1.1",
     "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.1.0",
-    "@astrojs/sitemap": "^3.7.0",
     "@babel/runtime": "^7.28.6",
     "@iconify-json/mdi": "^1.2.3",
     "@radix-ui/react-tabs": "^1.1.13",
