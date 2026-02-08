@@ -44,7 +44,7 @@ const mobileNavItems: NavItem[] = [
     
     { name: "Projects", path: "/projects", value: "projects", Icon: FolderKanban },
     
-    { name: "Publications", path: "/publications", value: "publications", Icon: Newspaper },
+    { name: "Papers", path: "/publications", value: "publications", Icon: Newspaper },
   ];
 
 const getActiveValue = (currentPath: string) => {
