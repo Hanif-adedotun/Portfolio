@@ -134,4 +134,10 @@ const ogImage = image.startsWith('http') ? image : new URL(image, site).href;
     }
   }
   
+  /* Add bottom padding on mobile to prevent fixed navbar from covering footer */
+  @media (max-width: 640px) {
+    body {
+      padding-bottom: 5rem; /* ~80px to account for navbar height + spacing */
+    }
+  }
 </style>
