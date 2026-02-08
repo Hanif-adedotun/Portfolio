@@ -44,7 +44,7 @@ const mobileNavItems: NavItem[] = [
     
     { name: "Projects", path: "/projects", value: "projects", Icon: FolderKanban },
     
-    { name: "CV", path: "/cv", value: "cv", Icon: FileText },
+    { name: "Publications", path: "/publications", value: "publications", Icon: Newspaper },
   ];
 
 const getActiveValue = (currentPath: string) => {
@@ -84,7 +84,7 @@ export default function NavbarTabs({ currentPath }: NavbarTabsProps) {
   if (isMobile) {
     return (
       <nav
-        className="fixed bottom-4 left-1/2 z-50 w-[min(92vw,420px)] -translate-x-1/2 rounded-2xl border border-border bg-background/90 px-2 py-1 shadow-lg backdrop-blur"
+        className="fixed bottom-2 left-1/2 z-50 w-[min(92vw,420px)] -translate-x-1/2 rounded-2xl border border-border bg-background/90 px-2 py-1 shadow-lg backdrop-blur"
         aria-label="Primary"
       >
         <ul className="grid grid-cols-4 gap-2">
