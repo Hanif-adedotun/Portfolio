@@ -154,13 +154,13 @@ export default function CodeBlock({ code, language, sectionIndex, paraIndex, ind
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80"></div>
             <div className="w-2.5 h-2.5 rounded-full bg-green-400/80"></div>
           </div>
-          <span className="text-xs font-semibold text-gray-600 dark:text-white uppercase tracking-wider ml-2">
+          <span className="text-sm font-semibold text-gray-600 dark:text-white uppercase tracking-wider ml-2">
             {language || 'code'}
           </span>
         </div>
         <button
           onClick={handleCopy}
-          className={`copy-code-btn group flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium transition-all duration-200 rounded-md hover:bg-gray-100/50 dark:hover:bg-gray-800/30 ${
+          className={`copy-code-btn group flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium transition-all duration-200 rounded-md hover:bg-gray-100/50 dark:hover:bg-gray-800/30 ${
             copied
               ? 'text-[#1DCFF6] dark:text-[#1DCFF6]'
               : 'text-gray-500 dark:text-gray-400 hover:text-[#1DCFF6] dark:hover:text-[#1DCFF6]'

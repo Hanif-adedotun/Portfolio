@@ -16,17 +16,17 @@ import publications from "../data/publications.json";
 
     <main class="space-y-8 mt-8">
       <section class="animate-fade-in-up">
-        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Publications
         </h1>
-        <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+        <p class="text-base text-gray-600 dark:text-gray-400 mb-6">
           Research contributions and academic publications.
         </p>
         <a
           href="https://scholar.google.com/citations?user=FpK8icMAAAAJ&hl=en"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-sm text-contrast hover:opacity-80 transition-all duration-300 hover:scale-105"
+          class="inline-flex items-center gap-2 text-base text-contrast hover:opacity-80 transition-all duration-300 hover:scale-105"
         >
           <Icon name="mdi:google" class="w-5 h-5" />
           View Google Scholar Profile
@@ -40,7 +40,7 @@ import publications from "../data/publications.json";
               class="border-b border-gray-200 dark:border-gray-800 pb-8 last:border-0 transition-all duration-300 hover:translate-x-1 group"
               style={`animation: fadeInUp 0.5s ease-out ${index * 100}ms both`}
             >
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-contrast transition-colors duration-300">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-contrast transition-colors duration-300">
                 {publication.link ? (
                   <a
                     href={publication.link}
@@ -54,14 +54,14 @@ import publications from "../data/publications.json";
                   publication.title
                 )}
               </h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mb-2 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
+              <p class="text-base text-gray-600 dark:text-gray-400 mb-2 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                 {publication.authors.join(", ")}
               </p>
-              <p class="text-sm text-gray-500 dark:text-gray-500 mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors duration-300">
+              <p class="text-base text-gray-500 dark:text-gray-500 mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors duration-300">
                 {publication.venue} • {publication.year}
               </p>
               {publication.description && (
-                <p class="text-sm text-gray-600 dark:text-gray-400 mt-3 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
+                <p class="text-base text-gray-600 dark:text-gray-400 mt-3 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
                   {publication.description}
                 </p>
               )}

@@ -94,7 +94,7 @@ export default function NavbarTabs({ currentPath }: NavbarTabsProps) {
               <li key={item.value}>
                 <a
                   href={item.path}
-                  className={`flex flex-col items-center justify-center gap-1 rounded-lg px-2 py-1 text-xs transition-all duration-300 ${
+                  className={`flex flex-col items-center justify-center gap-1 rounded-lg px-2 py-1 text-sm transition-all duration-300 ${
                     isActive
                       ? "text-contrast bg-muted"
                       : "text-muted-foreground hover:text-contrast"

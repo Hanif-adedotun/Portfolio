@@ -29,7 +29,7 @@ const parsed = parseContent(content);
     const paragraphs = part.content.split('\n\n').filter(p => p.trim());
     return paragraphs.map((para, paraIdx) => (
       <p
-        class="text-base text-gray-700 dark:text-gray-300 leading-relaxed transition-opacity duration-300"
+        class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed transition-opacity duration-300"
         style={`animation: fadeIn 0.5s ease-out ${(sectionIndex * 150) + (paraIndex * 50) + (index * 50) + (paraIdx * 50) + 300}ms both`}
       >
         {para}
