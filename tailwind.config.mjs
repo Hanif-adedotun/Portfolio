@@ -5,7 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Quicksand', 'sans-serif'],
+        mono: ['Quicksand', 'sans-serif'],
       },
       colors: {
         contrast: '#1DCFF6',
