@@ -15,7 +15,7 @@ import Snowfall from "react-snowfall";
     
     <button
       id="snowfall-toggle"
-      class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+      class="text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 p-2 rounded-lg hover:bg-gray-800"
       aria-label="Toggle snowfall"
       aria-pressed="false"
     >
@@ -26,14 +26,6 @@ import Snowfall from "react-snowfall";
         <Icon name="mdi:snowflake-off" class="w-5 h-5" />
       </span>
     </button>
-    <button
-      id="theme-toggle"
-      class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
-      aria-label="Toggle theme"
-    >
-      <span class="dark:hidden text-lg">🌙</span>
-      <span class="hidden dark:inline text-lg">☀️</span>
-    </button>
   </div>
   </div>
 
@@ -41,17 +33,17 @@ import Snowfall from "react-snowfall";
     <img
       src="/assets/sq-logo.jpg"
       alt="Profile"
-      class="w-32 h-32 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 border-gray-200 dark:border-gray-800"
+      class="w-32 h-32 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 border-gray-800"
     />
     <div class="flex-1">
-      <h1 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-1 tracking-tight">
+      <h1 class="text-xl md:text-2xl font-bold text-white mb-1 tracking-tight">
         Hanif Adedotun
       </h1>
       <div class="flex items-center gap-2 mb-2">
-        <p class="text-base text-gray-600 dark:text-gray-400 font-medium">hey@hanif.one</p>
+        <p class="text-base text-gray-400 font-medium">hey@hanif.one</p>
         <button
           id="copy-email"
-          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+          class="text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 p-1 rounded hover:bg-gray-800"
           aria-label="Copy email address"
           title="Copy email"
         >
@@ -64,7 +56,7 @@ import Snowfall from "react-snowfall";
           href="https://github.com/hanif-adedotun"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+          class="text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg hover:bg-gray-800"
           aria-label="GitHub"
         >
           <Icon name="mdi:github" class="w-5 h-5" />
@@ -73,7 +65,7 @@ import Snowfall from "react-snowfall";
           href="https://x.com/@devhanif"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+          class="text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg hover:bg-gray-800"
           aria-label="X (Twitter)"
         >
           <Icon name="mdi:twitter" class="w-5 h-5" />
@@ -82,14 +74,14 @@ import Snowfall from "react-snowfall";
           href="https://linkedin.com/in/hanif-adedotun"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+          class="text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg hover:bg-gray-800"
           aria-label="LinkedIn"
         >
           <Icon name="mdi:linkedin" class="w-5 h-5" />
         </a>
         <a
           href="/feed.xml"
-          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+          class="text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg hover:bg-gray-800"
           aria-label="RSS Feed"
         >
           <Icon name="mdi:rss" class="w-5 h-5" />
@@ -111,13 +103,6 @@ import Snowfall from "react-snowfall";
 </header>
 
 <script is:inline>
-  const themeToggle = document.getElementById("theme-toggle");
-
-  themeToggle?.addEventListener("click", () => {
-    const isDark = document.documentElement.classList.toggle("dark");
-    localStorage.theme = isDark ? "dark" : "light";
-  });
-
   const snowfallToggle = document.getElementById("snowfall-toggle");
   const snowfallIconOn = document.getElementById("snowfall-icon-on");
   const snowfallIconOff = document.getElementById("snowfall-icon-off");
