@@ -84,7 +84,7 @@ export default function NavbarTabs({ currentPath }: NavbarTabsProps) {
   if (isMobile) {
     return (
       <nav
-        className="fixed bottom-2 left-1/2 z-50 w-[min(92vw,420px)] -translate-x-1/2 rounded-2xl border border-border bg-background/90 px-2 py-1 shadow-lg backdrop-blur"
+        className="fixed bottom-2 left-1/2 z-50 w-[min(92vw,420px)] -translate-x-1/2 rounded-[16px] border border-border bg-background/90 px-2 py-2 shadow-lg backdrop-blur"
         aria-label="Primary"
       >
         <ul className="grid grid-cols-4 gap-2">
@@ -94,14 +94,14 @@ export default function NavbarTabs({ currentPath }: NavbarTabsProps) {
               <li key={item.value}>
                 <a
                   href={item.path}
-                  className={`flex flex-col items-center justify-center gap-1 rounded-lg px-2 py-1 text-sm transition-all duration-300 ${
+                  className={`flex flex-col items-center justify-center gap-1 rounded-[11px] px-2 py-1 text-xs transition-all duration-300 ${
                     isActive
                       ? "text-contrast bg-muted"
                       : "text-muted-foreground hover:text-contrast"
                   }`}
                   aria-current={isActive ? "page" : undefined}
                 >
-                  <item.Icon className="h-5 w-5" />
+                  <item.Icon className="h-4 w-4" />
                   <span>{item.name}</span>
                 </a>
               </li>

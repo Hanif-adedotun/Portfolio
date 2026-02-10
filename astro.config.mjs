@@ -20,5 +20,9 @@ export default defineConfig({
     ssr: {
       external: ['react-syntax-highlighter'],
     },
+    server: {
+      allowedHosts: ['v2.hanif.one', 'lazy-customer.outray.app'],
+    },
   },
+  
 });
