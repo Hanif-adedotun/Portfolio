@@ -22,7 +22,7 @@ export default defineConfig({
     },
     server: {
       allowedHosts: ['v2.hanif.one', 'lazy-customer.outray.app'],
-    },
-  },
+    }
+  }
   
 });
