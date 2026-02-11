@@ -20,9 +20,9 @@
       "segments": [
         {"type": "text", "value": "I am a "},
         {"type": "highlight", "value": "Software Engineer,"},
-        {"type": "text", "value": "with a particular interest in exploring "},
-        {"type": "link", "value": "thought to Actions technologies", "href": "https://neurosyncbci.com"},
-        {"type": "text", "value": " (and of course, AI)."}
+        {"type": "text", "value": "with a particular niche in building "},
+        {"type": "link", "value": "thought to actions (BCI) ", "href": "https://neurosyncbci.com"},
+        {"type": "text", "value": " and AI systems."}
       ]
     },
     {
