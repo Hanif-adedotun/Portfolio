@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import PostHog from "../components/posthog.astro";
 import "../styles/global.css";
 import "@fontsource/quicksand/400.css";
 import "@fontsource/quicksand/500.css";
@@ -108,7 +109,7 @@ const ogImage = image.startsWith('http') ? image : new URL(image, site).href;
       // }
       document.documentElement.classList.add("dark");
     </script>
-    
+    <PostHog />
   </head>
   <body
     class="bg-[#F8F9FC] dark:bg-[#0D1117] text-gray-800 dark:text-gray-300 transition-colors duration-200 animate-fade-in"
