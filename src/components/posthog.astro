@@ -39,5 +39,25 @@
       }),
       (e.__SV = 1));
   })(document, window.posthog || []);
-  posthog.init('phc_6dmnOHpDAEEE3XCPThn6roVXoZOSoPfSJWHbVU6OLq7', { api_host: 'https://us.i.posthog.com', defaults: '2025-05-24' });
+  posthog.init('phc_6dmnOHpDAEEE3XCPThn6roVXoZOSoPfSJWHbVU6OLq7', 
+  { 
+    api_host: 'https://us.i.posthog.com', 
+    defaults: '2025-05-24',
+    loaded: (posthog) => {
+      posthog.onFeatureFlags(() => {
+        const profileImage = document.getElementById('profile-image');
+        if (posthog.getFeatureFlag('profile_image') === 'control') {
+          if (profileImage) {
+            profileImage.src = '/assets/profile-2.jpg';
+            console.log('Using profile-2.jpg');
+          }
+        } else {
+          if (profileImage) {
+            profileImage.src = '/assets/sq-logo.jpg';
+            console.log('Using sq-logo.jpg');
+          }
+        }
+      });
+    }
+  });
 </script>
