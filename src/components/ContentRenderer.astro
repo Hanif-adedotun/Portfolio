@@ -1,0 +1,68 @@
+---
+import { parseContent } from '../lib/markdown';
+import CodeBlock from './CodeBlockClient';
+
+interface Props {
+  content: string;
+  sectionIndex: number;
+  paraIndex: number;
+}
+
+const { content, sectionIndex, paraIndex } = Astro.props;
+const parsed = parseContent(content);
+---
+
+{parsed.map((part, index) => {
+  if (part.type === 'code') {
+    return (
+      <CodeBlock
+        client:load
+        code={part.content}
+        language={part.language || 'text'}
+        sectionIndex={sectionIndex}
+        paraIndex={paraIndex}
+        index={index}
+      />
+    );
+  } else {
+    // Split text by newlines to handle multi-paragraph content
+    const paragraphs = part.content.split('\n\n').filter(p => p.trim());
+    return paragraphs.map((para, paraIdx) => (
+      <p
+        class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed transition-opacity duration-300"
+        style={`animation: fadeIn 0.5s ease-out ${(sectionIndex * 150) + (paraIndex * 50) + (index * 50) + (paraIdx * 50) + 300}ms both`}
+      >
+        {para}
+      </p>
+    ));
+  }
+})}
+
+<style>
+  /* Smooth scrollbar for code blocks */
+  .code-block-wrapper pre::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .code-block-wrapper pre::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .code-block-wrapper pre::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175, 0.3);
+    border-radius: 4px;
+  }
+  
+  .code-block-wrapper pre::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 163, 175, 0.5);
+  }
+  
+  .dark .code-block-wrapper pre::-webkit-scrollbar-thumb {
+    background: rgba(75, 85, 99, 0.4);
+  }
+  
+  .dark .code-block-wrapper pre::-webkit-scrollbar-thumb:hover {
+    background: rgba(75, 85, 99, 0.6);
+  }
+</style>
+

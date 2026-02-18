@@ -1,0 +1,39 @@
+[
+  {
+    "img": "Hiro",
+    "name": ["Hiro", "https://hiro.hanif.one"],
+    "summary": "An AI observability agent designed to automatically to manage and generate test coverage for your codebase.",
+    "tools": ["Python", "LangChain", "Astro"]
+  },
+  {
+    "img": "Vaul",
+    "name": ["Vaul", "https://vaul.hanif.one"],
+    "summary": "A native desktop application to manage terminal commands easily",
+    "tools": ["Go", "Wails"]
+  },
+  {
+    "img": "Headlines Agent",
+    "name": ["Headlines Agent", "https://github.com/Hanif-adedotun/ML-Series/tree/main/HEADLINE-AGENT"],
+    "summary": "An AI agent that fetches the latest technology news headlines and allows users to send them via email with custom credentials.",
+    "tools": ["Python", "LangGraph", "Streamlit"]
+  },
+  
+  {
+    "img": "VM",
+    "name": ["Voltex Middleware", "https://github.com/Hanif-adedotun/Nodejs/tree/master/voltex_react-app"],
+    "summary": "Automatically spin off production ready forms for your static frontend applications",
+    "tools": ["Nodejs", "React", "Bootstrap"]
+  },{
+    "img": "Interna",
+    "name": ["Interna", "https://getinterna.com"],
+    "summary": "A platform for students to find internships and for companies to find interns.",
+    "tools": ["Nextjs", "Vercel", "GCP"]
+  },
+  {
+    "img": "StartVest",
+    "name": ["StartVest", "https://startvest.io"],
+    "summary": "StartVest is an equity crowdfunding platform that allows people with creative ideas to register and get funded. We provide everyone the option to invest in startups.",
+    "tools": ["Bootstrap", "Django", "Firebase"]
+  }
+]
+

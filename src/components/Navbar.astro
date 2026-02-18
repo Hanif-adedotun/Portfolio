@@ -1,0 +1,9 @@
+---
+import NavbarTabs from "./NavbarTabs";
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="text-base animate-fade-in">
+  <NavbarTabs currentPath={currentPath} client:load />
+</nav>

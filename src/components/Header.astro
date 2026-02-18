@@ -1,0 +1,187 @@
+---
+import Navbar from "./Navbar.astro";
+import { Icon } from "astro-icon/components";
+import Snowfall from "react-snowfall";
+---
+
+<header class="mb-12">
+  <div id="snowfall" class="hidden">
+    <Snowfall color="white" client:load snowflakeCount={100}/>
+  </div>
+  
+  <div class="flex justify-between items-center mb-10">
+    <Navbar />
+    <div class="flex items-center gap-4">
+    
+    <button
+      id="snowfall-toggle"
+      class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 p-2 rounded-lg flex items-center gap-2"
+      aria-label="Toggle snowfall"
+      aria-pressed="false"
+    >
+      <span id="snowfall-icon-on" class="hidden">
+        <Icon name="mdi:snowflake" class="w-5 h-5" />
+      </span>
+      <span id="snowfall-icon-off">
+        <Icon name="mdi:snowflake-off" class="w-5 h-5" />
+      </span>
+      <span class="text-xs">Snow</span>
+    </button>
+    <!-- <button
+      id="theme-toggle"
+      class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 p-2 rounded-lg"
+      aria-label="Toggle theme"
+    >
+      <span class="dark:hidden text-xl">🌙</span>
+      <span class="hidden dark:inline text-xl">☀️</span>
+    </button> -->
+  </div>
+  </div>
+
+  <section class="flex items-start gap-6 animate-fade-in-up">
+    <div class="border-2 p-[6px] rounded-[18px] border-[#1DCFF6]">
+    <img
+      id="profile-image"
+      src="/assets/profile-2.jpg"
+      alt="Profile"
+      class="w-32 h-32 rounded-[12px] transition-all duration-300 hover:scale-105 hover:shadow-xl "
+    />
+    </div>
+    <div class="flex-1">
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1 tracking-tight">
+        Hanif <span class="!text-[#1DCFF6]">Adedotun</span>
+      </h1>
+      <div class="flex items-center gap-2 mb-2">
+        <p class="text-lg text-gray-600 dark:text-gray-400 font-medium">hey@hanif.one</p>
+        <button
+          id="copy-email"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+          aria-label="Copy email address"
+          title="Copy email"
+        >
+          <Icon name="mdi:content-copy" class="w-4 h-4" id="copy-icon" />
+          <Icon name="mdi:check" class="w-4 h-4 hidden" id="check-icon" />
+        </button>
+      </div>
+      <div class="flex gap-3 items-center mb-2">
+        <a
+          href="https://github.com/hanif-adedotun"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg"
+          aria-label="GitHub"
+        >
+          <Icon name="mdi:github" class="w-5 h-5" />
+        </a>
+        <a
+          href="https://x.com/@devhanif"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg"
+          aria-label="X (Twitter)"
+        >
+          <Icon name="mdi:twitter" class="w-5 h-5" />
+        </a>
+        <a
+          href="https://linkedin.com/in/hanif-adedotun"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg"
+          aria-label="LinkedIn"
+        >
+          <Icon name="mdi:linkedin" class="w-5 h-5" />
+        </a>
+        <a
+          href="/feed.xml"
+          class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-110 active:scale-95 pr-2 rounded-lg"
+          aria-label="RSS Feed"
+        >
+          <Icon name="mdi:rss" class="w-5 h-5" />
+        </a>
+      </div>
+      <a
+        href="https://wakatime.com/@94742452-cde1-48b8-815f-7eca77837463"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-2 inline-block transition-transform duration-300 hover:scale-105"
+      >
+        <img
+          src="https://wakatime.com/badge/user/94742452-cde1-48b8-815f-7eca77837463.svg"
+          alt="Wakatime stats"
+        />
+      </a>
+    </div>
+  </section>
+</header>
+
+<script is:inline>
+  // const themeToggle = document.getElementById("theme-toggle");
+
+  // themeToggle?.addEventListener("click", () => {
+  //   const isDark = document.documentElement.classList.toggle("dark");
+  //   localStorage.theme = isDark ? "dark" : "light";
+  // });
+
+  const snowfallToggle = document.getElementById("snowfall-toggle");
+  const snowfallIconOn = document.getElementById("snowfall-icon-on");
+  const snowfallIconOff = document.getElementById("snowfall-icon-off");
+
+  snowfallToggle?.addEventListener("click", () => {
+    const snowfall = document.getElementById("snowfall");
+    const isHidden = snowfall?.classList.toggle("hidden");
+
+    if (isHidden === false) {
+      snowfallIconOn?.classList.remove("hidden");
+      snowfallIconOff?.classList.add("hidden");
+      snowfallToggle?.setAttribute("aria-pressed", "true");
+    } else {
+      snowfallIconOn?.classList.add("hidden");
+      snowfallIconOff?.classList.remove("hidden");
+      snowfallToggle?.setAttribute("aria-pressed", "false");
+    }
+  });
+
+  // Copy email functionality
+  const copyEmailButton = document.getElementById("copy-email");
+  const copyIcon = document.getElementById("copy-icon");
+  const checkIcon = document.getElementById("check-icon");
+  const email = "hey@hanif.one";
+
+  copyEmailButton?.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      
+      // Show check icon and hide copy icon
+      copyIcon?.classList.add("hidden");
+      checkIcon?.classList.remove("hidden");
+      copyEmailButton?.setAttribute("aria-label", "Email copied!");
+      
+      // Reset after 2 seconds
+      setTimeout(() => {
+        copyIcon?.classList.remove("hidden");
+        checkIcon?.classList.add("hidden");
+        copyEmailButton?.setAttribute("aria-label", "Copy email address");
+      }, 2000);
+    } catch (err) {
+      // Fallback for older browsers
+      const textArea = document.createElement("textarea");
+      textArea.value = email;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand("copy");
+        copyIcon?.classList.add("hidden");
+        checkIcon?.classList.remove("hidden");
+        setTimeout(() => {
+          copyIcon?.classList.remove("hidden");
+          checkIcon?.classList.add("hidden");
+        }, 2000);
+      } catch (fallbackErr) {
+        console.error("Failed to copy email:", fallbackErr);
+      }
+      document.body.removeChild(textArea);
+    }
+  });
+</script>

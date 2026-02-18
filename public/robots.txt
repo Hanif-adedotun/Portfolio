@@ -1,6 +1,6 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /api/
 
-User-agent: Twitterbot
-Disallow:
+Sitemap: https://hanif.one/sitemap.xml
+

@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import certificates from "../data/certificates.json";
+---
+
+<Layout 
+  title="Certifications - Hanif Adedotun"
+  description="A collection of certifications and achievements earned by Hanif Adedotun over the years."
+  canonicalUrl="https://hanif.one/certifications"
+>
+  <div class="min-h-screen p-6 max-w-4xl mx-auto">
+    <Header />
+
+    <main class="space-y-12">
+      <section class="animate-fade-in-up">
+        <h2 class="text-2xl text-gray-900 dark:text-white mb-2">
+          Certifications
+        </h2>
+        <p class="text-base text-gray-600 dark:text-gray-400 mb-8">
+          A collection of certifications and achievements I've earned over the
+          years.
+        </p>
+
+        <div class="space-y-3">
+          {
+            certificates.map((cert, index) => (
+              <div 
+                class="flex gap-4 text-base transition-all duration-300 hover:translate-x-1 group"
+                style={`animation: fadeInUp 0.5s ease-out ${index * 100}ms both`}
+              >
+                <span class="text-gray-500 shrink-0 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">{cert.year}</span>
+                <div>
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-gray-900 dark:hover:text-white hover:text-contrast transition-colors duration-300 underline"
+                  >
+                    {cert.name}
+                  </a>
+                  <p class="text-gray-500 dark:text-gray-500 text-sm mt-0.5 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+                    {cert.org}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>
