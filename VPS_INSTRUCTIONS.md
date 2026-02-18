@@ -1,7 +1,7 @@
-# Deployment Instructions for v2.hanif.one
+# Deployment Instructions for hanif.one
 
 **Target Server:** `155.133.23.94`
-**Domain:** `v2.hanif.one`
+**Domain:** `hanif.one`
 
 ## 1. Connect to your VPS
 SSH into your server:
@@ -30,23 +30,23 @@ nginx -v
 ```
 
 ## 3. Clone the Repository
-We will clone the project into `/var/www/v2.hanif.one`.
+We will clone the project into `/var/www/hanif.one`.
 
 ```bash
 # Create the directory
-mkdir -p /var/www/v2.hanif.one
+mkdir -p /var/www/hanif.one
 
 # Clone into the directory (make sure directory is empty or just clone into it)
 cd /var/www
-git clone https://github.com/Hanif-adedotun/Portfolio.git v2.hanif.one
-# Note: If v2.hanif.one already exists and is failing, you might need to remove it first or pull changes.
+git clone https://github.com/Hanif-adedotun/Portfolio.git hanif.one
+# Note: If hanif.one already exists and is failing, you might need to remove it first or pull changes.
 ```
 
 ## 4. Install Dependencies and Build
 Navigate into the project folder and build the Astro site.
 
 ```bash
-cd /var/www/v2.hanif.one
+cd /var/www/hanif.one
 
 # Install dependencies
 npm install
@@ -63,10 +63,10 @@ You can use the `nginx.conf` included in the repository.
 sudo rm /etc/nginx/sites-enabled/default
 
 # Copy or symlink the project's nginx config
-sudo cp /var/www/v2.hanif.one/nginx.conf /etc/nginx/sites-available/v2.hanif.one
+sudo cp /var/www/hanif.one/nginx.conf /etc/nginx/sites-available/hanif.one
 
 # Enable the site
-sudo ln -s /etc/nginx/sites-available/v2.hanif.one /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/hanif.one /etc/nginx/sites-enabled/
 
 # Test Nginx configuration
 sudo nginx -t
@@ -83,7 +83,7 @@ Secure your site with HTTPS.
 sudo apt install certbot python3-certbot-nginx -y
 
 # Obtain and install certificate
-sudo certbot --nginx -d v2.hanif.one
+sudo certbot --nginx -d hanif.one
 ```
 
 Follow the prompts to configure HTTPS. Certbot will automatically update your Nginx configuration.

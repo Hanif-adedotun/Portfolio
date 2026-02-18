@@ -1,5 +1,5 @@
 # 🔍 Complete SEO Audit Report
-**Portfolio Website: v2.hanif.one**  
+**Portfolio Website: hanif.one**  
 **Date:** January 2025  
 **Auditor:** Senior SEO Specialist
 
@@ -110,7 +110,7 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://v2.hanif.one/sitemap.xml
+Sitemap: https://hanif.one/sitemap.xml
 ```
 
 ---
@@ -127,7 +127,7 @@ Sitemap: https://v2.hanif.one/sitemap.xml
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: "https://v2.hanif.one",
+  site: "https://hanif.one",
   integrations: [mdx(), icon(), react(), sitemap()],
   // ...
 });

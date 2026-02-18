@@ -5,7 +5,7 @@ import react from '@astrojs/react';
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://v2.hanif.one",
+  site: "https://hanif.one",
   output: 'static',
   integrations: [
     mdx(), 
@@ -21,7 +21,7 @@ export default defineConfig({
       external: ['react-syntax-highlighter'],
     },
     server: {
-      allowedHosts: ['v2.hanif.one', 'lazy-customer.outray.app'],
+      allowedHosts: ['hanif.one', 'lazy-customer.outray.app'],
     }
   }
   

@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const site = Astro.site || "https://v2.hanif.one";
+const site = Astro.site || "https://hanif.one";
 const postUrl = new URL(`/blog/${post.slug}`, site).href;
 const postDate = new Date(post.date).toISOString();
 ---

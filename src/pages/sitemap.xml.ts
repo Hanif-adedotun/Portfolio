@@ -4,7 +4,7 @@ import blogPosts from "../data/blog-posts.json";
 export const prerender = true;
 
 export const GET: APIRoute = ({ site }) => {
-  const siteUrl = (site?.href ?? "https://v2.hanif.one").replace(/\/$/, "");
+  const siteUrl = (site?.href ?? "https://hanif.one").replace(/\/$/, "");
   const currentDate = new Date().toISOString();
   
   // Static pages

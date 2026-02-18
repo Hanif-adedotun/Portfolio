@@ -1,5 +1,5 @@
 # 🔍 SEO Compliance Report & Score
-**Portfolio Website: v2.hanif.one**  
+**Portfolio Website: hanif.one**  
 **Date:** January 2025  
 **Auditor:** Senior SEO Specialist  
 **Previous Score:** 45/100  
@@ -97,7 +97,7 @@ Your portfolio website has achieved **excellent SEO compliance** after implement
 |---------|--------|--------|-------|
 | robots.txt | ✅ | 15/15 | Present, properly configured |
 | XML Sitemap | ✅ | 15/15 | Configured with @astrojs/sitemap |
-| HTTPS/SSL | ✅ | 10/10 | Assumed (v2.hanif.one) |
+| HTTPS/SSL | ✅ | 10/10 | Assumed (hanif.one) |
 | URL Structure | ✅ | 10/10 | Clean, semantic URLs |
 | HTML5 Semantic | ✅ | 10/10 | Proper use of semantic elements |
 | Mobile Responsive | ✅ | 10/10 | Viewport configured correctly |

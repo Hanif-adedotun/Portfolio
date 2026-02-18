@@ -22,7 +22,7 @@ interface Props {
 const { 
   title,
   description = "Hanif Adedotun - Software Engineer. Portfolio showcasing projects, blog posts, and technical expertise in modern web development.",
-  image = "https://v2.hanif.one/banner2.png",
+  image = "https://hanif.one/banner2.png",
   canonicalUrl,
   type = "website",
   author = "Hanif Adedotun",
@@ -31,7 +31,7 @@ const {
   section
 } = Astro.props;
 
-const site = Astro.site || "https://v2.hanif.one";
+const site = Astro.site || "https://hanif.one";
 const currentUrl = canonicalUrl || new URL(Astro.url.pathname, site).href;
 const ogImage = image.startsWith('http') ? image : new URL(image, site).href;
 ---
