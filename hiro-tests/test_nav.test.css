@@ -1,0 +1,25 @@
+
+      import React from 'react';
+      import { render, fireEvent, waitFor } from '@testing-library/react';
+      import '@testing-library/jest-dom/extend-expect';
+
+      describe('Nav', () => {
+         it('should render nav with correct background color', () => {
+            const { getByClassName } = render(<nav className='nav' />);
+            expect(getByClassName('nav')).toHaveStyle('background-color: var(--primary)');
+         });
+
+         it('should render nav-links with correct font family and color', () => {
+            const { getByClassName } = render(<a className='nav-links' href='#'>Link</a>);
+            expect(getByClassName('nav-links')).toHaveStyle('font-family: Quicksand');
+            expect(getByClassName('nav-links')).toHaveStyle('color: var(--accent)');
+         });
+
+         it('should render nav-links with correct hover effect', () => {
+            const { getByClassName } = render(<a className='nav-links' href='#'>Link</a>);
+            const link = getByClassName('nav-links');
+            fireEvent.mouseOver(link);
+            expect(link).toHaveStyle('border-bottom: 2px solid var(--contrast)');
+         });
+      });
+   
