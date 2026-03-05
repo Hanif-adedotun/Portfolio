@@ -1,0 +1,21 @@
+import React from 'react';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';
+import styles from './certificates.css';
+
+describe('Certificates Component', () => {
+  it('should render certificates main container', () => {
+    const { getByTestId } = render(<div className={styles.certificatesMain} data-testid='certificates-main' />);
+    expect(getByTestId('certificates-main')).toHaveStyle({ backgroundColor: 'var(--primary)' });
+  });
+
+  it('should render certificates head', () => {
+    const { getByTestId } = render(<div className={styles.certificatesHead} data-testid='certificates-head' />);
+    expect(getByTestId('certificates-head')).toHaveStyle({ color: 'var(--contrast)' });
+  });
+
+  it('should render certificates image container', () => {
+    const { getByTestId } = render(<div className={styles.certificatesImgContainer} data-testid='certificates-img-container' />);
+    expect(getByTestId('certificates-img-container')).toHaveStyle({ width: '70%' });
+  });
+});
