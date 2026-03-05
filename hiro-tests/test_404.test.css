@@ -1,0 +1,32 @@
+
+      import React from 'react';
+      import { render } from '@testing-library/react';
+      import './colours.css';
+
+      describe('Main-four component styles', () => {
+         it('should render main-four component with correct height and color', () => {
+            const { getByClassName } = render(<div className='main-four'></div>);
+            const mainFourElement = getByClassName('main-four');
+            expect(mainFourElement).toHaveStyle({ height: '90vh', color: 'var(--accent)' });
+         });
+
+         it('should render cont-four component with correct font sizes', () => {
+            const { getByClassName } = render(
+               <div className='cont-four'>
+                  <h1>Heading 1</h1>
+                  <h3>Heading 3</h3>
+               </div>
+            );
+            const h1Element = getByClassName('cont-four').querySelector('h1');
+            const h3Element = getByClassName('cont-four').querySelector('h3');
+            expect(h1Element).toHaveStyle({ fontSize: '300%' });
+            expect(h3Element).toHaveStyle({ fontSize: '200%' });
+         });
+
+         it('should render four-link component with correct text decoration and color', () => {
+            const { getByClassName } = render(<a className='four-link' href='#'>Link</a>);
+            const fourLinkElement = getByClassName('four-link');
+            expect(fourLinkElement).toHaveStyle({ textDecoration: 'none', color: 'var(--contrast)' });
+         });
+      });
+   
