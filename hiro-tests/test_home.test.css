@@ -1,0 +1,27 @@
+
+   import React from 'react';
+   import { render, screen } from '@testing-library/react';
+   import './styles.css';
+
+   describe('Styles', () => {
+     it('renders home-cont class with primary background color', () => {
+       render(<div className='home-cont'></div>);
+       const homeCont = screen.getByClassName('home-cont');
+       expect(homeCont).toHaveStyle('background-color: var(--primary)');
+     });
+
+     it('renders App class with center alignment', () => {
+       render(<div className='App'></div>);
+       const app = screen.getByClassName('App');
+       expect(app).toHaveStyle('display: flex');
+       expect(app).toHaveStyle('justify-content: center');
+       expect(app).toHaveStyle('align-items: center');
+     });
+
+     it('renders home-main class with max-content height', () => {
+       render(<div className='home-main'></div>);
+       const homeMain = screen.getByClassName('home-main');
+       expect(homeMain).toHaveStyle('height: max-content');
+     });
+   }
+   
