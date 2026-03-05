@@ -1,0 +1,14 @@
+import { render } from '@testing-library/react';
+import './colours.css';
+
+describe('Colour Variables', () => {
+  it('should render the colour variables', () => {
+    const { getByText } = render(<div className="blog-coming-soon">Coming Soon</div>);
+    expect(getByText('Coming Soon')).toHaveStyle({ color: 'var(--contrast)' });
+  });
+
+  it('should render the footer cert colour', () => {
+    const { getByText } = render(<div id="footer-cert">Cert</div>);
+    expect(getByText('Cert')).toHaveStyle({ color: 'var(--contrast)' });
+  });
+});

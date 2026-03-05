@@ -1,0 +1,17 @@
+describe('Scrollbar Styling', () => { 
+     it('should set the width of the scrollbar to 10px', () => { 
+       const scrollbar = document.querySelector('::-webkit-scrollbar'); 
+       expect(scrollbar.style.width).toBe('10px'); 
+     }); 
+     
+     it('should set the background of the scrollbar thumb to var(--secondary)', () => { 
+       const scrollbarThumb = document.querySelector('::-webkit-scrollbar-thumb'); 
+       expect(scrollbarThumb.style.background).toBe('var(--secondary)'); 
+     }); 
+     
+     it('should change the background of the scrollbar thumb on hover', () => { 
+       const scrollbarThumb = document.querySelector('::-webkit-scrollbar-thumb'); 
+       scrollbarThumb.dispatchEvent(new MouseEvent('mouseover', { bubbles: true })); 
+       expect(scrollbarThumb.style.background).toBe('var(--secondary)'); 
+     }); 
+   })
