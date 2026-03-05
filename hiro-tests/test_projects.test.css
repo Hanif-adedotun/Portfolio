@@ -1,0 +1,29 @@
+
+      import React from 'react';
+      import { render } from '@testing-library/react';
+      import './colours.css';
+
+      describe('Styles', () => {
+         it('should render project head with correct style', () => {
+            const { getByClass } = render(<div className='project-head'>Project Head</div>);
+            const projectHead = getByClass('project-head');
+            expect(projectHead.style.fontWeight).toBe('bold');
+            expect(projectHead.style.color).toBe('var(--contrast)');
+            expect(projectHead.style.fontSize).toBe('2em');
+         });
+
+         it('should render project tab with correct style', () => {
+            const { getByClass } = render(<div className='project-tab'>Project Tab</div>);
+            const projectTab = getByClass('project-tab');
+            expect(projectTab.style.color).toBe('var(--altacc)');
+         });
+
+         it('should render web title with correct style', () => {
+            const { getByClass } = render(<div className='web-title'>Web Title</div>);
+            const webTitle = getByClass('web-title');
+            expect(webTitle.style.color).toBe('var(--contrast)');
+            expect(webTitle.style.fontSize).toBe('large');
+            expect(webTitle.style.fontWeight).toBe('bold');
+         });
+      }
+   
