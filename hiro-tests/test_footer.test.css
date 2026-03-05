@@ -1,0 +1,16 @@
+
+   import React from 'react';
+   import { render } from '@testing-library/react';
+   import './styles.css';
+
+   describe('Footer Styles', () => {
+      it('should render footer with correct styles', () => {
+         const { getByText } = render(<footer className='footer'><p className='footer-text'>Copyright &copy; 2023</p></footer>);
+         const footerElement = getByText('Copyright &copy; 2023');
+
+         expect(footerElement).toHaveStyle({ 'text-align': 'center' });
+         expect(footerElement).toHaveStyle({ 'font-weight': 'bold' });
+         expect(footerElement).toHaveStyle({ 'font-size': 'small' });
+      });
+   });
+   
