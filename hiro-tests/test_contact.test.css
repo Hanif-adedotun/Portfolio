@@ -1,0 +1,55 @@
+
+   import React from 'react';
+   import { render, fireEvent, waitFor } from '@testing-library/react';
+   import '@testing-library/jest-dom';
+
+   describe('Contact Modal', () => {
+       it('renders contact modal box with correct styles', () => {
+           const { getByClassName } = render(
+               <div className='contact-modal-box'>
+                   <div className='backb-cont'>
+                       <div className='backb'>Back</div>
+                   </div>
+               </div>
+           );
+           expect(getByClassName('contact-modal-box')).toHaveStyle({
+               backgroundColor: 'var(--accent)',
+               color: 'var(--secondary)',
+               borderRadius: '15px',
+           });
+       });
+
+       it('renders contact form with correct styles', () => {
+           const { getByClassName } = render(
+               <div className='contact-form'>
+                   <input type='text' className='form-input' />
+                   <button className='form-send'>Send</button>
+               </div>
+           );
+           expect(getByClassName('contact-form')).toHaveStyle({
+               backgroundColor: 'var(--white)',
+               borderRadius: '15px',
+           });
+           expect(getByClassName('form-input')).toHaveStyle({
+               borderColor: 'var(--accent)',
+           });
+           expect(getByClassName('form-send')).toHaveStyle({
+               backgroundColor: 'var(--secondary)',
+               color: 'var(--accent)',
+           });
+       });
+
+       it('renders social icon container with correct styles on hover', () => {
+           const { getByClassName } = render(
+               <div className='social-icon-container'>
+                   <a href='#' className='social-icon'>Link</a>
+               </div>
+           );
+           const socialIcon = getByClassName('social-icon');
+           fireEvent.mouseOver(socialIcon);
+           expect(socialIcon).toHaveStyle({
+               color: 'var(--primary)',
+           });
+       });
+   });
+   
