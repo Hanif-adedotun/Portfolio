@@ -1,0 +1,57 @@
+
+   import React from 'react';
+   import { render, fireEvent, waitFor } from '@testing-library/react';
+   import { createTheme, ThemeProvider } from '@mui/material/styles';
+   import { CssVarsProvider } from '@mui/joy';
+
+   const theme = createTheme({
+     palette: {
+       primary: {
+         main: '#000'
+       },
+       secondary: {
+         main: '#fff'
+       },
+       contrast: {
+         main: '#fff'
+       }
+     }
+   });
+
+   describe('Resume CSS', () => {
+     it('should render with primary color', () => {
+       const { getByClass } = render(
+         <ThemeProvider theme={theme}>
+           <CssVarsProvider>
+             <div className='resume-main' />
+           </CssVarsProvider>
+         </ThemeProvider>
+       );
+       expect(getByClass('resume-main')).toHaveStyle(`background-color: ${theme.palette.primary.main}`);
+     });
+
+     it('should render with contrast color', () => {
+       const { getByClass } = render(
+         <ThemeProvider theme={theme}>
+           <CssVarsProvider>
+             <div className='resume-head' />
+           </CssVarsProvider>
+         </ThemeProvider>
+       );
+       expect(getByClass('resume-head')).toHaveStyle(`color: ${theme.palette.contrast.main}`);
+     });
+
+     it('should render with hover effect', () => {
+       const { getByClass } = render(
+         <ThemeProvider theme={theme}>
+           <CssVarsProvider>
+             <div className='resume-dowload' />
+           </CssVarsProvider>
+         </ThemeProvider>
+       );
+       const element = getByClass('resume-dowload');
+       fireEvent.mouseOver(element);
+       expect(element).toHaveStyle(`background-color: ${theme.palette.contrast.main}`);
+     });
+   }
+   
