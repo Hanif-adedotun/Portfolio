@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import blogPosts from "../../data/blog-posts.json";
-import ContentRenderer from "../../components/ContentRenderer.astro";
+import BlogPostPretext from "../../components/BlogPostPretext";
 
 export async function getStaticPaths() {
   return blogPosts.map((post) => ({
@@ -16,6 +16,7 @@ const site = Astro.site || "https://hanif.one";
 const postUrl = new URL(`/blog/${post.slug}`, site).href;
 const postDate = new Date(post.date).toISOString();
 ---
+
 
 <Layout 
   title={`${post.title} - Hanif Adedotun`}
@@ -51,50 +52,8 @@ const postDate = new Date(post.date).toISOString();
 
       <div class="flex gap-10 mt-4 justify-between">
         <!-- Main Article Content -->
-        <article class="flex-1 max-w-3xl">
-          <header class="mb-12 animate-fade-in-up">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
-              {post.title}
-            </h1>
-            <div class="flex items-center gap-4 text-base text-gray-600 dark:text-gray-400">
-              <span>{post.author}</span>
-              <span>•</span>
-              <time datetime={post.date}>
-                {new Date(post.date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </time>
-            </div>
-          </header>
-
-          <div class="prose prose-lg dark:prose-invert max-w-none">
-            <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-12 animate-fade-in-delay">
-              {post.intro}
-            </p>
-
-            {post.sections.map((section, sectionIndex) => (
-              <section
-                id={section.id}
-                class="mb-16 scroll-mt-24 transition-all duration-300"
-                style={`animation: fadeInUp 0.6s ease-out ${(sectionIndex * 150) + 200}ms both`}
-              >
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 hover:text-contrast transition-colors duration-300">
-                  {section.title}
-                </h2>
-                <div class="space-y-4">
-                  {section.content.map((paragraph, paraIndex) => (
-                    <ContentRenderer 
-                      content={paragraph}
-                      sectionIndex={sectionIndex}
-                      paraIndex={paraIndex}
-                    />
-                  ))}
-                </div>
-              </section>
-            ))}
-          </div>
+        <article class="flex-1 min-w-0 max-w-3xl">
+          <BlogPostPretext post={post} client:only="react" />
         </article>
 
         {/* Structured Data - JSON-LD */}
