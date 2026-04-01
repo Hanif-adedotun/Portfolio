@@ -1,0 +1,17 @@
+[
+  {
+    "model_id": "llama-3",
+    "total_tokens": 7852,
+    "num_requests": 44
+  },
+  {
+    "model_id": "claude-3",
+    "total_tokens": 9355,
+    "num_requests": 47
+  },
+  {
+    "model_id": "gpt-4",
+    "total_tokens": 10201,
+    "num_requests": 59
+  }
+]
