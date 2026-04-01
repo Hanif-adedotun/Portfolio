@@ -39,6 +39,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script_stop: true
           script: |
+            export PATH="$HOME/.bun/bin:$PATH"
             cd /var/www/v2.hanif.one
             git pull origin main
             bash build.sh
