@@ -1,8 +1,14 @@
 [
   {
+    "img": "Mirusync",
+    "name": ["Mirusync", "https://github.com/Hanif-adedotun/mirusync"],
+    "summary": "A cli-based dual way folder sync engine",
+    "tools": ["go", "Resync API"]
+  },
+  {
     "img": "Hiro",
     "name": ["Hiro", "https://hiro.hanif.one"],
-    "summary": "An AI observability agent designed to automatically to manage and generate test coverage for your codebase.",
+    "summary": "An AI observability agent designed that manages and generates test coverage for your codebase.",
     "tools": ["Python", "LangChain", "Astro"]
   },
   {

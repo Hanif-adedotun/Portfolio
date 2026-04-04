@@ -23,3 +23,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 dist
+
+# Local-only docs (not pushed to GitHub)
+/VPS_INSTRUCTIONS.md
+/SEO_AUDIT_REPORT.md
+/SEO_COMPLIANCE_REPORT.md
+/SEO_IMPLEMENTATION_SUMMARY.md

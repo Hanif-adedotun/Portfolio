@@ -1,5 +1,81 @@
 [
   {
+    "slug": "mapreduce-one-underrated-idea",
+    "title": "MapReduce",
+    "date": "2026-03-03",
+    "author": "Hanif Adedotun",
+    "intro": "Let us talk about one underrated concept of distributed computing. I came across MapReduce—a programming model for processing large datasets across many machines—and this post covers where it came from, where it is used, and a full example you can run locally or scale out.",
+    "sections": [
+      {
+        "id": "how-mapreduce-works",
+        "title": "How MapReduce works",
+        "content": [
+          "I came across a very interesting concept, MapReduce, which is a programming model for processing large datasets across many machines. It processes data in two steps: map (turn each record into key–value pairs) and reduce (combine all values that share a key). The runtime handles parallelism, failures, and data movement so you can focus on the transformation, not the cluster.",
+          "That split makes it a good fit for big data and for many AI and data-engineering pipelines: you process chunks in parallel, then aggregate. This post covers where MapReduce came from, where it is used, and a full example — aggregating token counts from model inference logs — that you can run locally or scale out."
+        ]
+      },
+      {
+        "id": "google-paper-history",
+        "title": "Google Paper and Brief History",
+        "content": [
+          "The model and the name come from the 2004 OSDI paper “MapReduce: Simplified Data Processing on Large Clusters” by Jeffrey Dean and Sanjay Ghemawat at Google.",
+          "The paper described a library and execution environment used inside Google. They reported processing terabytes on thousands of machines, with hundreds of MapReduce programs and over a thousand jobs per day on their clusters.",
+          "That work influenced the open-source world. Hadoop implemented the same model (with HDFS for storage and YARN for scheduling), and later systems (Spark, Flink, etc.) kept the map/reduce idea while adding in-memory processing and richer APIs. The 2004 paper remains the standard reference for the model and its rationale.",
+          "The original paper: https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf"
+        ]
+      },
+      {
+        "id": "code-example",
+        "title": "Code: End-to-End Example — Token Count from AI Inference Logs",
+        "content": [
+          "A common data-engineering task in AI is to aggregate statistics from inference or training logs (e.g. token counts per model or per day). Below is a minimal but complete MapReduce-style pipeline in Python: we simulate log files, run a local “map–shuffle–reduce,” and write aggregated results. The same logic can be moved to Hadoop Streaming, Spark, or a job scheduler.",
+          "We assume logs that look like: one JSON object per line, with model_id and token_count (and optionally a timestamp). Example:",
+          "```json\n{\"model_id\": \"gpt-4\", \"token_count\": 120, \"timestamp\": \"2025-02-20T10:00:00Z\"}\n{\"model_id\": \"gpt-4\", \"token_count\": 85, \"timestamp\": \"2025-02-20T10:01:00Z\"}\n{\"model_id\": \"claude-3\", \"token_count\": 200, \"timestamp\": \"2025-02-20T10:02:00Z\"}\n```",
+          "Map: Emit (key, value) per record. Each line becomes one key–value pair: key = model_id, value = something we can aggregate (e.g. token count, or a tuple if we want count + sum).",
+          "```python\nimport json\nimport os\nfrom collections import defaultdict\n\ndef map_inference_log(log_line: str):\n    \"\"\"Parse a log line and emit (model_id, token_count).\"\"\"\n    line = log_line.strip()\n    if not line:\n        return\n    try:\n        record = json.loads(line)\n        model_id = record.get(\"model_id\")\n        token_count = record.get(\"token_count\", 0)\n        if model_id is not None:\n            yield (model_id, token_count)\n    except json.JSONDecodeError:\n        pass\n```",
+          "Shuffle (group by key). In a real cluster, the framework does this. Locally we group the map outputs by key:",
+          "```python\ndef shuffle(mapped_pairs):\n    \"\"\"Group (key, value) pairs by key.\"\"\"\n    groups = defaultdict(list)\n    for key, value in mapped_pairs:\n        groups[key].append(value)\n    return groups.items()\n```",
+          "Reduce: Aggregate per key. We sum token counts per model (and optionally count requests):",
+          "```python\ndef reduce_token_counts(key, values):\n    \"\"\"Sum token counts for one model_id.\"\"\"\n    total_tokens = sum(values)\n    num_requests = len(values)\n    return key, {\"total_tokens\": total_tokens, \"num_requests\": num_requests}\n```",
+          "End-to-End Pipeline: read one or more log files, run map → shuffle → reduce, and write JSON output:",
+          "```python\ndef run_mapreduce(log_paths, output_path):\n    \"\"\"Run map-reduce over inference log files and write results.\"\"\"\n    mapped = []\n    for path in log_paths:\n        if not os.path.isfile(path):\n            continue\n        with open(path, \"r\") as f:\n            for line in f:\n                for pair in map_inference_log(line):\n                    mapped.append(pair)\n    grouped = shuffle(mapped)\n    results = []\n    for key, values in grouped:\n        _, row = reduce_token_counts(key, values)\n        results.append({\"model_id\": key, **row})\n    with open(output_path, \"w\") as f:\n        json.dump(results, f, indent=2)\n    return results\n```",
+          "Generating Sample Logs and Running: create a small script that writes sample logs and runs the pipeline:",
+          "```python\ndef generate_sample_logs(path, num_lines=100):\n    \"\"\"Write sample inference logs for testing.\"\"\"\n    import random\n    models = [\"gpt-4\", \"claude-3\", \"llama-3\"]\n    with open(path, \"w\") as f:\n        for _ in range(num_lines):\n            model = random.choice(models)\n            tokens = random.randint(50, 300)\n            record = {\n                \"model_id\": model,\n                \"token_count\": tokens,\n                \"timestamp\": \"2025-02-20T10:00:00Z\",\n            }\n            f.write(json.dumps(record) + \"\\n\")\n\nif __name__ == \"__main__\":\n    os.makedirs(\"data\", exist_ok=True)\n    log_dir = \"data/inference_logs\"\n    os.makedirs(log_dir, exist_ok=True)\n    for i in range(3):\n        generate_sample_logs(os.path.join(log_dir, f\"log_{i}.jsonl\"), num_lines=50)\n    log_paths = [\n        os.path.join(log_dir, f)\n        for f in os.listdir(log_dir)\n        if f.endswith(\".jsonl\")\n    ]\n    results = run_mapreduce(log_paths, \"data/token_counts_by_model.json\")\n    print(\"Aggregated token counts by model:\")\n    print(json.dumps(results, indent=2))\n```",
+          "Run it:",
+          "```bash\nmkdir -p data/inference_logs\npython mapreduce_inference_logs.py\n```",
+          "Output will look like:",
+          "```json\n[\n  { \"model_id\": \"gpt-4\", \"total_tokens\": 12400, \"num_requests\": 52 },\n  { \"model_id\": \"claude-3\", \"total_tokens\": 18200, \"num_requests\": 49 },\n  { \"model_id\": \"llama-3\", \"total_tokens\": 9900, \"num_requests\": 49 }\n]\n```",
+          "This is MapReduce in spirit: map each log line to (model_id, token_count), shuffle by model_id, then reduce by summing. To run at scale, you would feed the same map/reduce logic to Hadoop Streaming, Spark, or your cluster’s job API instead of looping over files in one process."
+        ]
+      },
+      {
+        "id": "applications-big-data",
+        "title": "Applications and Why MapReduce Fits Big Data",
+        "content": [
+          "MapReduce fits problems that are embarrassingly parallel on the map side and group-by-key on the reduce side: each input record is processed independently, then results are grouped by key and combined. Classic uses include:",
+          "> Batch indexing (e.g. building search indices from crawled pages)",
+          "> Log and event aggregation (counts, sums, histograms by dimension)",
+          "> ETL (extract, transform, load) over large tables or files",
+          "> Model training data prep (e.g. computing statistics or building vocabularies from huge corpora)",
+          "> Post-inference analytics (aggregating outputs, token counts, or metrics from inference logs)",
+          "Big data processing needs more than a single machine can do in memory or on one disk. MapReduce addresses that by:",
+          "> Parallelism — Many mappers and reducers run at once; throughput scales with cluster size.",
+          "> Data locality — Tasks run where the data lives when possible, reducing network use.",
+          "> Fault tolerance — Failed tasks are re-run; you don’t restart the whole job.",
+          "> Simple mental model — Map and reduce are easy to reason about and to test on small samples.",
+          "So MapReduce is “necessary” in the sense that this style of split–process–aggregate is how large-scale batch processing is done in practice, whether under the MapReduce name (e.g. Hadoop) or in newer frameworks that generalize it."
+        ]
+      },
+      {
+        "id": "conclusion",
+        "title": "Conclusion",
+        "content": [
+          "MapReduce gives you a simple way to describe large-scale batch jobs: define map and reduce, and let the runtime handle distribution and failures. It came from the 2004 Google paper and underpins Hadoop and many later systems. It remains relevant for big data and for AI/data-engineering workloads that need to aggregate over huge logs or datasets. The token-count example above shows the same pattern you’d use in production — only the execution environment (local script vs. cluster) changes."
+        ]
+      }
+    ]
+  },
+  {
     "slug": "2025-in-review",
     "title": "2025: In Review",
     "date": "2026-01-01",

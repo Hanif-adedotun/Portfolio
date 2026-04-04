@@ -49,10 +49,10 @@ import { Signature } from "./handwriting";
     />
     </div>
     <div class="flex-1">
-      <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1 tracking-tight flex flex-wrap items-baseline gap-x-2">
-        <Signature signature="hanif" inline client:load className="!text-[#1DCFF6] h-[1.5em]"/>
-        <!-- <span class="!text-[#1DCFF6]">Adedotun</span> -->
+      <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1 tracking-tight">
+        Hanif <span class="!text-[#1DCFF6]">Adedotun</span>
       </h1>
+      <Signature signature="hanif" class="w-32 h-32" client:load />
       <div class="flex items-center gap-2 mb-2">
         <p class="text-lg text-gray-600 dark:text-gray-400 font-medium">hey@hanif.one</p>
         <button
