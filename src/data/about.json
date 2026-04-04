@@ -18,7 +18,6 @@
   "text": [
     {
       "segments": [
-        {"type": "text", "value": "I am a "},
         {"type": "highlight", "value": "Software Engineer,"},
         {"type": "text", "value": "with a particular niche in building "},
         {"type": "link", "value": "thought to actions (BCI) ", "href": "https://neurosyncbci.com"},
@@ -36,7 +35,7 @@
     },
     {
       "segments": [
-        {"type": "text", "value": "Beyond my day-to-day work, I maintain a steady stream of "},
+        {"type": "text", "value": "Beyond my day-to-day work, I work on a few "},
         {"type": "link", "value": "side projects,", "href": "/projects"},
         {"type": "text", "value": "exploring ideas that are facinating to me."}
       ]
@@ -44,7 +43,7 @@
     {
       "segments": [
         {"type": "text", "value": "You can reach me on "},
-        {"type": "link", "value": "X", "href": "https://x.com/@devhanif"},
+        {"type": "link", "value": "X (very active here)", "href": "https://x.com/@devhanif"},
         {"type": "text", "value": " or "},
         {"type": "link", "value": "via email", "href": "mailto:hey@hanif.one"}
       ]
