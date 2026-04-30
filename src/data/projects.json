@@ -1,9 +1,10 @@
 [
   {
-    "img": "Mirusync",
-    "name": ["Mirusync", "https://github.com/Hanif-adedotun/mirusync"],
-    "summary": "A cli-based dual way folder sync engine",
-    "tools": ["go", "Resync API"]
+    "img": "Reposizer",
+    "name": ["Reposizer", "https://github.com/Hanif-adedotun/reposizer"],
+    "summary": "npm package that shows you the github repositories before cloning them.",
+    "tools": ["npm", "typescript", "github api"],
+    "videoUrl": "https://youtu.be/P-tUOC_ac3g"
   },
   {
     "img": "Hiro",
@@ -11,15 +12,32 @@
     "summary": "An AI observability agent designed that manages and generates test coverage for your codebase.",
     "tools": ["Python", "LangChain", "Astro"]
   },
+
+  {
+    "img": "Mirusync",
+    "name": ["Mirusync", "https://github.com/Hanif-adedotun/mirusync"],
+    "summary": "A cli-based dual way folder sync engine built to keep track of files across multiple devices.",
+    "videoUrl": "https://youtu.be/yn-YS8IBxFU",
+    "tools": ["go", "Resync API"]
+  },
+
   {
     "img": "Vaul",
     "name": ["Vaul", "https://vaul.hanif.one"],
     "summary": "A native desktop application to manage terminal commands easily",
+    "banner": "https://github.com/Hanif-adedotun/vaul/blob/main/preview3.jpg?raw=true",
     "tools": ["Go", "Wails"]
   },
   {
-    "img": "Headlines Agent",
-    "name": ["Headlines Agent", "https://github.com/Hanif-adedotun/ML-Series/tree/main/HEADLINE-AGENT"],
+    "img": "MapTheGap",
+    "name": ["Map the Gap", "https://github.com/Hanif-adedotun/codefest-health-app"],
+    "summary": "Assessment tool estimating risk of chronic disease based on personal and neighborhood factors, with personalized recommendations.",
+    "tools": ["python", "typescript", "fastapi"],
+    "videoUrl": "https://youtu.be/3OALMweizhI"
+  },
+  {
+    "img": "Headline Agent",
+    "name": ["Headline Agent", "https://github.com/Hanif-adedotun/ML-Series/tree/main/HEADLINE-AGENT"],
     "summary": "An AI agent that fetches the latest technology news headlines and allows users to send them via email with custom credentials.",
     "tools": ["Python", "LangGraph", "Streamlit"]
   },
@@ -29,15 +47,17 @@
     "name": ["Voltex Middleware", "https://github.com/Hanif-adedotun/Nodejs/tree/master/voltex_react-app"],
     "summary": "Automatically spin off production ready forms for your static frontend applications",
     "tools": ["Nodejs", "React", "Bootstrap"]
-  },{
+  },  {
     "img": "Interna",
     "name": ["Interna", "https://getinterna.com"],
+    "notMaintained": true,
     "summary": "A platform for students to find internships and for companies to find interns.",
     "tools": ["Nextjs", "Vercel", "GCP"]
   },
   {
     "img": "StartVest",
     "name": ["StartVest", "https://startvest.io"],
+    "notMaintained": true,
     "summary": "StartVest is an equity crowdfunding platform that allows people with creative ideas to register and get funded. We provide everyone the option to invest in startups.",
     "tools": ["Bootstrap", "Django", "Firebase"]
   }
