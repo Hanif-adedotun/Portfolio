@@ -7,11 +7,13 @@
     "videoUrl": "https://youtu.be/P-tUOC_ac3g"
   },
   {
-    "img": "Hiro",
-    "name": ["Hiro", "https://hiro.hanif.one"],
-    "summary": "An AI observability agent designed that manages and generates test coverage for your codebase.",
-    "tools": ["Python", "LangChain", "Astro"]
+    "img": "Vaul",
+    "name": ["Vaul", "https://vaul.hanif.one"],
+    "summary": "A native desktop application to manage terminal commands easily",
+    "banner": "https://github.com/Hanif-adedotun/vaul/blob/main/preview3.jpg?raw=true",
+    "tools": ["Go", "Wails"]
   },
+
 
   {
     "img": "Mirusync",
@@ -22,11 +24,10 @@
   },
 
   {
-    "img": "Vaul",
-    "name": ["Vaul", "https://vaul.hanif.one"],
-    "summary": "A native desktop application to manage terminal commands easily",
-    "banner": "https://github.com/Hanif-adedotun/vaul/blob/main/preview3.jpg?raw=true",
-    "tools": ["Go", "Wails"]
+    "img": "Hiro",
+    "name": ["Hiro", "https://hiro.hanif.one"],
+    "summary": "An AI observability agent designed that manages and generates test coverage for your codebase.",
+    "tools": ["Python", "LangChain", "Astro"]
   },
   {
     "img": "MapTheGap",
