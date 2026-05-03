@@ -1,0 +1,79 @@
+---
+import press from "../data/press.json";
+
+type PressItem = {
+  outlet: string;
+  url?: string;
+};
+
+const raw = press as PressItem[];
+const seen = new Set<string>();
+const items = raw.filter((i) => {
+  const k = `${i.outlet.trim().toLowerCase()}|${(i.url ?? "").trim()}`;
+  if (seen.has(k)) return false;
+  seen.add(k);
+  return true;
+});
+
+const linkClass =
+  "text-[#17b2d4] dark:text-[#1DCFF6] hover:underline underline-offset-2 decoration-1 transition-colors duration-300";
+---
+
+{
+  items.length > 0 && (
+    <div class="press-caption-drift mt-10 md:mt-12 md:-mr-2 md:ml-1">
+      <p class="max-w-2xl text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+        <span class="mr-2 font-mono text-[0.65rem] font-medium uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500">
+          Featured in
+        </span>
+        {items.map((item, idx) => {
+          const href = item.url?.trim();
+          const sep = (
+            <span class="mx-2 text-gray-300 dark:text-gray-600" aria-hidden="true">
+              ·
+            </span>
+          );
+          const node = href ? (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={linkClass}
+            >
+              {item.outlet}
+            </a>
+          ) : (
+            <span class="text-gray-600 dark:text-gray-300">{item.outlet}</span>
+          );
+          return (
+            <>
+              {idx > 0 ? sep : null}
+              {node}
+            </>
+          );
+        })}
+      </p>
+    </div>
+  )
+}
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll(root)) {
+      .press-caption-drift {
+        animation: press-caption-drift linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0% 30%;
+      }
+    }
+  }
+
+  @keyframes press-caption-drift {
+    from {
+      transform: translateY(2px);
+    }
+    to {
+      transform: translateY(-2px);
+    }
+  }
+</style>
