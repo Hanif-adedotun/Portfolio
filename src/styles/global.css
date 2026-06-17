@@ -46,7 +46,7 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.25rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -120,48 +120,31 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "Quicksand", sans-serif;
+    font-family: Georgia, "Times New Roman", ui-serif, serif;
   }
 }
 
-/* Enhanced animations for better UX */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out both;
-}
-
-.animate-fade-in-delay {
-  animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-/* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
 }
 
-/* Better focus states for accessibility */
 a:focus-visible,
 button:focus-visible {
-  @apply outline-2 outline-offset-2 outline-gray-500 dark:outline-gray-400 rounded;
+  @apply outline-2 outline-offset-2 outline-gray-500 dark:outline-gray-400;
+}
+
+.prose-plain p {
+  @apply text-base leading-relaxed text-gray-700 dark:text-gray-300 mb-4;
+}
+
+.prose-plain h2 {
+  @apply text-xl font-normal text-gray-900 dark:text-white mt-10 mb-4;
+}
+
+.prose-plain pre {
+  @apply overflow-x-auto rounded border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-4 text-sm font-mono mb-4;
+}
+
+.prose-plain code {
+  font-family: ui-monospace, "JetBrains Mono", monospace;
 }

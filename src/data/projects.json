@@ -1,66 +1,55 @@
 [
   {
-    "img": "Reposizer",
-    "name": ["Reposizer", "https://github.com/Hanif-adedotun/reposizer"],
-    "summary": "npm package that shows you the github repositories before cloning them.",
-    "tools": ["npm", "typescript", "github api"],
-    "videoUrl": "https://youtu.be/P-tUOC_ac3g"
+    "img": "Hiro",
+    "name": ["Hiro", "https://hiro.hanif.one"],
+    "summary": "AI observability agent that generates and manages unit test coverage for production codebases. Reduced test generation to ~60 seconds per repository.",
+    "featured": true
+  },
+  {
+    "img": "Neurosync",
+    "name": ["Neurosync", "https://neurosyncbci.com"],
+    "summary": "Brain–computer interface platform translating EEG signals to device actions. Reinforcement-learning pipeline deployed with Docker; $15,000+ in grant and competition funding.",
+    "featured": true
+  },
+  {
+    "img": "Interna",
+    "name": ["Interna", "https://getinterna.com"],
+    "summary": "Internship marketplace connecting students and employers; thousands of users at peak. PAADC national hackathon winner.",
+    "featured": true,
+    "archived": true
   },
   {
     "img": "Vaul",
     "name": ["Vaul", "https://vaul.hanif.one"],
-    "summary": "A native desktop application to manage terminal commands easily",
-    "banner": "https://github.com/Hanif-adedotun/vaul/blob/main/preview3.jpg?raw=true",
-    "tools": ["Go", "Wails"]
+    "summary": "Native desktop application for managing and reusing terminal commands (Go, Wails)."
   },
-
-
+  {
+    "img": "Reposizer",
+    "name": ["Reposizer", "https://github.com/Hanif-adedotun/reposizer"],
+    "summary": "npm CLI to inspect GitHub repositories before cloning.",
+    "videoUrl": "https://youtu.be/P-tUOC_ac3g"
+  },
   {
     "img": "Mirusync",
     "name": ["Mirusync", "https://github.com/Hanif-adedotun/mirusync"],
-    "summary": "A cli-based dual way folder sync engine built to keep track of files across multiple devices.",
-    "videoUrl": "https://youtu.be/yn-YS8IBxFU",
-    "tools": ["go", "Resync API"]
-  },
-
-  {
-    "img": "Hiro",
-    "name": ["Hiro", "https://hiro.hanif.one"],
-    "summary": "An AI observability agent designed that manages and generates test coverage for your codebase.",
-    "tools": ["Python", "LangChain", "Astro"]
+    "summary": "CLI dual-direction folder sync across devices.",
+    "videoUrl": "https://youtu.be/yn-YS8IBxFU"
   },
   {
     "img": "MapTheGap",
     "name": ["Map the Gap", "https://github.com/Hanif-adedotun/codefest-health-app"],
-    "summary": "Assessment tool estimating risk of chronic disease based on personal and neighborhood factors, with personalized recommendations.",
-    "tools": ["python", "typescript", "fastapi"],
+    "summary": "Chronic disease risk assessment from personal and neighborhood factors; personalized recommendations.",
     "videoUrl": "https://youtu.be/3OALMweizhI"
   },
   {
     "img": "Headline Agent",
     "name": ["Headline Agent", "https://github.com/Hanif-adedotun/ML-Series/tree/main/HEADLINE-AGENT"],
-    "summary": "An AI agent that fetches the latest technology news headlines and allows users to send them via email with custom credentials.",
-    "tools": ["Python", "LangGraph", "Streamlit"]
-  },
-  
-  {
-    "img": "VM",
-    "name": ["Voltex Middleware", "https://github.com/Hanif-adedotun/Nodejs/tree/master/voltex_react-app"],
-    "summary": "Automatically spin off production ready forms for your static frontend applications",
-    "tools": ["Nodejs", "React", "Bootstrap"]
-  },  {
-    "img": "Interna",
-    "name": ["Interna", "https://getinterna.com"],
-    "notMaintained": true,
-    "summary": "A platform for students to find internships and for companies to find interns.",
-    "tools": ["Nextjs", "Vercel", "GCP"]
+    "summary": "LangGraph agent that aggregates technology headlines and delivers them via email."
   },
   {
     "img": "StartVest",
     "name": ["StartVest", "https://startvest.io"],
-    "notMaintained": true,
-    "summary": "StartVest is an equity crowdfunding platform that allows people with creative ideas to register and get funded. We provide everyone the option to invest in startups.",
-    "tools": ["Bootstrap", "Django", "Firebase"]
+    "summary": "Equity crowdfunding platform for early-stage startups.",
+    "archived": true
   }
 ]
-

@@ -14,7 +14,6 @@ export const GET: APIRoute = ({ site }) => {
     { url: "/projects", changefreq: "monthly", priority: "0.8" },
     { url: "/cv", changefreq: "monthly", priority: "0.7" },
     { url: "/publications", changefreq: "monthly", priority: "0.7" },
-    { url: "/certifications", changefreq: "monthly", priority: "0.6" },
   ];
 
   // Blog posts
