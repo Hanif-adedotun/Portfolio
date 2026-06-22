@@ -1,67 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Intro from "../components/Intro.astro";
 import Footer from "../components/Footer.astro";
+import WorkEntry from "../components/WorkEntry.astro";
 import projects from "../data/projects.json";
 import about from "../data/about.json";
 import blogPosts from "../data/blog-posts.json";
 
 const featuredProjects = projects.filter((p) => p.featured);
+
+const description = `${about.intro.beforeCompany} ${about.company}${about.intro.afterCompany} ${about.intro.neurosync}${about.intro.afterNeurosync} ${about.intro.hiro}${about.intro.end}`;
 ---
 
 <Layout
   title="Hanif Adedotun"
-  description={about.summary}
+  description={description}
   canonicalUrl="https://hanif.one/"
 >
-  <div class="min-h-screen p-6 max-w-2xl mx-auto">
+  <div class="min-h-screen p-6 max-w-3xl mx-auto">
     <Header />
+    <Intro />
 
-    <main class="space-y-12">
+    <main class="space-y-16">
       <section>
-        <p class="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-          {about.summary}
-        </p>
-        <p class="mt-4 text-sm">
-          <a
-            href="/cv"
-            class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
-          >
-            CV
-          </a>
-        </p>
-      </section>
-
-      <section>
-        <h2 class="text-lg text-gray-900 dark:text-white mb-6">Selected work</h2>
-        <div class="space-y-6">
+        <h2 class="text-base font-medium text-gray-900 dark:text-white mb-10">
+          Selected work
+        </h2>
+        <div class="space-y-16">
           {
             featuredProjects.map((project) => (
-              <div>
-                <p class="text-base text-gray-900 dark:text-white">
-                  <a
-                    href={project.name[1]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
-                  >
-                    {project.name[0]}
-                  </a>
-                  {project.archived && (
-                    <span class="text-sm text-gray-500 dark:text-gray-500">
-                      {" "}
-                      (archived)
-                    </span>
-                  )}
-                </p>
-                <p class="mt-1 text-base text-gray-700 dark:text-gray-300">
-                  {project.summary}
-                </p>
-              </div>
+              <WorkEntry
+                title={project.name[0]}
+                url={project.name[1]}
+                dates={project.dates}
+                summary={project.summary}
+                banner={project.banner}
+              />
             ))
           }
         </div>
-        <p class="mt-4 text-sm">
+        <p class="mt-10">
           <a
             href="/projects"
             class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
@@ -72,12 +51,14 @@ const featuredProjects = projects.filter((p) => p.featured);
       </section>
 
       <section>
-        <h2 class="text-lg text-gray-900 dark:text-white mb-6">Writing</h2>
+        <h2 class="text-base font-medium text-gray-900 dark:text-white mb-6">
+          Writing
+        </h2>
         <div class="space-y-3">
           {
             blogPosts.slice(0, 5).map((post) => (
-              <div class="flex flex-col sm:flex-row sm:gap-6 text-base">
-                <span class="text-sm text-gray-500 dark:text-gray-500 shrink-0 sm:w-28">
+              <div class="flex flex-col sm:flex-row sm:gap-6">
+                <span class="text-sm shrink-0 sm:w-28">
                   {
                     new Date(post.date).toLocaleDateString("en-US", {
                       year: "numeric",
@@ -87,7 +68,7 @@ const featuredProjects = projects.filter((p) => p.featured);
                 </span>
                 <a
                   href={`/blog/${post.slug}`}
-                  class="text-gray-700 dark:text-gray-300 underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
+                  class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
                 >
                   {post.title}
                 </a>
@@ -95,7 +76,7 @@ const featuredProjects = projects.filter((p) => p.featured);
             ))
           }
         </div>
-        <p class="mt-4 text-sm">
+        <p class="mt-6">
           <a
             href="/blog"
             class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"

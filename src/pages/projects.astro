@@ -2,11 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import WorkEntry from "../components/WorkEntry.astro";
 import projects from "../data/projects.json";
 
 type Project = {
   name: [string, string];
+  dates: string;
   summary: string;
+  banner?: string;
   archived?: boolean;
 };
 
@@ -20,59 +23,42 @@ const archived = projectList.filter((p) => p.archived);
   description="Selected software projects by Hanif Adedotun."
   canonicalUrl="https://hanif.one/projects"
 >
-  <div class="min-h-screen p-6 max-w-2xl mx-auto">
+  <div class="min-h-screen p-6 max-w-3xl mx-auto">
     <Header />
 
-    <main class="space-y-10 mt-4">
-      <section>
-        <h1 class="text-lg text-gray-900 dark:text-white mb-6">Work</h1>
-        <div class="space-y-8">
-          {
-            active.map((project) => (
-              <div>
-                <p class="text-base text-gray-900 dark:text-white">
-                  <a
-                    href={project.name[1]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
-                  >
-                    {project.name[0]}
-                  </a>
-                </p>
-                <p class="mt-1 text-base text-gray-700 dark:text-gray-300">
-                  {project.summary}
-                </p>
-              </div>
-            ))
-          }
-        </div>
-      </section>
+    <main class="mt-4">
+      <h1 class="text-base font-medium text-gray-900 dark:text-white mb-10">Work</h1>
+
+      <div class="space-y-16">
+        {
+          active.map((project) => (
+            <WorkEntry
+              title={project.name[0]}
+              url={project.name[1]}
+              dates={project.dates}
+              summary={project.summary}
+              banner={project.banner}
+            />
+          ))
+        }
+      </div>
 
       {
         archived.length > 0 && (
-          <section>
-            <h2 class="text-base text-gray-500 dark:text-gray-500 mb-4">
+          <section class="mt-20">
+            <h2 class="text-sm text-gray-500 dark:text-gray-500 mb-10">
               Earlier work
             </h2>
-            <div class="space-y-6">
+            <div class="space-y-16">
               {
                 archived.map((project) => (
-                  <div>
-                    <p class="text-base text-gray-900 dark:text-white">
-                      <a
-                        href={project.name[1]}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
-                      >
-                        {project.name[0]}
-                      </a>
-                    </p>
-                    <p class="mt-1 text-base text-gray-700 dark:text-gray-300">
-                      {project.summary}
-                    </p>
-                  </div>
+                  <WorkEntry
+                    title={project.name[0]}
+                    url={project.name[1]}
+                    dates={project.dates}
+                    summary={project.summary}
+                    banner={project.banner}
+                  />
                 ))
               }
             </div>

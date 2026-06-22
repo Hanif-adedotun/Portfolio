@@ -1,50 +1,21 @@
 ---
 import Navbar from "./Navbar.astro";
+import PulseAvatar from "./PulseAvatar";
+import about from "../data/about.json";
 ---
 
-<header class="mb-12 border-b border-gray-200 dark:border-gray-800 pb-8">
-  <div class="mb-8">
+<header class="mb-10">
+  <div class="mb-10">
     <Navbar />
   </div>
 
-  <div>
-    <h1 class="text-2xl text-gray-900 dark:text-white mb-1">Hanif Adedotun</h1>
-    <p class="text-base text-gray-600 dark:text-gray-400 mb-3">
-      Lead Software Engineer
-    </p>
-    <p class="text-base text-gray-600 dark:text-gray-400 mb-3">
-      <a
-        href="mailto:hey@hanif.one"
-        class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
-      >
-        hey@hanif.one
-      </a>
-    </p>
-    <p class="text-sm text-gray-500 dark:text-gray-500">
-      <a
-        href="https://github.com/hanif-adedotun"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
-      >
-        GitHub
-      </a>
-      <span class="mx-2">·</span>
-      <a
-        href="https://linkedin.com/in/hanif-adedotun"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
-      >
-        LinkedIn
-      </a>
-      <span class="mx-2">·</span>
-      <a
-        href="/feed.xml"
-        class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
-      >
-        RSS
-      </a>
-    </p>
+  <div class="flex items-center gap-4">
+    <PulseAvatar src="/logo.png" alt={about.name} client:load />
+    <div class="min-w-0">
+      <h1 class="text-base font-medium text-gray-900 dark:text-white leading-tight">
+        {about.name}
+      </h1>
+      <p class="leading-tight">{about.title}</p>
+    </div>
   </div>
 </header>

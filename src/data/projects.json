@@ -2,54 +2,72 @@
   {
     "img": "Hiro",
     "name": ["Hiro", "https://hiro.hanif.one"],
+    "dates": "Aug '24 – present",
     "summary": "AI observability agent that generates and manages unit test coverage for production codebases. Reduced test generation to ~60 seconds per repository.",
+    "banner": "/assets/banners/hiro.png",
     "featured": true
   },
   {
     "img": "Neurosync",
     "name": ["Neurosync", "https://neurosyncbci.com"],
+    "dates": "Jan '22 – present",
     "summary": "Brain–computer interface platform translating EEG signals to device actions. Reinforcement-learning pipeline deployed with Docker; $15,000+ in grant and competition funding.",
+    "banner": "/assets/banners/neurosync.png",
     "featured": true
   },
   {
     "img": "Interna",
     "name": ["Interna", "https://getinterna.com"],
+    "dates": "Mar '22 – Dec '23",
     "summary": "Internship marketplace connecting students and employers; thousands of users at peak. PAADC national hackathon winner.",
+    "banner": "/assets/banners/interna.png",
     "featured": true,
     "archived": true
   },
   {
     "img": "Vaul",
     "name": ["Vaul", "https://vaul.hanif.one"],
-    "summary": "Native desktop application for managing and reusing terminal commands (Go, Wails)."
+    "dates": "Jun '23 – present",
+    "summary": "Native desktop application for managing and reusing terminal commands (Go, Wails).",
+    "banner": "/assets/banners/vaul.png"
   },
   {
     "img": "Reposizer",
     "name": ["Reposizer", "https://github.com/Hanif-adedotun/reposizer"],
+    "dates": "Feb '24",
     "summary": "npm CLI to inspect GitHub repositories before cloning.",
+    "banner": "/assets/banners/reposizer.png",
     "videoUrl": "https://youtu.be/P-tUOC_ac3g"
   },
   {
     "img": "Mirusync",
     "name": ["Mirusync", "https://github.com/Hanif-adedotun/mirusync"],
+    "dates": "Nov '23",
     "summary": "CLI dual-direction folder sync across devices.",
+    "banner": "/assets/banners/mirusync.png",
     "videoUrl": "https://youtu.be/yn-YS8IBxFU"
   },
   {
     "img": "MapTheGap",
     "name": ["Map the Gap", "https://github.com/Hanif-adedotun/codefest-health-app"],
+    "dates": "Apr '25",
     "summary": "Chronic disease risk assessment from personal and neighborhood factors; personalized recommendations.",
+    "banner": "/assets/banners/map-the-gap.png",
     "videoUrl": "https://youtu.be/3OALMweizhI"
   },
   {
     "img": "Headline Agent",
     "name": ["Headline Agent", "https://github.com/Hanif-adedotun/ML-Series/tree/main/HEADLINE-AGENT"],
-    "summary": "LangGraph agent that aggregates technology headlines and delivers them via email."
+    "dates": "Jul '25",
+    "summary": "LangGraph agent that aggregates technology headlines and delivers them via email.",
+    "banner": "/assets/banners/headline-agent.png"
   },
   {
     "img": "StartVest",
     "name": ["StartVest", "https://startvest.io"],
+    "dates": "Mar '21 – Dec '22",
     "summary": "Equity crowdfunding platform for early-stage startups.",
+    "banner": "/assets/banners/startvest.png",
     "archived": true
   }
 ]

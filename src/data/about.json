@@ -1,4 +1,24 @@
 {
-  "summary": "Lead Software Engineer at Kontratar, where I build AI systems that automate government contract proposals for Fortune 500 clients. I also work on brain–computer interfaces at Neurosync and independent tools like Hiro, an AI agent for test coverage.",
-  "title": "Lead Software Engineer"
+  "name": "Hanif Adedotun",
+  "title": "Lead Software Engineer",
+  "company": "Kontratar",
+  "companyUrl": "https://kontratar.com",
+  "intro": {
+    "beforeCompany": "Software Engineer at",
+    "afterCompany": ", where I build AI systems that automate government contract proposals for Fortune 500 clients.",
+    "sideWork": "I also work on brain–computer interfaces at",
+    "neurosyncUrl": "https://neurosyncbci.com",
+    "neurosync": "Neurosync",
+    "afterNeurosync": "and independent tools like",
+    "hiroUrl": "https://hiro.hanif.one",
+    "hiro": "Hiro",
+    "end": "."
+  },
+  "links": {
+    "blogUrl": "https://blog.hanif.one",
+    "xUrl": "https://x.com/@devhanif",
+    "xLabel": "@devhanif",
+    "email": "hey@hanif.one",
+    "githubUrl": "https://github.com/hanif-adedotun"
+  }
 }

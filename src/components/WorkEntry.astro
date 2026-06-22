@@ -1,0 +1,45 @@
+---
+type Props = {
+  title: string;
+  url: string;
+  dates: string;
+  summary: string;
+  banner?: string;
+};
+
+const { title, url, dates, summary, banner } = Astro.props;
+---
+
+<article class="work-entry">
+  <div class="flex items-baseline justify-between gap-4 mb-3">
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="work-entry__title hover:underline underline-offset-2"
+    >
+      {title}
+    </a>
+    <span class="work-entry__date shrink-0">{dates}</span>
+  </div>
+
+  <p class="mb-6">{summary}</p>
+
+  <div class="work-banner">
+    {
+      banner ? (
+        <>
+          <img
+            src={banner}
+            alt={`${title} preview`}
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling?.classList.remove('hidden')"
+          />
+          <div class="work-banner__placeholder hidden" aria-hidden="true" />
+        </>
+      ) : (
+        <div class="work-banner__placeholder" aria-hidden="true" />
+      )
+    }
+  </div>
+</article>
