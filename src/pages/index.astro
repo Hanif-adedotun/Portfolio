@@ -18,14 +18,14 @@ const description = `${about.intro.beforeCompany} ${about.company}${about.intro.
   description={description}
   canonicalUrl="https://hanif.one/"
 >
-  <div class="min-h-screen p-6 max-w-3xl mx-auto">
+  <div class="min-h-screen px-6 pt-10 lg:pt-[18vh] pb-6 max-w-3xl mx-auto">
     <Header />
     <Intro />
 
     <main class="space-y-16">
       <section>
-        <h2 class="text-base font-medium text-gray-900 dark:text-white mb-10">
-          Selected work
+        <h2 class="text-xl font-medium text-gray-900 dark:text-white mb-10">
+          Work
         </h2>
         <div class="space-y-16">
           {
@@ -50,7 +50,7 @@ const description = `${about.intro.beforeCompany} ${about.company}${about.intro.
         </p>
       </section>
 
-      <section>
+      <!-- <section>
         <h2 class="text-base font-medium text-gray-900 dark:text-white mb-6">
           Writing
         </h2>
@@ -84,7 +84,7 @@ const description = `${about.intro.beforeCompany} ${about.company}${about.intro.
             All writing
           </a>
         </p>
-      </section>
+      </section> -->
     </main>
 
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -93,7 +93,7 @@ const description = `${about.intro.beforeCompany} ${about.company}${about.intro.
       "name": "Hanif Adedotun",
       "url": "https://hanif.one",
       "email": "hey@hanif.one",
-      "jobTitle": "Lead Software Engineer",
+      "jobTitle": "Software Engineer",
       "sameAs": [
         "https://github.com/hanif-adedotun",
         "https://x.com/@devhanif",
