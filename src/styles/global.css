@@ -193,17 +193,23 @@ button:focus-visible {
 
 .work-banner {
   @apply w-full overflow-hidden rounded-3xl;
-  min-height: 320px;
+  height: 180px;
 }
 
 .work-banner img {
-  @apply w-full h-full object-cover;
-  min-height: 320px;
+  @apply block w-full h-full;
+  object-fit: cover;
+  object-position: left top;
+}
+
+@media (min-width: 768px) {
+  .work-banner {
+    height: 300px;
+  }
 }
 
 .work-banner__placeholder {
-  @apply w-full rounded-3xl;
-  min-height: 320px;
+  @apply w-full h-full rounded-3xl;
   background: linear-gradient(
     135deg,
     lab(88 0 0) 0%,
