@@ -1,19 +1,61 @@
 [
   {
+    "img": "Brief",
+    "name": ["Brief", "https://brief.hanif.one"],
+    "dates": "Jun '26",
+    "summary": "AI powered tool to extract follow ups from tasks across multiple work platforms (Slack, Jira, Github etc)",
+    "banner": "/assets/works/brief.jpg",
+    "featured": true
+  },
+  {
+    "img": "Reposizer",
+    "name": ["Reposizer", "https://reposizer.hanif.one/"],
+    "dates": "May '26",
+    "summary": "A node package to inspect GitHub repositories before cloning. Just run `npx reposizer <repo-url>` to get a report of the repository.",
+    "banner": "/assets/works/reposizer.jpg",
+    "videoUrl": "https://youtu.be/P-tUOC_ac3g?si=DT099D8HvBvg_xbG",
+    "featured": true
+  },
+  {
     "img": "Hiro",
     "name": ["Hiro", "https://hiro.hanif.one"],
-    "dates": "Aug '24 – present",
+    "dates": "Aug '25",
     "summary": "AI observability agent that generates and manages unit test coverage for production codebases. Reduced test generation to ~60 seconds per repository.",
-    "banner": "/assets/banners/hiro.png",
+    "banner": "/assets/works/hiro.png",
     "featured": true
   },
   {
     "img": "Neurosync",
     "name": ["Neurosync", "https://neurosyncbci.com"],
-    "dates": "Jan '22 – present",
+    "dates": "Nov '24 – present",
     "summary": "Brain–computer interface platform translating EEG signals to device actions. Reinforcement-learning pipeline deployed with Docker; $15,000+ in grant and competition funding.",
-    "banner": "/assets/banners/neurosync.png",
+    "banner": "/assets/banners/neurosync.jpeg",
+    "videoUrl": "https://youtu.be/0tayJyhvnoE?si=275dnCjibOvrTKdG",
     "featured": true
+  },
+  {
+    "img": "MapTheGap",
+    "name": ["Map the Gap", "https://github.com/Hanif-adedotun/codefest-health-app"],
+    "dates": "Apr '26",
+    "summary": "Chronic disease risk assessment from personal and neighborhood factors; personalized recommendations.",
+    "banner": "/assets/works/mapthegap.png",
+    "videoUrl": "https://youtu.be/3OALMweizhI"
+  },
+
+  {
+    "img": "Vaul",
+    "name": ["Vaul", "https://vaul.hanif.one"],
+    "dates": "Jan '26",
+    "summary": "Native desktop application for managing and reusing terminal commands (Go, Wails).",
+    "banner": "/assets/banners/vaul.png"
+  },
+  {
+    "img": "Mirusync",
+    "name": ["Mirusync", "https://github.com/Hanif-adedotun/mirusync"],
+    "dates": "Feb '26",
+    "summary": "CLI dual-direction folder sync across devices.",
+    "banner": "/assets/banners/mirusync.png",
+    "videoUrl": "https://youtu.be/yn-YS8IBxFU"
   },
   {
     "img": "Interna",
@@ -25,49 +67,10 @@
     "archived": true
   },
   {
-    "img": "Vaul",
-    "name": ["Vaul", "https://vaul.hanif.one"],
-    "dates": "Jun '23 – present",
-    "summary": "Native desktop application for managing and reusing terminal commands (Go, Wails).",
-    "banner": "/assets/banners/vaul.png"
-  },
-  {
-    "img": "Reposizer",
-    "name": ["Reposizer", "https://github.com/Hanif-adedotun/reposizer"],
-    "dates": "Feb '24",
-    "summary": "npm CLI to inspect GitHub repositories before cloning.",
-    "banner": "/assets/banners/reposizer.png",
-    "videoUrl": "https://youtu.be/P-tUOC_ac3g"
-  },
-  {
-    "img": "Mirusync",
-    "name": ["Mirusync", "https://github.com/Hanif-adedotun/mirusync"],
-    "dates": "Nov '23",
-    "summary": "CLI dual-direction folder sync across devices.",
-    "banner": "/assets/banners/mirusync.png",
-    "videoUrl": "https://youtu.be/yn-YS8IBxFU"
-  },
-  {
-    "img": "MapTheGap",
-    "name": ["Map the Gap", "https://github.com/Hanif-adedotun/codefest-health-app"],
-    "dates": "Apr '25",
-    "summary": "Chronic disease risk assessment from personal and neighborhood factors; personalized recommendations.",
-    "banner": "/assets/banners/map-the-gap.png",
-    "videoUrl": "https://youtu.be/3OALMweizhI"
-  },
-  {
     "img": "Headline Agent",
     "name": ["Headline Agent", "https://github.com/Hanif-adedotun/ML-Series/tree/main/HEADLINE-AGENT"],
     "dates": "Jul '25",
     "summary": "LangGraph agent that aggregates technology headlines and delivers them via email.",
     "banner": "/assets/banners/headline-agent.png"
-  },
-  {
-    "img": "StartVest",
-    "name": ["StartVest", "https://startvest.io"],
-    "dates": "Mar '21 – Dec '22",
-    "summary": "Equity crowdfunding platform for early-stage startups.",
-    "banner": "/assets/banners/startvest.png",
-    "archived": true
   }
 ]

@@ -6,14 +6,16 @@ import WorkEntry from "../components/WorkEntry.astro";
 import projects from "../data/projects.json";
 
 type Project = {
-  name: [string, string];
+  name: string[];
   dates: string;
   summary: string;
   banner?: string;
+  videoUrl?: string;
   archived?: boolean;
+  featured?: boolean;
 };
 
-const projectList = projects as Project[];
+const projectList: Project[] = projects;
 const active = projectList.filter((p) => !p.archived);
 const archived = projectList.filter((p) => p.archived);
 ---
@@ -27,7 +29,7 @@ const archived = projectList.filter((p) => p.archived);
     <Header />
 
     <main class="mt-4">
-      <h1 class="text-base font-medium text-gray-900 dark:text-white mb-10">Work</h1>
+      <h1 class="text-xl font-medium text-gray-900 dark:text-white mb-10">Some of the projects I've worked on over the years</h1>
 
       <div class="space-y-16">
         {
@@ -38,6 +40,7 @@ const archived = projectList.filter((p) => p.archived);
               dates={project.dates}
               summary={project.summary}
               banner={project.banner}
+              videoUrl={project.videoUrl}
             />
           ))
         }
@@ -58,6 +61,7 @@ const archived = projectList.filter((p) => p.archived);
                     dates={project.dates}
                     summary={project.summary}
                     banner={project.banner}
+                    videoUrl={project.videoUrl}
                   />
                 ))
               }

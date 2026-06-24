@@ -25,7 +25,7 @@ const description = `${about.intro.beforeCompany} ${about.company}${about.intro.
     <main class="space-y-16">
       <section>
         <h2 class="text-xl font-medium text-gray-900 dark:text-white mb-10">
-          Work
+          Some of my work
         </h2>
         <div class="space-y-16">
           {
@@ -36,6 +36,7 @@ const description = `${about.intro.beforeCompany} ${about.company}${about.intro.
                 dates={project.dates}
                 summary={project.summary}
                 banner={project.banner}
+                videoUrl={project.videoUrl}
               />
             ))
           }
@@ -45,7 +46,7 @@ const description = `${about.intro.beforeCompany} ${about.company}${about.intro.
             href="/projects"
             class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
           >
-            All work
+            View all
           </a>
         </p>
       </section>

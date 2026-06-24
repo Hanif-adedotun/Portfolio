@@ -61,6 +61,16 @@ const { post } = Astro.props;
                   </pre>
                 );
               }
+              if (part.type === "image") {
+                return (
+                  <img
+                    src={part.content}
+                    alt={part.alt ?? ""}
+                    class="mb-4 w-full rounded border border-gray-200 dark:border-gray-800"
+                    loading="lazy"
+                  />
+                );
+              }
               return part.content
                 .split("\n\n")
                 .filter((p) => p.trim())

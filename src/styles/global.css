@@ -48,6 +48,8 @@
 
 :root {
   --radius: 0.25rem;
+  --brand: #1dcff6;
+  --selection: rgba(29, 207, 246, 0.32);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -131,6 +133,16 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--selection);
+  color: inherit;
+}
+
+::-moz-selection {
+  background: var(--selection);
+  color: inherit;
 }
 
 a:focus-visible,

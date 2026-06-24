@@ -1,5 +1,109 @@
 [
   {
+    "slug": "bloom-filters",
+    "title": "Bloom filters",
+    "date": "2026-04-15",
+    "author": "Hanif Adedotun",
+    "intro": "“Is this username taken?” — A query asked billions of times a day. Here’s an algorithm that answers that in milliseconds.",
+    "sections": [
+      {
+        "id": "the-problem",
+        "title": "The Problem",
+        "content": [
+          "![Bloom filter overview](/assets/blog/bloom-filters/hero.png)",
+          "You’re building the next big social platform. At sign-up, users pick a username. Before hitting the database, you want to check: does this username already exist?",
+          "At 10 million users, a naive database lookup is fine. At 500 million users, every single sign-up attempt becomes an expensive query. You need something faster. A Bloom filter does this efficiently."
+        ]
+      },
+      {
+        "id": "what-is-a-bloom-filter",
+        "title": "What Is a Bloom Filter?",
+        "content": [
+          "A Bloom filter is a space-efficient, probabilistic data structure that answers one question: “Have I seen this element before?”",
+          "It has two possible answers:",
+          "> “Definitely NOT in the set” — guaranteed correct.",
+          "> “Probably in the set” — correct with high probability, but not 100%.",
+          "That asymmetry is the whole trick. Bloom filters have no false negatives but can have false positives. In username checking, this means:",
+          "> If the filter says “available” → it’s available. ✅",
+          "> If the filter says “taken” → it’s probably taken (then a database lookup to confirm). ⚠️",
+          "This means you only hit the database for usernames that are likely collisions — which, in practice, is a tiny fraction of requests."
+        ]
+      },
+      {
+        "id": "how-it-works",
+        "title": "How It Works",
+        "content": [
+          "A Bloom filter is a bit array of size m, initially all zeros, combined with k independent hash functions."
+        ]
+      },
+      {
+        "id": "insertion",
+        "title": "Insertion",
+        "content": [
+          "To add an element, run it through all k hash functions. Each function produces an index. Flip those bits to 1. Assuming an m of size 12, and a k of size 3.",
+          "![Bloom filter insertion](/assets/blog/bloom-filters/insertion.png)"
+        ]
+      },
+      {
+        "id": "lookup",
+        "title": "Lookup",
+        "content": [
+          "To check if an element exists, run it through the same k hash functions. If all resulting bits are 1, it's \"probably present.\" If any bit is 0, it's definitely absent.",
+          "![Bloom filter lookup](/assets/blog/bloom-filters/lookup.png)",
+          "![Bloom filter false positive](/assets/blog/bloom-filters/false-positive.png)",
+          "The false positive above? Bits 3, 7, and 11 were all set by “alice”, not “charlie” — but “charlie” got a hit anyway. This is the false positive rate in action."
+        ]
+      },
+      {
+        "id": "python-implementation",
+        "title": "Python Implementation",
+        "content": [
+          "Let’s build one from scratch. We’ll use mmh3 (MurmurHash3) for fast, well-distributed hashing and bitarray for memory-efficient bit storage.",
+          "```python\nimport mmh3\nimport math\nimport pickle\nimport re\nfrom pathlib import Path\nfrom typing import Union\n\nfrom bitarray import bitarray\n\n\nclass BloomFilter:\n    \"\"\"\n    A space-efficient probabilistic data structure for membership testing.\n\n    Guarantees no false negatives. May produce false positives at a\n    configurable rate.\n    \"\"\"\n\n    def __init__(self, expected_items: int, false_positive_rate: float = 0.01):\n        \"\"\"\n        Args:\n            expected_items:      How many items you expect to insert.\n            false_positive_rate: Acceptable false positive probability (0.0 - 1.0).\n        \"\"\"\n        self.expected_items = expected_items\n        self.fp_rate = false_positive_rate\n\n        # Calculate optimal bit array size\n        self.bit_count = self._optimal_bit_count(expected_items, false_positive_rate)\n\n        # Calculate optimal number of hash functions\n        self.hash_count = self._optimal_hash_count(self.bit_count, expected_items)\n\n        # Initialize the bit array (all zeros)\n        self.bits = bitarray(self.bit_count)\n        self.bits.setall(0)\n\n        self._inserted = 0\n\n    @staticmethod\n    def _optimal_bit_count(n: int, p: float) -> int:\n        \"\"\"m = -n * ln(p) / (ln(2))^2\"\"\"\n        return math.ceil(-n * math.log(p) / (math.log(2) ** 2))\n\n    @staticmethod\n    def _optimal_hash_count(m: int, n: int) -> int:\n        \"\"\"k = (m/n) * ln(2)\"\"\"\n        return max(1, round((m / n) * math.log(2)))\n\n    def _hash_positions(self, item: str) -> list[int]:\n        \"\"\"\n        Generate k bit positions for a given item using triple hashing.\n\n        Uses two base hashes to simulate k independent hash functions:\n            h_i(x) = (h1(x) + i * h2(x)) mod m\n\n        This avoids k full hash computations while maintaining quality distribution.\n        \"\"\"\n        h1 = mmh3.hash(item, seed=0, signed=False)\n        h2 = mmh3.hash(item, seed=1, signed=False)\n        h3 = mmh3.hash(item, seed=2, signed=False)\n        return [(h1 + i * h2 + i * h3) % self.bit_count for i in range(self.hash_count)]\n\n    def add(self, item: str) -> None:\n        \"\"\"Insert an item into the filter.\"\"\"\n        for pos in self._hash_positions(item):\n            self.bits[pos] = 1\n        self._inserted += 1\n\n    def __contains__(self, item: str) -> bool:\n        \"\"\"\n        Test membership. Returns:\n            False  → item is DEFINITELY not in the set.\n            True   → item is PROBABLY in the set.\n        \"\"\"\n        return all(self.bits[pos] for pos in self._hash_positions(item))\n\n    @property\n    def current_false_positive_rate(self) -> float:\n        \"\"\"Estimate the current FP rate based on items inserted so far.\"\"\"\n        if self._inserted == 0:\n            return 0.0\n        exponent = -self.hash_count * self._inserted / self.bit_count\n        return (1 - math.exp(exponent)) ** self.hash_count\n\n    @property\n    def fill_ratio(self) -> float:\n        \"\"\"Fraction of bits currently set to 1.\"\"\"\n        return self.bits.count(1) / self.bit_count\n\n    def __repr__(self) -> str:\n        return (\n            f\"BloomFilter(\"\n            f\"bits={self.bit_count:,}, \"\n            f\"hashes={self.hash_count}, \"\n            f\"inserted={self._inserted:,}, \"\n            f\"fp_rate={self.current_false_positive_rate:.4%}\"\n            f\")\"\n        )\n```"
+        ]
+      },
+      {
+        "id": "username-availability-checker",
+        "title": "Username Availability Checker",
+        "content": [
+          "Now let’s wrap the Bloom filter in a realistic username-checking service.",
+          "```python\nimport time\nimport random\nimport string\n\n\nclass UsernameChecker:\n    \"\"\"\n    Fast username availability check using a Bloom filter as the first gate.\n\n    Architecture:\n        Request → Bloom Filter → [probably taken] → DB lookup\n                              → [definitely free] → allow (no DB hit)\n    \"\"\"\n\n    def __init__(self, expected_users: int = 10_000_000, fp_rate: float = 0.001):\n        self.bloom = BloomFilter(expected_users, fp_rate)\n        self._registered: set[str] = set()  # Simulates the real database\n\n        print(f\"Initialized UsernameChecker\")\n        print(f\"  Bit array size : {self.bloom.bit_count / 8 / 1024 / 1024:.2f} MB\")\n        print(f\"  Hash functions : {self.bloom.hash_count}\")\n        print(f\"  Target FP rate : {fp_rate:.2%}\")\n        print()\n\n    def register(self, username: str) -> bool:\n        \"\"\"Register a new username. Returns True on success, False if taken.\"\"\"\n        username = username.lower().strip()\n\n        if not self.is_available(username):\n            return False\n\n        # Claim the username\n        self._registered.add(username)\n        self.bloom.add(username)\n        return True\n\n    def is_available(self, username: str) -> bool:\n        \"\"\"\n        Check if a username is available.\n\n        Fast path: Bloom filter says definitely free → return True immediately.\n        Slow path: Bloom filter says probably taken → check actual DB.\n        \"\"\"\n        username = username.lower().strip()\n\n        # Fast path — no DB hit needed\n        if username not in self.bloom:\n            return True\n\n        # Slow path — verify against real data (could be a DB query)\n        return username not in self._registered\n\n    def stats(self) -> dict:\n        return {\n            \"registered_users\": len(self._registered),\n            \"bloom_fill_ratio\": f\"{self.bloom.fill_ratio:.2%}\",\n            \"estimated_fp_rate\": f\"{self.bloom.current_false_positive_rate:.4%}\",\n        }\n```"
+        ]
+      },
+      {
+        "id": "see-it-in-action",
+        "title": "See It in Action",
+        "content": [
+          "Rather than walking through a wall of benchmark code, I’ve put together a live demo where you can register usernames, trigger false positives, and watch the bit array fill up in real time:",
+          "Try the live demo at https://bloom-filter.hanif.one/",
+          "Try registering a few names, then check one you haven’t registered — occasionally you’ll catch a false positive in the wild.",
+          "Watch the walkthrough: https://www.youtube.com/watch?v=KKIZsD4GcZ0"
+        ]
+      },
+      {
+        "id": "limitations-caveats",
+        "title": "Limitations & Caveats",
+        "content": [
+          "You can’t delete items. Setting a bit to 0 would invalidate other elements that share that bit. If you need deletion, look into Counting Bloom Filters or Cuckoo Filters.",
+          "The filter can’t tell you which items are present. It’s a membership oracle, not a dictionary.",
+          "False positives increase over time. Monitor fill_ratio. Keep it under ~40–50% for reliable performance.",
+          "Not a security primitive. An adversary who knows your hash seeds can craft inputs that always collide. Randomize seeds at startup and keep them secret if this matters."
+        ]
+      },
+      {
+        "id": "wrapping-up",
+        "title": "Wrapping Up",
+        "content": [
+          "Bloom filters are one of those data structures that feel like a cheat code once you internalize them. For the username-checking use case:",
+          "> A 500M user platform with 0.1% FP rate needs ~900 MB of RAM for the filter.",
+          "> That filter eliminates 99.9% of database round trips for available usernames.",
+          "> Lookups run in constant O(k) time — typically a handful of nanoseconds.",
+          "The probabilistic guarantee is the key insight: you’re not trying to be perfect, you’re trying to be fast. For the small fraction of false positives, you fall back to the database. The economics work out strongly in your favor."
+        ]
+      }
+    ]
+  },
+  {
     "slug": "mapreduce-one-underrated-idea",
     "title": "MapReduce",
     "date": "2026-03-03",
@@ -10,8 +114,10 @@
         "id": "how-mapreduce-works",
         "title": "How MapReduce works",
         "content": [
+          "![MapReduce overview](/assets/blog/mapreduce/hero.png)",
           "I came across a very interesting concept, MapReduce, which is a programming model for processing large datasets across many machines. It processes data in two steps: map (turn each record into key–value pairs) and reduce (combine all values that share a key). The runtime handles parallelism, failures, and data movement so you can focus on the transformation, not the cluster.",
-          "That split makes it a good fit for big data and for many AI and data-engineering pipelines: you process chunks in parallel, then aggregate. This post covers where MapReduce came from, where it is used, and a full example — aggregating token counts from model inference logs — that you can run locally or scale out."
+          "That split makes it a good fit for big data and for many AI and data-engineering pipelines: you process chunks in parallel, then aggregate. This post covers where MapReduce came from, where it is used, and a full example — aggregating token counts from model inference logs — that you can run locally or scale out.",
+          "Watch the walkthrough: https://www.youtube.com/watch?v=cHGaQz0E7AU"
         ]
       },
       {
