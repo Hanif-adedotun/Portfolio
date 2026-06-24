@@ -226,3 +226,109 @@ button:focus-visible {
     lab(18 0 0) 100%
   );
 }
+
+/* Projects page — sticky scroll stack */
+.project-stack__step {
+  height: 105dvh;
+  view-timeline-name: --stack-step;
+  view-timeline-axis: block;
+}
+
+.project-stack__card {
+  position: sticky;
+  top: 13vh;
+  z-index: var(--stack-index, 1);
+  padding-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .project-stack__step {
+    height: 120dvh;
+  }
+
+  .project-stack__card {
+    top: clamp(1.5rem, 6vh, 4rem);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @keyframes stack-enter {
+    0% {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    55% {
+      opacity: 0.75;
+      transform: translateY(6px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes stack-exit {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    22% {
+      opacity: 0.4;
+      transform: translateY(-12px);
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(-26px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-32px);
+    }
+  }
+
+  .project-stack__card.is-enter {
+    animation: stack-enter 1 linear both;
+    animation-timeline: --stack-step;
+    animation-range: entry 0% cover 48%;
+  }
+
+  .project-stack__card.is-exit {
+    animation: stack-exit 1 linear both;
+    animation-timeline: --stack-step;
+    animation-range: cover 28% exit 68%;
+  }
+
+  .project-stack__card.is-enter.is-exit {
+    animation:
+      stack-enter 1 linear both,
+      stack-exit 1 linear both;
+    animation-timeline: --stack-step, --stack-step;
+    animation-range:
+      entry 0% cover 48%,
+      cover 28% exit 68%;
+  }
+
+  @media (min-width: 768px) {
+    .project-stack__card.is-enter {
+      animation-range: entry 0% cover 55%;
+    }
+
+    .project-stack__card.is-exit {
+      animation-range: contain 42% exit 78%;
+    }
+
+    .project-stack__card.is-enter.is-exit {
+      animation-range:
+        entry 0% cover 55%,
+        contain 42% exit 78%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-stack__card.is-enter,
+  .project-stack__card.is-exit,
+  .project-stack__card.is-enter.is-exit {
+    animation: none;
+  }
+}

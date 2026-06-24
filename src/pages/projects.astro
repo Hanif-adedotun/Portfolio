@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import WorkEntry from "../components/WorkEntry.astro";
+import ProjectStack from "../components/ProjectStack.astro";
 import projects from "../data/projects.json";
 
 type Project = {
@@ -31,20 +32,7 @@ const archived = projectList.filter((p) => p.archived);
     <main class="mt-4">
       <h1 class="text-xl font-medium text-gray-900 dark:text-white mb-10">Some of the projects I've worked on over the years</h1>
 
-      <div class="space-y-16">
-        {
-          active.map((project) => (
-            <WorkEntry
-              title={project.name[0]}
-              url={project.name[1]}
-              dates={project.dates}
-              summary={project.summary}
-              banner={project.banner}
-              videoUrl={project.videoUrl}
-            />
-          ))
-        }
-      </div>
+      <ProjectStack projects={active} />
 
       {
         archived.length > 0 && (
