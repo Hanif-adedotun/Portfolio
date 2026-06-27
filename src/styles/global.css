@@ -163,7 +163,14 @@ button:focus-visible {
 }
 
 .prose-plain h2 {
-  @apply text-xl font-normal text-gray-900 dark:text-white mt-10 mb-4;
+  @apply font-normal text-gray-900 dark:text-white mt-10 mb-4;
+  font-size: 1.125rem; /* lg on mobile */
+}
+
+@media (min-width: 768px) {
+  .prose-plain h2 {
+    font-size: 1.25rem; /* xl on md+ */
+  }
 }
 
 .prose-plain pre {
@@ -206,9 +213,27 @@ button:focus-visible {
   object-position: left top;
 }
 
+@media (min-width: 640px) {
+  .work-banner {
+    height: 240px;
+  }
+}
+
 @media (min-width: 768px) {
   .work-banner {
     height: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .work-banner {
+    height: 340px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .work-banner {
+    height: 380px;
   }
 }
 
@@ -240,9 +265,15 @@ button:focus-visible {
 
 .project-stack__card {
   position: sticky;
-  top: 13vh;
+  top: 10vh;
   z-index: var(--stack-index, 1);
   padding-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .project-stack__card {
+    top: 8vh;
+  }
 }
 
 @media (min-width: 768px) {

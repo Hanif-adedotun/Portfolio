@@ -26,7 +26,7 @@ const activePath =
           href={item.path}
           aria-current={isActive ? "page" : undefined}
           class:list={[
-            "px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-150 select-none",
+            "px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium rounded-full transition-all duration-150 select-none",
             isActive
               ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-sm"
               : "text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200",
@@ -40,7 +40,7 @@ const activePath =
 </nav>
 
 <!-- Desktop nav — fixed left, centered vertically -->
-<nav aria-label="Primary" class="hidden lg:block fixed left-7 top-1/2 -translate-y-1/2 z-50">
+<nav aria-label="Primary" class="hidden lg:block fixed left-7 xl:left-10 2xl:left-16 top-1/2 -translate-y-1/2 z-50">
   <div class="flex flex-col gap-6">
     {navItems.map((item) => {
       const isActive = activePath === item.path;
