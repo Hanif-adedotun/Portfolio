@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Intro from "../components/Intro.astro";
 import Footer from "../components/Footer.astro";
 import WorkEntry from "../components/WorkEntry.astro";
+import WhySection from "../components/WhySection.astro";
 import projects from "../data/projects.json";
 import about from "../data/about.json";
 import blogPosts from "../data/blog-posts.json";
@@ -41,6 +42,7 @@ const description = `${about.intro.beforeCompany} ${about.company}${about.intro.
             ))
           }
         </div>
+        <WhySection />
         <p class="mt-10">
           <a
             href="/projects"
