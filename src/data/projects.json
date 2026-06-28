@@ -4,7 +4,7 @@
     "name": ["Neurosync", "https://neurosyncbci.com"],
     "dates": "Nov '24 – present",
     "summary": "Brain–computer interface platform translating EEG signals to device actions. Reinforcement-learning pipeline deployed with Docker; $15,000+ in grant and competition funding.",
-    "banner": "/assets/works/neurosync.jpeg",
+    "banner": "/assets/works/neurosync2.png",
     "videoUrl": "https://youtu.be/0tayJyhvnoE?si=275dnCjibOvrTKdG",
     "featured": true
   },

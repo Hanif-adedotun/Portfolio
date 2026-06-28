@@ -131,7 +131,7 @@
   }
   p {
     text-align: justify;
-    hyphens: auto;
+    hyphens: none;
   }
 }
 
@@ -193,7 +193,7 @@ button:focus-visible {
 }
 
 .work-entry__title {
-  @apply text-base font-medium text-gray-900 dark:text-white;
+  @apply font-medium text-gray-900 dark:text-white;
 }
 
 .work-entry__date {
@@ -265,14 +265,14 @@ button:focus-visible {
 
 .project-stack__card {
   position: sticky;
-  top: 10vh;
+  top: 8dvh; /* dvh tracks dynamic viewport so iOS URL-bar show/hide doesn't jank */
   z-index: var(--stack-index, 1);
   padding-bottom: 0.5rem;
 }
 
 @media (min-width: 640px) {
   .project-stack__card {
-    top: 8vh;
+    top: 6dvh;
   }
 }
 
@@ -287,50 +287,66 @@ button:focus-visible {
 }
 
 @supports (animation-timeline: view()) {
+  /* Pre-composite on GPU before any frame fires */
+  .project-stack__card.is-enter,
+  .project-stack__card.is-exit,
+  .project-stack__card.is-enter.is-exit {
+    will-change: transform, opacity;
+  }
+
+  /*
+   * Enter: card rises from slightly below and scales up from 96% → 100%.
+   * Per-keyframe easing (easeOutExpo) makes it snap to position fast then
+   * decelerate to a natural settle — the scroll drives the timeline linearly
+   * but the easing curve maps that linearly-advancing progress to a
+   * physics-like feel.
+   */
   @keyframes stack-enter {
     0% {
       opacity: 0;
-      transform: translateY(28px);
-    }
-    55% {
-      opacity: 0.75;
-      transform: translateY(6px);
+      transform: translateY(22px) scale(0.96);
+      animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     }
     100% {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
   }
 
+  /*
+   * Exit: card hesitates then flies upward, shrinking to 95%.
+   * easeInCubic (slow-start, fast-end) makes the card appear to resist
+   * briefly before being pulled away — reads as intentional, not mechanical.
+   * Hold the final state from 55 → 100% so the card stays hidden for the
+   * remainder of the animation-range window without any further movement.
+   */
   @keyframes stack-exit {
     0% {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
+      animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
     }
-    22% {
-      opacity: 0.4;
-      transform: translateY(-12px);
-    }
-    50% {
+    55% {
       opacity: 0;
-      transform: translateY(-26px);
+      transform: translateY(-20px) scale(0.95);
     }
     100% {
       opacity: 0;
-      transform: translateY(-32px);
+      transform: translateY(-20px) scale(0.95);
     }
   }
 
+  /* ── Default (mobile-first) ranges ── */
   .project-stack__card.is-enter {
     animation: stack-enter 1 linear both;
     animation-timeline: --stack-step;
-    animation-range: entry 0% cover 48%;
+    animation-range: entry 5% cover 44%;
   }
 
   .project-stack__card.is-exit {
     animation: stack-exit 1 linear both;
     animation-timeline: --stack-step;
-    animation-range: cover 28% exit 68%;
+    animation-range: cover 18% exit 52%;
   }
 
   .project-stack__card.is-enter.is-exit {
@@ -339,10 +355,11 @@ button:focus-visible {
       stack-exit 1 linear both;
     animation-timeline: --stack-step, --stack-step;
     animation-range:
-      entry 0% cover 48%,
-      cover 28% exit 68%;
+      entry 5% cover 44%,
+      cover 18% exit 52%;
   }
 
+  /* ── Tablet and up: looser, more cinematic timing ── */
   @media (min-width: 768px) {
     .project-stack__card.is-enter {
       animation-range: entry 0% cover 55%;
@@ -364,6 +381,7 @@ button:focus-visible {
   .project-stack__card.is-enter,
   .project-stack__card.is-exit,
   .project-stack__card.is-enter.is-exit {
+    will-change: auto;
     animation: none;
   }
 }

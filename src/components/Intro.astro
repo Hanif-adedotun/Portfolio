@@ -16,13 +16,10 @@ const { intro, links } = about;
   <p>
     {intro.sideWork}{" "}
     <a href={intro.neurosyncUrl} class="intro-link">{intro.neurosync}</a>
-    {" "}{intro.afterNeurosync}{" "}
-    <a href={intro.hiroUrl} class="intro-link">{intro.hiro}</a>
-    {intro.end}
   </p>
 
   <p>
-    I write about interesting software concepts on my{" "}
+    I write about software on my{" "}
     <a href={links.blogUrl} class="intro-link inline-flex items-center gap-1">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +38,7 @@ const { intro, links } = about;
         <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
       </svg>
       blog
-    </a> or reach me at{" "}
+    </a>, share thoughts on {" "}
     <a href={links.xUrl} class="intro-link" target="_blank" rel="noopener noreferrer">
       {links.xLabel}
     </a>{" "}
@@ -65,7 +62,7 @@ const { intro, links } = about;
       </svg>
       email
     </a>{" "}
-    or see my code on{" "}
+    and put code on{" "}
     <a
       href={links.githubUrl}
       class="intro-link inline-flex items-center gap-1"

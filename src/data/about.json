@@ -1,18 +1,14 @@
 {
   "name": "Hanif Adedotun",
-  "title": "Lead Software Engineer",
-  "company": "Kontratar",
+  "title": "Software Engineer",
+  "company": "Kontratar,",
   "companyUrl": "https://kontratar.com",
   "intro": {
-    "beforeCompany": "Software Engineer at",
-    "afterCompany": ", where I build AI systems that automate government contract proposals for Fortune 500 clients.",
-    "sideWork": "I also work on brain–computer interfaces at",
+    "beforeCompany": "Lead Software Engineer at",
+    "afterCompany": " where we develop AI-powered workflows to help businesses discover, manage, and win government contracts.",
+    "sideWork": "Outside of work, I research brain computer interfaces at",
     "neurosyncUrl": "https://neurosyncbci.com",
-    "neurosync": "Neurosync",
-    "afterNeurosync": "and independent tools like",
-    "hiroUrl": "https://hiro.hanif.one",
-    "hiro": "Hiro",
-    "end": "."
+    "neurosync": "Neurosync."
   },
   "links": {
     "blogUrl": "https://blog.hanif.one",
@@ -24,9 +20,9 @@
   "why": {
     "title": "Why I do what I do",
     "paragraphs": [
-      "I wrote my first hello world in 2016 and for a long time, I didn't know exactly what I wanted to do, which led me to try a lot of things: graphic design, running my own printing store, and a few other side quests.",
-      "A decade later, one thing has stayed consistent: I get real satisfaction when I spot a problem, have an idea for solving it, and learn whatever skills it takes to bring that idea to life. Done that, for myself, for the government, and for startups  [Interna, Celia, Zynta, and Devtranet.]",
-      "With Neurosync, I get to research on a frontier technology. I do what I do because I wake up every day imagining what the world might look like in another decade—and it excites me that I chose this path."
+      "The future I see doesn't have a screen. Information renders directly; actions happen without reaching for a device. The boundary between thought and action collapses. It is the most inevitable direction of computing, and it's what I think about every day.",
+      "The common thread isn't the domain, it's the question: what's standing between a person and their intent, and can it be eliminated? At Neurosync Labs, that's the device itself, translating brain signals directly into action.",
+      "I came to software engineering through adjacent paths, graphic design, a printing business, experiments that didn't stick. I used to think that made my path unusual. Now I think it's why I build differently: I've had to learn fast, ship things that actually work, and start from zero more than once."
     ]
   }
 }
