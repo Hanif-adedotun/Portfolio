@@ -43,10 +43,13 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-body: lab(73.668 0 0);
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.25rem;
+  --brand: #1dcff6;
+  --selection: rgba(29, 207, 246, 0.32);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -119,49 +122,266 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
-    font-family: "Quicksand", sans-serif;
+    @apply bg-background;
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: lab(73.668 0 0);
+  }
+  p {
+    text-align: justify;
+    hyphens: none;
   }
 }
 
-/* Enhanced animations for better UX */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out both;
-}
-
-.animate-fade-in-delay {
-  animation: fadeInUp 0.6s ease-out 0.2s both;
-}
-
-/* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
 }
 
-/* Better focus states for accessibility */
+::selection {
+  background: var(--selection);
+  color: inherit;
+}
+
+::-moz-selection {
+  background: var(--selection);
+  color: inherit;
+}
+
 a:focus-visible,
 button:focus-visible {
-  @apply outline-2 outline-offset-2 outline-gray-500 dark:outline-gray-400 rounded;
+  @apply outline-2 outline-offset-2 outline-gray-500 dark:outline-gray-400;
+}
+
+.prose-plain p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: lab(73.668 0 0);
+  @apply mb-4;
+}
+
+.prose-plain h2 {
+  @apply font-normal text-gray-900 dark:text-white mt-10 mb-4;
+  font-size: 1.125rem; /* lg on mobile */
+}
+
+@media (min-width: 768px) {
+  .prose-plain h2 {
+    font-size: 1.25rem; /* xl on md+ */
+  }
+}
+
+.prose-plain pre {
+  @apply overflow-x-auto rounded border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-4 text-sm font-mono mb-4;
+}
+
+.prose-plain code {
+  font-family: ui-monospace, "JetBrains Mono", monospace;
+}
+
+.intro-link {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: lab(55 0 0);
+}
+
+.intro-favicon {
+  display: inline-block;
+  vertical-align: -2px;
+}
+
+.work-entry__title {
+  @apply font-medium text-gray-900 dark:text-white;
+}
+
+.work-entry__date {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 14px;
+  color: lab(73.668 0 0);
+}
+
+.work-banner {
+  @apply w-full overflow-hidden rounded-3xl;
+  height: 180px;
+}
+
+.work-banner img {
+  @apply block w-full h-full;
+  object-fit: cover;
+  object-position: left top;
+}
+
+@media (min-width: 640px) {
+  .work-banner {
+    height: 240px;
+  }
+}
+
+@media (min-width: 768px) {
+  .work-banner {
+    height: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .work-banner {
+    height: 340px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .work-banner {
+    height: 380px;
+  }
+}
+
+.work-banner__placeholder {
+  @apply w-full h-full rounded-3xl;
+  background: linear-gradient(
+    135deg,
+    lab(88 0 0) 0%,
+    lab(72 0 0) 50%,
+    lab(58 0 0) 100%
+  );
+}
+
+.dark .work-banner__placeholder {
+  background: linear-gradient(
+    135deg,
+    lab(32 0 0) 0%,
+    lab(24 0 0) 50%,
+    lab(18 0 0) 100%
+  );
+}
+
+/* Projects page — sticky scroll stack */
+.project-stack__step {
+  height: 105dvh;
+  view-timeline-name: --stack-step;
+  view-timeline-axis: block;
+}
+
+.project-stack__card {
+  position: sticky;
+  top: 8dvh; /* dvh tracks dynamic viewport so iOS URL-bar show/hide doesn't jank */
+  z-index: var(--stack-index, 1);
+  padding-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .project-stack__card {
+    top: 6dvh;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-stack__step {
+    height: 120dvh;
+  }
+
+  .project-stack__card {
+    top: clamp(1.5rem, 6vh, 4rem);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  /* Pre-composite on GPU before any frame fires */
+  .project-stack__card.is-enter,
+  .project-stack__card.is-exit,
+  .project-stack__card.is-enter.is-exit {
+    will-change: transform, opacity;
+  }
+
+  /*
+   * Enter: card rises from slightly below and scales up from 96% → 100%.
+   * Per-keyframe easing (easeOutExpo) makes it snap to position fast then
+   * decelerate to a natural settle — the scroll drives the timeline linearly
+   * but the easing curve maps that linearly-advancing progress to a
+   * physics-like feel.
+   */
+  @keyframes stack-enter {
+    0% {
+      opacity: 0;
+      transform: translateY(22px) scale(0.96);
+      animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /*
+   * Exit: card hesitates then flies upward, shrinking to 95%.
+   * easeInCubic (slow-start, fast-end) makes the card appear to resist
+   * briefly before being pulled away — reads as intentional, not mechanical.
+   * Hold the final state from 55 → 100% so the card stays hidden for the
+   * remainder of the animation-range window without any further movement.
+   */
+  @keyframes stack-exit {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+    }
+    55% {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.95);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.95);
+    }
+  }
+
+  /* ── Default (mobile-first) ranges ── */
+  .project-stack__card.is-enter {
+    animation: stack-enter 1 linear both;
+    animation-timeline: --stack-step;
+    animation-range: entry 5% cover 44%;
+  }
+
+  .project-stack__card.is-exit {
+    animation: stack-exit 1 linear both;
+    animation-timeline: --stack-step;
+    animation-range: cover 18% exit 52%;
+  }
+
+  .project-stack__card.is-enter.is-exit {
+    animation:
+      stack-enter 1 linear both,
+      stack-exit 1 linear both;
+    animation-timeline: --stack-step, --stack-step;
+    animation-range:
+      entry 5% cover 44%,
+      cover 18% exit 52%;
+  }
+
+  /* ── Tablet and up: looser, more cinematic timing ── */
+  @media (min-width: 768px) {
+    .project-stack__card.is-enter {
+      animation-range: entry 0% cover 55%;
+    }
+
+    .project-stack__card.is-exit {
+      animation-range: contain 42% exit 78%;
+    }
+
+    .project-stack__card.is-enter.is-exit {
+      animation-range:
+        entry 0% cover 55%,
+        contain 42% exit 78%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-stack__card.is-enter,
+  .project-stack__card.is-exit,
+  .project-stack__card.is-enter.is-exit {
+    will-change: auto;
+    animation: none;
+  }
 }

@@ -1,0 +1,19 @@
+---
+import about from "../data/about.json";
+
+const { why } = about;
+---
+
+<!--
+  Personal narrative after featured work samples.
+  Placed before "View all" so projects provide context, then motivation, then the CTA.
+  Copy lives in about.json; paragraphs kept short and honest per site tone.
+-->
+<section class="mt-16">
+  <h2 class="text-base md:text-xl font-medium text-gray-900 dark:text-white mb-6 md:mb-10">
+    {why.title}
+  </h2>
+  <div class="space-y-4">
+    {why.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+  </div>
+</section>

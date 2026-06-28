@@ -1,7 +1,8 @@
 export interface ParsedContent {
-  type: 'text' | 'code';
+  type: 'text' | 'code' | 'image';
   content: string;
   language?: string;
+  alt?: string;
 }
 
 /**
@@ -18,12 +19,11 @@ export function parseContent(content: string): ParsedContent[] {
 
   // Match code blocks with optional language: ```language\ncode\n```
   // Also handles code blocks without newline after opening: ```languagecode```
-  const codeBlockRegex = /```(\w+)?\s*\n?([\s\S]*?)```/g;
+  const tokenRegex = /```(\w+)?\s*\n?([\s\S]*?)```|!\[([^\]]*)\]\(([^)]+)\)/g;
   let lastIndex = 0;
   let match;
 
-  while ((match = codeBlockRegex.exec(content)) !== null) {
-    // Add text before code block
+  while ((match = tokenRegex.exec(content)) !== null) {
     if (match.index > lastIndex) {
       const textContent = content.substring(lastIndex, match.index);
       if (textContent.trim()) {
@@ -31,12 +31,15 @@ export function parseContent(content: string): ParsedContent[] {
       }
     }
 
-    // Add code block
-    const language = match[1]?.trim() || 'text';
-    const code = match[2]?.trim() || '';
-    parts.push({ type: 'code', content: code, language });
+    if (match[0].startsWith('![')) {
+      parts.push({ type: 'image', alt: match[3] ?? '', content: match[4] ?? '' });
+    } else {
+      const language = match[1]?.trim() || 'text';
+      const code = match[2]?.trim() || '';
+      parts.push({ type: 'code', content: code, language });
+    }
 
-    lastIndex = codeBlockRegex.lastIndex;
+    lastIndex = tokenRegex.lastIndex;
   }
 
   // Add remaining text after last code block
