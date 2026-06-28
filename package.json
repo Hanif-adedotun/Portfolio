@@ -1,7 +1,7 @@
 {
   "name": "mdx-portfolio",
   "type": "module",
-  "version": "0.0.1",
+  "version": "3.1.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -11,24 +11,13 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^2.1.1",
-    "@astrojs/react": "^4.4.2",
-    "@chenglou/pretext": "^0.0.3",
-    "@fontsource/quicksand": "^5.2.10",
-    "@iconify-json/mdi": "^1.2.3",
-    "@radix-ui/react-tabs": "^1.1.13",
+    "@astrojs/react": "4",
+    "@fontsource/inter": "^5.2.8",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^4.3.5",
-    "astro-icon": "^1.1.5",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "framer-motion": "^12.34.3",
-    "lucide-react": "^0.562.0",
-    "motion": "^12.34.3",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "react-snowfall": "^2.4.0",
-    "react-syntax-highlighter": "^16.1.1",
-    "tailwind-merge": "^3.4.0",
+    "motion": "^12.40.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "tailwindcss": "^4.1.18",
     "tailwindcss-animate": "^1.0.7"
   }

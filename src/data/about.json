@@ -1,53 +1,28 @@
 {
-  "old-text": [
-    "Hi! I'm Hanif, a software engineer with about 2+ years of experience.",
-    "I love tinkering with new technologies. I believe every problem has a befitting solution, I just have to spend enough time to figure it out.",
-    "Fastest way to reach me is via X, and then my email above;"
-  ],
-  "old-text-v2": [
-    "Hi! I'm Hanif, a software engineer with about 2+ years of experience.",
-    "I build solutions I find useful. I am constantly bringing ideas to life, and learning new things along the way.",
-    "Fastest way to reach me is via X, and then my email above;"
-  ],
-  "old-text-v3": [
-    "Hello there! 👋 Welcome to my corner of the internet!",
-    "I wrote my first 'hello world' in 2016, and when I realised I could bring ideas to life, I felt like a superhero ever since. I spend most of my time working, and then a better part just building things I wished existed. (Tring to document more this year)",
-    "I build solutions I find useful. I am constantly bringing ideas to life, and learning new things along the way.",
-    "Fastest way to reach me is via X, and then my email above;"
-  ],
-  "text": [
-    {
-      "segments": [
-        {"type": "highlight", "value": "Software Engineer,"},
-        {"type": "text", "value": "with a particular niche in building "},
-        {"type": "link", "value": "thought to actions (BCI) ", "href": "https://neurosyncbci.com"},
-        {"type": "text", "value": " and Agentic systems."}
-      ]
-    },
-    {
-      "segments": [
-        {"type": "text", "value": "It has been almost a "},
-        {"type": "highlight", "value": "decade"},
-        {"type": "text", "value": " of bringing ideas to life, whether by building core production systems or "},
-        {"type": "link", "value": "standing on stages", "href": "https://youtu.be/7wxsJpKAEj4"},
-        {"type": "text", "value": " to show people why a product belongs in their lives."}
-      ]
-    },
-    {
-      "segments": [
-        {"type": "text", "value": "Beyond my day-to-day work, I work on a few "},
-        {"type": "link", "value": "side projects,", "href": "/projects"},
-        {"type": "text", "value": "exploring ideas that are facinating to me."}
-      ]
-    },
-    {
-      "segments": [
-        {"type": "text", "value": "You can reach me on "},
-        {"type": "link", "value": "X (very active here)", "href": "https://x.com/@devhanif"},
-        {"type": "text", "value": " or "},
-        {"type": "link", "value": "via email", "href": "mailto:hey@hanif.one"}
-      ]
-    }
-  ]
+  "name": "Hanif Adedotun",
+  "title": "Software Engineer",
+  "company": "Kontratar,",
+  "companyUrl": "https://kontratar.com",
+  "intro": {
+    "beforeCompany": "Lead Software Engineer at",
+    "afterCompany": " where we develop AI-powered workflows to help businesses discover, manage, and win government contracts.",
+    "sideWork": "Outside of work, I research brain computer interfaces at",
+    "neurosyncUrl": "https://neurosyncbci.com",
+    "neurosync": "Neurosync."
+  },
+  "links": {
+    "blogUrl": "https://blog.hanif.one",
+    "xUrl": "https://x.com/@devhanif",
+    "xLabel": "@devhanif",
+    "email": "hey@hanif.one",
+    "githubUrl": "https://github.com/hanif-adedotun"
+  },
+  "why": {
+    "title": "Why I do what I do",
+    "paragraphs": [
+      "The future I see doesn't have a screen. Information renders directly; actions happen without reaching for a device. The boundary between thought and action collapses. It is the most inevitable direction of computing, and it's what I think about every day.",
+      "The common thread isn't the domain, it's the question: what's standing between a person and their intent, and can it be eliminated? At Neurosync Labs, that's the device itself, translating brain signals directly into action.",
+      "I came to software engineering through adjacent paths, graphic design, a printing business, experiments that didn't stick. I used to think that made my path unusual. Now I think it's why I build differently: I've had to learn fast, ship things that actually work, and start from zero more than once."
+    ]
+  }
 }
-

@@ -1,0 +1,44 @@
+---
+import WorkEntry from "./WorkEntry.astro";
+
+type Project = {
+  name: string[];
+  dates: string;
+  summary: string;
+  banner?: string;
+  videoUrl?: string;
+};
+
+type Props = {
+  projects: Project[];
+};
+
+const { projects } = Astro.props;
+const count = projects.length;
+---
+
+<div class="project-stack">
+  {
+    projects.map((project, index) => (
+      <section class="project-stack__step" aria-label={project.name[0]}>
+        <div
+          class:list={[
+            "project-stack__card",
+            { "is-enter": index > 0 },
+            { "is-exit": index < count - 1 },
+          ]}
+          style={`--stack-index: ${index + 1}`}
+        >
+          <WorkEntry
+            title={project.name[0]}
+            url={project.name[1]}
+            dates={project.dates}
+            summary={project.summary}
+            banner={project.banner}
+            videoUrl={project.videoUrl}
+          />
+        </div>
+      </section>
+    ))
+  }
+</div>

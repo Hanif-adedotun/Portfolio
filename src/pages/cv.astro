@@ -2,52 +2,45 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { Icon } from "astro-icon/components";
+
+const resumeUrl =
+  "https://docs.google.com/document/d/1sC0lsScDSwPbR-SpXfl6cY_rcB67E4sgOdKBeQMlWqc/edit?usp=sharing";
+const academicCvUrl =
+  "https://docs.google.com/document/d/1KSpU9eojLUHrX8ETWiE388v2JlEBDXPFipkClBi-ivc/edit?usp=sharing";
 ---
 
-<Layout 
-  title="Resume - Hanif Adedotun"
-  description="Resume and academic CV of Hanif Adedotun, software engineer and developer."
+<Layout
+  title="CV — Hanif Adedotun"
+  description="Resume and academic CV of Hanif Adedotun."
   canonicalUrl="https://hanif.one/cv"
 >
-  <div class="min-h-screen p-6 max-w-4xl mx-auto">
+  <div class="min-h-screen px-6 pt-10 md:pt-16 lg:pt-[18vh] pb-6 max-w-2xl mx-auto">
     <Header />
 
-    <main class="space-y-12 mt-8">
-      <section class="animate-fade-in-up">
-        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-8">
-          Resume
-        </h1>
-        <div class="space-y-6">
-          <div 
-            class="transition-all duration-300 hover:translate-x-1"
-            style="animation: fadeInUp 0.5s ease-out 100ms both"
-          >
+    <main class="mt-4">
+      <section>
+        <h1 class="text-lg text-gray-900 dark:text-white mb-6">CV</h1>
+        <div class="space-y-3 text-base">
+          <p>
             <a
-             href="https://docs.google.com/document/d/1sC0lsScDSwPbR-SpXfl6cY_rcB67E4sgOdKBeQMlWqc/edit?usp=sharing"
-             
+              href={resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-base text-gray-900 dark:text-white hover:text-contrast transition-all duration-300 underline group"
+              class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
             >
               Resume
-              <Icon name="mdi:download" class="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
             </a>
-          </div>
-          <div 
-            class="transition-all duration-300 hover:translate-x-1"
-            style="animation: fadeInUp 0.5s ease-out 200ms both"
-          >
+          </p>
+          <p>
             <a
-              href="https://docs.google.com/document/d/1KSpU9eojLUHrX8ETWiE388v2JlEBDXPFipkClBi-ivc/edit?usp=sharing"
+              href={academicCvUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-base text-gray-900 dark:text-white hover:text-contrast transition-all duration-300 underline group"
+              class="underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600"
             >
               Academic CV
-              <Icon name="mdi:download" class="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
             </a>
-          </div>
+          </p>
         </div>
       </section>
     </main>

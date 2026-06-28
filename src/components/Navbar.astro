@@ -1,9 +1,77 @@
 ---
-import NavbarTabs from "./NavbarTabs";
-
 const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { name: "Home", path: "/" },
+  { name: "Writing", path: "/blog" },
+  { name: "Work", path: "/projects" },
+  { name: "Papers", path: "/publications" },
+  { name: "CV", path: "/cv" },
+];
+
+const activePath =
+  currentPath === "/"
+    ? "/"
+    : navItems.find((item) => item.path !== "/" && currentPath.startsWith(item.path))
+        ?.path ?? "/";
 ---
 
-<nav class="text-base animate-fade-in">
-  <NavbarTabs currentPath={currentPath} client:load />
+<!-- Mobile / tablet nav -->
+<nav aria-label="Primary" class="lg:hidden">
+  <div class="inline-flex items-center gap-0.5 p-1 bg-white/70 dark:bg-white/[0.04] backdrop-blur border border-gray-200/80 dark:border-white/[0.08] rounded-full shadow-sm shadow-gray-200/60 dark:shadow-none">
+    {navItems.map((item) => {
+      const isActive = activePath === item.path;
+      return (
+        <a
+          href={item.path}
+          aria-current={isActive ? "page" : undefined}
+          class:list={[
+            "px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-medium rounded-full transition-all duration-150 select-none",
+            isActive
+              ? "bg-gray-900 dark:bg-white text-white dark:text-gray-900 shadow-sm"
+              : "text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200",
+          ]}
+        >
+          {item.name}
+        </a>
+      );
+    })}
+  </div>
+</nav>
+
+<!-- Desktop nav — fixed left, centered vertically -->
+<nav aria-label="Primary" class="hidden lg:block fixed left-7 xl:left-10 2xl:left-16 top-1/2 -translate-y-1/2 z-50">
+  <div class="flex flex-col gap-6">
+    {navItems.map((item) => {
+      const isActive = activePath === item.path;
+      return (
+        <a
+          href={item.path}
+          aria-current={isActive ? "page" : undefined}
+          class="group flex items-center gap-3 transition-transform duration-200 ease-out hover:translate-x-1.5 focus-visible:translate-x-1.5 motion-reduce:transition-none motion-reduce:hover:translate-x-0 motion-reduce:focus-visible:translate-x-0"
+        >
+          <!-- Notch dot -->
+          <div
+            class:list={[
+              "relative z-10 w-3 h-3 shrink-0 rounded-full border-2 transition-all duration-200",
+              isActive
+                ? "bg-gray-900 dark:bg-white border-gray-900 dark:border-white scale-110"
+                : "bg-[#F8F9FC] dark:bg-[#0D1117] border-gray-300 dark:border-gray-600 group-hover:border-gray-500 dark:group-hover:border-gray-400",
+            ]}
+          />
+          <!-- Label -->
+          <span
+            class:list={[
+              "text-[11px] tracking-wide leading-none whitespace-nowrap transition-colors duration-150",
+              isActive
+                ? "text-gray-900 dark:text-white font-medium"
+                : "text-gray-400 dark:text-gray-500 group-hover:text-gray-700 dark:group-hover:text-gray-300",
+            ]}
+          >
+            {item.name}
+          </span>
+        </a>
+      );
+    })}
+  </div>
 </nav>

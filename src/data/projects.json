@@ -1,66 +1,70 @@
 [
   {
+    "img": "Neurosync",
+    "name": ["Neurosync", "https://neurosyncbci.com"],
+    "dates": "Nov '24 – present",
+    "summary": "Brain–computer interface platform translating EEG signals to device actions. Reinforcement-learning pipeline deployed with Docker; $15,000+ in grant and competition funding.",
+    "banner": "/assets/works/neurosync2.png",
+    "videoUrl": "https://youtu.be/0tayJyhvnoE?si=275dnCjibOvrTKdG",
+    "featured": true
+  },
+  {
+    "img": "Brief",
+    "name": ["Brief", "https://brief.hanif.one"],
+    "dates": "Jun '26",
+    "summary": "AI powered tool to extract follow ups from tasks across multiple work platforms (Slack, Jira, Github etc)",
+    "banner": "/assets/works/brief.jpg",
+    "featured": true
+  },
+  {
     "img": "Reposizer",
-    "name": ["Reposizer", "https://github.com/Hanif-adedotun/reposizer"],
-    "summary": "npm package that shows you the github repositories before cloning them.",
-    "tools": ["npm", "typescript", "github api"],
-    "videoUrl": "https://youtu.be/P-tUOC_ac3g"
+    "name": ["Reposizer", "https://reposizer.hanif.one/"],
+    "dates": "May '26",
+    "summary": "A node package to inspect GitHub repositories before cloning. Just run `npx reposizer <repo-url>` to get a report of the repository.",
+    "banner": "/assets/works/reposizer.jpg",
+    "videoUrl": "https://youtu.be/P-tUOC_ac3g?si=DT099D8HvBvg_xbG",
+    "featured": true
   },
-  {
-    "img": "Vaul",
-    "name": ["Vaul", "https://vaul.hanif.one"],
-    "summary": "A native desktop application to manage terminal commands easily",
-    "banner": "https://github.com/Hanif-adedotun/vaul/blob/main/preview3.jpg?raw=true",
-    "tools": ["Go", "Wails"]
-  },
-
-
-  {
-    "img": "Mirusync",
-    "name": ["Mirusync", "https://github.com/Hanif-adedotun/mirusync"],
-    "summary": "A cli-based dual way folder sync engine built to keep track of files across multiple devices.",
-    "videoUrl": "https://youtu.be/yn-YS8IBxFU",
-    "tools": ["go", "Resync API"]
-  },
-
   {
     "img": "Hiro",
     "name": ["Hiro", "https://hiro.hanif.one"],
-    "summary": "An AI observability agent designed that manages and generates test coverage for your codebase.",
-    "tools": ["Python", "LangChain", "Astro"]
+    "dates": "Aug '25",
+    "summary": "AI observability agent that generates and manages unit test coverage for production codebases. Reduced test generation to ~60 seconds per repository.",
+    "banner": "/assets/works/hiro.png",
+    "featured": true
   },
+
   {
     "img": "MapTheGap",
     "name": ["Map the Gap", "https://github.com/Hanif-adedotun/codefest-health-app"],
-    "summary": "Assessment tool estimating risk of chronic disease based on personal and neighborhood factors, with personalized recommendations.",
-    "tools": ["python", "typescript", "fastapi"],
+    "dates": "Apr '26",
+    "summary": "Chronic disease risk assessment from personal and neighborhood factors; personalized recommendations.",
+    "banner": "/assets/works/mapthegap.png",
     "videoUrl": "https://youtu.be/3OALMweizhI"
   },
+
   {
-    "img": "Headline Agent",
-    "name": ["Headline Agent", "https://github.com/Hanif-adedotun/ML-Series/tree/main/HEADLINE-AGENT"],
-    "summary": "An AI agent that fetches the latest technology news headlines and allows users to send them via email with custom credentials.",
-    "tools": ["Python", "LangGraph", "Streamlit"]
+    "img": "Vaul",
+    "name": ["Vaul", "https://vaul.hanif.one"],
+    "dates": "Jan '26",
+    "summary": "Native desktop application for managing and reusing terminal commands (Go, Wails).",
+    "banner": "/assets/works/vaul.jpg"
   },
-  
   {
-    "img": "VM",
-    "name": ["Voltex Middleware", "https://github.com/Hanif-adedotun/Nodejs/tree/master/voltex_react-app"],
-    "summary": "Automatically spin off production ready forms for your static frontend applications",
-    "tools": ["Nodejs", "React", "Bootstrap"]
-  },  {
+    "img": "Mirusync",
+    "name": ["Mirusync", "https://github.com/Hanif-adedotun/mirusync"],
+    "dates": "Feb '26",
+    "summary": "CLI dual-direction folder sync across devices.",
+    "banner": "/assets/works/mirusync.png",
+    "videoUrl": "https://youtu.be/yn-YS8IBxFU"
+  },
+  {
     "img": "Interna",
     "name": ["Interna", "https://getinterna.com"],
-    "notMaintained": true,
-    "summary": "A platform for students to find internships and for companies to find interns.",
-    "tools": ["Nextjs", "Vercel", "GCP"]
-  },
-  {
-    "img": "StartVest",
-    "name": ["StartVest", "https://startvest.io"],
-    "notMaintained": true,
-    "summary": "StartVest is an equity crowdfunding platform that allows people with creative ideas to register and get funded. We provide everyone the option to invest in startups.",
-    "tools": ["Bootstrap", "Django", "Firebase"]
+    "dates": "Mar '21 – Dec '23",
+    "summary": "Founded a startup bridging students to internship opportunities, we placed 20+ students, attracted over 4,000+ visitors, and won multiple hackathons (including the PAADC national prize) before gracefully winding down operations.",
+    "banner": "/assets/works/interna.png",
+    "featured": true,
+    "archived": true
   }
 ]
-
