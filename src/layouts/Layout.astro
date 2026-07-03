@@ -1,7 +1,5 @@
 ---
 import "../styles/global.css";
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/500.css";
 
 interface Props {
   title: string;
@@ -46,6 +44,13 @@ const ogImage = image.startsWith("http") ? image : new URL(image, site).href;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={currentUrl} />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
     <meta property="og:type" content={type} />
     <meta property="og:url" content={currentUrl} />
     <meta property="og:title" content={title} />
@@ -82,7 +87,7 @@ const ogImage = image.startsWith("http") ? image : new URL(image, site).href;
 
 <style is:global>
   html {
-    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
   }
 
   * {
