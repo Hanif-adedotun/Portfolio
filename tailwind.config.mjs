@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Quicksand', 'sans-serif'],
-        mono: ['Quicksand', 'sans-serif'],
+        sans: ['Instrument Sans', 'sans-serif'],
+        mono: ['Instrument Sans', 'sans-serif'],
       },
       colors: {
         contrast: '#1DCFF6',
