@@ -13,6 +13,15 @@ type Props = {
 
 const { projects } = Astro.props;
 const count = projects.length;
+
+/*
+  Folder top path in viewBox 0 0 1000 44 (y grows downward):
+  string → rise → tab top → diagonal → run
+  Corners use quadratic curves so the tab reads soft, not hard-angled.
+  Title sits in the raised tab (x ≈ 56–388).
+*/
+const FOLDER_PATH =
+  "M0 42 H24 Q40 42 40 26 V14 Q40 2 56 2 H384 Q400 2 414 12 L454 34 Q470 42 486 42 H1000";
 ---
 
 <div
@@ -38,6 +47,19 @@ const count = projects.length;
             ]}
           >
             <header class="project-stack__tab">
+              {/*
+                Single continuous border stroke:
+                string line → folder tab → diagonal angle → run to the end.
+              */}
+              <svg
+                class="project-stack__outline"
+                viewBox="0 0 1000 44"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path d={FOLDER_PATH} />
+              </svg>
+
               <a
                 href={project.name[1]}
                 target="_blank"
@@ -46,6 +68,7 @@ const count = projects.length;
               >
                 {project.name[0]}
               </a>
+
               <span class="project-stack__date">{project.dates}</span>
             </header>
 
