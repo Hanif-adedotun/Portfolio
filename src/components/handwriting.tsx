@@ -5,6 +5,7 @@ import {
   type Easing,
   motion,
   type SVGMotionProps,
+  useReducedMotion,
   type Variants,
 } from 'motion/react'
 import { cn } from '@/lib/utils'
@@ -19,9 +20,9 @@ export const SIGNATURE_OPTIONS = [
 
 export type SignatureOption = (typeof SIGNATURE_OPTIONS)[number]
 
-const PATH_DURATION = 0.5
-const PATH_STAGGER_DELAY = 0.2
-const PATH_EASING: Easing = [0.4, 0, 0.2, 1]
+const PATH_DURATION = 0.35
+const PATH_STAGGER_DELAY = 0.06
+const PATH_EASING: Easing = [0.23, 1, 0.32, 1]
 
 interface ParsedSignature {
   viewBox: string
@@ -54,7 +55,20 @@ const container: Variants = {
   animate: {},
 }
 
-function createDrawVariant(index: number): Variants {
+function createDrawVariant(index: number, reduceMotion: boolean): Variants {
+  if (reduceMotion) {
+    return {
+      initial: {
+        opacity: 1,
+        pathLength: 1,
+      },
+      animate: {
+        opacity: 1,
+        pathLength: 1,
+      },
+    }
+  }
+
   const delay = index * PATH_STAGGER_DELAY
   return {
     initial: {
@@ -98,6 +112,7 @@ export const Signature = ({
   style,
   ...props
 }: SignatureProps) => {
+  const shouldReduceMotion = useReducedMotion()
   const [data, setData] = useState<ParsedSignature | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
@@ -162,6 +177,7 @@ export const Signature = ({
 
   const { viewBox, paths } = data
   const defaultSvgClass = sizeClass ? '' : 'h-auto w-full'
+  const reduceMotion = shouldReduceMotion === true
 
   return (
     <motion.svg
@@ -188,7 +204,7 @@ export const Signature = ({
           key={index}
           d={d}
           strokeWidth="2"
-          variants={createDrawVariant(index)}
+          variants={createDrawVariant(index, reduceMotion)}
         />
       ))}
       {paths.map((d, index) => (

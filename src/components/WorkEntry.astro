@@ -28,7 +28,7 @@ const { title, url, dates, summary, banner, videoUrl } = Astro.props;
             href={videoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-1 shrink-0 rounded-full border border-gray-200 dark:border-gray-700 px-2 py-0.5 text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            class="demo-chip inline-flex items-center gap-1 shrink-0 rounded-full border border-gray-200 dark:border-gray-700 px-2 py-0.5 text-xs text-gray-600 dark:text-gray-400"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -69,3 +69,35 @@ const { title, url, dates, summary, banner, videoUrl } = Astro.props;
     }
   </div>
 </article>
+
+<style>
+  .demo-chip {
+    transition:
+      color 150ms ease,
+      transform 160ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1));
+  }
+
+  .demo-chip:active {
+    transform: scale(0.97);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .demo-chip:hover {
+      color: #111827; /* gray-900 */
+    }
+
+    :global(.dark) .demo-chip:hover {
+      color: #fff;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .demo-chip {
+      transition: color 150ms ease;
+    }
+
+    .demo-chip:active {
+      transform: none;
+    }
+  }
+</style>

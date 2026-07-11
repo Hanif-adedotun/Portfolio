@@ -57,6 +57,8 @@
   --radius: 0.25rem;
   --brand: #1dcff6;
   --selection: rgba(29, 207, 246, 0.32);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -142,8 +144,16 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 ::selection {
@@ -263,55 +273,134 @@ button:focus-visible {
   );
 }
 
-/* Projects page — sticky scroll stack */
-.project-stack__step {
-  height: 105dvh;
-  view-timeline-name: --stack-step;
-  view-timeline-axis: block;
+/* Projects page — folder-tab sticky stack
+ *
+ * All cards share one sticky containing block (.project-stack). Spacers
+ * between cards create scroll room. Each card sticks at a progressive top
+ * offset so earlier projects remain as compact title tabs while the active
+ * card stays fully readable underneath the stack.
+ */
+.project-stack {
+  --tab-h: 2.75rem;
+  --stack-base: 0.25rem;
+  /* Cap visible tab depth so ~390px viewports keep room for the active card */
+  --stack-cap: 3;
+  --stack-bg: #f8f9fc;
+  position: relative;
+}
+
+.dark .project-stack {
+  --stack-bg: #0d1117;
 }
 
 .project-stack__card {
   position: sticky;
-  top: 8dvh; /* dvh tracks dynamic viewport so iOS URL-bar show/hide doesn't jank */
-  z-index: var(--stack-index, 1);
-  padding-bottom: 0.5rem;
+  top: calc(
+    var(--stack-base) +
+      min(var(--stack-index), var(--stack-cap)) * var(--tab-h)
+  );
+  z-index: calc(var(--stack-index) + 1);
+  /* No transform here — it would break sticky */
+}
+
+.project-stack__shell {
+  background: var(--stack-bg);
+  padding-bottom: 1.25rem;
+  margin-inline: -0.25rem;
+  padding-inline: 0.25rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+  transform-origin: top center;
+}
+
+
+
+.project-stack__tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  height: var(--tab-h);
+  padding-block: 0;
+  background: var(--stack-bg);
+  overflow: hidden;
+}
+
+.project-stack__name {
+  font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.dark .project-stack__name {
+  color: #fff;
+}
+
+.project-stack__date {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8125rem;
+  color: lab(73.668 0 0);
+  flex-shrink: 0;
+}
+
+.project-stack__body {
+  padding-top: 1rem;
+}
+
+.project-stack__spacer {
+  /* Scroll distance before the next card docks into the folder stack */
+  height: 72dvh;
+  pointer-events: none;
 }
 
 @media (min-width: 640px) {
-  .project-stack__card {
-    top: 6dvh;
+  .project-stack {
+    --tab-h: 3rem;
+    --stack-cap: 4;
+  }
+
+  .project-stack__name {
+    font-size: 1.25rem;
+  }
+
+  .project-stack__date {
+    font-size: 0.875rem;
   }
 }
 
 @media (min-width: 768px) {
-  .project-stack__step {
-    height: 120dvh;
+  .project-stack {
+    --stack-base: 0.5rem;
   }
 
-  .project-stack__card {
-    top: clamp(1.5rem, 6vh, 4rem);
+  .project-stack__spacer {
+    height: 85dvh;
   }
 }
 
+/*
+ * Soft enter for cards arriving from below — no exit-to-invisible.
+ * Use forwards (not both): both would apply the 0% keyframe before entry,
+ * leaving upcoming shells at opacity < 1 so prior sticky cards ghost through
+ * on mobile (reads as duplicated headers/content).
+ */
 @supports (animation-timeline: view()) {
-  /* Pre-composite on GPU before any frame fires */
-  .project-stack__card.is-enter,
-  .project-stack__card.is-exit,
-  .project-stack__card.is-enter.is-exit {
+  .project-stack__shell.is-enter {
     will-change: transform, opacity;
+    animation: stack-folder-enter 1 linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
   }
 
-  /*
-   * Enter: card rises from slightly below and scales up from 96% → 100%.
-   * Per-keyframe easing (easeOutExpo) makes it snap to position fast then
-   * decelerate to a natural settle — the scroll drives the timeline linearly
-   * but the easing curve maps that linearly-advancing progress to a
-   * physics-like feel.
-   */
-  @keyframes stack-enter {
+  @keyframes stack-folder-enter {
     0% {
-      opacity: 0;
-      transform: translateY(22px) scale(0.96);
+      opacity: 0.92;
+      transform: translateY(12px) scale(0.99);
       animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     }
     100% {
@@ -319,75 +408,10 @@ button:focus-visible {
       transform: translateY(0) scale(1);
     }
   }
-
-  /*
-   * Exit: card hesitates then flies upward, shrinking to 95%.
-   * easeInCubic (slow-start, fast-end) makes the card appear to resist
-   * briefly before being pulled away — reads as intentional, not mechanical.
-   * Hold the final state from 55 → 100% so the card stays hidden for the
-   * remainder of the animation-range window without any further movement.
-   */
-  @keyframes stack-exit {
-    0% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
-    }
-    55% {
-      opacity: 0;
-      transform: translateY(-20px) scale(0.95);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(-20px) scale(0.95);
-    }
-  }
-
-  /* ── Default (mobile-first) ranges ── */
-  .project-stack__card.is-enter {
-    animation: stack-enter 1 linear both;
-    animation-timeline: --stack-step;
-    animation-range: entry 5% cover 44%;
-  }
-
-  .project-stack__card.is-exit {
-    animation: stack-exit 1 linear both;
-    animation-timeline: --stack-step;
-    animation-range: cover 18% exit 52%;
-  }
-
-  .project-stack__card.is-enter.is-exit {
-    animation:
-      stack-enter 1 linear both,
-      stack-exit 1 linear both;
-    animation-timeline: --stack-step, --stack-step;
-    animation-range:
-      entry 5% cover 44%,
-      cover 18% exit 52%;
-  }
-
-  /* ── Tablet and up: looser, more cinematic timing ── */
-  @media (min-width: 768px) {
-    .project-stack__card.is-enter {
-      animation-range: entry 0% cover 55%;
-    }
-
-    .project-stack__card.is-exit {
-      animation-range: contain 42% exit 78%;
-    }
-
-    .project-stack__card.is-enter.is-exit {
-      animation-range:
-        entry 0% cover 55%,
-        contain 42% exit 78%;
-    }
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .project-stack__card.is-enter,
-  .project-stack__card.is-exit,
-  .project-stack__card.is-enter.is-exit {
+  .project-stack__shell.is-enter {
     will-change: auto;
     animation: none;
   }

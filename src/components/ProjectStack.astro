@@ -1,6 +1,4 @@
 ---
-import WorkEntry from "./WorkEntry.astro";
-
 type Project = {
   name: string[];
   dates: string;
@@ -17,28 +15,124 @@ const { projects } = Astro.props;
 const count = projects.length;
 ---
 
-<div class="project-stack">
+<div
+  class="project-stack"
+  style={`--stack-count: ${count}`}
+>
   {
     projects.map((project, index) => (
-      <section class="project-stack__step" aria-label={project.name[0]}>
-        <div
-          class:list={[
-            "project-stack__card",
-            { "is-enter": index > 0 },
-            { "is-exit": index < count - 1 },
-          ]}
-          style={`--stack-index: ${index + 1}`}
+      <>
+        <article
+          class="project-stack__card"
+          style={`--stack-index: ${index}`}
+          aria-label={project.name[0]}
         >
-          <WorkEntry
-            title={project.name[0]}
-            url={project.name[1]}
-            dates={project.dates}
-            summary={project.summary}
-            banner={project.banner}
-            videoUrl={project.videoUrl}
-          />
-        </div>
-      </section>
+          {/*
+            Transform/opacity live on the shell — never on the sticky card —
+            so position:sticky keeps working across browsers.
+          */}
+          <div
+            class:list={[
+              "project-stack__shell",
+              { "is-enter": index > 0 },
+            ]}
+          >
+            <header class="project-stack__tab">
+              <a
+                href={project.name[1]}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-stack__name hover:underline underline-offset-2"
+              >
+                {project.name[0]}
+              </a>
+              <span class="project-stack__date">{project.dates}</span>
+            </header>
+
+            <div class="project-stack__body">
+              {
+                project.videoUrl && (
+                  <a
+                    href={project.videoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="demo-chip mb-3 inline-flex items-center gap-1 shrink-0 rounded-full border border-gray-200 dark:border-gray-700 px-2 py-0.5 text-xs text-gray-600 dark:text-gray-400"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="#FF0000"
+                      class="shrink-0"
+                      aria-hidden="true"
+                    >
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                    View demo
+                  </a>
+                )
+              }
+              <p class="mb-6">{project.summary}</p>
+
+              <div class="work-banner">
+                {project.banner ? (
+                  <>
+                    <img
+                      src={project.banner}
+                      alt={`${project.name[0]} preview`}
+                      loading="lazy"
+                      onerror="this.style.display='none'; this.nextElementSibling?.classList.remove('hidden')"
+                    />
+                    <div
+                      class="work-banner__placeholder hidden"
+                      aria-hidden="true"
+                    />
+                  </>
+                ) : (
+                  <div class="work-banner__placeholder" aria-hidden="true" />
+                )}
+              </div>
+            </div>
+          </div>
+        </article>
+
+        {index < count - 1 && (
+          <div class="project-stack__spacer" aria-hidden="true" />
+        )}
+      </>
     ))
   }
 </div>
+
+<style>
+  .demo-chip {
+    transition:
+      color 150ms ease,
+      transform 160ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1));
+  }
+
+  .demo-chip:active {
+    transform: scale(0.97);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .demo-chip:hover {
+      color: #111827;
+    }
+
+    :global(.dark) .demo-chip:hover {
+      color: #fff;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .demo-chip {
+      transition: color 150ms ease;
+    }
+
+    .demo-chip:active {
+      transform: none;
+    }
+  }
+</style>
