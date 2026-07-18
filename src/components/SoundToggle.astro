@@ -1,0 +1,149 @@
+<button
+  type="button"
+  class="sound-toggle"
+  data-sound-toggle
+  aria-label="Mute interaction sounds"
+  aria-pressed="true"
+  title="Mute interaction sounds"
+>
+  <span class="sound-toggle__glyph" aria-hidden="true">
+    <svg class="sound-toggle__on" viewBox="0 0 20 20">
+      <path d="M3 8v4h3l4 3.2V4.8L6 8H3Z" />
+      <path d="M13 7.1c.7.7 1 1.7 1 2.9s-.3 2.2-1 2.9M15.3 5c1.2 1.3 1.8 3 1.8 5s-.6 3.7-1.8 5" />
+    </svg>
+    <svg class="sound-toggle__off" viewBox="0 0 20 20">
+      <path d="M3 8v4h3l4 3.2V4.8L6 8H3Z" />
+      <path d="m13.2 8 3.2 4M16.4 8l-3.2 4" />
+    </svg>
+  </span>
+  <span>Sound</span>
+</button>
+
+<script>
+  import { play, setEnabled } from "cuelume";
+  import {
+    getSoundEnabled,
+    saveSoundEnabled,
+  } from "../lib/sound-preference";
+
+  const toggles =
+    document.querySelectorAll<HTMLButtonElement>("[data-sound-toggle]");
+
+  function render(enabled: boolean) {
+    document.documentElement.dataset.sound = enabled ? "on" : "off";
+
+    toggles.forEach((toggle) => {
+      const action = enabled ? "Mute" : "Enable";
+      toggle.setAttribute("aria-pressed", String(enabled));
+      toggle.setAttribute("aria-label", `${action} interaction sounds`);
+      toggle.title = `${action} interaction sounds`;
+    });
+  }
+
+  let enabled = getSoundEnabled();
+  setEnabled(enabled);
+  render(enabled);
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      enabled = !enabled;
+
+      if (enabled) {
+        setEnabled(true);
+        play("ready");
+      } else {
+        play("toggle");
+        setEnabled(false);
+      }
+
+      saveSoundEnabled(enabled);
+      render(enabled);
+    });
+  });
+</script>
+
+<style>
+  .sound-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+    min-height: 2rem;
+    padding: 0.3rem 0.65rem 0.3rem 0.5rem;
+    border: 1px solid rgb(209 213 219 / 0.8);
+    border-radius: 999px;
+    color: #6b7280;
+    background: rgb(255 255 255 / 0.56);
+    font-size: 0.6875rem;
+    line-height: 1;
+    letter-spacing: 0.025em;
+    backdrop-filter: blur(12px);
+    transition:
+      color 150ms ease,
+      border-color 150ms ease,
+      background-color 150ms ease,
+      transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  :global(.dark) .sound-toggle {
+    border-color: rgb(255 255 255 / 0.1);
+    color: #9ca3af;
+    background: rgb(255 255 255 / 0.035);
+  }
+
+  .sound-toggle:hover {
+    color: #111827;
+    border-color: rgb(156 163 175 / 0.9);
+  }
+
+  :global(.dark) .sound-toggle:hover {
+    color: #f3f4f6;
+    border-color: rgb(255 255 255 / 0.2);
+  }
+
+  .sound-toggle:active {
+    transform: scale(0.96);
+  }
+
+  .sound-toggle:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  .sound-toggle__glyph {
+    display: grid;
+    width: 1rem;
+    height: 1rem;
+    place-items: center;
+  }
+
+  .sound-toggle svg {
+    grid-area: 1 / 1;
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 1.35;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .sound-toggle__off,
+  :global(html[data-sound="off"]) .sound-toggle__on {
+    display: none;
+  }
+
+  :global(html[data-sound="off"]) .sound-toggle__off {
+    display: block;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sound-toggle {
+      transition: none;
+    }
+
+    .sound-toggle:active {
+      transform: none;
+    }
+  }
+</style>

@@ -79,6 +79,8 @@ const FOLDER_PATH =
                     href={project.videoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-cuelume-press="press"
+                    data-cuelume-release="release"
                     class="demo-chip mb-3 inline-flex items-center gap-1 shrink-0 rounded-full border border-gray-200 dark:border-gray-700 px-2 py-0.5 text-xs text-gray-600 dark:text-gray-400"
                   >
                     <svg
@@ -127,6 +129,41 @@ const FOLDER_PATH =
     ))
   }
 </div>
+
+<script>
+  import { play } from "cuelume";
+
+  const cards = document.querySelectorAll<HTMLElement>(".project-stack__card");
+  let hasScrolled = false;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      hasScrolled = true;
+    },
+    { passive: true, once: true },
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+
+        const card = entry.target as HTMLElement;
+        if (card.dataset.cuelumeSeen === "true") continue;
+
+        card.dataset.cuelumeSeen = "true";
+        if (hasScrolled) play("whisper");
+      }
+    },
+    {
+      threshold: 0,
+      rootMargin: "-35% 0px -35% 0px",
+    },
+  );
+
+  cards.forEach((card) => observer.observe(card));
+</script>
 
 <style>
   .demo-chip {
