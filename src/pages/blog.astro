@@ -39,7 +39,11 @@ import blogPosts from "../data/blog-posts.json";
                 data-intro={post.intro.toLowerCase()}
                 class="blog-post border-b border-gray-200 dark:border-gray-800 pb-6 last:border-0"
               >
-                <a href={`/blog/${post.slug}`} class="block">
+                <a
+                  href={`/blog/${post.slug}`}
+                  data-cuelume-hover="whisper"
+                  class="block"
+                >
                   <h2 class="text-base text-gray-900 dark:text-white mb-2 underline underline-offset-2 decoration-gray-400 dark:decoration-gray-600">
                     {post.title}
                   </h2>

@@ -57,6 +57,8 @@
   --radius: 0.25rem;
   --brand: #1dcff6;
   --selection: rgba(29, 207, 246, 0.32);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -142,8 +144,16 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 ::selection {
@@ -263,55 +273,180 @@ button:focus-visible {
   );
 }
 
-/* Projects page — sticky scroll stack */
-.project-stack__step {
-  height: 105dvh;
-  view-timeline-name: --stack-step;
-  view-timeline-axis: block;
+/* Projects page — folder-tab sticky stack
+ *
+ * All cards share one sticky containing block (.project-stack). Spacers
+ * between cards create scroll room. Each card sticks at a progressive top
+ * offset so earlier projects remain as compact title tabs while the active
+ * card stays fully readable underneath the stack.
+ *
+ * Top edge is one continuous SVG stroke:
+ * string line → raised tab → diagonal angle → run to the end.
+ */
+.project-stack {
+  --tab-h: 2.75rem;
+  --stack-base: 0.25rem;
+  /* Cap visible tab depth so ~390px viewports keep room for the active card */
+  --stack-cap: 3;
+  --stack-bg: #f8f9fc;
+  /* Light theme-matching folder outline */
+  --folder-line: color-mix(in oklab, #1f2937 18%, transparent);
+  /* Title sits inside the raised bump of the path (viewBox 1000×44) */
+  --folder-label-left: 5.5%;
+  --folder-label-width: 36%;
+  position: relative;
+}
+
+.dark .project-stack {
+  --stack-bg: #0d1117;
+  --folder-line: color-mix(in oklab, #fff 22%, transparent);
 }
 
 .project-stack__card {
   position: sticky;
-  top: 8dvh; /* dvh tracks dynamic viewport so iOS URL-bar show/hide doesn't jank */
-  z-index: var(--stack-index, 1);
-  padding-bottom: 0.5rem;
+  top: calc(
+    var(--stack-base) +
+      min(var(--stack-index), var(--stack-cap)) * var(--tab-h)
+  );
+  z-index: calc(var(--stack-index) + 1);
+  /* No transform here — it would break sticky */
+}
+
+.project-stack__shell {
+  background: var(--stack-bg);
+  padding-bottom: 1.25rem;
+  margin-inline: -0.25rem;
+  padding-inline: 0.25rem;
+  transform-origin: top center;
+  /* Depth between stacked folders — soft lift, not a hard edge */
+  box-shadow: 0 -10px 28px -12px color-mix(in oklab, #000 14%, transparent);
+}
+
+.dark .project-stack__shell {
+  box-shadow: 0 -12px 32px -12px color-mix(in oklab, #000 55%, transparent);
+}
+
+.project-stack__tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: var(--tab-h);
+  padding-block: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+/* Single continuous folder outline stroke */
+.project-stack__outline {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  color: var(--folder-line);
+}
+
+.project-stack__outline path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.project-stack__name {
+  position: absolute;
+  left: var(--folder-label-left);
+  width: var(--folder-label-width);
+  top: 0;
+  bottom: 0.35rem;
+  z-index: 1;
+  display: block;
+  font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;
+  line-height: var(--tab-h);
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  padding-inline: 0.45rem 0.35rem;
+}
+
+.dark .project-stack__name {
+  color: #fff;
+}
+
+.project-stack__date {
+  position: relative;
+  z-index: 1;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.8125rem;
+  color: lab(73.668 0 0);
+  flex-shrink: 0;
+  padding-inline: 0.5rem 0.15rem;
+  line-height: 1;
+  /* Sit on the run, clear of the diagonal (~36% of viewBox) */
+  margin-left: max(40%, 12rem);
+}
+
+.project-stack__body {
+  padding-top: 1rem;
+}
+
+.project-stack__spacer {
+  /* Scroll distance before the next card docks into the folder stack */
+  height: 72dvh;
+  pointer-events: none;
 }
 
 @media (min-width: 640px) {
-  .project-stack__card {
-    top: 6dvh;
+  .project-stack {
+    --tab-h: 3rem;
+    --stack-cap: 4;
+  }
+
+  .project-stack__name {
+    font-size: 1.25rem;
+  }
+
+  .project-stack__date {
+    font-size: 0.875rem;
   }
 }
 
 @media (min-width: 768px) {
-  .project-stack__step {
-    height: 120dvh;
+  .project-stack {
+    --stack-base: 0.5rem;
   }
 
-  .project-stack__card {
-    top: clamp(1.5rem, 6vh, 4rem);
+  .project-stack__spacer {
+    height: 85dvh;
   }
 }
 
+/*
+ * Soft enter for cards arriving from below — no exit-to-invisible.
+ * Use forwards (not both): both would apply the 0% keyframe before entry,
+ * leaving upcoming shells at opacity < 1 so prior sticky cards ghost through
+ * on mobile (reads as duplicated headers/content).
+ */
 @supports (animation-timeline: view()) {
-  /* Pre-composite on GPU before any frame fires */
-  .project-stack__card.is-enter,
-  .project-stack__card.is-exit,
-  .project-stack__card.is-enter.is-exit {
+  .project-stack__shell.is-enter {
     will-change: transform, opacity;
+    animation: stack-folder-enter 1 linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
   }
 
-  /*
-   * Enter: card rises from slightly below and scales up from 96% → 100%.
-   * Per-keyframe easing (easeOutExpo) makes it snap to position fast then
-   * decelerate to a natural settle — the scroll drives the timeline linearly
-   * but the easing curve maps that linearly-advancing progress to a
-   * physics-like feel.
-   */
-  @keyframes stack-enter {
+  @keyframes stack-folder-enter {
     0% {
-      opacity: 0;
-      transform: translateY(22px) scale(0.96);
+      opacity: 0.92;
+      transform: translateY(12px) scale(0.99);
       animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     }
     100% {
@@ -319,75 +454,10 @@ button:focus-visible {
       transform: translateY(0) scale(1);
     }
   }
-
-  /*
-   * Exit: card hesitates then flies upward, shrinking to 95%.
-   * easeInCubic (slow-start, fast-end) makes the card appear to resist
-   * briefly before being pulled away — reads as intentional, not mechanical.
-   * Hold the final state from 55 → 100% so the card stays hidden for the
-   * remainder of the animation-range window without any further movement.
-   */
-  @keyframes stack-exit {
-    0% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
-    }
-    55% {
-      opacity: 0;
-      transform: translateY(-20px) scale(0.95);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(-20px) scale(0.95);
-    }
-  }
-
-  /* ── Default (mobile-first) ranges ── */
-  .project-stack__card.is-enter {
-    animation: stack-enter 1 linear both;
-    animation-timeline: --stack-step;
-    animation-range: entry 5% cover 44%;
-  }
-
-  .project-stack__card.is-exit {
-    animation: stack-exit 1 linear both;
-    animation-timeline: --stack-step;
-    animation-range: cover 18% exit 52%;
-  }
-
-  .project-stack__card.is-enter.is-exit {
-    animation:
-      stack-enter 1 linear both,
-      stack-exit 1 linear both;
-    animation-timeline: --stack-step, --stack-step;
-    animation-range:
-      entry 5% cover 44%,
-      cover 18% exit 52%;
-  }
-
-  /* ── Tablet and up: looser, more cinematic timing ── */
-  @media (min-width: 768px) {
-    .project-stack__card.is-enter {
-      animation-range: entry 0% cover 55%;
-    }
-
-    .project-stack__card.is-exit {
-      animation-range: contain 42% exit 78%;
-    }
-
-    .project-stack__card.is-enter.is-exit {
-      animation-range:
-        entry 0% cover 55%,
-        contain 42% exit 78%;
-    }
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .project-stack__card.is-enter,
-  .project-stack__card.is-exit,
-  .project-stack__card.is-enter.is-exit {
+  .project-stack__shell.is-enter {
     will-change: auto;
     animation: none;
   }

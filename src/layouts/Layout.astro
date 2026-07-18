@@ -85,6 +85,16 @@ const ogImage = image.startsWith("http") ? image : new URL(image, site).href;
   </body>
 </html>
 
+<script>
+  import { bind, setEnabled } from "cuelume";
+  import { getSoundEnabled } from "../lib/sound-preference";
+
+  const enabled = getSoundEnabled();
+  setEnabled(enabled);
+  document.documentElement.dataset.sound = enabled ? "on" : "off";
+  bind();
+</script>
+
 <style is:global>
   html {
     font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
