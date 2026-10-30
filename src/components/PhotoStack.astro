@@ -81,7 +81,7 @@ const total = items.length;
 
       <div class="photo-descriptions" aria-live="polite" aria-atomic="true">
         {items.map((photo, index) => (
-          <div class="photo-description" hidden={index !== 0}>
+          <div class="photo-description text-center" hidden={index !== 0}>
             <span>{photo.description}</span>
             {photo.link && (
               <a href={photo.link.url} class="intro-link">
@@ -92,7 +92,7 @@ const total = items.length;
         ))}
       </div>
 
-      {total > 1 && <p class="photo-hint">Swipe or use the arrows to explore</p>}
+      {/* {total > 1 && <p class="photo-hint">Swipe or use the arrows to explore</p>} */}
     </section>
   )
 }

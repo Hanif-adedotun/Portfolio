@@ -3,24 +3,25 @@
     "src": "/assets/pics/interna_2022.jpg",
     "alt": "Hackathon winner 2022",
     "caption": "Interna 2022",
-    "description": "Placeholder description. Replace with the story behind this photo."
-  },
-  {
-    "src": "/assets/pics/neurosync_2023.jpeg",
-    "alt": "Neurosync 2023",
-    "caption": "Neurosync 2023",
-    "description": "Placeholder description. Replace with the story behind this photo."
-  },
-  {
-    "src": "/assets/pics/neurosync_2024.jpeg",
-    "alt": "Neurosync 2023",
-    "caption": "Neurosync 2023",
-    "description": "Placeholder description. Replace with the story behind this photo."
+    "description": "First ever hackathon win."
   },
   {
     "src": "/assets/pics/neurosync_2024_2.jpeg",
     "alt": "Neurosync 2024",
     "caption": "Neurosync 2024",
-    "description": "Placeholder description. Replace with the story behind this photo."
+    "description": "Alumni hackathon competition."
+  },
+  {
+    "src": "/assets/pics/neurosync_2023.jpeg",
+    "alt": "Neurosync 2023",
+    "caption": "Neurosync 2023",
+    "description": "Biggest hackathon win yet. "
+  },
+  {
+    "src": "/assets/pics/neurosync_2024.jpeg",
+    "alt": "Neurosync 2023",
+    "caption": "Neurosync 2023",
+    "description": "Pre-seed investment from the e-village following the hackathon win."
   }
+
 ]
