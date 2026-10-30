@@ -1,0 +1,27 @@
+[
+  {
+    "src": "/assets/works/neurosync.jpeg",
+    "alt": "Placeholder photo: Neurosync",
+    "caption": "Neurosync · BCI research",
+    "description": "Placeholder description. Replace with the story behind this photo.",
+    "link": { "label": "Explore Neurosync", "url": "https://neurosyncbci.com" }
+  },
+  {
+    "src": "/assets/works/hiro.png",
+    "alt": "Placeholder photo: Hiro",
+    "caption": "Hiro",
+    "description": "Placeholder description. Replace with the story behind this photo."
+  },
+  {
+    "src": "/assets/works/brief.jpg",
+    "alt": "Placeholder photo: Brief",
+    "caption": "Brief",
+    "description": "Placeholder description. Replace with the story behind this photo."
+  },
+  {
+    "src": "/assets/works/mapthegap.png",
+    "alt": "Placeholder photo: Map the Gap",
+    "caption": "Map the Gap",
+    "description": "Placeholder description. Replace with the story behind this photo."
+  }
+]
