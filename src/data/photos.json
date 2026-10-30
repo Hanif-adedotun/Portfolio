@@ -1,27 +1,26 @@
 [
   {
-    "src": "/assets/works/neurosync.jpeg",
-    "alt": "Placeholder photo: Neurosync",
-    "caption": "Neurosync · BCI research",
-    "description": "Placeholder description. Replace with the story behind this photo.",
-    "link": { "label": "Explore Neurosync", "url": "https://neurosyncbci.com" }
-  },
-  {
-    "src": "/assets/works/hiro.png",
-    "alt": "Placeholder photo: Hiro",
-    "caption": "Hiro",
+    "src": "/assets/pics/interna_2022.jpg",
+    "alt": "Hackathon winner 2022",
+    "caption": "Interna 2022",
     "description": "Placeholder description. Replace with the story behind this photo."
   },
   {
-    "src": "/assets/works/brief.jpg",
-    "alt": "Placeholder photo: Brief",
-    "caption": "Brief",
+    "src": "/assets/pics/neurosync_2023.jpeg",
+    "alt": "Neurosync 2023",
+    "caption": "Neurosync 2023",
     "description": "Placeholder description. Replace with the story behind this photo."
   },
   {
-    "src": "/assets/works/mapthegap.png",
-    "alt": "Placeholder photo: Map the Gap",
-    "caption": "Map the Gap",
+    "src": "/assets/pics/neurosync_2024.jpeg",
+    "alt": "Neurosync 2023",
+    "caption": "Neurosync 2023",
+    "description": "Placeholder description. Replace with the story behind this photo."
+  },
+  {
+    "src": "/assets/pics/neurosync_2024_2.jpeg",
+    "alt": "Neurosync 2024",
+    "caption": "Neurosync 2024",
     "description": "Placeholder description. Replace with the story behind this photo."
   }
 ]
