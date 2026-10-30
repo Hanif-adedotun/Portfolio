@@ -1,0 +1,354 @@
+---
+import photos from "../data/photos.json";
+
+type Photo = {
+  src: string;
+  alt: string;
+  caption: string;
+  description: string;
+  link?: { label: string; url: string };
+};
+
+const items = photos as Photo[];
+const total = items.length;
+---
+
+{
+  total > 0 && (
+    <section
+      class="photo-carousel mb-16"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Photos from my work"
+      tabindex="0"
+    >
+      {/*
+        Every polaroid shares one grid cell; data-position (0 = front)
+        drives the offset/tilt, so the stack reshuffles via CSS transitions.
+      */}
+      <div class="photo-stack">
+        {items.map((photo, index) => (
+          <figure
+            class="photo-slide"
+            data-position={index}
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`${index + 1} of ${total}`}
+            aria-hidden={index === 0 ? "false" : "true"}
+            inert={index !== 0}
+          >
+            <div class="photo-frame">
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                draggable="false"
+                loading={index < 2 ? "eager" : "lazy"}
+                decoding="async"
+              />
+            </div>
+            <figcaption>{photo.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+
+      {total > 1 && (
+        <div class="photo-controls">
+          <button
+            type="button"
+            class="photo-arrow"
+            data-photo-prev
+            data-cuelume-press="press"
+            data-cuelume-release="release"
+            aria-label="Previous photo"
+          >
+            ←
+          </button>
+          <span class="photo-count" aria-live="polite" aria-atomic="true">
+            1 / {total}
+          </span>
+          <button
+            type="button"
+            class="photo-arrow"
+            data-photo-next
+            data-cuelume-press="press"
+            data-cuelume-release="release"
+            aria-label="Next photo"
+          >
+            →
+          </button>
+        </div>
+      )}
+
+      <div class="photo-descriptions" aria-live="polite" aria-atomic="true">
+        {items.map((photo, index) => (
+          <div class="photo-description text-center" hidden={index !== 0}>
+            <span>{photo.description}</span>
+            {photo.link && (
+              <a href={photo.link.url} class="intro-link">
+                {photo.link.label}
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* {total > 1 && <p class="photo-hint">Swipe or use the arrows to explore</p>} */}
+    </section>
+  )
+}
+
+<script>
+  import { play } from "cuelume";
+
+  const carousel = document.querySelector<HTMLElement>(".photo-carousel");
+
+  if (carousel) {
+    const slides = Array.from(carousel.querySelectorAll<HTMLElement>(".photo-slide"));
+    const descriptions = Array.from(
+      carousel.querySelectorAll<HTMLElement>(".photo-description"),
+    );
+    const stack = carousel.querySelector<HTMLElement>(".photo-stack")!;
+    const count = carousel.querySelector<HTMLElement>(".photo-count");
+    let current = 0;
+
+    function showPhoto(index: number) {
+      current = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, i) => {
+        const position = (i - current + slides.length) % slides.length;
+        slide.dataset.position = String(position);
+        slide.setAttribute("aria-hidden", position === 0 ? "false" : "true");
+        slide.inert = position !== 0;
+      });
+
+      descriptions.forEach((description, i) => {
+        description.hidden = i !== current;
+      });
+
+      if (count) count.textContent = `${current + 1} / ${slides.length}`;
+    }
+
+    function step(delta: number) {
+      if (slides.length < 2) return;
+      showPhoto(current + delta);
+      play("whisper");
+    }
+
+    carousel
+      .querySelector("[data-photo-prev]")
+      ?.addEventListener("click", () => step(-1));
+    carousel
+      .querySelector("[data-photo-next]")
+      ?.addEventListener("click", () => step(1));
+
+    carousel.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+      event.preventDefault();
+      step(event.key === "ArrowRight" ? 1 : -1);
+    });
+
+    // Horizontal swipe; vertical drags fall through to page scroll (touch-action: pan-y).
+    let start: { x: number; y: number; id: number } | null = null;
+
+    stack.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+      start = { x: event.clientX, y: event.clientY, id: event.pointerId };
+    });
+
+    stack.addEventListener("pointermove", (event) => {
+      if (!start || event.pointerId !== start.id) return;
+      const dx = Math.abs(event.clientX - start.x);
+      const dy = Math.abs(event.clientY - start.y);
+      if (dx > 45 && dx > dy) stack.setPointerCapture(event.pointerId);
+    });
+
+    stack.addEventListener("pointerup", (event) => {
+      if (!start || event.pointerId !== start.id) return;
+      const dx = event.clientX - start.x;
+      const dy = event.clientY - start.y;
+      start = null;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+        step(dx < 0 ? 1 : -1);
+      }
+    });
+
+    stack.addEventListener("pointercancel", () => {
+      start = null;
+    });
+  }
+</script>
+
+<style>
+  .photo-carousel {
+    --polaroid-bg: #f8f8f5;
+    --polaroid-border: #e7e7e2;
+    --polaroid-ink: #111827;
+    --polaroid-shadow: 0 12px 28px rgb(26 26 26 / 0.09), 0 2px 5px rgb(26 26 26 / 0.04);
+    --photo-matte: #ecece8;
+    --arrow-border: #d1d5db;
+    --arrow-hover-bg: #f3f4f6;
+    --muted: #6b7280;
+    --ease: cubic-bezier(0.23, 1, 0.32, 1);
+
+    width: min(300px, 74vw);
+    margin-inline: auto;
+    outline-offset: 8px;
+  }
+
+  :global(.dark) .photo-carousel {
+    --polaroid-bg: #ecebe6;
+    --polaroid-border: #d6d5cf;
+    --polaroid-shadow: 0 14px 32px rgb(0 0 0 / 0.5), 0 2px 6px rgb(0 0 0 / 0.35);
+    --arrow-border: #374151;
+    --arrow-hover-bg: #1f2937;
+    --muted: #9ca3af;
+  }
+
+  .photo-stack {
+    position: relative;
+    display: grid;
+    /* Room for the cards fanned up behind the front one */
+    padding-top: 18px;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: grab;
+  }
+
+  .photo-stack:active {
+    cursor: grabbing;
+  }
+
+  .photo-slide {
+    grid-area: 1 / 1;
+    margin: 0;
+    padding: 14px 14px 10px;
+    background: var(--polaroid-bg);
+    border: 1px solid var(--polaroid-border);
+    box-shadow: var(--polaroid-shadow);
+    /* Default: buried at the back (positions 4+) */
+    transform: translate(5px, -18px) rotate(1deg);
+    z-index: 1;
+    pointer-events: none;
+    transition:
+      transform 350ms var(--ease),
+      opacity 250ms var(--ease);
+  }
+
+  .photo-slide[data-position="0"] {
+    transform: translate(0, 0) rotate(-2deg);
+    z-index: 6;
+    pointer-events: auto;
+  }
+
+  .photo-slide[data-position="1"] {
+    transform: translate(13px, -8px) rotate(4deg);
+    z-index: 5;
+  }
+
+  .photo-slide[data-position="2"] {
+    transform: translate(-12px, -13px) rotate(-7deg);
+    z-index: 4;
+  }
+
+  .photo-slide[data-position="3"] {
+    transform: translate(5px, -18px) rotate(1deg);
+    z-index: 3;
+  }
+
+  .photo-frame {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--photo-matte);
+  }
+
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .photo-slide figcaption {
+    height: 3rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Permanent Marker", "Marker Felt", cursive;
+    font-size: 1rem;
+    line-height: 1.35;
+    color: var(--polaroid-ink);
+    text-align: center;
+  }
+
+  .photo-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .photo-arrow {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--arrow-border);
+    border-radius: 50%;
+    background: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      transform 160ms var(--ease);
+  }
+
+  .photo-arrow:active {
+    transform: scale(0.95);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .photo-arrow:hover {
+      background: var(--arrow-hover-bg);
+      border-color: currentColor;
+    }
+  }
+
+  .photo-count {
+    min-width: 3.5rem;
+    text-align: center;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.875rem;
+  }
+
+  .photo-descriptions {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  .photo-description[hidden] {
+    display: none;
+  }
+
+  .photo-description a {
+    display: block;
+    width: fit-content;
+    margin-top: 0.5rem;
+  }
+
+  .photo-hint {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .photo-slide,
+    .photo-arrow {
+      transition: none;
+    }
+  }
+</style>
