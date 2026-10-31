@@ -1,4 +1,6 @@
 ---
+import type { ImageMetadata } from "astro";
+import { getImage } from "astro:assets";
 import photos from "../data/photos.json";
 
 type Photo = {
@@ -9,7 +11,71 @@ type Photo = {
   link?: { label: string; url: string };
 };
 
-const items = photos as Photo[];
+/*
+  photos.json keeps paths like "/assets/pics/njit.jpeg"; the files live in
+  src/assets/pics so Astro can resize and re-encode them at build time.
+*/
+const sources = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/pics/*.{jpg,jpeg,png,webp}",
+  { eager: true },
+);
+
+// Inner width of a polaroid's square frame (300px card − 2×14px padding).
+const FRAME = 272;
+// Positions 0–3 peek out of the stack; anything deeper is fully hidden.
+const VISIBLE_DEPTH = 4;
+
+const FORMATS = [
+  { format: "avif", type: "image/avif", quality: 50 },
+  { format: "webp", type: "image/webp", quality: 70 },
+] as const;
+
+async function srcsetFor(
+  image: ImageMetadata,
+  widths: number[],
+  format: "avif" | "webp" | "jpg",
+  quality: number,
+) {
+  const urls = await Promise.all(
+    widths.map((width) => getImage({ src: image, width, format, quality })),
+  );
+  return urls.map((url, i) => `${url.src} ${i + 1}x`).join(", ");
+}
+
+const items = await Promise.all(
+  (photos as Photo[]).map(async (photo) => {
+    const image = sources[`/src${photo.src}`]?.default;
+    if (!image) {
+      throw new Error(
+        `PhotoStack: "${photo.src}" not found. Put the file in src/assets/pics/.`,
+      );
+    }
+
+    // The frame is square with object-fit: cover, so the *short* side has to
+    // cover FRAME at each density — landscape shots need extra width.
+    const aspect = Math.max(1, image.width / image.height);
+    const widths = [1, 2].map((density) =>
+      Math.min(image.width, Math.ceil(FRAME * density * aspect)),
+    );
+
+    const [fallback, ...modern] = await Promise.all([
+      srcsetFor(image, widths, "jpg", 72),
+      ...FORMATS.map(({ format, quality }) =>
+        srcsetFor(image, widths, format, quality),
+      ),
+    ]);
+
+    return {
+      ...photo,
+      width: widths[0],
+      height: Math.round(widths[0] / (image.width / image.height)),
+      fallback,
+      fallbackSrc: fallback.split(" ")[0],
+      modern: modern.map((srcset, i) => ({ srcset, type: FORMATS[i].type })),
+    };
+  }),
+);
+
 const total = items.length;
 ---
 
@@ -38,13 +104,40 @@ const total = items.length;
             inert={index !== 0}
           >
             <div class="photo-frame">
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                draggable="false"
-                loading={index < 2 ? "eager" : "lazy"}
-                decoding="async"
-              />
+              {index < VISIBLE_DEPTH ? (
+                <picture>
+                  {photo.modern.map((source) => (
+                    <source type={source.type} srcset={source.srcset} />
+                  ))}
+                  <img
+                    src={photo.fallbackSrc}
+                    srcset={photo.fallback}
+                    width={photo.width}
+                    height={photo.height}
+                    alt={photo.alt}
+                    draggable="false"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchpriority={index === 0 ? "high" : "low"}
+                    decoding="async"
+                  />
+                </picture>
+              ) : (
+                /* Buried cards hold their URLs in data-* until they near the front. */
+                <picture data-deferred>
+                  {photo.modern.map((source) => (
+                    <source type={source.type} data-srcset={source.srcset} />
+                  ))}
+                  <img
+                    data-src={photo.fallbackSrc}
+                    data-srcset={photo.fallback}
+                    width={photo.width}
+                    height={photo.height}
+                    alt={photo.alt}
+                    draggable="false"
+                    decoding="async"
+                  />
+                </picture>
+              )}
             </div>
             <figcaption>{photo.caption}</figcaption>
           </figure>
@@ -111,11 +204,48 @@ const total = items.length;
     const count = carousel.querySelector<HTMLElement>(".photo-count");
     let current = 0;
 
+    // Must match VISIBLE_DEPTH in the frontmatter.
+    const VISIBLE_DEPTH = 4;
+
+    function hydrate(slide: HTMLElement) {
+      const picture = slide.querySelector<HTMLElement>("picture[data-deferred]");
+      if (!picture) return;
+      picture.removeAttribute("data-deferred");
+      picture.querySelectorAll<HTMLSourceElement | HTMLImageElement>("[data-srcset]").forEach((el) => {
+        el.srcset = el.dataset.srcset!;
+        el.removeAttribute("data-srcset");
+      });
+      const img = picture.querySelector("img");
+      if (img?.dataset.src) {
+        img.src = img.dataset.src;
+        img.removeAttribute("data-src");
+      }
+    }
+
+    // Warm the buried cards once the page is idle — unless the visitor is on
+    // Data Saver or a 2G-class link, where they load only as they're reached.
+    const connection = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    const constrained =
+      connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType ?? "");
+
+    if (!constrained) {
+      const warm = () => slides.forEach(hydrate);
+      const idle = () =>
+        "requestIdleCallback" in window
+          ? requestIdleCallback(warm, { timeout: 4000 })
+          : setTimeout(warm, 1500);
+      if (document.readyState === "complete") idle();
+      else window.addEventListener("load", idle, { once: true });
+    }
+
     function showPhoto(index: number) {
       current = (index + slides.length) % slides.length;
 
       slides.forEach((slide, i) => {
         const position = (i - current + slides.length) % slides.length;
+        if (position < VISIBLE_DEPTH) hydrate(slide);
         slide.dataset.position = String(position);
         slide.setAttribute("aria-hidden", position === 0 ? "false" : "true");
         slide.inert = position !== 0;
